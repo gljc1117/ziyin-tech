@@ -3,7 +3,6 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import HeroSection from "@/components/hero/HeroSection";
-import DemoRequestForm from "@/components/forms/DemoRequestForm";
 import HospitalSection from "@/components/home/HospitalSection";
 
 /* ============================================================
@@ -44,7 +43,7 @@ function AnimatedNumber({ target, suffix = "" }: { target: number; suffix?: stri
    ============================================================ */
 const features = [
   {
-    title: "三维重建",
+    title: "3D 重建",
     desc: "CT / MRI DICOM 数据一键重建，亚毫米级精度还原解剖结构，支持多模态融合。",
     icon: (
       <svg viewBox="0 0 48 48" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -54,7 +53,7 @@ const features = [
     ),
   },
   {
-    title: "手术规划",
+    title: "术前规划",
     desc: "AI 辅助截骨线设计、螺钉通道规划、假体匹配，生成术前报告一键打印。",
     icon: (
       <svg viewBox="0 0 48 48" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -64,12 +63,23 @@ const features = [
     ),
   },
   {
-    title: "有限元分析",
-    desc: "骨骼-植入物应力仿真，预测术后力学分布，优化固定方案降低失败率。",
+    title: "AI 辅助测量",
+    desc: "自动识别解剖标志点，智能测量角度、长度、对位关系，量化评估手术方案。",
     icon: (
       <svg viewBox="0 0 48 48" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth={2}>
         <path d="M8 40L24 8l16 32H8z" strokeLinejoin="round" />
         <path d="M16 24h16M20 32h8" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "手术导航",
+    desc: "术中实时 3D 导航，引导器械精确定位，可视化手术路径，缩短手术时间。",
+    icon: (
+      <svg viewBox="0 0 48 48" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth={2}>
+        <path d="M24 4v40M4 24h40" strokeLinecap="round" />
+        <circle cx="24" cy="24" r="8" />
+        <circle cx="24" cy="24" r="16" />
       </svg>
     ),
   },
@@ -123,7 +133,7 @@ export default function Home() {
           <p className="mx-auto mt-3 max-w-md text-center text-gray-500">
             从影像到手术室，全链路数字化方案
           </p>
-          <div className="mt-14 grid gap-8 sm:grid-cols-3">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((f, i) => (
               <motion.div
                 key={f.title}
@@ -142,18 +152,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. 预约演示 */}
+      {/* 5. CTA */}
       <section
         id="demo"
         className="py-24"
         style={{ backgroundColor: "#0A2463" }}
       >
-        <div className="mx-auto max-w-xl px-6">
-          <h2 className="text-center text-3xl font-bold text-white">申请免费演示</h2>
-          <p className="mx-auto mt-3 mb-10 max-w-md text-center text-sm text-white/50">
-            填写以下信息，我们的团队将在 24 小时内与您联系
+        <div className="mx-auto max-w-2xl px-6 text-center">
+          <h2 className="text-3xl font-bold text-white">开始数字化手术规划</h2>
+          <p className="mx-auto mt-3 mb-8 max-w-md text-sm text-white/50">
+            填写信息申请免费演示，我们的团队将在 24 小时内与您联系
           </p>
-          <DemoRequestForm />
+          <a
+            href="/demo"
+            className="inline-flex items-center rounded-lg bg-cyan-500 px-8 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
+          >
+            申请免费演示
+          </a>
         </div>
       </section>
 

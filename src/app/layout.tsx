@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "子殷科技 — 医疗级3D重建影像平台",
-    template: "%s | 子殷科技",
+    default: "子殷科技 - 数字骨科智能手术规划平台",
+    template: "%s | 子殷科技 - 数字骨科智能手术规划平台",
   },
   description:
     "CT/MRI三维重建 + AI手术规划，让骨科精准手术触手可及。内蒙古子殷科技有限公司，已取得二类医疗器械注册证。",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "子殷科技",
   ],
   openGraph: {
-    title: "子殷科技 — 医疗级3D重建影像平台",
+    title: "子殷科技 - 数字骨科智能手术规划平台",
     description:
       "CT/MRI三维重建 + AI手术规划，让骨科精准手术触手可及。",
     url: "https://ziyin-tech.vercel.app",

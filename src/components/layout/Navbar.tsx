@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { href: "/", label: "首页" },
   { href: "/cases", label: "临床案例" },
-  { href: "#demo", label: "申请演示" },
+  { href: "/demo", label: "申请演示" },
 ];
 
 export default function Navbar() {
@@ -40,7 +40,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="#demo"
+            href="/demo"
             className="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
           >
             免费试用

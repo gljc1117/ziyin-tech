@@ -19,8 +19,8 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-const departments = ["骨科", "脊柱外科", "关节外科", "创伤骨科"];
-const products = ["CT重建", "手术规划", "有限元分析", "AR导航"];
+const departments = ["骨科", "脊柱外科", "关节外科", "创伤骨科", "放疗科", "口腔科"];
+const products = ["3D重建", "术前规划", "AI辅助测量", "手术导航"];
 const volumes = ["<20", "20-50", ">50"];
 
 /* ---------- 步骤进度条 ---------- */

@@ -95,11 +95,20 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center px-6 md:flex-row md:gap-12 md:px-12">
         {/* 左侧文案 */}
         <div className="flex flex-1 flex-col items-center py-12 text-center md:items-start md:py-0 md:text-left">
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="text-sm font-medium uppercase tracking-widest text-cyan-400"
+          >
+            数字骨科智能手术规划平台
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
           >
             每台手术，先数字演练
           </motion.h1>
@@ -107,20 +116,37 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             className="mt-5 max-w-lg text-base leading-relaxed text-blue-100/80 sm:text-lg"
           >
-            CT/MR 三维重建 + AI 手术规划，让骨科精准手术触手可及
+            CT/MRI 三维重建 + AI 手术规划，让骨科精准手术触手可及
           </motion.p>
+
+          {/* 四大核心能力标签 */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-6 flex flex-wrap gap-2"
+          >
+            {["3D 重建", "术前规划", "AI 辅助测量", "手术导航"].map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300"
+              >
+                {tag}
+              </span>
+            ))}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-8 flex flex-wrap items-center gap-4"
           >
             <a
-              href="#demo"
+              href="/demo"
               className="inline-flex items-center rounded-lg px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
               style={{ backgroundColor: "#00B4D8" }}
             >
