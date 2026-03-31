@@ -34,7 +34,13 @@ export async function POST(req: NextRequest) {
 
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
     const { error } = await supabase.from("demo_requests").insert({
-      ...parsed.data,
+      doctor_name: parsed.data.name,
+      hospital_name: parsed.data.hospital,
+      department: parsed.data.department,
+      phone: parsed.data.phone,
+      modules: parsed.data.products,
+      monthly_cases: parsed.data.surgery_volume,
+      notes: parsed.data.notes ?? null,
       status: "pending",
     });
 

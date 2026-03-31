@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import HeroSection from "@/components/hero/HeroSection";
 import DemoRequestForm from "@/components/forms/DemoRequestForm";
+import HospitalSection from "@/components/home/HospitalSection";
 
 /* ============================================================
    数字滚动组件
@@ -112,7 +113,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. 产品特性 */}
+      {/* 3. 合作医院 */}
+      <HospitalSection />
+
+      {/* 4. 产品特性 */}
       <section className="bg-gray-50 py-24">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-center text-3xl font-bold text-gray-900">核心产品模块</h2>
@@ -138,7 +142,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. 预约演示 */}
+      {/* 5. 预约演示 */}
       <section
         id="demo"
         className="py-24"
@@ -153,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Footer */}
+      {/* 6. Footer */}
       <footer className="bg-gray-950 py-10 text-center text-sm text-gray-500">
         <p>© {new Date().getFullYear()} 内蒙古子殷科技有限公司 保留所有权利</p>
         <p className="mt-2 text-xs text-gray-600">

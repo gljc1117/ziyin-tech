@@ -1,7 +1,13 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import CaseFilter from "@/components/cases/CaseFilter";
 import CaseCard from "@/components/cases/CaseCard";
 import type { ClinicalCase } from "@/lib/types";
+
+export const metadata: Metadata = {
+  title: "临床案例",
+  description: "精选合作医院3D打印临床应用案例，涵盖骨科定制器械、放疗模具、手术导板等。",
+};
 
 // 演示数据 — 接入 Supabase 后替换为真实查询
 const demoCases: ClinicalCase[] = [
@@ -72,7 +78,7 @@ export default async function CasesPage({
     : demoCases;
 
   return (
-    <main className="mx-auto max-w-7xl px-6 py-20">
+    <main className="mx-auto max-w-7xl px-6 pt-24 pb-20">
       <h1 className="text-3xl font-bold text-gray-900">临床案例</h1>
       <p className="mt-2 text-gray-500">精选合作医院 3D 打印临床应用案例</p>
 

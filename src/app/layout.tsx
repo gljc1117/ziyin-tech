@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "子殷科技 — 医疗级3D重建影像平台",
-  description: "CT/MRI三维重建 + AI手术规划，让骨科精准手术触手可及。内蒙古子殷科技有限公司。",
+  title: {
+    default: "子殷科技 — 医疗级3D重建影像平台",
+    template: "%s | 子殷科技",
+  },
+  description:
+    "CT/MRI三维重建 + AI手术规划，让骨科精准手术触手可及。内蒙古子殷科技有限公司，已取得二类医疗器械注册证。",
+  keywords: [
+    "3D打印",
+    "骨科",
+    "三维重建",
+    "手术规划",
+    "医疗器械",
+    "PEEK",
+    "数字骨科",
+    "CT重建",
+    "子殷科技",
+  ],
+  openGraph: {
+    title: "子殷科技 — 医疗级3D重建影像平台",
+    description:
+      "CT/MRI三维重建 + AI手术规划，让骨科精准手术触手可及。",
+    url: "https://ziyin-tech.vercel.app",
+    siteName: "子殷科技",
+    locale: "zh_CN",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +56,10 @@ export default function RootLayout({
       lang="zh-CN"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

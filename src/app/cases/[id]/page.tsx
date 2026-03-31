@@ -43,7 +43,7 @@ export default async function CaseDetailPage({
   if (!data) notFound();
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-20">
+    <main className="mx-auto max-w-3xl px-6 pt-24 pb-20">
       <Link href="/cases" className="text-sm text-blue-600 hover:underline">
         &larr; 返回案例列表
       </Link>
