@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CaseFilter from "@/components/cases/CaseFilter";
 import CaseCard from "@/components/cases/CaseCard";
+import AICasesSection from "./AICasesSection";
 import type { ClinicalCase, CaseCategory } from "@/lib/types";
 import { createServerClient } from "@/lib/supabase-server";
 
@@ -145,6 +146,9 @@ export default async function CasesPage({
         </div>
       )}
 
+      {category === "ai_reconstruction" ? (
+        <AICasesSection />
+      ) : (
       <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((c, i) => (
           <CaseCard key={c.id} caseData={c} index={i} />
@@ -167,6 +171,7 @@ export default async function CasesPage({
           </div>
         )}
       </div>
+      )}
     </main>
   );
 }

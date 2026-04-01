@@ -101,11 +101,12 @@ export default function Home() {
 
       {/* 3. 统计数字 */}
       <section className="bg-white py-20">
-        <div className="mx-auto grid max-w-5xl gap-8 px-6 sm:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl gap-8 px-6 sm:grid-cols-4">
           {[
-            { target: 2000, suffix: "+", label: "重建病例" },
-            { target: 50, suffix: "+", label: "合作医院" },
-            { target: 0.5, suffix: "mm", label: "手术精度" },
+            { target: 6, suffix: " 家", label: "三甲医院" },
+            { target: 10, suffix: "+", label: "覆盖科室" },
+            { target: 40, suffix: "+", label: "器官分割" },
+            { target: 16, suffix: "s", label: "报告生成" },
           ].map((item) => (
             <motion.div
               key={item.label}
@@ -116,8 +117,8 @@ export default function Home() {
               className="flex flex-col items-center rounded-2xl border border-gray-100 bg-gray-50 py-10"
             >
               <span className="text-4xl font-extrabold text-blue-900">
-                {item.label === "手术精度" ? (
-                  <PrecisionNumber />
+                {item.label === "报告生成" ? (
+                  <>{"<"}<AnimatedNumber target={item.target} suffix={item.suffix} /></>
                 ) : (
                   <AnimatedNumber target={item.target} suffix={item.suffix} />
                 )}
