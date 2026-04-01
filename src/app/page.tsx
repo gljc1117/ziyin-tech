@@ -186,11 +186,26 @@ export default function Home() {
               <Link href="/demo" className="transition-colors hover:text-white/70">申请演示</Link>
             </nav>
           </div>
-          <div className="mt-8 border-t border-gray-800 pt-6 text-center">
-            <p>© {new Date().getFullYear()} 内蒙古子殷科技有限公司 保留所有权利</p>
-            <p className="mt-1 text-xs text-gray-600">
-              本平台仅供医疗专业人员使用，不构成临床诊疗建议
-            </p>
+          <div className="mt-8 border-t border-gray-800 pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 items-end">
+              <div className="text-center md:col-span-2">
+                <p>© {new Date().getFullYear()} 内蒙古子殷科技有限公司 保留所有权利</p>
+                <p className="mt-1 text-xs text-gray-600">
+                  本平台仅供医疗专业人员使用，不构成临床诊疗建议
+                </p>
+              </div>
+              <div className="mt-4 text-center md:mt-0">
+                <a
+                  href="https://beian.miit.gov.cn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#64748B] transition-colors hover:text-[#3B82F6]"
+                  style={{ fontSize: 12 }}
+                >
+                  蒙ICP备2025030436号-1
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
