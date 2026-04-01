@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.icp-link {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.icp-link:hover {
+  color: #3B82F6 !important;
+}

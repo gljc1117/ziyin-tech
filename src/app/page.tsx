@@ -199,8 +199,8 @@ export default function Home() {
                   href="https://beian.miit.gov.cn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-[#64748B] transition-colors hover:text-[#3B82F6]"
-                  style={{ fontSize: 12 }}
+                  className="icp-link"
+                  style={{ fontSize: 12, color: "#94a3b8" }}
                 >
                   蒙ICP备2025030436号-1
                 </a>
