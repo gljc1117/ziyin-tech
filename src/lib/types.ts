@@ -51,6 +51,21 @@ export interface Model3D {
 export type ModelMaterial = "PEEK" | "Titanium" | "Resin" | "Nylon" | "Other";
 export type ModelStatus = "processing" | "ready" | "printing" | "completed" | "failed";
 
+/* ---------- COS Manifest ---------- */
+export interface ManifestModel {
+  name: string;
+  format: string;
+  url: string;
+  size_mb: number;
+  md5?: string;
+}
+
+export interface CaseManifest {
+  case_id: string;
+  generated_at: string;
+  models: ManifestModel[];
+}
+
 /* ---------- 临床案例 ---------- */
 export type CaseCategory =
   | "orthopedic"      // 骨科定制器械

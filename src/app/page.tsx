@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import HeroSection from "@/components/hero/HeroSection";
 import HospitalSection from "@/components/home/HospitalSection";
+import CaseShowcase from "@/components/home/CaseShowcase";
 
 /* ============================================================
    数字滚动组件
@@ -95,7 +96,10 @@ export default function Home() {
       {/* 1. Hero */}
       <HeroSection />
 
-      {/* 2. 统计数字 */}
+      {/* 2. 临床案例展示 */}
+      <CaseShowcase />
+
+      {/* 3. 统计数字 */}
       <section className="bg-white py-20">
         <div className="mx-auto grid max-w-5xl gap-8 px-6 sm:grid-cols-3">
           {[
