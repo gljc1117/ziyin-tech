@@ -182,13 +182,52 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-6 flex flex-wrap gap-2"
           >
-            {["3D 重建", "术前规划", "AI 辅助测量", "手术导航"].map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300"
+            {[
+              {
+                label: "3D 重建",
+                href: "#cases",
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
+                  </svg>
+                ),
+              },
+              {
+                label: "术前规划",
+                href: "/demo",
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" /><path d="M9 10h6M9 14h6M9 6h2" />
+                  </svg>
+                ),
+              },
+              {
+                label: "AI 辅助测量",
+                href: "/demo",
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M2 20L20 2" /><path d="M2 20l4-1-3-3 1-4" strokeLinejoin="round" /><path d="M7 13l2 2M11 9l2 2M15 5l2 2" />
+                  </svg>
+                ),
+              },
+              {
+                label: "手术导航",
+                href: "/demo",
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="3" /><circle cx="12" cy="12" r="8" /><path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+                  </svg>
+                ),
+              },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="flex items-center gap-1.5 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-xs font-medium text-cyan-300 transition-all hover:bg-white/15 hover:text-white"
               >
-                {tag}
-              </span>
+                {item.icon}
+                {item.label}
+              </a>
             ))}
           </motion.div>
 
