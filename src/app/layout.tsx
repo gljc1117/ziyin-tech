@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | 子殷科技 - 数字骨科智能手术规划平台",
   },
   description:
-    "CT/MRI三维重建 + AI手术规划，让骨科精准手术触手可及。内蒙古子殷科技有限公司，已取得二类医疗器械注册证。",
+    "CT/MRI三维重建 + AI手术规划，让骨科精准手术触手可及。上海子殷科技有限公司，已取得二类医疗器械注册证。",
   keywords: [
     "3D打印",
     "骨科",

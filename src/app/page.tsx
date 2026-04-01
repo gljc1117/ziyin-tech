@@ -181,7 +181,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
             <div className="text-center md:text-left">
-              <p className="font-semibold text-white/80">内蒙古子殷科技有限公司</p>
+              <p className="font-semibold text-white/80">上海子殷科技有限公司</p>
               <p className="mt-1 text-xs text-gray-600">二类医疗器械注册证持有企业</p>
             </div>
             <nav className="flex flex-wrap justify-center gap-6">
@@ -193,7 +193,7 @@ export default function Home() {
           <div className="mt-8 border-t border-gray-800 pt-6">
             <div className="grid grid-cols-1 md:grid-cols-3 items-end">
               <div className="text-center md:col-span-2">
-                <p>© {new Date().getFullYear()} 内蒙古子殷科技有限公司 保留所有权利</p>
+                <p>© {new Date().getFullYear()} 上海子殷科技有限公司 保留所有权利</p>
                 <p className="mt-1 text-xs text-gray-600">
                   本平台仅供医疗专业人员使用，不构成临床诊疗建议
                 </p>
