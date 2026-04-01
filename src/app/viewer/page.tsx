@@ -157,7 +157,7 @@ function ViewerContent() {
       </div>
 
       {/* Bottom organ bar */}
-      {manifest && allDone && (
+      {manifest && (
         <div className="flex-shrink-0 border-t border-white/10 bg-slate-800/95 backdrop-blur-xl">
           <div className="flex h-16 items-center gap-1 overflow-x-auto px-4">
             {manifest.models.map((m) => {

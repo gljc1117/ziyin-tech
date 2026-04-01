@@ -553,7 +553,7 @@ export default function ModelViewer({
         </CanvasErrorBoundary>
       )}
 
-      {showControls && manifest && allDone && (
+      {showControls && manifest && (
         <SideControlsPanel
           models={manifest.models}
           visibility={visibility}
