@@ -1,36 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { createBrowserClient } from "@supabase/ssr";
 
-interface Hospital {
-  id: string;
-  name: string;
-  level: string;
-  city: string;
-}
+const hospitals = [
+  { name: "上海市第六人民医院", city: "上海", level: "三甲", abbr: "沪", color: "#1E40AF" },
+  { name: "北京大学人民医院", city: "北京", level: "三甲", abbr: "京", color: "#DC2626" },
+  { name: "浙江大学第二附属医院", city: "杭州", level: "三甲", abbr: "浙", color: "#059669" },
+  { name: "中日友好医院", city: "北京", level: "三甲", abbr: "中", color: "#7C3AED" },
+  { name: "四川大学华西第二医院", city: "成都", level: "三甲", abbr: "川", color: "#D97706" },
+  { name: "内蒙古自治区人民医院", city: "呼和浩特", level: "三甲", abbr: "蒙", color: "#0891B2" },
+];
 
 export default function HospitalSection() {
-  const [hospitals, setHospitals] = useState<Hospital[]>([]);
-
-  useEffect(() => {
-    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    if (!url || !key) return;
-
-    const supabase = createBrowserClient(url, key);
-    supabase
-      .from("hospitals")
-      .select("id, name, level, city")
-      .order("created_at", { ascending: true })
-      .then(({ data }) => {
-        if (data) setHospitals(data as Hospital[]);
-      });
-  }, []);
-
-  if (hospitals.length === 0) return null;
-
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-6">
@@ -41,15 +22,18 @@ export default function HospitalSection() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {hospitals.map((h, i) => (
             <motion.div
-              key={h.id}
+              key={h.name}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="flex items-center gap-4 rounded-xl border border-gray-100 bg-gray-50 p-5 transition-shadow hover:shadow-md"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-lg font-bold text-white">
-                {h.name.charAt(0)}
+              <div
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-lg font-bold text-white"
+                style={{ backgroundColor: h.color }}
+              >
+                {h.abbr}
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">{h.name}</h3>
