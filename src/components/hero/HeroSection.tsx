@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Float } from "@react-three/drei";
-import { motion, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Mesh } from "three";
 
 /* ---------- 3D 骨盆线框模型 ---------- */
@@ -61,17 +62,18 @@ function AnimatedScene() {
 }
 
 /* ---------- WebGL 检测 ---------- */
+function checkWebGL() {
+  if (typeof document === "undefined") return true;
+  try {
+    const c = document.createElement("canvas");
+    return !!(c.getContext("webgl") || c.getContext("webgl2"));
+  } catch {
+    return false;
+  }
+}
+
 function useWebGLSupport() {
-  const [supported, setSupported] = useState(true);
-  useEffect(() => {
-    try {
-      const c = document.createElement("canvas");
-      const ok = !!(c.getContext("webgl") || c.getContext("webgl2"));
-      setSupported(ok);
-    } catch {
-      setSupported(false);
-    }
-  }, []);
+  const [supported] = useState(checkWebGL);
   return supported;
 }
 
@@ -152,12 +154,12 @@ export default function HeroSection() {
             >
               申请免费演示
             </a>
-            <a
+            <Link
               href="/cases"
               className="inline-flex items-center rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105 hover:border-white/70 active:scale-95"
             >
               查看临床案例
-            </a>
+            </Link>
           </motion.div>
         </div>
 

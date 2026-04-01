@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import HeroSection from "@/components/hero/HeroSection";
 import HospitalSection from "@/components/home/HospitalSection";
@@ -155,8 +156,7 @@ export default function Home() {
       {/* 5. CTA */}
       <section
         id="demo"
-        className="py-24"
-        style={{ backgroundColor: "#0A2463" }}
+        className="bg-[#0A2463] py-24"
       >
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-3xl font-bold text-white">开始数字化手术规划</h2>
@@ -173,11 +173,26 @@ export default function Home() {
       </section>
 
       {/* 6. Footer */}
-      <footer className="bg-gray-950 py-10 text-center text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} 内蒙古子殷科技有限公司 保留所有权利</p>
-        <p className="mt-2 text-xs text-gray-600">
-          本平台仅供医疗专业人员使用，不构成临床诊疗建议
-        </p>
+      <footer className="bg-gray-950 py-12 text-sm text-gray-500">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+            <div className="text-center md:text-left">
+              <p className="font-semibold text-white/80">内蒙古子殷科技有限公司</p>
+              <p className="mt-1 text-xs text-gray-600">二类医疗器械注册证持有企业</p>
+            </div>
+            <nav className="flex flex-wrap justify-center gap-6">
+              <Link href="/" className="transition-colors hover:text-white/70">首页</Link>
+              <Link href="/cases" className="transition-colors hover:text-white/70">临床案例</Link>
+              <Link href="/demo" className="transition-colors hover:text-white/70">申请演示</Link>
+            </nav>
+          </div>
+          <div className="mt-8 border-t border-gray-800 pt-6 text-center">
+            <p>© {new Date().getFullYear()} 内蒙古子殷科技有限公司 保留所有权利</p>
+            <p className="mt-1 text-xs text-gray-600">
+              本平台仅供医疗专业人员使用，不构成临床诊疗建议
+            </p>
+          </div>
+        </div>
       </footer>
     </>
   );

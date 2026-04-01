@@ -75,6 +75,7 @@ const errorCls = "mt-1 text-xs text-red-400";
 export default function DemoRequestForm() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const {
     register,
@@ -96,12 +97,21 @@ export default function DemoRequestForm() {
   }
 
   async function onSubmit(data: FormData) {
-    const res = await fetch("/api/demo-request", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    if (res.ok) setSubmitted(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/demo-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setSubmitError("提交失败，请稍后重试");
+      }
+    } catch {
+      setSubmitError("网络错误，请检查网络连接后重试");
+    }
   }
 
   if (submitted) {
@@ -275,6 +285,11 @@ export default function DemoRequestForm() {
                 {isSubmitting ? "提交中…" : "提交预约"}
               </button>
             </div>
+            {submitError && (
+              <p className="mt-3 rounded-lg bg-red-500/10 border border-red-500/20 px-4 py-2 text-center text-sm text-red-400">
+                {submitError}
+              </p>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

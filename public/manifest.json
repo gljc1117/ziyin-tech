@@ -1,0 +1,13 @@
+{
+  "name": "子殷科技 - 数字骨科智能手术规划平台",
+  "short_name": "子殷科技",
+  "description": "CT/MRI三维重建 + AI手术规划",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A2463",
+  "theme_color": "#0A2463",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

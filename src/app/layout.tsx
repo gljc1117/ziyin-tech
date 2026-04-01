@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ziyin-tech.vercel.app"),
   title: {
     default: "子殷科技 - 数字骨科智能手术规划平台",
     template: "%s | 子殷科技 - 数字骨科智能手术规划平台",
@@ -39,7 +40,23 @@ export const metadata: Metadata = {
     siteName: "子殷科技",
     locale: "zh_CN",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "子殷科技 - 数字骨科智能手术规划平台",
+      },
+    ],
   },
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
