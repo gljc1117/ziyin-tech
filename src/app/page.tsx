@@ -194,6 +194,7 @@ export default function Home() {
               <Link href="/" className="transition-colors hover:text-white/70">首页</Link>
               <Link href="/cases" className="transition-colors hover:text-white/70">临床案例</Link>
               <Link href="/news" className="transition-colors hover:text-white/70">新闻动态</Link>
+              <Link href="/about" className="transition-colors hover:text-white/70">关于我们</Link>
               <Link href="/demo" className="transition-colors hover:text-white/70">申请演示</Link>
             </nav>
           </div>

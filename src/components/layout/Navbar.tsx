@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/", label: "首页" },
   { href: "/cases", label: "临床案例" },
   { href: "/news", label: "新闻动态" },
+  { href: "/about", label: "关于" },
   { href: "/demo", label: "申请演示" },
 ];
 
