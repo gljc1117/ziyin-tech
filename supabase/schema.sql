@@ -66,9 +66,33 @@ create index if not exists cases_surgery_type_idx
 create index if not exists hospitals_name_trgm_idx
   on hospitals using gin(name gin_trgm_ops);
 
+-- 新闻动态
+create table if not exists news (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  summary text,
+  content text,
+  cover_url text,
+  category text default '公司动态',
+  is_published boolean default true,
+  published_at timestamptz default now(),
+  created_at timestamptz default now()
+);
+
+alter table news enable row level security;
+
+create policy "已发布新闻可读"
+  on news for select using (is_published = true);
+
 -- 种子数据（测试用）
 insert into hospitals (name, level, city) values
   ('北京协和医院', '三甲', '北京'),
   ('上海瑞金医院', '三甲', '上海'),
   ('广州南方医院', '三甲', '广州')
+on conflict do nothing;
+
+insert into news (title, summary, category, published_at) values
+  ('子殷科技完成数字骨科平台核心模块开发', '盘古AI三维重建系统完成CT/MRI DICOM数据自动分割与亚毫米级三维重建能力验证，标志着平台核心技术栈正式贯通。', '技术进展', '2026-03-15'),
+  ('与内蒙古医科大学附属医院达成临床合作', '双方将在骨科3D打印手术导板、个性化植入物等领域开展深度合作，首批临床验证案例已启动。', '合作动态', '2026-03-01'),
+  ('子殷科技官网正式上线', '全新官网 www.chcomct.cn 正式发布，展示数字骨科智能手术规划平台核心能力与临床案例。', '公司动态', '2026-02-20')
 on conflict do nothing;

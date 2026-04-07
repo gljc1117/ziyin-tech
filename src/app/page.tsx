@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import HeroSection from "@/components/hero/HeroSection";
 import HospitalSection from "@/components/home/HospitalSection";
+import LatestNews from "@/components/home/LatestNews";
 
 /* ============================================================
    数字滚动组件
@@ -153,7 +154,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. CTA */}
+      {/* 5. 最新动态 */}
+      <LatestNews />
+
+      {/* 6. CTA */}
       <section
         id="demo"
         className="bg-[#0A2463] py-24"
@@ -172,7 +176,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Footer */}
+      {/* 7. Footer */}
       <footer className="bg-gray-950 py-12 text-sm text-gray-500">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
@@ -183,6 +187,7 @@ export default function Home() {
             <nav className="flex flex-wrap justify-center gap-6">
               <Link href="/" className="transition-colors hover:text-white/70">首页</Link>
               <Link href="/cases" className="transition-colors hover:text-white/70">临床案例</Link>
+              <Link href="/news" className="transition-colors hover:text-white/70">新闻动态</Link>
               <Link href="/demo" className="transition-colors hover:text-white/70">申请演示</Link>
             </nav>
           </div>
