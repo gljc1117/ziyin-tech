@@ -1,9 +1,21 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import CaseModelSection from "./CaseModelSection";
 
 // 临时演示数据 — 后续接入 Supabase
-const caseMap: Record<string, { title: string; hospital: string; department: string; doctor: string; summary: string; content: string }> = {
+const caseMap: Record<
+  string,
+  {
+    title: string;
+    hospital: string;
+    department: string;
+    doctor: string;
+    summary: string;
+    content: string;
+    caseId?: string; // COS case-id for 3D models
+  }
+> = {
   "femur-custom-plate": {
     title: "股骨远端骨折个性化接骨板",
     hospital: "上海市第六人民医院",
@@ -31,7 +43,49 @@ const caseMap: Record<string, { title: string; hospital: string; department: str
     content:
       "患者男性，38 岁，Schatzker IV 型胫骨平台骨折。术前基于 CT 三维重建进行虚拟手术规划，确定截骨平面和螺钉置入通道，3D 打印手术导板。术中导板精准定位，手术时间从 3.5 小时缩短至 2 小时，透视次数减少 60%。",
   },
+  demo: {
+    title: "多器官 CT 三维重建演示",
+    hospital: "PanGu AI 演示",
+    department: "数字影像",
+    doctor: "AI",
+    summary: "基于 CT 数据的多器官自动分割与三维重建，包含肝脏、肾脏、气管等结构。",
+    content:
+      "本演示案例展示 PanGu AI 平台的多器官自动分割能力。系统自动识别并分割 CT 影像中的肝脏、左右肾脏、肾动脉、气管等解剖结构，生成高精度 STL 三维模型。所有模型可在浏览器中实时交互查看，支持器官分色显示与显隐控制。",
+    caseId: "demo",
+  },
+  TEST001: {
+    title: "肝脏 CT 三维重建",
+    hospital: "四川大学华西第二医院",
+    department: "肝胆外科",
+    doctor: "主任医师",
+    summary: "肝脏 CT 三维重建，精确分割肝脏轮廓，为肝切除术前规划提供解剖参考。",
+    content: "本案例基于腹部增强 CT 数据，使用 AI 自动分割肝脏轮廓并生成高精度三维模型。重建结果可用于肝切除术前规划，帮助外科医生评估肝脏体积、确定切除范围和安全切缘。",
+    caseId: "TEST001",
+  },
+  "lung-case": {
+    title: "肺部专科三维重建",
+    hospital: "上海市第六人民医院",
+    department: "胸外科",
+    doctor: "主任医师",
+    summary: "基于高分辨率胸部 CT，AI 全自动分割肺叶、支气管树、肺动脉与肺静脉。9 个解剖结构精确重建，辅助术前规划与解剖评估。",
+    content:
+      "本案例基于高分辨率胸部 CT 数据，使用 PanGu AI 桌面端进行全自动肺部专科重建。系统精确分割双肺五叶（右肺上叶、中叶、下叶，左肺上叶、下叶），同时重建肺动脉、肺静脉血管树和气管-气道系统，共 9 个解剖结构。模型保留了亚毫米级的解剖细节，可辅助胸外科术前手术入路规划与解剖评估。",
+    caseId: "lung-case",
+  },
+  fullbody: {
+    title: "全身多器官三维重建",
+    hospital: "浙江大学第二附属医院",
+    department: "普外科",
+    doctor: "主任医师",
+    summary: "腹部 CT 全自动多器官分割，覆盖肝脏、脾脏、双肾、胃、胰腺、胆囊等 13 个解剖结构。支持器官体积计算与空间关系评估。",
+    content:
+      "本案例使用 TotalSegmentator 对腹部 CT 进行全自动分割，重建了肝脏、脾脏、左右肾、胃、胰腺、胆囊、主动脉、门静脉、十二指肠及双侧肺叶等 13 个解剖结构。所有模型经过网格简化处理，总数据量仅 2.9MB，适合在线实时交互查看，支持器官体积计算与空间关系评估。",
+    caseId: "fullbody",
+  },
 };
+
+const COS_MANIFEST_BASE =
+  "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models";
 
 export default async function CaseDetailPage({
   params,
@@ -42,8 +96,12 @@ export default async function CaseDetailPage({
   const data = caseMap[id];
   if (!data) notFound();
 
+  const manifestUrl = data.caseId
+    ? `${COS_MANIFEST_BASE}/${data.caseId}/manifest.json`
+    : null;
+
   return (
-    <main className="mx-auto max-w-3xl px-6 pt-24 pb-20">
+    <main className="mx-auto max-w-4xl px-6 pt-24 pb-20">
       <Link href="/cases" className="text-sm text-blue-600 hover:underline">
         &larr; 返回案例列表
       </Link>
@@ -63,10 +121,32 @@ export default async function CaseDetailPage({
         />
       </div>
 
+      {/* 3D 查看器 */}
+      {manifestUrl && data.caseId && (
+        <CaseModelSection
+          manifestUrl={manifestUrl}
+          caseId={data.caseId}
+          title={data.title}
+          department={data.department}
+        />
+      )}
+
       <article className="prose prose-gray mt-10 max-w-none">
         <p className="lead">{data.summary}</p>
         <p>{data.content}</p>
       </article>
+
+      {manifestUrl && data.caseId && (
+        <div className="mt-6 text-sm text-gray-400">
+          外部分享链接：
+          <Link
+            href={`/viewer?case=${data.caseId}`}
+            className="ml-1 text-blue-500 hover:underline"
+          >
+            /viewer?case={data.caseId}
+          </Link>
+        </div>
+      )}
     </main>
   );
 }

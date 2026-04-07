@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import HeroSection from "@/components/hero/HeroSection";
 import HospitalSection from "@/components/home/HospitalSection";
 import LatestNews from "@/components/home/LatestNews";
+import CaseShowcase from "@/components/home/CaseShowcase";
 
 /* ============================================================
    数字滚动组件
@@ -96,13 +97,17 @@ export default function Home() {
       {/* 1. Hero */}
       <HeroSection />
 
-      {/* 2. 统计数字 */}
+      {/* 2. 临床案例展示 */}
+      <CaseShowcase />
+
+      {/* 3. 统计数字 */}
       <section className="bg-white py-20">
-        <div className="mx-auto grid max-w-5xl gap-8 px-6 sm:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl gap-8 px-6 sm:grid-cols-4">
           {[
-            { target: 2000, suffix: "+", label: "重建病例" },
-            { target: 50, suffix: "+", label: "合作医院" },
-            { target: 0.5, suffix: "mm", label: "手术精度" },
+            { target: 6, suffix: " 家", label: "三甲医院" },
+            { target: 10, suffix: "+", label: "覆盖科室" },
+            { target: 40, suffix: "+", label: "器官分割" },
+            { target: 16, suffix: "s", label: "报告生成" },
           ].map((item) => (
             <motion.div
               key={item.label}
@@ -113,8 +118,8 @@ export default function Home() {
               className="flex flex-col items-center rounded-2xl border border-gray-100 bg-gray-50 py-10"
             >
               <span className="text-4xl font-extrabold text-blue-900">
-                {item.label === "手术精度" ? (
-                  <PrecisionNumber />
+                {item.label === "报告生成" ? (
+                  <>{"<"}<AnimatedNumber target={item.target} suffix={item.suffix} /></>
                 ) : (
                   <AnimatedNumber target={item.target} suffix={item.suffix} />
                 )}
@@ -179,10 +184,11 @@ export default function Home() {
       {/* 7. Footer */}
       <footer className="bg-gray-950 py-12 text-sm text-gray-500">
         <div className="mx-auto max-w-6xl px-6">
+          {/* 主内容行 */}
           <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
             <div className="text-center md:text-left">
-              <p className="font-semibold text-white/80">内蒙古子殷科技有限公司</p>
-              <p className="mt-1 text-xs text-gray-600">二类医疗器械注册证持有企业</p>
+              <p className="font-semibold text-white/80">上海子殷科技有限公司</p>
+              <p className="mt-1 text-sm text-gray-400">数字技术守护每一次精准手术</p>
             </div>
             <nav className="flex flex-wrap justify-center gap-6">
               <Link href="/" className="transition-colors hover:text-white/70">首页</Link>
@@ -191,26 +197,20 @@ export default function Home() {
               <Link href="/demo" className="transition-colors hover:text-white/70">申请演示</Link>
             </nav>
           </div>
-          <div className="mt-8 border-t border-gray-800 pt-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 items-end">
-              <div className="text-center md:col-span-2">
-                <p>© {new Date().getFullYear()} 内蒙古子殷科技有限公司 保留所有权利</p>
-                <p className="mt-1 text-xs text-gray-600">
-                  本平台仅供医疗专业人员使用，不构成临床诊疗建议
-                </p>
-              </div>
-              <div className="mt-4 text-center md:mt-0">
-                <a
-                  href="https://beian.miit.gov.cn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="icp-link"
-                  style={{ fontSize: 12, color: "#94a3b8" }}
-                >
-                  蒙ICP备2025030436号-1
-                </a>
-              </div>
-            </div>
+
+          {/* 版权行 */}
+          <div className="mt-6 flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-4 md:flex-row">
+            <p className="text-xs text-gray-600">
+              &copy; 2024-2026 上海子殷科技有限公司 保留所有权利
+            </p>
+            <a
+              href="https://beian.miit.gov.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-600 transition-colors hover:text-gray-400"
+            >
+              蒙ICP备2025030436号-1
+            </a>
           </div>
         </div>
       </footer>

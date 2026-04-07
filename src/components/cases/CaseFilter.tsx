@@ -10,6 +10,7 @@ const categories: { value: CaseCategory | "all"; label: string }[] = [
   { value: "surgical_guide", label: "手术导板" },
   { value: "implant", label: "植入物" },
   { value: "other", label: "其他" },
+  { value: "ai_reconstruction" as CaseCategory, label: "AI 三维重建" },
 ];
 
 export default function CaseFilter() {
