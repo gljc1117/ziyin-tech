@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createServerClient } from "@/lib/supabase-server";
+import NewsContent from "@/components/news/NewsContent";
 
 interface NewsDetail {
   id: string;
@@ -16,6 +17,7 @@ const categoryColor: Record<string, string> = {
   公司动态: "bg-cyan-500/20 text-cyan-300",
   技术进展: "bg-purple-500/20 text-purple-300",
   合作动态: "bg-emerald-500/20 text-emerald-300",
+  学术动态: "bg-amber-500/20 text-amber-300",
 };
 
 export async function generateMetadata({
@@ -90,11 +92,7 @@ export default async function NewsDetailPage({
           {news.title}
         </h1>
 
-        {body && (
-          <div className="mt-8 text-base leading-relaxed text-white/70 whitespace-pre-line">
-            {body}
-          </div>
-        )}
+        {body && <NewsContent content={body} />}
 
         <div className="mt-12">
           <Link
