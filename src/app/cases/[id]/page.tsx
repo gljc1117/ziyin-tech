@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import CaseModelSection from "./CaseModelSection";
+import CaseMarkdownContent from "./CaseMarkdownContent";
+import { createServerClient } from "@/lib/supabase-server";
 
 // 临时演示数据 — 后续接入 Supabase
 const caseMap: Record<
@@ -87,18 +89,104 @@ const caseMap: Record<
 const COS_MANIFEST_BASE =
   "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models";
 
+interface OutcomeData {
+  hospital?: string;
+  department?: string;
+  doctors?: string;
+  technique?: string;
+  result?: string;
+  significance?: string;
+  date?: string;
+  content?: string;
+}
+
+async function getSupabaseCase(id: string) {
+  const supabase = createServerClient();
+  if (!supabase) return null;
+
+  const { data, error } = await supabase
+    .from("cases")
+    .select("*, hospitals(name)")
+    .eq("id", id)
+    .single();
+
+  if (error || !data) return null;
+  return data;
+}
+
 export default async function CaseDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const data = caseMap[id];
-  if (!data) notFound();
 
-  const manifestUrl = data.caseId
-    ? `${COS_MANIFEST_BASE}/${data.caseId}/manifest.json`
-    : null;
+  // Try static caseMap first
+  const staticData = caseMap[id];
+  if (staticData) {
+    const manifestUrl = staticData.caseId
+      ? `${COS_MANIFEST_BASE}/${staticData.caseId}/manifest.json`
+      : null;
+
+    return (
+      <main className="mx-auto max-w-4xl px-6 pt-24 pb-20">
+        <Link href="/cases" className="text-sm text-blue-600 hover:underline">
+          &larr; 返回案例列表
+        </Link>
+
+        <h1 className="mt-6 text-3xl font-bold text-gray-900">{staticData.title}</h1>
+        <p className="mt-2 text-sm text-gray-500">
+          {staticData.hospital} · {staticData.department} · {staticData.doctor}
+        </p>
+
+        <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl bg-gray-100">
+          <Image
+            src="/images/case-placeholder.jpg"
+            alt={staticData.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {manifestUrl && staticData.caseId && (
+          <CaseModelSection
+            manifestUrl={manifestUrl}
+            caseId={staticData.caseId}
+            title={staticData.title}
+            department={staticData.department}
+          />
+        )}
+
+        <article className="prose prose-gray mt-10 max-w-none">
+          <p className="lead">{staticData.summary}</p>
+          <p>{staticData.content}</p>
+        </article>
+
+        {manifestUrl && staticData.caseId && (
+          <div className="mt-6 text-sm text-gray-400">
+            外部分享链接：
+            <Link
+              href={`/viewer?case=${staticData.caseId}`}
+              className="ml-1 text-blue-500 hover:underline"
+            >
+              /viewer?case={staticData.caseId}
+            </Link>
+          </div>
+        )}
+      </main>
+    );
+  }
+
+  // Try Supabase
+  const dbCase = await getSupabaseCase(id);
+  if (!dbCase) notFound();
+
+  const outcome: OutcomeData = (dbCase.outcome_data as OutcomeData) ?? {};
+  const hospitalName =
+    outcome.hospital ??
+    (dbCase.hospitals as { name?: string } | null)?.name ??
+    "";
 
   return (
     <main className="mx-auto max-w-4xl px-6 pt-24 pb-20">
@@ -106,46 +194,47 @@ export default async function CaseDetailPage({
         &larr; 返回案例列表
       </Link>
 
-      <h1 className="mt-6 text-3xl font-bold text-gray-900">{data.title}</h1>
+      <h1 className="mt-6 text-3xl font-bold text-gray-900">
+        {dbCase.title}
+      </h1>
       <p className="mt-2 text-sm text-gray-500">
-        {data.hospital} · {data.department} · {data.doctor}
+        {hospitalName}
+        {outcome.department ? ` · ${outcome.department}` : ""}
       </p>
 
-      <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl bg-gray-100">
-        <Image
-          src="/images/case-placeholder.jpg"
-          alt={data.title}
-          fill
-          className="object-cover"
-          priority
-        />
+      {/* 关键信息卡片 */}
+      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        {outcome.doctors && (
+          <div className="rounded-xl bg-blue-50 p-4">
+            <div className="text-xs font-medium text-blue-600">手术团队</div>
+            <div className="mt-1 text-sm text-gray-800">{outcome.doctors}</div>
+          </div>
+        )}
+        {outcome.technique && (
+          <div className="rounded-xl bg-green-50 p-4">
+            <div className="text-xs font-medium text-green-600">技术要点</div>
+            <div className="mt-1 text-sm text-gray-800">{outcome.technique}</div>
+          </div>
+        )}
+        {outcome.result && (
+          <div className="rounded-xl bg-purple-50 p-4">
+            <div className="text-xs font-medium text-purple-600">手术结果</div>
+            <div className="mt-1 text-sm text-gray-800">{outcome.result}</div>
+          </div>
+        )}
+        {outcome.significance && (
+          <div className="rounded-xl bg-amber-50 p-4">
+            <div className="text-xs font-medium text-amber-600">临床意义</div>
+            <div className="mt-1 text-sm text-gray-800">{outcome.significance}</div>
+          </div>
+        )}
       </div>
 
-      {/* 3D 查看器 */}
-      {manifestUrl && data.caseId && (
-        <CaseModelSection
-          manifestUrl={manifestUrl}
-          caseId={data.caseId}
-          title={data.title}
-          department={data.department}
-        />
-      )}
-
-      <article className="prose prose-gray mt-10 max-w-none">
-        <p className="lead">{data.summary}</p>
-        <p>{data.content}</p>
-      </article>
-
-      {manifestUrl && data.caseId && (
-        <div className="mt-6 text-sm text-gray-400">
-          外部分享链接：
-          <Link
-            href={`/viewer?case=${data.caseId}`}
-            className="ml-1 text-blue-500 hover:underline"
-          >
-            /viewer?case={data.caseId}
-          </Link>
-        </div>
+      {/* Markdown 图文内容 */}
+      {outcome.content && (
+        <article className="mt-10">
+          <CaseMarkdownContent content={outcome.content} />
+        </article>
       )}
     </main>
   );

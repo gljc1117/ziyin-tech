@@ -93,24 +93,27 @@ async function getCases(): Promise<{ cases: ClinicalCase[]; fromDb: boolean }> {
   }
 
   // Map Supabase schema to ClinicalCase type
-  const mapped: ClinicalCase[] = data.map((row: Record<string, unknown>) => ({
-    id: row.id as string,
-    title: row.title as string,
-    slug: (row.id as string).slice(0, 8),
-    category: ((row.surgery_type as string) ?? "other") as CaseCategory,
-    hospital: "",
-    department: "",
-    doctor_name: "",
-    summary: "",
-    cover_image_url: (row.preview_url as string) ?? "/images/case-placeholder.jpg",
-    images: [],
-    model_ids: [],
-    tags: [(row.body_part as string) ?? ""].filter(Boolean),
-    is_published: row.is_public as boolean,
-    published_at: row.published_at as string,
-    created_at: row.published_at as string,
-    updated_at: row.published_at as string,
-  }));
+  const mapped: ClinicalCase[] = data.map((row: Record<string, unknown>) => {
+    const outcome = (row.outcome_data ?? {}) as Record<string, string>;
+    return {
+      id: row.id as string,
+      title: row.title as string,
+      slug: row.id as string,
+      category: ((row.surgery_type as string) ?? "other") as CaseCategory,
+      hospital: outcome.hospital ?? "",
+      department: outcome.department ?? "",
+      doctor_name: outcome.doctors ?? "",
+      summary: outcome.result ?? "",
+      cover_image_url: (row.preview_url as string) ?? "/images/case-placeholder.jpg",
+      images: [],
+      model_ids: [],
+      tags: [(row.body_part as string) ?? "", (row.surgery_type as string) ?? ""].filter(Boolean),
+      is_published: row.is_public as boolean,
+      published_at: row.published_at as string,
+      created_at: row.published_at as string,
+      updated_at: row.published_at as string,
+    };
+  });
 
   return { cases: mapped, fromDb: true };
 }
