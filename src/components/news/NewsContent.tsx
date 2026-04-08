@@ -18,11 +18,20 @@ export default function NewsContent({ content }: { content: string }) {
               {children}
             </h3>
           ),
-          p: ({ children }) => (
-            <p className="mt-4 text-base leading-relaxed text-white/70">
-              {children}
-            </p>
-          ),
+          p: ({ children, node }) => {
+            // If paragraph contains an image, render as div to avoid invalid <p><div> nesting
+            const hasImage = node?.children?.some(
+              (child) => child.type === "element" && child.tagName === "img"
+            );
+            if (hasImage) {
+              return <div className="mt-4">{children}</div>;
+            }
+            return (
+              <p className="mt-4 text-base leading-relaxed text-white/70">
+                {children}
+              </p>
+            );
+          },
           img: ({ src, alt }) => {
             if (typeof src !== "string") return null;
             return (

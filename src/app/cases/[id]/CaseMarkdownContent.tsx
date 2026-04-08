@@ -26,6 +26,15 @@ export default function CaseMarkdownContent({ content }: { content: string }) {
       <Markdown
         components={{
           img: MarkdownImage,
+          p: ({ children, node }) => {
+            const hasImage = node?.children?.some(
+              (child) => child.type === "element" && child.tagName === "img"
+            );
+            if (hasImage) {
+              return <div className="mt-4">{children}</div>;
+            }
+            return <p>{children}</p>;
+          },
         }}
       >
         {content}
