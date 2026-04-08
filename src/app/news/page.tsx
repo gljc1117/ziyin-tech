@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { createServerClient } from "@/lib/supabase-server";
 import NewsListClient from "@/components/news/NewsListClient";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "新闻动态",
   description: "子殷科技最新公司动态、技术进展和合作信息",
