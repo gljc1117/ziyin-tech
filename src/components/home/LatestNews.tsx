@@ -1,16 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { createClient } from "@/lib/supabase";
+import Image from "next/image";
+import { newsDateLabel } from "@/lib/news-types";
+import { getPublishedNews } from "@/lib/published-news";
 
-interface NewsItem {
-  id: string;
-  title: string;
-  category: string;
-  published_at: string;
-}
 
 const categoryColor: Record<string, string> = {
   公司动态: "bg-cyan-500/20 text-cyan-300",
@@ -18,26 +10,9 @@ const categoryColor: Record<string, string> = {
   合作动态: "bg-emerald-500/20 text-emerald-300",
 };
 
-function formatDate(dateStr: string) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("zh-CN", { year: "numeric", month: "long", day: "numeric" });
-}
 
-export default function LatestNews() {
-  const [news, setNews] = useState<NewsItem[]>([]);
-
-  useEffect(() => {
-    const supabase = createClient();
-    supabase
-      .from("news")
-      .select("id, title, category, published_at")
-      .eq("is_published", true)
-      .order("published_at", { ascending: false })
-      .limit(3)
-      .then(({ data }) => {
-        if (data) setNews(data);
-      });
-  }, []);
+export default async function LatestNews() {
+  const news = (await getPublishedNews()).slice(0, 3);
 
   if (news.length === 0) return null;
 
@@ -58,18 +33,13 @@ export default function LatestNews() {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          {news.map((item, i) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-            >
+          {news.map((item) => (
+            <div key={item.id}>
               <Link
                 href={`/news/${item.id}`}
                 className="group block rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-cyan-500/30 hover:bg-white/[0.08]"
               >
+                {item.cover_image_url && <div className="relative mb-5 aspect-video overflow-hidden rounded-lg bg-slate-100"><Image src={item.cover_image_url} alt={item.title} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-contain" /></div>}
                 <div className="flex items-center gap-2">
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
@@ -83,10 +53,10 @@ export default function LatestNews() {
                   {item.title}
                 </h3>
                 <p className="mt-2 text-xs text-white/40">
-                  {formatDate(item.published_at)}
+                  {newsDateLabel(item)}
                 </p>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
 

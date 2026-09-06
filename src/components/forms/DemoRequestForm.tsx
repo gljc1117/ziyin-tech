@@ -2,26 +2,11 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { demoRequestSchema as schema, demoProducts as products, demoVolumes as volumes, type DemoRequestData as FormData } from "@/lib/demo-request";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-/* ---------- Schema ---------- */
-const schema = z.object({
-  name: z.string().min(2, "请输入姓名"),
-  hospital: z.string().min(2, "请输入医院名称"),
-  department: z.string().min(1, "请选择科室"),
-  phone: z.string().regex(/^1[3-9]\d{9}$/, "请输入有效手机号"),
-  products: z.array(z.string()).min(1, "请至少选择一个产品模块"),
-  surgery_volume: z.string().min(1, "请选择月手术量"),
-  notes: z.string().optional(),
-});
-
-type FormData = z.infer<typeof schema>;
-
-const departments = ["骨科", "脊柱外科", "关节外科", "创伤骨科", "放疗科", "口腔科"];
-const products = ["3D重建", "术前规划", "AI辅助测量", "手术导航"];
-const volumes = ["<20", "20-50", ">50"];
+const departments = ["骨科", "脊柱外科", "关节外科", "创伤骨科", "胸外科", "放疗科", "口腔科", "影像科", "医工/科研/管理", "其他"];
 
 /* ---------- 步骤进度条 ---------- */
 function StepBar({ current }: { current: number }) {
@@ -84,7 +69,7 @@ export default function DemoRequestForm() {
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: { products: [], surgery_volume: "", department: "" },
+    defaultValues: { products: [], department: "" },
   });
 
   async function nextStep() {
@@ -104,10 +89,11 @@ export default function DemoRequestForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      if (res.ok) {
+      const result = await res.json().catch(() => null);
+      if (res.ok && result?.success === true) {
         setSubmitted(true);
       } else {
-        setSubmitError("提交失败，请稍后重试");
+        setSubmitError(typeof result?.error === "string" ? result.error : "暂未确认提交成功，请稍后重试");
       }
     } catch {
       setSubmitError("网络错误，请检查网络连接后重试");
@@ -122,8 +108,8 @@ export default function DemoRequestForm() {
         className="rounded-2xl bg-cyan-400/10 border border-cyan-400/30 p-10 text-center"
       >
         <div className="text-4xl">✅</div>
-        <p className="mt-4 text-lg font-semibold text-white">预约成功</p>
-        <p className="mt-2 text-sm text-white/60">我们将在 24 小时内联系您</p>
+        <p className="mt-4 text-lg font-semibold text-white">预约信息已提交</p>
+        <p className="mt-2 text-sm text-white/60">我们已收到您的需求，工作人员将据此与您联系</p>
       </motion.div>
     );
   }
@@ -151,18 +137,18 @@ export default function DemoRequestForm() {
             className="space-y-4"
           >
             <div>
-              <label className={labelCls}>姓名</label>
-              <input {...register("name")} className={inputCls} placeholder="张医生" />
+              <label htmlFor="name" className={labelCls}>姓名</label>
+              <input id="name" {...register("name")} className={inputCls} placeholder="张医生" />
               {errors.name && <p className={errorCls}>{errors.name.message}</p>}
             </div>
             <div>
-              <label className={labelCls}>医院</label>
-              <input {...register("hospital")} className={inputCls} placeholder="XX人民医院" />
+              <label htmlFor="hospital" className={labelCls}>医院 / 机构</label>
+              <input id="hospital" {...register("hospital")} className={inputCls} placeholder="XX人民医院" />
               {errors.hospital && <p className={errorCls}>{errors.hospital.message}</p>}
             </div>
             <div>
-              <label className={labelCls}>科室</label>
-              <select {...register("department")} className={inputCls}>
+              <label htmlFor="department" className={labelCls}>科室</label>
+              <select id="department" {...register("department")} className={inputCls}>
                 <option value="" disabled>请选择</option>
                 {departments.map((d) => (
                   <option key={d} value={d} className="text-gray-900">{d}</option>
@@ -171,8 +157,8 @@ export default function DemoRequestForm() {
               {errors.department && <p className={errorCls}>{errors.department.message}</p>}
             </div>
             <div>
-              <label className={labelCls}>手机号</label>
-              <input {...register("phone")} className={inputCls} placeholder="13800138000" />
+              <label htmlFor="phone" className={labelCls}>手机号</label>
+              <input id="phone" type="tel" inputMode="tel" autoComplete="tel" maxLength={11} {...register("phone")} className={inputCls} placeholder="13800138000" />
               {errors.phone && <p className={errorCls}>{errors.phone.message}</p>}
             </div>
             <button
@@ -261,14 +247,17 @@ export default function DemoRequestForm() {
             className="space-y-5"
           >
             <div>
-              <label className={labelCls}>备注（选填）</label>
+              <label htmlFor="notes" className={labelCls}>备注（选填）</label>
               <textarea
-                {...register("notes")}
+                id="notes" {...register("notes")}
                 rows={4}
                 className={inputCls}
-                placeholder="请描述您的具体需求或问题…"
+                maxLength={2000}
+                placeholder="请描述合作需求，请勿填写患者姓名、病历或影像信息"
               />
             </div>
+            {errors.notes && <p className={errorCls}>{errors.notes.message}</p>}
+            <p className="text-xs leading-6 text-white/60">提交的信息用于本次演示预约与合作咨询跟进，请仅填写工作联系信息。</p>
             <div className="flex gap-3">
               <button
                 type="button"
@@ -286,7 +275,7 @@ export default function DemoRequestForm() {
               </button>
             </div>
             {submitError && (
-              <p className="mt-3 rounded-lg bg-red-500/10 border border-red-500/20 px-4 py-2 text-center text-sm text-red-400">
+              <p role="alert" className="mt-3 rounded-lg bg-red-500/10 border border-red-500/20 px-4 py-2 text-center text-sm text-red-400">
                 {submitError}
               </p>
             )}

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { PUBLIC_DEMOS, type PublicDemo as CaseEntry } from "@/lib/public-demos";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -10,22 +11,6 @@ const ViewerModal = dynamic(
   { ssr: false }
 );
 
-const COS_BASE =
-  "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models";
-
-interface CaseEntry {
-  id: string;
-  title: string;
-  department: string;
-  organ: string;
-}
-
-const FALLBACK: CaseEntry[] = [
-  { id: "lung-case", title: "肺部专科三维重建", department: "胸外科", organ: "lung" },
-  { id: "fullbody", title: "全身多器官三维重建", department: "普外科", organ: "multi" },
-  { id: "TEST001", title: "肝脏 CT 三维重建", department: "肝胆外科", organ: "liver" },
-];
-
 const GRADIENTS = [
   "from-cyan-600/30 to-blue-700/30",
   "from-emerald-600/30 to-cyan-700/30",
@@ -33,21 +18,14 @@ const GRADIENTS = [
 ];
 
 export default function AICasesSection() {
-  const [cases, setCases] = useState<CaseEntry[]>(FALLBACK);
+  const cases = PUBLIC_DEMOS;
   const [viewerCase, setViewerCase] = useState<CaseEntry | null>(null);
 
-  useEffect(() => {
-    fetch(`${COS_BASE}/cases-index.json`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (data?.cases?.length) setCases(data.cases);
-      })
-      .catch(() => {});
-  }, []);
+
 
   return (
     <>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
         {cases.map((c, i) => (
           <motion.div
             key={c.id}
@@ -65,7 +43,7 @@ export default function AICasesSection() {
                   <path d="M2 17l10 5 10-5" />
                   <path d="M2 12l10 5 10-5" />
                 </svg>
-                <span className="mt-1 block text-xs">3D Model</span>
+                <span className="mt-1 block text-xs">技术演示</span>
               </div>
             </div>
             <div className="p-4">
@@ -80,7 +58,7 @@ export default function AICasesSection() {
                   onClick={() => setViewerCase(c)}
                   className="flex-1 rounded-lg bg-blue-600 px-3 py-2 text-xs font-medium text-white transition-transform hover:scale-[1.02]"
                 >
-                  3D 阅片
+                  查看三维模型
                 </button>
                 <Link
                   href={`/cases/${c.id}`}

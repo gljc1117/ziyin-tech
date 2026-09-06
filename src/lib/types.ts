@@ -72,6 +72,9 @@ export type CaseCategory =
   | "radiotherapy"    // 后装放疗模具
   | "surgical_guide"  // 手术导板
   | "implant"         // 植入物
+  | "medical_center"
+  | "service_project"
+  | "ai_reconstruction"
   | "other";
 
 export interface ClinicalCase {

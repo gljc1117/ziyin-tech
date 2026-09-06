@@ -2,15 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { newsDateLabel, type PublishedNewsItem as NewsItem } from "@/lib/news-types";
 import { motion } from "framer-motion";
 
-interface NewsItem {
-  id: string;
-  title: string;
-  summary: string | null;
-  category: string;
-  published_at: string;
-}
 
 const categories = ["全部", "公司动态", "技术进展", "合作动态", "学术动态"];
 
@@ -21,10 +16,6 @@ const categoryColor: Record<string, string> = {
   学术动态: "bg-amber-500/20 text-amber-300",
 };
 
-function formatDate(dateStr: string) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("zh-CN", { year: "numeric", month: "long", day: "numeric" });
-}
 
 export default function NewsListClient({ initialNews }: { initialNews: NewsItem[] }) {
   const [active, setActive] = useState("全部");
@@ -71,6 +62,7 @@ export default function NewsListClient({ initialNews }: { initialNews: NewsItem[
                 href={`/news/${item.id}`}
                 className="group block rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-cyan-500/30 hover:bg-white/[0.08]"
               >
+                {item.cover_image_url && <div className="relative mb-5 h-48 overflow-hidden rounded-lg bg-slate-100 sm:h-64"><Image src={item.cover_image_url} alt={item.title} fill sizes="(max-width: 768px) 100vw, 768px" className="object-contain" /></div>}
                 <div className="flex flex-wrap items-center gap-3">
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
@@ -80,7 +72,7 @@ export default function NewsListClient({ initialNews }: { initialNews: NewsItem[
                     {item.category}
                   </span>
                   <span className="text-xs text-white/40">
-                    {formatDate(item.published_at)}
+                    {newsDateLabel(item)}
                   </span>
                 </div>
                 <h2 className="mt-3 text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
+import { SITE_URL, SITE_DESCRIPTION } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ziyin-tech.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "子殷科技 - 数字骨科智能手术规划平台",
-    template: "%s | 子殷科技 - 数字骨科智能手术规划平台",
+    default: "子殷科技 - 医疗AI · 医学3D打印 · 数智医学中心",
+    template: "%s | 子殷科技",
   },
   description:
-    "CT/MRI 三维重建 + AI 手术规划，让骨科精准手术触手可及。提供 3D 重建、术前规划、AI 辅助测量、手术导航等数字化解决方案。",
+    SITE_DESCRIPTION,
   keywords: [
     "数字骨科",
     "三维重建",
@@ -33,10 +34,10 @@ export const metadata: Metadata = {
     "医疗器械",
   ],
   openGraph: {
-    title: "子殷科技 - 数字骨科智能手术规划平台",
+    title: "子殷科技 - 医疗AI · 医学3D打印 · 数智医学中心",
     description:
-      "CT/MRI三维重建 + AI手术规划，让骨科精准手术触手可及。",
-    url: "https://ziyin-tech.vercel.app",
+      SITE_DESCRIPTION,
+    url: SITE_URL,
     siteName: "子殷科技",
     locale: "zh_CN",
     type: "website",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "子殷科技 - 数字骨科智能手术规划平台",
+        alt: "子殷科技 - 医疗AI · 医学3D打印 · 数智医学中心",
       },
     ],
   },

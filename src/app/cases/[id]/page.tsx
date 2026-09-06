@@ -1,90 +1,13 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import { getPublicDemo } from "@/lib/public-demos";
+import { pageMetadata } from "@/lib/site";
 import Link from "next/link";
 import CaseModelSection from "./CaseModelSection";
 import CaseMarkdownContent from "./CaseMarkdownContent";
 import { createServerClient } from "@/lib/supabase-server";
-
-// 临时演示数据 — 后续接入 Supabase
-const caseMap: Record<
-  string,
-  {
-    title: string;
-    hospital: string;
-    department: string;
-    doctor: string;
-    summary: string;
-    content: string;
-    caseId?: string; // COS case-id for 3D models
-  }
-> = {
-  "femur-custom-plate": {
-    title: "股骨远端骨折个性化接骨板",
-    hospital: "上海市第六人民医院",
-    department: "骨科",
-    doctor: "张主任",
-    summary: "基于 CT 数据三维重建，PEEK 材料 3D 打印定制接骨板。",
-    content:
-      "患者男性，45岁，股骨远端粉碎性骨折。传统接骨板无法完美贴合复杂骨折形态。我们基于术前 CT 数据进行三维重建，设计个性化 PEEK 接骨板，通过 3D 打印制造。术中验证贴合度优异，固定牢靠，手术时间缩短 30%。术后随访 6 个月，骨折愈合良好，无并发症。",
-  },
-  "cervical-brachytherapy-mold": {
-    title: "宫颈癌后装放疗个体化施源器",
-    hospital: "内蒙古医科大学第二附属医院",
-    department: "放疗科",
-    doctor: "李主任",
-    summary: "3D 打印个体化放疗模具，提升剂量分布精度。",
-    content:
-      "患者女性，52 岁，宫颈癌 IIB 期，需行后装放疗。传统标准施源器与患者解剖结构匹配度有限。我们基于 MRI 数据重建宫颈三维模型，设计并 3D 打印个体化施源器，剂量分布均匀性提升 25%，直肠和膀胱受照剂量显著降低。",
-  },
-  "tibial-plateau-guide": {
-    title: "胫骨平台骨折手术导板",
-    hospital: "天津医院",
-    department: "创伤骨科",
-    doctor: "王主任",
-    summary: "数字化规划 + 3D 打印导板，缩短手术时间 40%。",
-    content:
-      "患者男性，38 岁，Schatzker IV 型胫骨平台骨折。术前基于 CT 三维重建进行虚拟手术规划，确定截骨平面和螺钉置入通道，3D 打印手术导板。术中导板精准定位，手术时间从 3.5 小时缩短至 2 小时，透视次数减少 60%。",
-  },
-  demo: {
-    title: "多器官 CT 三维重建演示",
-    hospital: "PanGu AI 演示",
-    department: "数字影像",
-    doctor: "AI",
-    summary: "基于 CT 数据的多器官自动分割与三维重建，包含肝脏、肾脏、气管等结构。",
-    content:
-      "本演示案例展示 PanGu AI 平台的多器官自动分割能力。系统自动识别并分割 CT 影像中的肝脏、左右肾脏、肾动脉、气管等解剖结构，生成高精度 STL 三维模型。所有模型可在浏览器中实时交互查看，支持器官分色显示与显隐控制。",
-    caseId: "demo",
-  },
-  TEST001: {
-    title: "肝脏 CT 三维重建",
-    hospital: "四川大学华西第二医院",
-    department: "肝胆外科",
-    doctor: "主任医师",
-    summary: "肝脏 CT 三维重建，精确分割肝脏轮廓，为肝切除术前规划提供解剖参考。",
-    content: "本案例基于腹部增强 CT 数据，使用 AI 自动分割肝脏轮廓并生成高精度三维模型。重建结果可用于肝切除术前规划，帮助外科医生评估肝脏体积、确定切除范围和安全切缘。",
-    caseId: "TEST001",
-  },
-  "lung-case": {
-    title: "肺部专科三维重建",
-    hospital: "上海市第六人民医院",
-    department: "胸外科",
-    doctor: "主任医师",
-    summary: "基于高分辨率胸部 CT，AI 全自动分割肺叶、支气管树、肺动脉与肺静脉。9 个解剖结构精确重建，辅助术前规划与解剖评估。",
-    content:
-      "本案例基于高分辨率胸部 CT 数据，使用 PanGu AI 桌面端进行全自动肺部专科重建。系统精确分割双肺五叶（右肺上叶、中叶、下叶，左肺上叶、下叶），同时重建肺动脉、肺静脉血管树和气管-气道系统，共 9 个解剖结构。模型保留了亚毫米级的解剖细节，可辅助胸外科术前手术入路规划与解剖评估。",
-    caseId: "lung-case",
-  },
-  fullbody: {
-    title: "全身多器官三维重建",
-    hospital: "浙江大学第二附属医院",
-    department: "普外科",
-    doctor: "主任医师",
-    summary: "腹部 CT 全自动多器官分割，覆盖肝脏、脾脏、双肾、胃、胰腺、胆囊等 13 个解剖结构。支持器官体积计算与空间关系评估。",
-    content:
-      "本案例使用 TotalSegmentator 对腹部 CT 进行全自动分割，重建了肝脏、脾脏、左右肾、胃、胰腺、胆囊、主动脉、门静脉、十二指肠及双侧肺叶等 13 个解剖结构。所有模型经过网格简化处理，总数据量仅 2.9MB，适合在线实时交互查看，支持器官体积计算与空间关系评估。",
-    caseId: "fullbody",
-  },
-};
+import { canDisplayCase } from "@/lib/content-policy";
+import { getEditorialArticle } from "@/lib/editorial-content";
+import { EditorialCaseDetail } from "@/components/content/EditorialArticleBody";
 
 const COS_MANIFEST_BASE =
   "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models";
@@ -108,10 +31,25 @@ async function getSupabaseCase(id: string) {
     .from("cases")
     .select("*, hospitals(name)")
     .eq("id", id)
+    .eq("is_public", true)
     .single();
 
-  if (error || !data) return null;
+  if (error || !data || !canDisplayCase(data)) return null;
   return data;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const article = getEditorialArticle(id);
+  if (article) {
+    const metadata = pageMetadata(article.caseProfile.title, article.summary, "/cases/" + id);
+    return { ...metadata, openGraph: { ...metadata.openGraph, images: [{ url: article.cover.url, alt: article.cover.alt, width: article.cover.width, height: article.cover.height }] }, ...(article.status === "candidate" ? { robots: { index: false, follow: false } } : {}) };
+  }
+  const demo = getPublicDemo(id);
+  if (demo) return pageMetadata(demo.title, demo.summary, "/cases/" + id);
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) return { robots: { index: false, follow: false } };
+  const record = await getSupabaseCase(id);
+  return record ? pageMetadata(record.title, "子殷科技案例与项目交付", "/cases/" + id) : { robots: { index: false, follow: false } };
 }
 
 export default async function CaseDetailPage({
@@ -120,9 +58,12 @@ export default async function CaseDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  const article = getEditorialArticle(id);
+  if (article) return <EditorialCaseDetail article={article} />;
 
-  // Try static caseMap first
-  const staticData = caseMap[id];
+  // Only explicitly listed technical demonstrations use static content.
+  const demo = getPublicDemo(id);
+  const staticData = demo ? { ...demo, caseId: demo.id, content: "本页用于展示三维模型的交互方式，不代表特定医院、医生或患者的临床结果。具体项目交付范围与效果请结合已核验的项目资料确认。" } : undefined;
   if (staticData) {
     const manifestUrl = staticData.caseId
       ? `${COS_MANIFEST_BASE}/${staticData.caseId}/manifest.json`
@@ -136,18 +77,9 @@ export default async function CaseDetailPage({
 
         <h1 className="mt-6 text-3xl font-bold text-gray-900">{staticData.title}</h1>
         <p className="mt-2 text-sm text-gray-500">
-          {staticData.hospital} · {staticData.department} · {staticData.doctor}
+          技术演示 · {staticData.department}
         </p>
 
-        <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl bg-gray-100">
-          <Image
-            src="/images/case-placeholder.jpg"
-            alt={staticData.title}
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
 
         {manifestUrl && staticData.caseId && (
           <CaseModelSection
@@ -177,6 +109,9 @@ export default async function CaseDetailPage({
       </main>
     );
   }
+
+  // Database cases use UUIDs; unpublished demo/test slugs are not public routes.
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) notFound();
 
   // Try Supabase
   const dbCase = await getSupabaseCase(id);

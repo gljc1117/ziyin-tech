@@ -6,7 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "首页" },
-  { href: "/cases", label: "临床案例" },
+  { href: "/#products", label: "产品与服务" },
+  { href: "/cases", label: "案例与交付" },
   { href: "/news", label: "新闻动态" },
   { href: "/about", label: "关于" },
   { href: "/demo", label: "申请演示" },
@@ -39,7 +40,7 @@ export default function Navbar() {
             href="/demo"
             className="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
           >
-            免费试用
+            预约演示
           </Link>
         </nav>
 
@@ -48,6 +49,8 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           className="flex h-10 w-10 items-center justify-center rounded-lg text-white md:hidden"
           aria-label="菜单"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
             {open ? (
@@ -63,6 +66,7 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

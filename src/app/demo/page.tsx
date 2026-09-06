@@ -1,15 +1,7 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/site";
 import DemoRequestForm from "@/components/forms/DemoRequestForm";
 
-export const metadata: Metadata = {
-  title: "申请演示 | 子殷科技 - 数字骨科智能手术规划平台",
-  description:
-    "填写信息申请子殷科技数字骨科平台免费演示，体验3D重建、术前规划、AI辅助测量、手术导航全流程。",
-  openGraph: {
-    title: "申请演示 | 子殷科技",
-    description: "申请子殷科技数字骨科平台免费演示",
-  },
-};
+export const metadata = pageMetadata("预约演示与合作咨询", "了解医疗AI、医学3D打印与数智医学中心的合作方式。", "/demo");
 
 export default function DemoPage() {
   return (
@@ -19,10 +11,10 @@ export default function DemoPage() {
     >
       <div className="mx-auto max-w-xl px-6 py-16">
         <h1 className="text-center text-3xl font-bold text-white">
-          申请免费演示
+          预约演示与合作咨询
         </h1>
         <p className="mx-auto mt-3 mb-10 max-w-md text-center text-sm text-white/50">
-          填写以下信息，我们的团队将在 24 小时内与您联系
+          填写工作联系信息与需求，团队将据此安排沟通
         </p>
         <DemoRequestForm />
       </div>

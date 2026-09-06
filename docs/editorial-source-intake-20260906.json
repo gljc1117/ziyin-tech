@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-06",
+  "documents": [
+    {
+      "file": "从影像到刀锋.docx",
+      "sha256": "020f7eecea7d56c48731b9103d0eeb46f00286d780be981031634582efae6b3c",
+      "id": "xiaogan-knee-guides-2026",
+      "publicationDate": null
+    },
+    {
+      "file": "喜报丨携手国家中医医学中心丨子殷科技中标河南中医一附院3D打印服务项目.docx",
+      "sha256": "7387338e704ae9e65f62d7bffd0d5abd15a0d366d7726e8634d3920e994e7194",
+      "id": "henan-tcm-3d-printing-service-2026",
+      "publicationDate": null
+    },
+    {
+      "file": "孝感数智医学与临床转化中心正式揭牌启动.docx",
+      "sha256": "6116c8c86358452509c1855a241cc7a8717eaa8dfbe6661c85f0f56c85e52222",
+      "id": "xiaogan-medical-center-2026",
+      "publicationDate": null
+    }
+  ],
+  "selectedImages": [
+    {
+      "bytes": 374492,
+      "file": "henan-hospital.png",
+      "sha256": "f03c018c3da6950ffa998573b3a8a7eb09972165d41948fd6b293b23f4e2af65",
+      "source": "article-2/image1.png"
+    },
+    {
+      "bytes": 67880,
+      "file": "xiaogan-opening.webp",
+      "sha256": "74dcae7d2cf21066a17cee7165a56b7ae8e5d32c605a6e374d53afad8aad2866",
+      "source": "article-3/image1.webp"
+    },
+    {
+      "bytes": 53632,
+      "file": "xiaogan-signing.webp",
+      "sha256": "74f469988b544f5431e1ae5e1a0956d5f2e1e422e9f3986d254ab03aa6aeeb5a",
+      "source": "article-3/image2.webp"
+    },
+    {
+      "bytes": 86418,
+      "file": "xiaogan-center-tour.webp",
+      "sha256": "812392337a5dfed95e80819239e020bba2b6115ac752ce7afe407167373b429a",
+      "source": "article-3/image5.webp"
+    },
+    {
+      "bytes": 82126,
+      "file": "knee-planning.webp",
+      "sha256": "fad8af343de858ad635f086afffa54657820b569846fadf0bef01da6d266445d",
+      "source": "article-1/image1.webp"
+    }
+  ],
+  "verification": [
+    {
+      "id": "henan-tcm-3d-printing-service-2026",
+      "originalPublicationDate": null,
+      "eventDate": "2026-06-09",
+      "references": [
+        {
+          "title": "采购代理机构成交公告",
+          "url": "https://www.hnhxzx.com/index.php?a=index&aid=11107&c=View&m=home",
+          "verification": "primary_full_text"
+        }
+      ]
+    },
+    {
+      "id": "xiaogan-medical-center-2026",
+      "originalPublicationDate": null,
+      "eventDate": "2026-06-04",
+      "references": [
+        {
+          "title": "荆楚网揭牌活动报道",
+          "url": "https://www.cnhubei.com/content/2026-06/08/content_20022377.html",
+          "verification": "search_summary"
+        }
+      ]
+    },
+    {
+      "id": "xiaogan-knee-guides-2026",
+      "originalPublicationDate": null,
+      "eventDate": "2026-06",
+      "references": []
+    }
+  ]
+}

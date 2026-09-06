@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { createServerClient } from "@/lib/supabase-server";
+import { getPublishedNews } from "@/lib/published-news";
 import NewsContent from "@/components/news/NewsContent";
+import { getEditorialArticle } from "@/lib/editorial-content";
+import EditorialArticleBody from "@/components/content/EditorialArticleBody";
+import { newsDateLabel } from "@/lib/news-types";
 
-interface NewsDetail {
-  id: string;
-  title: string;
-  summary: string | null;
-  content: string | null;
-  category: string;
-  published_at: string;
-}
 
 const categoryColor: Record<string, string> = {
   公司动态: "bg-cyan-500/20 text-cyan-300",
@@ -26,26 +22,13 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const supabase = createServerClient();
-  if (!supabase) return { title: "新闻详情" };
+  const data = (await getPublishedNews()).find((item) => item.id === id);
+  if (!data) return { title: "新闻详情", robots: { index: false, follow: false } };
 
-  const { data } = await supabase
-    .from("news")
-    .select("title, summary")
-    .eq("id", id)
-    .eq("is_published", true)
-    .single();
-
-  if (!data) return { title: "新闻详情" };
-
-  return {
-    title: data.title,
-    description: data.summary ?? undefined,
-    openGraph: {
-      title: `${data.title} | 子殷科技`,
-      description: data.summary ?? undefined,
-    },
-  };
+  const metadata = pageMetadata(data.title, data.summary ?? "子殷科技新闻动态", "/news/" + id);
+  const editorial = getEditorialArticle(id);
+  if (!editorial) return metadata;
+  return { ...metadata, openGraph: { ...metadata.openGraph, images: [{ url: editorial.cover.url, alt: editorial.cover.alt, width: editorial.cover.width, height: editorial.cover.height }] }, ...(editorial.status === "candidate" ? { robots: { index: false, follow: false } } : {}) };
 }
 
 export default async function NewsDetailPage({
@@ -54,23 +37,11 @@ export default async function NewsDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const supabase = createServerClient();
-  if (!supabase) notFound();
-
-  const { data: news } = await supabase
-    .from("news")
-    .select("id, title, summary, content, category, published_at")
-    .eq("id", id)
-    .eq("is_published", true)
-    .single<NewsDetail>();
-
+  const news = (await getPublishedNews()).find((item) => item.id === id);
   if (!news) notFound();
 
-  const date = new Date(news.published_at).toLocaleDateString("zh-CN", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const date = newsDateLabel(news);
+  const editorial = getEditorialArticle(id);
 
   const body = news.content || news.summary;
 
@@ -92,7 +63,7 @@ export default async function NewsDetailPage({
           {news.title}
         </h1>
 
-        {body && <NewsContent content={body} />}
+        {editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
 
         <div className="mt-12">
           <Link

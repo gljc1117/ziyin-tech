@@ -1,9 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 /* ============================================================
    SEO metadata (exported from a separate file for client component)
@@ -11,42 +10,6 @@ import { motion, useInView } from "framer-motion";
 
 /* ============================================================
    数字滚动组件
-   ============================================================ */
-function AnimatedNumber({
-  target,
-  suffix = "",
-}: {
-  target: number;
-  suffix?: string;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [display, setDisplay] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-    const duration = 1600;
-    const startTime = performance.now();
-    function tick(now: number) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }, [inView, target]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {display.toLocaleString()}
-      {suffix}
-    </span>
-  );
-}
-
-/* ============================================================
-   发展历程数据
    ============================================================ */
 const milestones = [
   { date: "2018.6", text: "研发团队在上海成立" },
@@ -147,7 +110,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-4 text-lg text-white/70 sm:text-xl"
           >
-            专注医学3D打印 &middot; 赋能精准医疗
+            医疗AI &middot; 医学3D打印 &middot; 数智医学中心
           </motion.p>
         </div>
       </section>
@@ -163,33 +126,11 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl font-bold text-white">公司概况</h2>
             <p className="mt-6 leading-relaxed text-gray-300">
-              子殷科技是一家专注于医学3D打印服务解决方案的高新技术企业，入驻和林格尔新区智能制造产业园A2号楼（1-4层，约1939平米）。自2020年成立以来，公司已与近40家医院建立合作，完成近2000例临床案例。依托上海交大附属九院3D打印技术临床转化研发中心，持续推动数字骨科技术落地。
+              子殷科技围绕医疗AI、医学3D打印与数智医学中心，开展数字技术与医工协作服务。通过医工造物、CalcAI及医院与科室合作，将具体需求转化为可沟通、可实施的项目方案。
             </p>
           </motion.div>
 
-          {/* 统计数字 */}
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { target: 40, suffix: "+", label: "合作医院" },
-              { target: 2000, suffix: "+", label: "临床案例" },
-              { target: 1939, suffix: " m\u00B2", label: "产研基地" },
-              { target: 3, suffix: " 类", label: "NMPA 注册证" },
-            ].map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col items-center rounded-2xl border border-white/10 bg-white/5 py-10"
-              >
-                <span className="text-4xl font-extrabold text-cyan-400">
-                  <AnimatedNumber target={item.target} suffix={item.suffix} />
-                </span>
-                <span className="mt-2 text-sm text-gray-400">{item.label}</span>
-              </motion.div>
-            ))}
-          </div>
+
         </div>
       </section>
 

@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import type { ClinicalCase } from "@/lib/types";
 
 const categoryLabel: Record<string, string> = {
+  medical_center: "中心共建",
+  service_project: "服务项目",
   orthopedic: "骨科器械",
   radiotherapy: "放疗模具",
   surgical_guide: "手术导板",

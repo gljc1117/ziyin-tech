@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { PUBLIC_DEMOS, type PublicDemo as CaseEntry } from "@/lib/public-demos";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -9,22 +10,6 @@ const ViewerModal = dynamic(
   () => import("@/components/viewer/ViewerModal"),
   { ssr: false }
 );
-
-const COS_BASE =
-  "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models";
-
-interface CaseEntry {
-  id: string;
-  title: string;
-  department: string;
-  organ: string;
-}
-
-const FALLBACK_CASES: CaseEntry[] = [
-  { id: "fullbody", title: "全身多器官三维重建", department: "普外科", organ: "multi" },
-  { id: "demo", title: "腹部器官分割", department: "肝胆外科", organ: "liver" },
-  { id: "TEST001", title: "肝脏分割测试", department: "肝胆外科", organ: "liver" },
-];
 
 const ORGAN_ICON: Record<string, string> = {
   liver: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z",
@@ -46,17 +31,10 @@ const GRADIENTS = [
 ];
 
 export default function CaseShowcase() {
-  const [cases, setCases] = useState<CaseEntry[]>(FALLBACK_CASES);
+  const cases = PUBLIC_DEMOS;
   const [viewerCase, setViewerCase] = useState<CaseEntry | null>(null);
 
-  useEffect(() => {
-    fetch(`${COS_BASE}/cases-index.json`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (data?.cases?.length) setCases(data.cases);
-      })
-      .catch(() => {});
-  }, []);
+
 
   return (
     <>
@@ -68,13 +46,13 @@ export default function CaseShowcase() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl font-bold text-white">临床案例</h2>
+            <h2 className="text-3xl font-bold text-white">三维技术演示</h2>
             <p className="mt-3 text-sm text-gray-400">
-              AI 全自动分割 · 多器官三维重建
+              肺部与多器官交互展示 · 不代表特定医院的临床交付成果
             </p>
           </motion.div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {cases.map((c, i) => (
               <CaseCard
                 key={c.id}
@@ -126,7 +104,7 @@ function CaseCard({
         <div className="flex flex-col items-center gap-3 text-white/40 transition-colors group-hover:text-white/60">
           <OrganIcon organ={data.organ} />
           <span className="text-xs font-medium uppercase tracking-wider">
-            3D Model
+            技术演示
           </span>
         </div>
       </div>
@@ -145,7 +123,7 @@ function CaseCard({
             onClick={onView}
             className="flex-1 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-2 text-xs font-medium text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
-            3D 阅片
+            查看三维模型
           </button>
           <Link
             href={`/cases/${data.id}`}

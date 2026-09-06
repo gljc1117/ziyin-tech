@@ -5,12 +5,14 @@ import type { CaseCategory } from "@/lib/types";
 
 const categories: { value: CaseCategory | "all"; label: string }[] = [
   { value: "all", label: "全部" },
+  { value: "medical_center", label: "中心共建" },
+  { value: "service_project", label: "服务项目" },
   { value: "orthopedic", label: "骨科器械" },
   { value: "radiotherapy", label: "放疗模具" },
   { value: "surgical_guide", label: "手术导板" },
   { value: "implant", label: "植入物" },
   { value: "other", label: "其他" },
-  { value: "ai_reconstruction" as CaseCategory, label: "AI 三维重建" },
+  { value: "ai_reconstruction", label: "AI 三维重建" },
 ];
 
 export default function CaseFilter() {

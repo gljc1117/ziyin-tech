@@ -10,11 +10,13 @@ import {
   type ReactNode,
 } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
+import Link from "next/link";
 import { OrbitControls } from "@react-three/drei";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
 import * as THREE from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import type { CaseManifest, ManifestModel } from "@/lib/types";
+import { parseManifest } from "@/lib/model-manifest";
 
 /* ============================================================
    器官颜色映射
@@ -119,16 +121,17 @@ function getOrganLabel(name: string) {
    Error Boundary
    ============================================================ */
 class CanvasErrorBoundary extends Component<
-  { children: ReactNode; fallback: ReactNode },
+  { children: ReactNode; fallback: ReactNode; onError?: () => void },
   { hasError: boolean }
 > {
-  constructor(props: { children: ReactNode; fallback: ReactNode }) {
+  constructor(props: { children: ReactNode; fallback: ReactNode; onError?: () => void }) {
     super(props);
     this.state = { hasError: false };
   }
   static getDerivedStateFromError() {
     return { hasError: true };
   }
+  componentDidCatch() { this.props.onError?.(); }
   render() {
     if (this.state.hasError) return this.props.fallback;
     return this.props.children;
@@ -139,11 +142,7 @@ class CanvasErrorBoundary extends Component<
    Scene Background Setter (must be inside Canvas)
    ============================================================ */
 function SceneBackground({ color }: { color: string }) {
-  const { scene } = useThree();
-  useEffect(() => {
-    scene.background = new THREE.Color(color);
-  }, [scene, color]);
-  return null;
+  return <color attach="background" args={[color]} />;
 }
 
 /* ============================================================
@@ -168,29 +167,38 @@ function STLModel({
   const style = useMemo(() => getOrganStyle(organName), [organName]);
 
   useEffect(() => {
-    const loader = new STLLoader();
-    loader.load(
-      url,
-      (geo) => {
+    const controller = new AbortController();
+    let disposed = false;
+    let ownedGeometry: THREE.BufferGeometry | null = null;
+    const timer = setTimeout(() => controller.abort(), 20000);
+    fetch(url, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("model_http_error");
+        return response.arrayBuffer();
+      })
+      .then((buffer) => {
+        if (disposed) return;
+        const geo = new STLLoader().parse(buffer);
+        const positions = geo.getAttribute("position");
+        if (!positions || positions.count === 0 || !Array.from(positions.array).every(Number.isFinite)) {
+          geo.dispose();
+          throw new Error("invalid_model_geometry");
+        }
         geo.computeVertexNormals();
         geo.computeBoundingBox();
+        ownedGeometry = geo;
         setGeometry(geo);
         onLoaded();
-      },
-      undefined,
-      (err) => {
-        console.warn(`[ModelViewer] Failed to load ${organName}:`, err);
-        onError(organName);
-      }
-    );
+      })
+      .catch(() => { if (!disposed) onError(organName); })
+      .finally(() => clearTimeout(timer));
     return () => {
-      setGeometry((prev) => {
-        prev?.dispose();
-        return null;
-      });
+      disposed = true;
+      clearTimeout(timer);
+      controller.abort();
+      ownedGeometry?.dispose();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [url]);
+  }, [url, organName, onLoaded, onError]);
 
   if (!geometry || !visible) return null;
 
@@ -408,7 +416,26 @@ export interface ModelViewerProps {
   onVisibilityChange?: (visibility: Record<string, boolean>) => void;
 }
 
-export default function ModelViewer({
+export default function ModelViewer(props: ModelViewerProps) {
+  const [attempt, setAttempt] = useState(0);
+  return <div className={`relative ${props.className ?? ""}`}>
+    <ModelViewerSession key={props.manifestUrl + ":" + attempt} {...props} className="h-full min-h-[280px] w-full" />
+    <button onClick={() => setAttempt((value) => value + 1)} className="absolute bottom-3 left-3 z-20 rounded-lg bg-slate-800 px-3 py-2 text-xs text-white">重新加载</button>
+  </div>;
+}
+
+function ContextLossGuard({ onError }: { onError: () => void }) {
+  const { gl } = useThree();
+  useEffect(() => {
+    const element = gl.domElement;
+    const handleLoss = (event: Event) => { event.preventDefault(); onError(); };
+    element.addEventListener("webglcontextlost", handleLoss);
+    return () => element.removeEventListener("webglcontextlost", handleLoss);
+  }, [gl, onError]);
+  return null;
+}
+
+function ModelViewerSession({
   manifestUrl,
   autoRotate = false,
   autoRotateSpeed = 1.5,
@@ -432,33 +459,40 @@ export default function ModelViewer({
 
   useEffect(() => {
     let cancelled = false;
-    setError(null);
-    setLoadedCount(0);
-    setFailedCount(0);
-    setManifest(null);
-
-    fetch(manifestUrl)
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((data: CaseManifest) => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10000);
+    async function load() {
+      try {
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("webgl2") || canvas.getContext("webgl");
+        if (!context) throw new Error("当前浏览器未开启三维图形支持，请使用支持 WebGL 的浏览器");
+        context.getExtension("WEBGL_lose_context")?.loseContext();
+        const response = await fetch(manifestUrl, { signal: controller.signal });
+        if (!response.ok) throw new Error("模型清单暂不可用，请稍后重试");
+        const data = parseManifest(await response.json());
         if (cancelled) return;
         setManifest(data);
-        const vis: Record<string, boolean> = {};
-        data.models.forEach((m) => (vis[m.name] = true));
-        setVisibility(vis);
+        setVisibility(Object.fromEntries(data.models.map((model) => [model.name, true])));
         onManifestLoaded?.(data);
-      })
-      .catch((e) => {
-        if (!cancelled) setError(e.message);
-      });
-
-    return () => {
-      cancelled = true;
-    };
+      } catch (cause) {
+        if (!cancelled) setError(controller.signal.aborted ? "模型清单加载超时，请检查网络后重试" : cause instanceof Error ? cause.message : "三维演示暂不可用");
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+    void load();
+    return () => { cancelled = true; clearTimeout(timer); controller.abort(); };
+    // This session is remounted when the URL changes; callbacks are notifications.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [manifestUrl]);
+
+  useEffect(() => {
+    if (!manifest || allDone || error) return;
+    const timer = setTimeout(() => setError("三维资源加载超时，请稍后重试"), 30000);
+    return () => clearTimeout(timer);
+  }, [manifest, allDone, error]);
+
+  const handleRenderError = useCallback(() => setError("三维图形引擎不可用，请重新加载或更换浏览器"), []);
 
   const handleModelLoaded = useCallback(() => {
     setLoadedCount((c) => c + 1);
@@ -492,14 +526,15 @@ export default function ModelViewer({
     [onVisibilityChange]
   );
 
-  if (error) {
+  if (error || (allDone && loadedCount === 0)) {
     return (
       <div
-        className={`flex items-center justify-center rounded-xl bg-[#0a0a1a] text-gray-500 ${className}`}
+        className={`flex items-center justify-center rounded-xl bg-[#0a0a1a] text-gray-300 ${className}`}
       >
-        <div className="text-center">
+        <div role="alert" className="px-6 text-center">
           <p className="text-lg">3D 模型加载失败</p>
-          <p className="mt-1 text-sm text-gray-600">{error}</p>
+          <p className="mt-2 text-sm leading-6 text-gray-300">{error || "模型资源未加载成功，请稍后重试"}</p>
+          <Link href="/cases?category=ai_reconstruction" className="mt-4 inline-block text-sm text-cyan-300">返回三维演示列表</Link>
         </div>
       </div>
     );
@@ -527,6 +562,7 @@ export default function ModelViewer({
 
       {manifest && (
         <CanvasErrorBoundary
+          onError={handleRenderError}
           fallback={
             <div className="flex h-full items-center justify-center text-gray-500">
               <p>3D 渲染引擎初始化失败</p>
@@ -538,6 +574,7 @@ export default function ModelViewer({
             gl={{ antialias: true, alpha: transparent || lightMode === "light" }}
             style={{ background: bgColor }}
           >
+            <ContextLossGuard onError={handleRenderError} />
             <SceneContent
               models={manifest.models}
               visibility={visibility}
@@ -553,7 +590,9 @@ export default function ModelViewer({
         </CanvasErrorBoundary>
       )}
 
-      {showControls && manifest && (
+      {allDone && failedCount > 0 && <p role="status" className="absolute inset-x-0 bottom-8 bg-amber-950/90 px-4 py-2 text-center text-xs text-amber-100">部分模型加载失败（{failedCount}/{total}），当前展示不完整，请重新加载。</p>}
+
+      {showControls && manifest && allDone && (
         <SideControlsPanel
           models={manifest.models}
           visibility={visibility}
@@ -591,7 +630,7 @@ function SideControlsPanel({
   onHideAll: () => void;
 }) {
   return (
-    <div className="absolute right-3 top-3 z-20 w-48 rounded-lg bg-black/70 p-3 backdrop-blur-sm">
+    <div className="absolute right-3 top-3 z-20 w-36 sm:w-48 rounded-lg bg-black/70 p-3 backdrop-blur-sm">
       <div className="mb-2 flex items-center justify-between">
         <span className="text-xs font-medium text-gray-300">器官显隐</span>
         <div className="flex gap-1">
@@ -609,7 +648,7 @@ function SideControlsPanel({
           </button>
         </div>
       </div>
-      <div className="max-h-80 space-y-1 overflow-y-auto">
+      <div className="max-h-40 space-y-1 overflow-y-auto sm:max-h-80">
         {models.map((m) => {
           const style = getOrganStyle(m.name);
           const isVisible = visibility[m.name] !== false;

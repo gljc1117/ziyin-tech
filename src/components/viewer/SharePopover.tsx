@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import QRCode from "qrcode";
+import { SITE_URL } from "@/lib/site";
 
 interface SharePopoverProps {
   caseId: string;
@@ -11,16 +12,17 @@ interface SharePopoverProps {
 export default function SharePopover({ caseId, onClose }: SharePopoverProps) {
   const [qrDataUrl, setQrDataUrl] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState("");
   const ref = useRef<HTMLDivElement>(null);
 
-  const shareUrl = `https://www.chcomct.cn/viewer?case=${caseId}`;
+  const shareUrl = `${SITE_URL}/viewer?case=${encodeURIComponent(caseId)}`;
 
   useEffect(() => {
     QRCode.toDataURL(shareUrl, {
       width: 200,
       margin: 2,
       color: { dark: "#000000", light: "#FFFFFF" },
-    }).then(setQrDataUrl);
+    }).then(setQrDataUrl).catch(() => setQrDataUrl(null));
   }, [shareUrl]);
 
   // Click outside to close
@@ -45,15 +47,7 @@ export default function SharePopover({ caseId, onClose }: SharePopoverProps) {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback
-      const input = document.createElement("input");
-      input.value = shareUrl;
-      document.body.appendChild(input);
-      input.select();
-      document.execCommand("copy");
-      document.body.removeChild(input);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setCopyError("复制失败，请长按下方链接手动复制");
     }
   };
 
@@ -78,7 +72,7 @@ export default function SharePopover({ caseId, onClose }: SharePopoverProps) {
         </p>
 
         <div className="mt-3 flex items-center gap-2 rounded-lg bg-gray-50 px-3 py-2">
-          <span className="flex-1 truncate text-[11px] text-gray-600">
+          <span className="min-w-0 flex-1 break-all select-all text-[11px] text-gray-600">
             {shareUrl}
           </span>
           <button
@@ -89,6 +83,7 @@ export default function SharePopover({ caseId, onClose }: SharePopoverProps) {
           </button>
         </div>
 
+        {copyError && <p role="alert" className="mt-2 text-xs text-red-700">{copyError}</p>}
         <button
           onClick={onClose}
           className="mt-3 w-full rounded-lg border border-gray-200 py-1.5 text-xs text-gray-500 hover:bg-gray-50"
