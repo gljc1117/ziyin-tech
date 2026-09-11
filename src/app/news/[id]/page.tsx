@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPublishedNews } from "@/lib/published-news";
 import NewsContent from "@/components/news/NewsContent";
-import { getEditorialArticle } from "@/lib/editorial-content";
+import { getNewsArticle } from "@/lib/company-news";
 import EditorialArticleBody from "@/components/content/EditorialArticleBody";
 import { newsDateLabel } from "@/lib/news-types";
 
@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!data) return { title: "新闻详情", robots: { index: false, follow: false } };
 
   const metadata = pageMetadata(data.title, data.summary ?? "子殷科技新闻动态", "/news/" + id);
-  const editorial = getEditorialArticle(id);
+  const editorial = getNewsArticle(id);
   if (!editorial) return metadata;
   return { ...metadata, openGraph: { ...metadata.openGraph, images: [{ url: editorial.cover.url, alt: editorial.cover.alt, width: editorial.cover.width, height: editorial.cover.height }] }, ...(editorial.status === "candidate" ? { robots: { index: false, follow: false } } : {}) };
 }
@@ -41,7 +41,7 @@ export default async function NewsDetailPage({
   if (!news) notFound();
 
   const date = newsDateLabel(news);
-  const editorial = getEditorialArticle(id);
+  const editorial = getNewsArticle(id);
 
   const body = news.content || news.summary;
 

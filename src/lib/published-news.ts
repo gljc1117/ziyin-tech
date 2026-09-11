@@ -1,11 +1,11 @@
 import { cache } from "react";
 import { createServerClient } from "./supabase-server";
 import { canDisplayNews } from "./content-policy";
-import { getEditorialArticles } from "./editorial-content";
+import { getNewsArticles } from "./company-news";
 import type { PublishedNewsItem } from "./news-types";
 
 export const getPublishedNews = cache(async (): Promise<PublishedNewsItem[]> => {
-  const editorial = getEditorialArticles();
+  const editorial = getNewsArticles();
   const imported: PublishedNewsItem[] = editorial.map((item) => ({
     id: item.id, title: item.title, summary: item.summary, content: null,
     category: item.category, published_at: item.sourcePublishedAt,

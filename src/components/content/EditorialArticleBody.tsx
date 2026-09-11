@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { EditorialArticle, EditorialImage } from "@/lib/editorial-content";
+import type { CompanyNewsArticle } from "@/lib/company-news";
 
 function Figure({ item }: { item: EditorialImage }) {
   return <figure className="mt-8">
@@ -12,14 +13,14 @@ function Figure({ item }: { item: EditorialImage }) {
   </figure>;
 }
 
-export function EditorialSources({ article }: { article: EditorialArticle }) {
+export function EditorialSources({ article }: { article: EditorialArticle | CompanyNewsArticle }) {
   return <aside className="mt-10 border-t border-current/15 pt-5 text-sm leading-7">
     <p>内容来源：子殷科技提供的《{article.sourceTitle}》。</p>
     {article.references.map((source) => <p key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{source.title} ↗</a></p>)}
   </aside>;
 }
 
-export default function EditorialArticleBody({ article }: { article: EditorialArticle }) {
+export default function EditorialArticleBody({ article }: { article: EditorialArticle | CompanyNewsArticle }) {
   return <div className="mt-6 text-slate-200">
     {article.status === "candidate" && <p className="rounded-lg border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">候选内容预览 · 尚未发布</p>}
     <p className="mt-6 text-lg leading-8">{article.summary}</p>
@@ -28,10 +29,11 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
       <h2 className="text-xl font-semibold text-white">{section.heading}</h2>
       {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-4 text-base leading-8 text-slate-300">{paragraph}</p>)}
       {section.items && <ol className="mt-4 list-decimal space-y-2 pl-6 text-slate-300">{section.items.map((item) => <li key={item}>{item}</li>)}</ol>}
+      {"sectionImages" in article && article.sectionImages?.[section.heading] && <Figure item={article.sectionImages[section.heading]} />}
     </section>)}
     {article.gallery.map((item) => <Figure key={item.url} item={item} />)}
     <EditorialSources article={article} />
-    <Link href={"/cases/" + article.id} className="mt-6 inline-block rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950">查看项目与交付记录 →</Link>
+    {"caseProfile" in article && <Link href={"/cases/" + article.id} className="mt-6 inline-block rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950">查看项目与交付记录 →</Link>}
   </div>;
 }
 

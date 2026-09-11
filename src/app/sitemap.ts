@@ -1,10 +1,14 @@
 import type { MetadataRoute } from "next";
 import { getEditorialArticles } from "@/lib/editorial-content";
+import { getNewsArticles } from "@/lib/company-news";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.chcomct.cn";
 
-  const editorial = getEditorialArticles(false).flatMap((item) => [{ url: base + "/news/" + item.id }, { url: base + "/cases/" + item.id }]);
+  const editorial = [
+    ...getNewsArticles(false).map((item) => ({ url: base + "/news/" + item.id })),
+    ...getEditorialArticles(false).map((item) => ({ url: base + "/cases/" + item.id })),
+  ];
   return [
     ...editorial,
     { url: base, changeFrequency: "weekly", priority: 1 },

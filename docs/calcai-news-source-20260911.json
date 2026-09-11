@@ -1,0 +1,36 @@
+{
+  "article": "calcai-shanghai-sixth-foot-ankle-alliance-2026",
+  "source_document": "子殷科技_CalcAI足踝联盟大会_微信公众号图文稿_V1.docx",
+  "source_sha256": "e0567098d77bc6f118d62c5c4f6381b6dca5fd82076d0a915994b66e600265d3",
+  "authorization": "2026-09-11 用户明确同意大会照片存入官网公开GitHub代码仓库并继续发布，同时提供新增大会合影用于本次发布。",
+  "publication_scope": "官网学术动态及首页最新动态；不创建临床案例，不改写数据库",
+  "baseline_commit": "299ccdd53e7341c70334ecf6150511cbea812bb7",
+  "recovery": "用新增 revert 提交回退本次文章发布，保留此前内容和历史。",
+  "images": [
+    {
+      "source_file": "04a024f2dfe090d066eac2f3a4cdb1db.jpg",
+      "published_file": "public/images/news/calcai-alliance-20260911/conference-report.jpg",
+      "sha256": "75629d71d13ba61d8040c1d65cc2712ba883f375bab45f1247cc7f02714c1b63"
+    },
+    {
+      "source_file": "56ed33356968db7f633855df45386282.jpg",
+      "published_file": "public/images/news/calcai-alliance-20260911/bone-fragments.jpg",
+      "sha256": "a6715e1836b80dfd788d834aa2280f750df5e0142000d1c1e02d6190c3753322"
+    },
+    {
+      "source_file": "8f3228937682268475cda8550515d8da.jpg",
+      "published_file": "public/images/news/calcai-alliance-20260911/local-review.jpg",
+      "sha256": "13c734097decbdbb9df807b3509315dc2d3605cb694a1cbad5c41a3cf147ce4b"
+    },
+    {
+      "source_file": "66041ffe0e06d1832dbfbcf83747efdc.jpg",
+      "published_file": "public/images/news/calcai-alliance-20260911/research-collaboration.jpg",
+      "sha256": "4ba04d14b189b4437b67f40741f61aa0d092be8df0d95fb5f856afb247f77314"
+    },
+    {
+      "source_file": "微信图片_20260911183008_660_23.jpg",
+      "published_file": "public/images/news/calcai-alliance-20260911/conference-group.jpg",
+      "sha256": "889ae08ee9f18cb37ddfa25bd4178f5944cc4f819a4114e88cbd1a54c09eb299"
+    }
+  ]
+}
