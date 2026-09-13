@@ -8,6 +8,8 @@ const categoryColor: Record<string, string> = {
   公司动态: "bg-cyan-500/20 text-cyan-300",
   技术进展: "bg-purple-500/20 text-purple-300",
   合作动态: "bg-emerald-500/20 text-emerald-300",
+  学术动态: "bg-amber-500/20 text-amber-300",
+  视频科普: "bg-cyan-500/20 text-cyan-200",
 };
 
 

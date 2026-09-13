@@ -1,24 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { newsDateLabel, type PublishedNewsItem as NewsItem } from "@/lib/news-types";
 import { motion } from "framer-motion";
 
 
-const categories = ["全部", "公司动态", "技术进展", "合作动态", "学术动态"];
+const preferredCategoryOrder = ["合作动态", "技术进展", "学术动态", "视频科普", "公司动态"];
 
 const categoryColor: Record<string, string> = {
   公司动态: "bg-cyan-500/20 text-cyan-300",
   技术进展: "bg-purple-500/20 text-purple-300",
   合作动态: "bg-emerald-500/20 text-emerald-300",
   学术动态: "bg-amber-500/20 text-amber-300",
+  视频科普: "bg-cyan-500/20 text-cyan-200",
 };
 
 
 export default function NewsListClient({ initialNews }: { initialNews: NewsItem[] }) {
   const [active, setActive] = useState("全部");
+  const categoryCounts = useMemo(
+    () =>
+      initialNews.reduce<Record<string, number>>((counts, item) => {
+        counts[item.category] = (counts[item.category] ?? 0) + 1;
+        return counts;
+      }, {}),
+    [initialNews],
+  );
+  const categories = useMemo(() => {
+    const available = Object.keys(categoryCounts);
+    const ordered = preferredCategoryOrder.filter((category) => categoryCounts[category]);
+    const remaining = available
+      .filter((category) => !preferredCategoryOrder.includes(category))
+      .sort((left, right) => left.localeCompare(right, "zh-CN"));
+    return ["全部", ...ordered, ...remaining];
+  }, [categoryCounts]);
 
   const filtered = active === "全部"
     ? initialNews
@@ -39,6 +56,9 @@ export default function NewsListClient({ initialNews }: { initialNews: NewsItem[
             }`}
           >
             {cat}
+            <span className="ml-1.5 text-xs opacity-70">
+              {cat === "全部" ? initialNews.length : categoryCounts[cat]}
+            </span>
           </button>
         ))}
       </div>

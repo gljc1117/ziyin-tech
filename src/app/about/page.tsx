@@ -3,41 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  COMPANY_MILESTONES,
+  COMPANY_TIMELINE_UPDATED_LABEL,
+} from "@/lib/company-milestones";
 
 /* ============================================================
    SEO metadata (exported from a separate file for client component)
    ============================================================ */
-
-/* ============================================================
-   数字滚动组件
-   ============================================================ */
-const milestones = [
-  { date: "2018.6", text: "研发团队在上海成立" },
-  { date: "2019.1", text: "极视AI 3DRston V1.0 研发成功" },
-  { date: "2020.1", text: "上海子殷科技有限公司正式成立" },
-  {
-    date: "2020.12",
-    text: "入驻内蒙古和林格尔新区智能制造产业园；Cloud OS 1.0 发布",
-  },
-  {
-    date: "2021",
-    text: "科技型中小企业认定；自治区首家医学3D打印中心投产；NMPA注册申请启动",
-  },
-  {
-    date: "2023.4",
-    text: "截骨导板获批医疗器械注册证（填补自治区空白）；纳入国家医保编码",
-  },
-  {
-    date: "2023.7",
-    text: "创新联合体成立；骨模型/器官模型获注册证",
-  },
-  { date: "2024.4", text: "通过 CE 认证 + ISO 13485 认证" },
-  { date: "2024.9", text: "与上海六院数字化医疗中心建立合作" },
-  {
-    date: "2024.11",
-    text: "协助国家骨科医学中心完成国内首例微创拇外翻髓内板矫形手术",
-  },
-];
 
 /* ============================================================
    设施图片
@@ -137,32 +110,56 @@ export default function AboutPage() {
       {/* ---- 发展历程 ---- */}
       <section className="bg-[#0a1128] py-20">
         <div className="mx-auto max-w-4xl px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-14 text-center text-3xl font-bold text-white"
-          >
-            发展历程
-          </motion.h2>
+          <div className="mb-14 text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl font-bold text-white"
+            >
+              发展历程
+            </motion.h2>
+            <p className="mt-3 text-sm text-gray-400">
+              重点里程碑与官网动态 · 更新至 {COMPANY_TIMELINE_UPDATED_LABEL}
+            </p>
+          </div>
 
           <div className="relative border-l-2 border-cyan-500/30 pl-8">
-            {milestones.map((m, i) => (
+            {COMPANY_MILESTONES.map((milestone, index) => (
               <motion.div
-                key={m.date}
+                key={`${milestone.sortDate}-${milestone.text}`}
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative mb-10 last:mb-0"
+                transition={{ duration: 0.5, delay: (index % 5) * 0.06 }}
+                className="relative mb-9 last:mb-0"
               >
                 {/* dot */}
                 <span className="absolute -left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 border-cyan-400 bg-[#0a1128]" />
                 <span className="text-sm font-semibold text-cyan-400">
-                  {m.date}
+                  {milestone.date}
                 </span>
-                <p className="mt-1 leading-relaxed text-gray-300">{m.text}</p>
+                <p className="mt-1 leading-relaxed text-gray-300">
+                  {milestone.text}
+                </p>
+                {(milestone.source || milestone.href) && (
+                  <div className="mt-2 flex flex-wrap items-center gap-3 text-xs">
+                    {milestone.source && (
+                      <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-gray-400">
+                        {milestone.source}
+                      </span>
+                    )}
+                    {milestone.href && (
+                      <Link
+                        href={milestone.href}
+                        className="font-medium text-cyan-400 transition-colors hover:text-cyan-300"
+                      >
+                        查看动态 <span aria-hidden="true">→</span>
+                      </Link>
+                    )}
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>

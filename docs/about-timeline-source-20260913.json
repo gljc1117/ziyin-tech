@@ -1,0 +1,68 @@
+{
+  "page": "/about",
+  "section": "发展历程",
+  "updated_at": "2026-09-13",
+  "baseline_commit": "8af8cdd1bf9372a23a6635f80ff6c42fb148f577",
+  "authorization": "用户要求根据子殷科技官网动态和其提供的微信公众号材料更新并发布官网发展历程。",
+  "sources": [
+    {
+      "type": "existing_website",
+      "scope": "2018年至2024年既有公司里程碑",
+      "path": "src/app/about/page.tsx"
+    },
+    {
+      "type": "user_supplied_wechat_material",
+      "scope": "2024年4月至2026年4月公司、产品、院企合作、成果转化及数商认证节点"
+    },
+    {
+      "type": "user_supplied_patent_document",
+      "title": "专利申请受理通知书",
+      "document_date": "2026-08-13",
+      "application_number": "202611224126.6",
+      "invention_title": "一种基于多模态数据的跟骨骨折AI复位方法",
+      "applicants": [
+        "上海市第六人民医院",
+        "上海子殷科技有限公司"
+      ],
+      "sha256": "c93736765f7f55f230b8e43129dc9425e8b865d9acbe77d9d7fd38fef0528a38",
+      "publication_decision": "仅公开申请受理事实，不公开包含代理人联系方式的原始PDF。"
+    },
+    {
+      "type": "approved_website_news",
+      "scope": "2026年起合作动态、学术动态与技术进展",
+      "paths": [
+        "src/lib/editorial-content.ts",
+        "src/lib/company-news.ts"
+      ]
+    },
+    {
+      "type": "external_public_cross_check",
+      "title": "北大人民医院第三届科技创新转化月开启",
+      "url": "https://news.pku.edu.cn/"
+    },
+    {
+      "type": "external_public_cross_check",
+      "title": "金赛药业首个院企共建医学3D打印创新研究中心正式启动",
+      "url": "https://www.genscigroup.com/"
+    },
+    {
+      "type": "external_public_cross_check",
+      "title": "和林格尔新区召开科技成果转化大会",
+      "url": "https://inews.nmgnews.com.cn/system/2025/02/28/030104558.shtml"
+    },
+    {
+      "type": "external_public_cross_check",
+      "title": "国家医保信息业务编码标准数据库",
+      "url": "https://code.nhsa.gov.cn/"
+    }
+  ],
+  "editorial_decisions": [
+    "公众号材料中的宣传性结论改为可核对的事件与项目阶段描述。",
+    "广元中心节点按公开报道所载启动日期2025年6月16日记录；公众号材料所写2025年7月25日未作为启动日期使用。",
+    "高分子PEEK项目按不同阶段分别记录产品发布、成果转化协议与医保编码入库，不将入库表述为临床疗效或市场认可。",
+    "数商证书编号NMG2604001及有效期信息来自用户提供的公众号材料；时间线仅展示认证事实与编号。",
+    "专利附件为申请受理通知书，不是授权证书，也不能单独证明预审通过；官网仅表述国家知识产权局已受理。",
+    "视频科普观看入口不自动进入公司发展里程碑。"
+  ],
+  "automatic_update_rule": "2026年起，已批准且分类为合作动态、学术动态或技术进展的官网文章会自动合并到发展历程，并链接到对应官网文章。"
+}
