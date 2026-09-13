@@ -1,0 +1,29 @@
+{
+  "article": "xiaogan-smart-medicine-research-20260820",
+  "source_document": "公众号推文_新.pdf",
+  "source_sha256": "d810ed1448c69208c531a9f64856c0dc2d1cae43c86f72debbeae1e080680147",
+  "source_pages": 1,
+  "source_pdf_created_at": "2026-08-23T08:28:48-04:00",
+  "event_date": "2026-08-20",
+  "event_date_basis": "正文记载8月20日上午，年份依据同批PDF创建时间2026年冻结。",
+  "authorization": "2026-09-13 用户明确要求将所附《公众号推文_新.pdf》内容发布到子殷官网。",
+  "publication_scope": "官网新闻及首页最新动态；按原稿事实整理，不创建临床病例，不扩写疗效或验证结论。",
+  "baseline_commit": "438ff5634e86fa591c8d3530ea1db4b123926061",
+  "recovery": "用新增 revert 提交回退本次文章发布，保留此前内容和历史。",
+  "images": [
+    {
+      "source_object": 7,
+      "published_file": "public/images/news/xiaogan-smart-medicine-research-20260820/research-tour.png",
+      "width": 1080,
+      "height": 796,
+      "sha256": "6e5fea127cce5ca192214e13ca78a22167751fe70897b7c53c00af7f63955cfb"
+    },
+    {
+      "source_object": 10,
+      "published_file": "public/images/news/xiaogan-smart-medicine-research-20260820/research-exchange.jpg",
+      "width": 1080,
+      "height": 991,
+      "sha256": "ac2e477d9935e6b4fad8e3758fcd34ae5385cf23b144808b04901da203221062"
+    }
+  ]
+}
