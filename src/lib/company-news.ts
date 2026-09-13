@@ -2,10 +2,61 @@ import { getEditorialArticles, type EditorialArticle, type EditorialImage } from
 
 // Company reporting can be published as news without creating a clinical case.
 export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
+  sourceAttribution?: string;
   sectionImages?: Record<string, EditorialImage>;
+  officialVideo?: {
+    publisher: string;
+    title: string;
+    url: string;
+  };
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+{
+  "id": "xiaogan-orthopedics-3d-printing-video-2026",
+  "title": "孝感市中心医院发布《骨科黑科技，3D打印深度科普》科普视频",
+  "summary": "湖北省孝感市中心医院通过官方视频号发布《骨科黑科技，3D打印深度科普》。子殷科技官网现提供官方观看入口，方便关注医学3D打印的读者查看原片。",
+  "category": "视频科普",
+  "eventDate": "2026-09-13",
+  "dateLabel": "2026年9月13日",
+  "sourceTitle": "骨科黑科技，3D打印深度科普",
+  "sourceAttribution": "内容来源：湖北省孝感市中心医院官方视频号《骨科黑科技，3D打印深度科普》。",
+  "sourcePublishedAt": "2026-09-13T00:00:00+08:00",
+  "status": "approved",
+  "cover": {
+    "url": "/images/news/xiaogan-orthopedics-video-2026/watch-entry.svg",
+    "alt": "孝感市中心医院骨科3D打印科普视频官方观看入口",
+    "width": 1600,
+    "height": 900
+  },
+  "gallery": [],
+  "officialVideo": {
+    "publisher": "湖北省孝感市中心医院",
+    "title": "骨科黑科技，3D打印深度科普",
+    "url": "https://weixin.qq.com/sph/AFyQ0Vs2EV"
+  },
+  "references": [
+    {
+      "title": "湖北省孝感市中心医院官方视频号观看入口",
+      "url": "https://weixin.qq.com/sph/AFyQ0Vs2EV",
+      "verification": "search_summary"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "医院官方视频",
+      "paragraphs": [
+        "该视频由湖北省孝感市中心医院发布，主题为骨科3D打印科普。点击页面中的观看按钮，或使用微信扫描二维码，即可前往医院官方视频号查看原片。"
+      ]
+    },
+    {
+      "heading": "内容以医院原片为准",
+      "paragraphs": [
+        "本页现阶段作为官方视频观看入口，不对采访观点作二次转述。后续如取得经授权的原始视频文件，将在完成内容核对后更新站内播放与采访摘要。"
+      ]
+    }
+  ]
+},
 {
   "id": "calcai-shanghai-sixth-foot-ankle-alliance-2026",
   "title": "子殷科技亮相上海六院足踝联盟大会，汇报CalcAI跟骨骨折智能复位科研进展",
