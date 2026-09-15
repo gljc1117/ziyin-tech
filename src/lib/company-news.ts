@@ -1,3 +1,4 @@
+import { AI_WORKFORCE_COMMENTARY } from "./ai-workforce-commentary";
 import { getEditorialArticles, type EditorialArticle, type EditorialImage } from "./editorial-content";
 
 import { PHYSICAL_EXAM_COMMENTARY } from "./physical-exam-commentary";
@@ -15,6 +16,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+AI_WORKFORCE_COMMENTARY,
 PHYSICAL_EXAM_COMMENTARY,
 {
   "id": "xiaogan-smart-medicine-research-20260820",
