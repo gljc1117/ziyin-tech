@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+<title>递归自我改进的概念关系</title><desc>改进机制生成后续系统，独立评价提供证据，经验证的机制修订用于下一轮。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#2563eb"/></marker></defs>
+<rect width="1200" height="600" fill="#eff6ff"/>
+<g font-family="sans-serif"><text x="64" y="78" fill="#1d4ed8" font-size="24">子殷科技 · 医工观察</text><text x="64" y="155" fill="#0f172a" font-size="46" font-weight="700">AI能否持续改进自己？</text>
+<rect x="65" y="230" width="295" height="120" rx="14" fill="white" stroke="#93c5fd" stroke-width="2"/><rect x="451" y="230" width="295" height="120" rx="14" fill="white" stroke="#93c5fd" stroke-width="2"/><rect x="837" y="230" width="295" height="120" rx="14" fill="white" stroke="#93c5fd" stroke-width="2"/>
+<g fill="#0f172a" font-size="30" text-anchor="middle"><text x="212" y="301">改进机制</text><text x="598" y="301">后续系统</text><text x="984" y="301">独立评价</text></g>
+<g fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"><path d="M370 290 H435"/><path d="M756 290 H821"/><path d="M985 360 V450 H213 V364"/></g>
+<rect x="415" y="418" width="370" height="62" fill="#eff6ff"/><text x="600" y="458" fill="#1d4ed8" font-size="26" text-anchor="middle">经验证的机制修订与复用</text><text x="64" y="551" fill="#475569" font-size="22">概念示意 · 非实验结果</text></g></svg>

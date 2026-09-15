@@ -1,3 +1,4 @@
+import { RSI_COMMENTARY } from "./rsi-commentary";
 import { FLY_CONNECTOME_REVIEW } from "./fly-connectome-review";
 import { AI_WORKFORCE_COMMENTARY } from "./ai-workforce-commentary";
 import { getEditorialArticles, type EditorialArticle, type EditorialImage } from "./editorial-content";
@@ -18,6 +19,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+RSI_COMMENTARY,
 FLY_CONNECTOME_REVIEW,
 AI_WORKFORCE_COMMENTARY,
 PHYSICAL_EXAM_COMMENTARY,
