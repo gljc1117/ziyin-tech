@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { OpinionCover, hasOpinionVisual } from "@/components/content/OpinionVisual";
 import { newsDateLabel } from "@/lib/news-types";
 import { getPublishedNews } from "@/lib/published-news";
 
@@ -40,9 +41,9 @@ export default async function LatestNews() {
             <div key={item.id}>
               <Link
                 href={`/news/${item.id}`}
-                className="group block rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-cyan-500/30 hover:bg-white/[0.08]"
+                className="group block rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:border-cyan-500/30 hover:bg-white/[0.08]"
               >
-                {item.cover_image_url && <div className="relative mb-5 aspect-video overflow-hidden rounded-lg bg-slate-100"><Image src={item.cover_image_url} alt={item.title} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-contain" /></div>}
+                {hasOpinionVisual(item.id) ? <div className="mb-5"><OpinionCover id={item.id} /></div> : item.cover_image_url && <div className="relative mb-5 aspect-video overflow-hidden rounded-lg bg-slate-100"><Image src={item.cover_image_url} alt={item.title} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-contain" /></div>}
                 <div className="flex items-center gap-2">
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
@@ -55,7 +56,7 @@ export default async function LatestNews() {
                 <h3 className="mt-3 text-base font-semibold text-white group-hover:text-cyan-400 transition-colors line-clamp-2">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-xs text-white/40">
+                <p className="mt-2 text-sm text-slate-300">
                   {newsDateLabel(item)}
                 </p>
               </Link>

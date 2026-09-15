@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { EditorialArticle, EditorialImage } from "@/lib/editorial-content";
 import type { CompanyNewsArticle } from "@/lib/company-news";
 import OfficialVideoCard from "./OfficialVideoCard";
+import { hasOpinionVisual, OpinionFramework } from "./OpinionVisual";
 
 function Figure({ item }: { item: EditorialImage }) {
   return <figure className="mt-8">
@@ -37,7 +38,7 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
   return <div className="mt-6 text-slate-200">
     {article.status === "candidate" && <p className="rounded-lg border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">候选内容预览 · 尚未发布</p>}
     <p className="mt-6 text-lg leading-8">{article.summary}</p>
-    <Figure item={article.cover} />
+    {hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />}
     {"officialVideo" in article && article.officialVideo && <OfficialVideoCard video={article.officialVideo} />}
     {article.sections.map((section) => <section key={section.heading} className="mt-10">
       <h2 className="text-xl font-semibold text-white">{section.heading}</h2>

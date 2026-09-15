@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { OpinionCover, hasOpinionVisual } from "@/components/content/OpinionVisual";
 import { newsDateLabel, type PublishedNewsItem as NewsItem } from "@/lib/news-types";
 import { motion } from "framer-motion";
 
@@ -81,9 +82,10 @@ export default function NewsListClient({ initialNews }: { initialNews: NewsItem[
             >
               <Link
                 href={`/news/${item.id}`}
-                className="group block rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-cyan-500/30 hover:bg-white/[0.08]"
+                className={`group block rounded-2xl border border-white/15 bg-white/5 p-4 transition-colors hover:border-cyan-400/40 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:p-6 ${hasOpinionVisual(item.id) ? "md:grid md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)] md:items-center md:gap-8" : ""}`}
               >
-                {item.cover_image_url && <div className="relative mb-5 h-48 overflow-hidden rounded-lg bg-slate-100 sm:h-64"><Image src={item.cover_image_url} alt={item.title} fill sizes="(max-width: 768px) 100vw, 768px" className="object-contain" /></div>}
+                {hasOpinionVisual(item.id) ? <OpinionCover id={item.id} /> : item.cover_image_url && <div className="relative mb-5 h-48 overflow-hidden rounded-lg bg-slate-100 sm:h-64"><Image src={item.cover_image_url} alt={item.title} fill sizes="(max-width: 768px) 100vw, 768px" className="object-contain" /></div>}
+                <div className={hasOpinionVisual(item.id) ? "mt-5 min-w-0 md:mt-0" : "min-w-0"}>
                 <div className="flex flex-wrap items-center gap-3">
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
@@ -92,18 +94,19 @@ export default function NewsListClient({ initialNews }: { initialNews: NewsItem[
                   >
                     {item.category}
                   </span>
-                  <span className="text-xs text-white/40">
+                  <span className="text-sm text-slate-300">
                     {newsDateLabel(item)}
                   </span>
                 </div>
-                <h2 className="mt-3 text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                <h2 className="mt-3 text-xl leading-relaxed sm:text-2xl font-semibold text-white group-hover:text-cyan-400 transition-colors">
                   {item.title}
                 </h2>
                 {item.summary && (
-                  <p className="mt-2 text-sm leading-relaxed text-white/50 line-clamp-2">
+                  <p className="mt-3 text-base leading-7 text-slate-300 line-clamp-3">
                     {item.summary}
                   </p>
                 )}
+                </div>
               </Link>
             </motion.div>
           ))}
