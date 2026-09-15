@@ -11,10 +11,10 @@ export default async function NewsPage() {
   const news = await getPublishedNews();
 
   return (
-    <main className="min-h-screen bg-[#060e24] pt-24 pb-16">
+    <main className="min-h-screen bg-[#f5f7fa] pt-24 pb-16">
       <div className="mx-auto max-w-5xl px-6">
-        <h1 className="text-3xl font-bold text-white">新闻动态</h1>
-        <p className="mt-2 text-sm text-white/50">
+        <h1 className="text-3xl font-bold text-slate-900">新闻动态</h1>
+        <p className="mt-2 text-sm text-slate-600">
           了解子殷科技最新进展
         </p>
         <NewsListClient initialNews={news} />

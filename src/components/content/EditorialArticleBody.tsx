@@ -21,7 +21,7 @@ function ReferenceText({ text, article }: { text: string; article: EditorialArti
     const match = part.match(/^\[(\d+)\]$/);
     const number = match ? Number(match[1]) : 0;
     if (!number || number > article.references.length) return part;
-    return <sup key={index} className="ml-0.5"><a href={"#reference-" + number} aria-label={"参考文献 " + number} className="text-cyan-300 underline underline-offset-2">{part}</a></sup>;
+    return <sup key={index} className="ml-0.5"><a href={"#reference-" + number} aria-label={"参考文献 " + number} className="text-blue-700 underline underline-offset-2">{part}</a></sup>;
   })}</>;
 }
 
@@ -35,15 +35,15 @@ export function EditorialSources({ article }: { article: EditorialArticle | Comp
 }
 
 export default function EditorialArticleBody({ article }: { article: EditorialArticle | CompanyNewsArticle }) {
-  return <div className="mt-6 text-slate-200">
+  return <div className="mt-6 text-slate-700">
     {article.status === "candidate" && <p className="rounded-lg border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">候选内容预览 · 尚未发布</p>}
     <p className="mt-6 text-lg leading-8">{article.summary}</p>
     {hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />}
     {"officialVideo" in article && article.officialVideo && <OfficialVideoCard video={article.officialVideo} />}
     {article.sections.map((section) => <section key={section.heading} className="mt-10">
-      <h2 className="text-xl font-semibold text-white">{section.heading}</h2>
-      {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-4 text-base leading-8 text-slate-300"><ReferenceText text={paragraph} article={article} /></p>)}
-      {section.items && <ol className="mt-4 list-decimal space-y-2 pl-6 text-slate-300">{section.items.map((item) => <li key={item}>{item}</li>)}</ol>}
+      <h2 className="text-xl font-semibold text-slate-900">{section.heading}</h2>
+      {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-5 text-[17px] leading-8 text-slate-800"><ReferenceText text={paragraph} article={article} /></p>)}
+      {section.items && <ol className="mt-4 list-decimal space-y-2 pl-6 text-slate-800">{section.items.map((item) => <li key={item}>{item}</li>)}</ol>}
       {"sectionImages" in article && article.sectionImages?.[section.heading] && <Figure item={article.sectionImages[section.heading]} />}
     </section>)}
     {article.gallery.map((item) => <Figure key={item.url} item={item} />)}

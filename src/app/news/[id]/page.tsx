@@ -10,12 +10,12 @@ import { newsDateLabel } from "@/lib/news-types";
 
 
 const categoryColor: Record<string, string> = {
-  学术观点: "bg-sky-500/20 text-sky-200",
-  公司动态: "bg-cyan-500/20 text-cyan-300",
-  技术进展: "bg-purple-500/20 text-purple-300",
-  合作动态: "bg-emerald-500/20 text-emerald-300",
-  学术动态: "bg-amber-500/20 text-amber-300",
-  视频科普: "bg-cyan-500/20 text-cyan-200",
+  学术观点: "bg-sky-500/20 text-blue-800",
+  公司动态: "bg-cyan-500/20 text-cyan-800",
+  技术进展: "bg-purple-500/20 text-purple-800",
+  合作动态: "bg-emerald-500/20 text-emerald-800",
+  学术动态: "bg-amber-500/20 text-amber-800",
+  视频科普: "bg-cyan-500/20 text-cyan-800",
 };
 
 export async function generateMetadata({
@@ -48,20 +48,20 @@ export default async function NewsDetailPage({
   const body = news.content || news.summary;
 
   return (
-    <main className="min-h-screen bg-[#060e24] pt-24 pb-16">
+    <main className="min-h-screen bg-white pt-24 pb-16">
       <article className="mx-auto max-w-3xl px-6">
         <div className="flex flex-wrap items-center gap-3">
           <span
             className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
-              categoryColor[news.category] ?? "bg-white/10 text-white/60"
+              categoryColor[news.category] ?? "bg-white/10 text-slate-600"
             }`}
           >
             {news.category}
           </span>
-          <span className="text-xs text-white/40">{date}</span>
+          <span className="text-xs text-slate-500">{date}</span>
         </div>
 
-        <h1 className="mt-4 text-3xl font-bold leading-tight text-white">
+        <h1 className="mt-4 text-3xl font-bold leading-snug text-slate-900">
           {news.title}
         </h1>
 
@@ -70,7 +70,7 @@ export default async function NewsDetailPage({
         <div className="mt-12">
           <Link
             href="/news"
-            className="inline-flex items-center gap-2 rounded-lg bg-white/5 px-5 py-2.5 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900"
           >
             <svg viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
               <path

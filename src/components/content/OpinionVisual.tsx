@@ -42,16 +42,24 @@ export function OpinionCover({ id }: { id: string }) {
 export function OpinionFramework({ id }: { id: string }) {
   const visual = visuals[id];
   if (!visual) return null;
-  return <figure className="mt-8 rounded-2xl border border-cyan-300/20 bg-[#10283e] p-5 sm:p-7">
-    <p className="text-sm font-medium tracking-wider text-cyan-200">医工观察 · 阅读框架</p>
-    <h2 className="mt-2 text-xl font-semibold text-white">{visual.subtitle}</h2>
+  return <figure className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-7">
+    <p className="text-sm font-medium tracking-wider text-blue-700">医工观察 · 阅读框架</p>
+    <h2 className="mt-2 text-xl font-semibold text-slate-900">{visual.subtitle}</h2>
     <ol className="mt-6 grid gap-3 sm:grid-cols-3">
-      {visual.steps.map((step, index) => <li key={step.title} className="rounded-xl border border-white/15 bg-white/5 p-5">
-        <span className="text-sm font-semibold text-cyan-200">0{index + 1}</span>
-        <h3 className="mt-2 text-lg font-semibold text-white">{step.title}</h3>
-        <p className="mt-2 text-base leading-7 text-slate-200">{step.description}</p>
+      {visual.steps.map((step, index) => <li key={step.title} className="rounded-xl border border-slate-200 bg-white p-5">
+        <span className="text-sm font-semibold text-blue-700">0{index + 1}</span>
+        <h3 className="mt-2 text-lg font-semibold text-slate-900">{step.title}</h3>
+        <p className="mt-2 text-base leading-7 text-slate-700">{step.description}</p>
       </li>)}
     </ol>
-    <figcaption className="mt-5 text-sm leading-7 text-slate-300">{visual.note}</figcaption>
+    <figcaption className="mt-5 text-sm leading-7 text-slate-600">{visual.note}</figcaption>
   </figure>;
+}
+
+export function OpinionThumbnail({ id }: { id: string }) {
+  const workforce = id === "ai-clinical-workforce-20260915";
+  return <div aria-hidden="true" className="flex aspect-square w-full flex-col justify-center rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 p-3 text-center ring-1 ring-inset ring-blue-100 sm:p-5">
+    <span className="text-[11px] font-medium tracking-wider text-blue-700 sm:text-xs">医工观察</span>
+    <span className="mt-3 text-lg font-semibold leading-relaxed text-slate-900 sm:text-2xl">{workforce ? <>临床工作<br />与AI</> : <>医疗AI<br />的价值</>}</span>
+  </div>;
 }

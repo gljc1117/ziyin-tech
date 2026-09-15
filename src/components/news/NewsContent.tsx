@@ -5,16 +5,16 @@ import Image from "next/image";
 
 export default function NewsContent({ content }: { content: string }) {
   return (
-    <div className="mt-8 prose-invert max-w-none">
+    <div className="mt-8 text-slate-800 max-w-none">
       <ReactMarkdown
         components={{
           h2: ({ children }) => (
-            <h2 className="mt-10 mb-4 text-xl font-bold text-white">
+            <h2 className="mt-10 mb-4 text-xl font-bold text-slate-900">
               {children}
             </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="mt-8 mb-3 text-lg font-semibold text-white">
+            <h3 className="mt-8 mb-3 text-lg font-semibold text-slate-900">
               {children}
             </h3>
           ),
@@ -27,7 +27,7 @@ export default function NewsContent({ content }: { content: string }) {
               return <div className="mt-4">{children}</div>;
             }
             return (
-              <p className="mt-4 text-base leading-relaxed text-white/70">
+              <p className="mt-4 text-[17px] leading-8 text-slate-800">
                 {children}
               </p>
             );
@@ -47,10 +47,10 @@ export default function NewsContent({ content }: { content: string }) {
             );
           },
           strong: ({ children }) => (
-            <strong className="font-semibold text-white">{children}</strong>
+            <strong className="font-semibold text-slate-900">{children}</strong>
           ),
           blockquote: ({ children }) => (
-            <blockquote className="mt-4 border-l-2 border-cyan-500/50 pl-4 text-white/60 italic">
+            <blockquote className="mt-4 border-l-2 border-cyan-500/50 pl-4 text-slate-600 italic">
               {children}
             </blockquote>
           ),
