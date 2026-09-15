@@ -14,12 +14,22 @@ function Figure({ item }: { item: EditorialImage }) {
   </figure>;
 }
 
+function ReferenceText({ text, article }: { text: string; article: EditorialArticle | CompanyNewsArticle }) {
+  if (!("numberedReferences" in article) || !article.numberedReferences) return <>{text}</>;
+  return <>{text.split(/(\[\d+\])/g).map((part, index) => {
+    const match = part.match(/^\[(\d+)\]$/);
+    const number = match ? Number(match[1]) : 0;
+    if (!number || number > article.references.length) return part;
+    return <sup key={index} className="ml-0.5"><a href={"#reference-" + number} aria-label={"参考文献 " + number} className="text-cyan-300 underline underline-offset-2">{part}</a></sup>;
+  })}</>;
+}
+
 export function EditorialSources({ article }: { article: EditorialArticle | CompanyNewsArticle }) {
   return <aside className="mt-10 border-t border-current/15 pt-5 text-sm leading-7">
     <p>{"sourceAttribution" in article && article.sourceAttribution
       ? article.sourceAttribution
       : <>内容来源：子殷科技提供的《{article.sourceTitle}》。</>}</p>
-    {article.references.map((source) => <p key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{source.title} ↗</a></p>)}
+    {article.references.map((source, index) => <p key={source.url} id={"numberedReferences" in article && article.numberedReferences ? "reference-" + (index + 1) : undefined} className="scroll-mt-24 break-words">{"numberedReferences" in article && article.numberedReferences ? `[${index + 1}] ` : ""}<a href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{source.title} ↗</a></p>)}
   </aside>;
 }
 
@@ -31,7 +41,7 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
     {"officialVideo" in article && article.officialVideo && <OfficialVideoCard video={article.officialVideo} />}
     {article.sections.map((section) => <section key={section.heading} className="mt-10">
       <h2 className="text-xl font-semibold text-white">{section.heading}</h2>
-      {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-4 text-base leading-8 text-slate-300">{paragraph}</p>)}
+      {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-4 text-base leading-8 text-slate-300"><ReferenceText text={paragraph} article={article} /></p>)}
       {section.items && <ol className="mt-4 list-decimal space-y-2 pl-6 text-slate-300">{section.items.map((item) => <li key={item}>{item}</li>)}</ol>}
       {"sectionImages" in article && article.sectionImages?.[section.heading] && <Figure item={article.sectionImages[section.heading]} />}
     </section>)}

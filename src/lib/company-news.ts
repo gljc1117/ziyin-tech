@@ -1,8 +1,11 @@
 import { getEditorialArticles, type EditorialArticle, type EditorialImage } from "./editorial-content";
 
+import { PHYSICAL_EXAM_COMMENTARY } from "./physical-exam-commentary";
+
 // Company reporting can be published as news without creating a clinical case.
 export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
   sourceAttribution?: string;
+  numberedReferences?: boolean;
   sectionImages?: Record<string, EditorialImage>;
   officialVideo?: {
     publisher: string;
@@ -12,6 +15,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+PHYSICAL_EXAM_COMMENTARY,
 {
   "id": "xiaogan-smart-medicine-research-20260820",
   "title": "调研赋能医工融合，聚力数智医学发展",

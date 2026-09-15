@@ -10,6 +10,7 @@ import { newsDateLabel } from "@/lib/news-types";
 
 
 const categoryColor: Record<string, string> = {
+  学术观点: "bg-sky-500/20 text-sky-200",
   公司动态: "bg-cyan-500/20 text-cyan-300",
   技术进展: "bg-purple-500/20 text-purple-300",
   合作动态: "bg-emerald-500/20 text-emerald-300",

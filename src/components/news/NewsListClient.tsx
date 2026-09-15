@@ -7,9 +7,10 @@ import { newsDateLabel, type PublishedNewsItem as NewsItem } from "@/lib/news-ty
 import { motion } from "framer-motion";
 
 
-const preferredCategoryOrder = ["合作动态", "技术进展", "学术动态", "视频科普", "公司动态"];
+const preferredCategoryOrder = ["合作动态", "技术进展", "学术观点", "学术动态", "视频科普", "公司动态"];
 
 const categoryColor: Record<string, string> = {
+  学术观点: "bg-sky-500/20 text-sky-200",
   公司动态: "bg-cyan-500/20 text-cyan-300",
   技术进展: "bg-purple-500/20 text-purple-300",
   合作动态: "bg-emerald-500/20 text-emerald-300",
