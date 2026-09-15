@@ -1,3 +1,4 @@
+import { FLY_CONNECTOME_REVIEW } from "./fly-connectome-review";
 import { AI_WORKFORCE_COMMENTARY } from "./ai-workforce-commentary";
 import { getEditorialArticles, type EditorialArticle, type EditorialImage } from "./editorial-content";
 
@@ -7,6 +8,7 @@ import { PHYSICAL_EXAM_COMMENTARY } from "./physical-exam-commentary";
 export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
   sourceAttribution?: string;
   numberedReferences?: boolean;
+  sectionTables?: Record<string, { caption: string; columns: string[]; rows: string[][] }>;
   sectionImages?: Record<string, EditorialImage>;
   officialVideo?: {
     publisher: string;
@@ -16,6 +18,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+FLY_CONNECTOME_REVIEW,
 AI_WORKFORCE_COMMENTARY,
 PHYSICAL_EXAM_COMMENTARY,
 {
