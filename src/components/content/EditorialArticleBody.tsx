@@ -43,6 +43,13 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
     {article.sections.map((section) => <section key={section.heading} className="mt-10">
       <h2 className="text-xl font-semibold text-slate-900">{section.heading}</h2>
       {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-5 text-[17px] leading-8 text-slate-800"><ReferenceText text={paragraph} article={article} /></p>)}
+      {"sectionTables" in article && article.sectionTables?.[section.heading] && <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200">
+        <table className="w-full min-w-[620px] border-collapse text-left text-sm leading-7">
+          <caption className="px-4 py-3 text-left font-medium text-slate-700">{article.sectionTables[section.heading].caption}</caption>
+          <thead className="bg-slate-100 text-slate-900"><tr>{article.sectionTables[section.heading].columns.map((column) => <th key={column} scope="col" className="border-t border-slate-200 px-4 py-3">{column}</th>)}</tr></thead>
+          <tbody>{article.sectionTables[section.heading].rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={cellIndex} className="border-t border-slate-200 px-4 py-3 align-top"><ReferenceText text={cell} article={article} /></td>)}</tr>)}</tbody>
+        </table>
+      </div>}
       {section.items && <ol className="mt-4 list-decimal space-y-2 pl-6 text-slate-800">{section.items.map((item) => <li key={item}>{item}</li>)}</ol>}
       {"sectionImages" in article && article.sectionImages?.[section.heading] && <Figure item={article.sectionImages[section.heading]} />}
     </section>)}
