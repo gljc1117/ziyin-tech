@@ -61,7 +61,7 @@ export default async function NewsDetailPage({
           <span className="text-xs text-slate-500">{date}</span>
         </div>
 
-        <h1 className="mt-4 text-3xl font-bold leading-snug text-slate-900">
+        <h1 className="mt-4 text-3xl font-bold leading-snug text-slate-900" style={id === "recursive-self-improvement-medical-ai-20260915" ? { textWrap: "balance" } : undefined}>
           {news.title}
         </h1>
 
