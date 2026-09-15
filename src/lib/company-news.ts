@@ -1,3 +1,4 @@
+import { RECURSIVE_INSTRUMENTS_REVIEW } from "./recursive-instruments-review";
 import { XIAOGAN_LUNG_BIOPSY } from "./xiaogan-lung-biopsy";
 import { RSI_COMMENTARY } from "./rsi-commentary";
 import { FLY_CONNECTOME_REVIEW } from "./fly-connectome-review";
@@ -20,6 +21,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+RECURSIVE_INSTRUMENTS_REVIEW,
 XIAOGAN_LUNG_BIOPSY,
 RSI_COMMENTARY,
 FLY_CONNECTOME_REVIEW,
