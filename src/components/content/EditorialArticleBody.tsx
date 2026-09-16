@@ -1,3 +1,4 @@
+import GrantDecisionFramework from "./GrantDecisionFramework";
 import RsiFramework from "./RsiFramework";
 import ScientificInstrumentFramework from "./ScientificInstrumentFramework";
 import Image from "next/image";
@@ -40,7 +41,7 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
   return <div className="mt-6 text-slate-700">
     {article.status === "candidate" && <p className="rounded-lg border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">候选内容预览 · 尚未发布</p>}
     <p className="mt-6 text-lg leading-8">{article.summary}</p>
-    {article.id === "recursive-scientific-instruments-materials-medical-ai-20260916" ? <ScientificInstrumentFramework /> : article.id === "recursive-self-improvement-medical-ai-20260915" ? <RsiFramework /> : hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />}
+    {article.id === "grant-assistant-calibrated-decisions-20260916" ? <GrantDecisionFramework /> : article.id === "recursive-scientific-instruments-materials-medical-ai-20260916" ? <ScientificInstrumentFramework /> : article.id === "recursive-self-improvement-medical-ai-20260915" ? <RsiFramework /> : hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />}
     {"officialVideo" in article && article.officialVideo && <OfficialVideoCard video={article.officialVideo} />}
     {article.sections.map((section) => <section key={section.heading} className="mt-10">
       <h2 className="text-xl font-semibold text-slate-900">{section.heading}</h2>
