@@ -1,3 +1,4 @@
+import { GRANT_DECISION_FRAMEWORK } from "./grant-decision-framework";
 import { RECURSIVE_INSTRUMENTS_REVIEW } from "./recursive-instruments-review";
 import { XIAOGAN_LUNG_BIOPSY } from "./xiaogan-lung-biopsy";
 import { RSI_COMMENTARY } from "./rsi-commentary";
@@ -21,6 +22,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+GRANT_DECISION_FRAMEWORK,
 RECURSIVE_INSTRUMENTS_REVIEW,
 XIAOGAN_LUNG_BIOPSY,
 RSI_COMMENTARY,

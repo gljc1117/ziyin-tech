@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">从生成式问答到可校准决策</title><desc id="desc">科研申报助手的方法设计：规则计算、语义决策、生成推理与专业复核协同，证据贯穿全程。概念示意，无实测数据。</desc>
+<rect width="1200" height="630" fill="#f1f5f9"/><rect x="0" y="0" width="16" height="630" fill="#1d4ed8"/>
+<g font-family="Arial, 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif">
+<text x="72" y="74" fill="#1d4ed8" font-size="22" font-weight="700" letter-spacing="3">ZIYIN · RESEARCH WORKFLOW</text>
+<text x="72" y="155" fill="#0f172a" font-size="48" font-weight="700">从生成式问答到可校准决策</text>
+<text x="72" y="208" fill="#475569" font-size="27">科研项目申报助手 · 分层架构与验证框架</text>
+<g fill="#ffffff" stroke="#cbd5e1" stroke-width="2"><rect x="72" y="265" width="510" height="108" rx="16"/><rect x="612" y="265" width="510" height="108" rx="16"/><rect x="72" y="397" width="510" height="108" rx="16"/><rect x="612" y="397" width="510" height="108" rx="16"/></g>
+<g fill="#1d4ed8" font-size="19" font-weight="700"><text x="99" y="300">01  RULES</text><text x="639" y="300">02  DECISIONS</text><text x="99" y="432">03  REASONING</text><text x="639" y="432">04  REVIEW</text></g>
+<g fill="#0f172a" font-size="30" font-weight="700"><text x="99" y="347">规则计算 · 精确核验</text><text x="639" y="347">语义决策 · 分类匹配</text><text x="99" y="479">生成推理 · 有据论证</text><text x="639" y="479">专业复核 · 确认交付</text></g>
+<text x="72" y="571" fill="#475569" font-size="22">证据可追溯 ｜ 不确定可复核 ｜ 效果可检验</text><text x="1122" y="606" text-anchor="end" fill="#64748b" font-size="16">方法设计 · 非实测结果</text>
+</g></svg>
