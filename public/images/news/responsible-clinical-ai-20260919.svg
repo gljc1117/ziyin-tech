@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">负责任的医疗 AI：六项原则与共同协作</title>
+  <desc id="desc">六项原则为选择工具、保护信息、核验结果、患者沟通、有用记录与异常处置；医生、医院、技术团队共同落实。子殷科技原创实践框架示意，不代表已验证产品能力。</desc>
+  <rect width="1440" height="900" fill="#f0f5fa"/>
+  <rect width="1440" height="242" fill="#102d50"/>
+  <g font-family="'Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+    <text x="76" y="65" fill="#88c9ee" font-size="21" letter-spacing="3">ZIYIN · CLINICAL AI GOVERNANCE</text>
+    <text x="76" y="138" fill="#ffffff" font-size="48" font-weight="700">负责任地使用医疗 AI</text>
+    <text x="76" y="195" fill="#d0e2f2" font-size="25">让关键结果有依据，让专业判断可回看</text>
+    <g fill="#ffffff" stroke="#d5e2ef" stroke-width="2">
+      <rect x="76" y="280" width="404" height="148" rx="16"/>
+      <rect x="518" y="280" width="404" height="148" rx="16"/>
+      <rect x="960" y="280" width="404" height="148" rx="16"/>
+      <rect x="76" y="458" width="404" height="148" rx="16"/>
+      <rect x="518" y="458" width="404" height="148" rx="16"/>
+      <rect x="960" y="458" width="404" height="148" rx="16"/>
+    </g>
+    <g font-size="20" fill="#2172ab" font-weight="700">
+      <text x="102" y="324">01</text><text x="544" y="324">02</text><text x="986" y="324">03</text>
+      <text x="102" y="502">04</text><text x="544" y="502">05</text><text x="986" y="502">06</text>
+    </g>
+    <g font-size="29" fill="#143659" font-weight="700">
+      <text x="152" y="326">选择并理解工具</text><text x="594" y="326">保护患者信息</text><text x="1036" y="326">核验输入与输出</text>
+      <text x="152" y="504">做好患者沟通</text><text x="594" y="504">保留有用记录</text><text x="1036" y="504">处置不安全结果</text>
+    </g>
+    <g font-size="22" fill="#52677c">
+      <text x="102" y="382">明确用途、适用范围和局限</text><text x="544" y="382">确认授权、必要性和数据流向</text><text x="986" y="382">回看证据，支持修订与否决</text>
+      <text x="102" y="560">解释作用、不确定性与替代方案</text><text x="544" y="560">关联版本、修改与关键判断</text><text x="986" y="560">控制影响，报告并验证修复</text>
+    </g>
+    <rect x="76" y="646" width="1288" height="138" rx="16" fill="#dfebf5"/>
+    <text x="106" y="690" font-size="22" font-weight="700" fill="#143659">共同落实</text>
+    <text x="106" y="741" font-size="24" fill="#143659">医生：专业判断</text>
+    <text x="510" y="741" font-size="24" fill="#143659">医疗机构：准入与管理</text>
+    <text x="956" y="741" font-size="24" fill="#143659">技术团队：验证与追溯</text>
+    <text x="76" y="843" font-size="20" fill="#52677c">子殷科技 · 原创实践框架示意</text>
+    <text x="1364" y="843" text-anchor="end" font-size="20" fill="#52677c">专业述评 / 2026.09</text>
+  </g>
+</svg>
