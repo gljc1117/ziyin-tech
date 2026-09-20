@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getPublishedNews } from "@/lib/published-news";
 import NewsContent from "@/components/news/NewsContent";
 import { getNewsArticle } from "@/lib/company-news";
+import { SPECIALTY_AI_CLOSED_LOOP } from "@/lib/specialty-ai-closed-loop";
 import EditorialArticleBody from "@/components/content/EditorialArticleBody";
 import { newsDateLabel } from "@/lib/news-types";
 
@@ -18,6 +19,10 @@ const categoryColor: Record<string, string> = {
   视频科普: "bg-cyan-500/20 text-cyan-800",
 };
 
+function getEditorialNewsArticle(id: string) {
+  return id === SPECIALTY_AI_CLOSED_LOOP.id ? SPECIALTY_AI_CLOSED_LOOP : getNewsArticle(id);
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -28,7 +33,7 @@ export async function generateMetadata({
   if (!data) return { title: "新闻详情", robots: { index: false, follow: false } };
 
   const metadata = pageMetadata(data.title, data.summary ?? "子殷科技新闻动态", "/news/" + id);
-  const editorial = getNewsArticle(id);
+  const editorial = getEditorialNewsArticle(id);
   if (!editorial) return metadata;
   return { ...metadata, openGraph: { ...metadata.openGraph, images: [{ url: editorial.cover.url, alt: editorial.cover.alt, width: editorial.cover.width, height: editorial.cover.height }] }, ...(editorial.status === "candidate" ? { robots: { index: false, follow: false } } : {}) };
 }
@@ -43,7 +48,7 @@ export default async function NewsDetailPage({
   if (!news) notFound();
 
   const date = newsDateLabel(news);
-  const editorial = getNewsArticle(id);
+  const editorial = getEditorialNewsArticle(id);
 
   const body = news.content || news.summary;
 

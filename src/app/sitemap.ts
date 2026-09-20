@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 import { getEditorialArticles } from "@/lib/editorial-content";
 import { getNewsArticles } from "@/lib/company-news";
+import { SPECIALTY_AI_CLOSED_LOOP } from "@/lib/specialty-ai-closed-loop";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.chcomct.cn";
 
   const editorial = [
-    ...getNewsArticles(false).map((item) => ({ url: base + "/news/" + item.id })),
+    ...[SPECIALTY_AI_CLOSED_LOOP, ...getNewsArticles(false)].map((item) => ({ url: base + "/news/" + item.id })),
     ...getEditorialArticles(false).map((item) => ({ url: base + "/cases/" + item.id })),
   ];
   return [
