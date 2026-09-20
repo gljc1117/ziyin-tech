@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">从大平台到专科闭环</title>
+  <desc id="desc">模型经过专科产品、临床证据、多中心复制和产品矩阵，逐步形成医院级平台</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b36"/>
+      <stop offset="0.55" stop-color="#0b3154"/>
+      <stop offset="1" stop-color="#0d5c68"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#53d4ff"/>
+      <stop offset="1" stop-color="#5eead4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#001329" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <circle cx="1270" cy="80" r="250" fill="none" stroke="#76e4f7" stroke-opacity="0.08" stroke-width="52"/>
+  <circle cx="120" cy="820" r="210" fill="none" stroke="#5eead4" stroke-opacity="0.07" stroke-width="42"/>
+
+  <g font-family="Noto Sans SC, Microsoft YaHei, sans-serif">
+    <text x="120" y="128" fill="#8be9f5" font-size="26" font-weight="600" letter-spacing="5">子殷科技 · 产品战略研究</text>
+    <text x="120" y="222" fill="#ffffff" font-size="68" font-weight="750">从“大平台”到“专科闭环”</text>
+    <text x="120" y="284" fill="#c7e8f1" font-size="31">医疗人工智能进入证据驱动与医工协同的产品化阶段</text>
+
+    <g filter="url(#shadow)">
+      <rect x="120" y="380" width="188" height="132" rx="24" fill="#ffffff" fill-opacity="0.10" stroke="#81e6f5" stroke-opacity="0.30"/>
+      <rect x="324" y="380" width="188" height="132" rx="24" fill="#ffffff" fill-opacity="0.10" stroke="#81e6f5" stroke-opacity="0.30"/>
+      <rect x="528" y="380" width="188" height="132" rx="24" fill="#ffffff" fill-opacity="0.10" stroke="#81e6f5" stroke-opacity="0.30"/>
+      <rect x="732" y="380" width="188" height="132" rx="24" fill="#ffffff" fill-opacity="0.10" stroke="#81e6f5" stroke-opacity="0.30"/>
+      <rect x="936" y="380" width="188" height="132" rx="24" fill="#ffffff" fill-opacity="0.10" stroke="#81e6f5" stroke-opacity="0.30"/>
+      <rect x="1140" y="380" width="188" height="132" rx="24" fill="url(#accent)" fill-opacity="0.94"/>
+    </g>
+
+    <g fill="#8be9f5" font-size="30" font-weight="700" text-anchor="middle">
+      <text x="214" y="438">模型</text>
+      <text x="418" y="438">专科产品</text>
+      <text x="622" y="438">临床证据</text>
+      <text x="826" y="438">多中心复制</text>
+      <text x="1030" y="438">产品矩阵</text>
+    </g>
+    <g fill="#c7e8f1" font-size="19" text-anchor="middle">
+      <text x="214" y="478">技术能力</text>
+      <text x="418" y="478">任务闭环</text>
+      <text x="622" y="478">可追溯验证</text>
+      <text x="826" y="478">统一定义</text>
+      <text x="1030" y="478">成熟产品汇聚</text>
+    </g>
+    <g fill="#06344a" text-anchor="middle">
+      <text x="1234" y="430" font-size="29" font-weight="800">医院级平台</text>
+      <text x="1234" y="470" font-size="18" font-weight="600">MEDIFORGE</text>
+    </g>
+
+    <g stroke="#79e5f4" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.82">
+      <path d="M308 446h16"/><path d="M512 446h16"/><path d="M716 446h16"/><path d="M920 446h16"/><path d="M1124 446h16"/>
+    </g>
+
+    <rect x="120" y="610" width="1208" height="126" rx="28" fill="#06172c" fill-opacity="0.48" stroke="#8be9f5" stroke-opacity="0.16"/>
+    <text x="160" y="660" fill="#8be9f5" font-size="23" font-weight="700">专科AI产品工厂</text>
+    <text x="160" y="706" fill="#ffffff" font-size="26">一个专科 × 一个明确任务 × 一个模型或模型组 × 人工复核 × 标准化输出 × 一条证据链</text>
+    <text x="120" y="818" fill="#b9dce6" font-size="24">不是先造OS，再寻找临床场景；而是先让一个个临床产品成熟，最后让OS自然生长出来。</text>
+  </g>
+</svg>
