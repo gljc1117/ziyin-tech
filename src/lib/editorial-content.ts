@@ -6,8 +6,8 @@ export interface EditorialArticle {
   eventDate: string; dateLabel: string; sourceTitle: string;
   sourcePublishedAt: string | null; status: "candidate" | "approved" | "withdrawn";
   cover: EditorialImage; gallery: EditorialImage[];
-  references: { title: string; url: string; verification: "primary_full_text" | "search_summary" }[];
-  sections: { heading: string; paragraphs: string[]; items?: string[] }[];
+  references: { title: string; url: string; linkLabel?: string; verification: "primary_full_text" | "search_summary" }[];
+  sections: { heading: string; headingLevel?: 2 | 3; paragraphs: string[]; items?: string[] }[];
   caseProfile: {
     title: string; category: CaseCategory; phase: string; hospital: string; department: string;
     need: string; work: string; result: string; deliverables: string[]; boundary: string;
