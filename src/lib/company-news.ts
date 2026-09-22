@@ -1,3 +1,4 @@
+import { ORGANIZATIONAL_COGNITION } from "./organizational-cognition";
 import { RESPONSIBLE_CLINICAL_AI } from "./responsible-clinical-ai";
 import { MEDICAL_AI_REGULATION } from "./medical-ai-regulation";
 import { GRANT_DECISION_FRAMEWORK } from "./grant-decision-framework";
@@ -14,6 +15,8 @@ import { PHYSICAL_EXAM_COMMENTARY } from "./physical-exam-commentary";
 export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
   sourceAttribution?: string;
   numberedReferences?: boolean;
+  hideCover?: boolean;
+  referenceNote?: string;
   sectionTables?: Record<string, { caption: string; columns: string[]; rows: string[][] }>;
   sectionImages?: Record<string, EditorialImage>;
   officialVideo?: {
@@ -24,6 +27,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+ORGANIZATIONAL_COGNITION,
 RESPONSIBLE_CLINICAL_AI,
 MEDICAL_AI_REGULATION,
 GRANT_DECISION_FRAMEWORK,

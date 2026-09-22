@@ -33,7 +33,8 @@ export function EditorialSources({ article }: { article: EditorialArticle | Comp
     <p>{"sourceAttribution" in article && article.sourceAttribution
       ? article.sourceAttribution
       : <>内容来源：子殷科技提供的《{article.sourceTitle}》。</>}</p>
-    {article.references.map((source, index) => <p key={source.url} id={"numberedReferences" in article && article.numberedReferences ? "reference-" + (index + 1) : undefined} className="scroll-mt-24 break-words">{"numberedReferences" in article && article.numberedReferences ? `[${index + 1}] ` : ""}<a href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{source.title} ↗</a></p>)}
+    {article.references.map((source, index) => <p key={source.url} id={"numberedReferences" in article && article.numberedReferences ? "reference-" + (index + 1) : undefined} className="scroll-mt-24 break-words">{"numberedReferences" in article && article.numberedReferences ? `[${index + 1}] ` : ""}{source.linkLabel && <>{source.title} </>}<a href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{source.linkLabel || source.title} ↗</a></p>)}
+    {"referenceNote" in article && article.referenceNote && <p className="mt-5">{article.referenceNote}</p>}
   </aside>;
 }
 
@@ -41,10 +42,12 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
   return <div className="mt-6 text-slate-700">
     {article.status === "candidate" && <p className="rounded-lg border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">候选内容预览 · 尚未发布</p>}
     <p className="mt-6 text-lg leading-8">{article.summary}</p>
-    {article.id === "grant-assistant-calibrated-decisions-20260916" ? <GrantDecisionFramework /> : article.id === "recursive-scientific-instruments-materials-medical-ai-20260916" ? <ScientificInstrumentFramework /> : article.id === "recursive-self-improvement-medical-ai-20260915" ? <RsiFramework /> : hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />}
+    {!("hideCover" in article && article.hideCover) && (article.id === "grant-assistant-calibrated-decisions-20260916" ? <GrantDecisionFramework /> : article.id === "recursive-scientific-instruments-materials-medical-ai-20260916" ? <ScientificInstrumentFramework /> : article.id === "recursive-self-improvement-medical-ai-20260915" ? <RsiFramework /> : hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />)}
     {"officialVideo" in article && article.officialVideo && <OfficialVideoCard video={article.officialVideo} />}
     {article.sections.map((section) => <section key={section.heading} className="mt-10">
-      <h2 className="text-xl font-semibold text-slate-900">{section.heading}</h2>
+      {section.headingLevel === 3
+        ? <h3 className="text-lg font-semibold leading-8 text-slate-900">{section.heading}</h3>
+        : <h2 className="text-xl font-semibold leading-8 text-slate-900">{section.heading}</h2>}
       {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-5 text-[17px] leading-8 text-slate-800"><ReferenceText text={paragraph} article={article} /></p>)}
       {"sectionTables" in article && article.sectionTables?.[section.heading] && <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200">
         <table className="w-full min-w-[620px] border-collapse text-left text-sm leading-7">
