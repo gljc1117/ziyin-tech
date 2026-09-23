@@ -1,3 +1,4 @@
+import { CHCOMCT_SM_APPROVAL } from "./chcomct-sm-approval";
 import { ORGANIZATIONAL_COGNITION } from "./organizational-cognition";
 import { RESPONSIBLE_CLINICAL_AI } from "./responsible-clinical-ai";
 import { MEDICAL_AI_REGULATION } from "./medical-ai-regulation";
@@ -27,6 +28,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CHCOMCT_SM_APPROVAL,
 ORGANIZATIONAL_COGNITION,
 RESPONSIBLE_CLINICAL_AI,
 MEDICAL_AI_REGULATION,
