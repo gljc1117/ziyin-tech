@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const demoProducts = ["医疗AI / CalcAI", "医学3D打印 / 医工造物", "数智医学中心", "其他合作"] as const;
+export const demoProducts = ["医学图像处理 / Chcomct SM", "医学3D打印 / 医工造物", "医疗AI / CalcAI", "数智医学中心", "科研合作与成果转化", "其他合作"] as const;
 export const demoVolumes = ["<20", "20-50", ">50", "不适用"] as const;
 export const demoRequestSchema = z.object({
   name: z.string().trim().min(2, "请输入姓名").max(50, "姓名过长"),

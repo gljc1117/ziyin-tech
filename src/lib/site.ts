@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const SITE_URL = "https://www.chcomct.cn";
-export const SITE_DESCRIPTION = "子殷科技围绕医疗AI、医学3D打印与数智医学中心，连接临床需求、医工协作与项目交付。了解医工造物、CalcAI及合作服务。";
+export const SITE_DESCRIPTION = "子殷科技，面向医院的数智医学产品与医工转化服务商。了解Chcomct SM医学图像处理软件、医学3D打印、科研协作与数智医学中心共建。";
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   return {

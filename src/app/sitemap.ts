@@ -1,3 +1,4 @@
+import { PRODUCTS } from "@/lib/products";
 import type { MetadataRoute } from "next";
 import { getEditorialArticles } from "@/lib/editorial-content";
 import { getNewsArticles } from "@/lib/company-news";
@@ -12,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return [
     ...editorial,
+    { url: base + "/products", changeFrequency: "monthly", priority: 0.9 },
+    ...PRODUCTS.map(p=>({url: base + "/products/" + p.slug, priority: 0.8})),
     { url: base, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/cases`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/news`, changeFrequency: "weekly", priority: 0.8 },

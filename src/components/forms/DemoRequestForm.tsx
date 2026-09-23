@@ -1,87 +1,66 @@
 "use client";
-
+import { useRef, useState } from "react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { demoRequestSchema as schema, demoProducts as products, demoVolumes as volumes, type DemoRequestData as FormData } from "@/lib/demo-request";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const departments = ["骨科", "脊柱外科", "关节外科", "创伤骨科", "胸外科", "放疗科", "口腔科", "影像科", "医工/科研/管理", "其他"];
-
-/* ---------- 步骤进度条 ---------- */
-function StepBar({ current }: { current: number }) {
-  const labels = ["基本信息", "需求意向", "补充提交"];
-  return (
-    <div className="mb-8 flex items-center justify-between">
-      {labels.map((label, i) => {
-        const step = i + 1;
-        const done = step < current;
-        const active = step === current;
-        return (
-          <div key={label} className="flex flex-1 flex-col items-center gap-2">
-            <div className="flex w-full items-center">
-              {i > 0 && (
-                <div
-                  className={`h-0.5 flex-1 transition-colors ${done ? "bg-cyan-400" : "bg-white/20"}`}
-                />
-              )}
-              <div
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-colors ${
-                  active
-                    ? "bg-cyan-400 text-gray-900"
-                    : done
-                      ? "bg-cyan-400/80 text-gray-900"
-                      : "bg-white/20 text-white/50"
-                }`}
-              >
-                {done ? "✓" : step}
-              </div>
-              {i < labels.length - 1 && (
-                <div
-                  className={`h-0.5 flex-1 transition-colors ${done ? "bg-cyan-400" : "bg-white/20"}`}
-                />
-              )}
-            </div>
-            <span className={`text-xs ${active ? "text-cyan-300" : "text-white/40"}`}>{label}</span>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-/* ---------- 共用样式 ---------- */
-const inputCls =
-  "w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30";
-const labelCls = "mb-1.5 block text-sm font-medium text-white/80";
-const errorCls = "mt-1 text-xs text-red-400";
-
-/* ---------- 主组件 ---------- */
-export default function DemoRequestForm() {
+import {
+  demoRequestSchema,
+  demoProducts,
+  demoVolumes,
+  type DemoRequestData,
+} from "@/lib/demo-request";
+const departments = [
+  "骨科",
+  "脊柱外科",
+  "关节外科",
+  "创伤骨科",
+  "胸外科",
+  "放疗科",
+  "口腔科",
+  "影像科",
+  "医工/科研/管理",
+  "其他",
+];
+const descriptions = [
+  "图像处理软件的功能、适用范围与演示",
+  "三维建模、个性化设计及制造服务",
+  "跟骨骨折专科研发与科研演示",
+  "建设方案、技术操作与运营协作",
+  "围绕具体课题沟通研发与转化路径",
+  "其他需求，欢迎在备注中说明",
+];
+const inputClass =
+  "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 placeholder:text-slate-500";
+export default function DemoRequestForm({
+  initialProduct,
+}: {
+  initialProduct?: string;
+}) {
+  const chosen = demoProducts.find((p) => p === initialProduct);
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
-
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const {
     register,
     handleSubmit,
     trigger,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>({
-    resolver: zodResolver(schema),
-    defaultValues: { products: [], department: "" },
+  } = useForm<DemoRequestData>({
+    resolver: zodResolver(demoRequestSchema),
+    defaultValues: {
+      products: chosen ? [chosen] : [],
+      department: "",
+      surgery_volume: "不适用",
+    },
   });
-
   async function nextStep() {
-    const fields: (keyof FormData)[][] = [
-      ["name", "hospital", "department", "phone"],
-      ["products", "surgery_volume"],
-    ];
-    const valid = await trigger(fields[step - 1]);
-    if (valid) setStep((s) => s + 1);
+    if (await trigger(["products", "notes"])) {
+      setStep(2);
+      requestAnimationFrame(() => titleRef.current?.focus());
+    }
   }
-
-  async function onSubmit(data: FormData) {
+  async function onSubmit(data: DemoRequestData) {
     setSubmitError("");
     try {
       const res = await fetch("/api/demo-request", {
@@ -90,198 +69,280 @@ export default function DemoRequestForm() {
         body: JSON.stringify(data),
       });
       const result = await res.json().catch(() => null);
-      if (res.ok && result?.success === true) {
-        setSubmitted(true);
-      } else {
-        setSubmitError(typeof result?.error === "string" ? result.error : "暂未确认提交成功，请稍后重试");
-      }
+      if (res.ok && result?.success === true) setSubmitted(true);
+      else
+        setSubmitError(
+          typeof result?.error === "string"
+            ? result.error
+            : "暂未确认提交成功，请稍后重试",
+        );
     } catch {
-      setSubmitError("网络错误，请检查网络连接后重试");
+      setSubmitError("网络连接中断，暂未确认提交成功，请检查网络后重试");
     }
   }
-
-  if (submitted) {
+  if (submitted)
     return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="rounded-2xl bg-cyan-400/10 border border-cyan-400/30 p-10 text-center"
+      <div
+        role="status"
+        className="rounded-xl border border-cyan-200 bg-cyan-50 p-8"
       >
-        <div className="text-4xl">✅</div>
-        <p className="mt-4 text-lg font-semibold text-white">预约信息已提交</p>
-        <p className="mt-2 text-sm text-white/60">我们已收到您的需求，工作人员将据此与您联系</p>
-      </motion.div>
+        <p className="text-2xl font-semibold text-slate-900">合作需求已提交</p>
+        <p className="mt-4 leading-7 text-slate-600">
+          我们已收到您的需求，工作人员将据此与您联系。
+        </p>
+        <Link
+          href="/products"
+          className="mt-6 inline-block font-medium text-blue-700"
+        >
+          继续了解产品与服务 →
+        </Link>
+      </div>
     );
-  }
-
-  const pageVariants = {
-    enter: { opacity: 0, x: 40 },
-    center: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -40 },
-  };
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mx-auto max-w-lg">
-      <StepBar current={step} />
-
-      <AnimatePresence mode="wait">
-        {/* ---- Step 1 ---- */}
-        {step === 1 && (
-          <motion.div
-            key="s1"
-            variants={pageVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.25 }}
-            className="space-y-4"
+    <form
+      noValidate
+      onSubmit={(e) => {
+        if (step === 1) {
+          e.preventDefault();
+          void nextStep();
+        } else {
+          void handleSubmit(onSubmit)(e);
+        }
+      }}
+    >
+      <ol
+        aria-label="填写进度"
+        className="mb-8 flex gap-6 border-b border-slate-200 pb-5 text-sm"
+      >
+        {["选择需求", "联系信息"].map((label, i) => (
+          <li
+            key={label}
+            aria-current={step === i + 1 ? "step" : undefined}
+            className={
+              step === i + 1 ? "font-semibold text-blue-800" : "text-slate-500"
+            }
           >
-            <div>
-              <label htmlFor="name" className={labelCls}>姓名</label>
-              <input id="name" {...register("name")} className={inputCls} placeholder="张医生" />
-              {errors.name && <p className={errorCls}>{errors.name.message}</p>}
+            {i + 1}. {label}
+          </li>
+        ))}
+      </ol>
+      <h2
+        ref={titleRef}
+        tabIndex={-1}
+        className="mb-6 text-xl font-semibold text-slate-900"
+      >
+        {step === 1 ? "您希望了解哪些服务？" : "留下工作联系信息"}
+      </h2>
+      {step === 1 ? (
+        <div>
+          <fieldset>
+            <legend className="mb-4 text-sm text-slate-600">
+              可多选，我们会根据需求安排沟通。
+            </legend>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {demoProducts.map((p, i) => (
+                <label
+                  key={p}
+                  className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-4 has-checked:border-blue-700 has-checked:bg-blue-50"
+                >
+                  <input
+                    type="checkbox"
+                    value={p}
+                    {...register("products")}
+                    aria-invalid={!!errors.products}
+                    aria-describedby={
+                      errors.products ? "products-error" : undefined
+                    }
+                    className="mt-1 h-4 w-4 shrink-0 accent-blue-700"
+                  />
+                  <span>
+                    <span className="text-sm font-semibold text-slate-800">
+                      {p}
+                    </span>
+                    <span className="mt-2 block text-xs leading-6 text-slate-600">
+                      {descriptions[i]}
+                    </span>
+                  </span>
+                </label>
+              ))}
             </div>
-            <div>
-              <label htmlFor="hospital" className={labelCls}>医院 / 机构</label>
-              <input id="hospital" {...register("hospital")} className={inputCls} placeholder="XX人民医院" />
-              {errors.hospital && <p className={errorCls}>{errors.hospital.message}</p>}
-            </div>
-            <div>
-              <label htmlFor="department" className={labelCls}>科室</label>
-              <select id="department" {...register("department")} className={inputCls}>
-                <option value="" disabled>请选择</option>
-                {departments.map((d) => (
-                  <option key={d} value={d} className="text-gray-900">{d}</option>
-                ))}
-              </select>
-              {errors.department && <p className={errorCls}>{errors.department.message}</p>}
-            </div>
-            <div>
-              <label htmlFor="phone" className={labelCls}>手机号</label>
-              <input id="phone" type="tel" inputMode="tel" autoComplete="tel" maxLength={11} {...register("phone")} className={inputCls} placeholder="13800138000" />
-              {errors.phone && <p className={errorCls}>{errors.phone.message}</p>}
-            </div>
-            <button
-              type="button"
-              onClick={nextStep}
-              className="mt-2 w-full rounded-lg bg-cyan-500 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] active:scale-95"
-            >
-              下一步
-            </button>
-          </motion.div>
-        )}
-
-        {/* ---- Step 2 ---- */}
-        {step === 2 && (
-          <motion.div
-            key="s2"
-            variants={pageVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.25 }}
-            className="space-y-5"
-          >
-            <div>
-              <label className={labelCls}>产品模块（多选）</label>
-              <div className="grid grid-cols-2 gap-3">
-                {products.map((p) => (
-                  <label key={p} className="flex items-center gap-2 text-sm text-white/80">
-                    <input
-                      type="checkbox"
-                      value={p}
-                      {...register("products")}
-                      className="accent-cyan-400"
-                    />
-                    {p}
-                  </label>
-                ))}
-              </div>
-              {errors.products && <p className={errorCls}>{errors.products.message}</p>}
-            </div>
-            <div>
-              <label className={labelCls}>月手术量</label>
-              <div className="flex gap-3">
-                {volumes.map((v) => (
-                  <label key={v} className="flex items-center gap-2 text-sm text-white/80">
-                    <input
-                      type="radio"
-                      value={v}
-                      {...register("surgery_volume")}
-                      className="accent-cyan-400"
-                    />
-                    {v}
-                  </label>
-                ))}
-              </div>
-              {errors.surgery_volume && <p className={errorCls}>{errors.surgery_volume.message}</p>}
-            </div>
-            <div className="flex gap-3">
-              <button
-                type="button"
-                onClick={() => setStep(1)}
-                className="flex-1 rounded-lg border border-white/20 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] active:scale-95"
+            {errors.products && (
+              <p
+                id="products-error"
+                role="alert"
+                className="mt-3 text-sm text-red-700"
               >
-                上一步
-              </button>
-              <button
-                type="button"
-                onClick={nextStep}
-                className="flex-1 rounded-lg bg-cyan-500 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] active:scale-95"
-              >
-                下一步
-              </button>
-            </div>
-          </motion.div>
-        )}
-
-        {/* ---- Step 3 ---- */}
-        {step === 3 && (
-          <motion.div
-            key="s3"
-            variants={pageVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.25 }}
-            className="space-y-5"
-          >
-            <div>
-              <label htmlFor="notes" className={labelCls}>备注（选填）</label>
-              <textarea
-                id="notes" {...register("notes")}
-                rows={4}
-                className={inputCls}
-                maxLength={2000}
-                placeholder="请描述合作需求，请勿填写患者姓名、病历或影像信息"
-              />
-            </div>
-            {errors.notes && <p className={errorCls}>{errors.notes.message}</p>}
-            <p className="text-xs leading-6 text-white/60">提交的信息用于本次演示预约与合作咨询跟进，请仅填写工作联系信息。</p>
-            <div className="flex gap-3">
-              <button
-                type="button"
-                onClick={() => setStep(2)}
-                className="flex-1 rounded-lg border border-white/20 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] active:scale-95"
-              >
-                上一步
-              </button>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="flex-1 rounded-lg bg-cyan-500 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] active:scale-95 disabled:opacity-50"
-              >
-                {isSubmitting ? "提交中…" : "提交预约"}
-              </button>
-            </div>
-            {submitError && (
-              <p role="alert" className="mt-3 rounded-lg bg-red-500/10 border border-red-500/20 px-4 py-2 text-center text-sm text-red-400">
-                {submitError}
+                {errors.products.message}
               </p>
             )}
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </fieldset>
+          <label
+            htmlFor="notes"
+            className="mb-2 mt-7 block text-sm font-medium text-slate-800"
+          >
+            需求说明（选填）
+          </label>
+          <textarea
+            id="notes"
+            {...register("notes")}
+            rows={3}
+            maxLength={2000}
+            placeholder="例如：希望了解科室三维建模服务或中心建设。请勿填写患者姓名、病历或影像信息。"
+            className={inputClass}
+          />
+          {errors.notes && (
+            <p role="alert" className="mt-2 text-sm text-red-700">
+              {errors.notes.message}
+            </p>
+          )}
+          <button
+            type="button"
+            onClick={nextStep}
+            className="primary-button mt-6 w-full"
+          >
+            下一步：联系信息
+          </button>
+        </div>
+      ) : (
+        <div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {(
+              [
+                {
+                  key: "name",
+                  label: "姓名",
+                  placeholder: "您的姓名",
+                  autoComplete: "name",
+                },
+                {
+                  key: "hospital",
+                  label: "医院 / 机构",
+                  placeholder: "医院或机构全称",
+                  autoComplete: "organization",
+                },
+                {
+                  key: "phone",
+                  label: "手机号",
+                  placeholder: "便于工作联系的手机号",
+                  autoComplete: "tel",
+                },
+              ] as const
+            ).map((field) => (
+              <div key={field.key}>
+                <label
+                  htmlFor={field.key}
+                  className="mb-2 block text-sm font-medium text-slate-800"
+                >
+                  {field.label}
+                </label>
+                <input
+                  id={field.key}
+                  {...register(field.key)}
+                  type={field.key === "phone" ? "tel" : "text"}
+                  autoComplete={field.autoComplete}
+                  maxLength={
+                    field.key === "phone" ? 11 : field.key === "name" ? 50 : 120
+                  }
+                  placeholder={field.placeholder}
+                  aria-invalid={!!errors[field.key]}
+                  aria-describedby={
+                    errors[field.key] ? `${field.key}-error` : undefined
+                  }
+                  className={inputClass}
+                />
+                {errors[field.key] && (
+                  <p
+                    id={`${field.key}-error`}
+                    role="alert"
+                    className="mt-2 text-sm text-red-700"
+                  >
+                    {errors[field.key]?.message}
+                  </p>
+                )}
+              </div>
+            ))}
+            <div>
+              <label
+                htmlFor="department"
+                className="mb-2 block text-sm font-medium text-slate-800"
+              >
+                科室 / 部门
+              </label>
+              <select
+                id="department"
+                {...register("department")}
+                aria-invalid={!!errors.department}
+                aria-describedby={
+                  errors.department ? "department-error" : undefined
+                }
+                className={inputClass}
+              >
+                <option value="">请选择</option>
+                {departments.map((d) => (
+                  <option key={d}>{d}</option>
+                ))}
+              </select>
+              {errors.department && (
+                <p
+                  id="department-error"
+                  role="alert"
+                  className="mt-2 text-sm text-red-700"
+                >
+                  {errors.department.message}
+                </p>
+              )}
+            </div>
+          </div>
+          <label
+            htmlFor="surgery_volume"
+            className="mb-2 mt-6 block text-sm font-medium text-slate-800"
+          >
+            月手术量（选填）
+          </label>
+          <select
+            id="surgery_volume"
+            {...register("surgery_volume")}
+            className={inputClass}
+          >
+            {demoVolumes.map((v) => (
+              <option key={v} value={v}>
+                {v === "不适用" ? "暂不提供 / 不适用" : `${v} 例`}
+              </option>
+            ))}
+          </select>
+          <p className="mt-5 text-xs leading-6 text-slate-600">
+            信息仅用于本次演示预约与合作咨询跟进，请填写工作联系信息。
+          </p>
+          <div className="mt-6 flex gap-3">
+            <button
+              type="button"
+              disabled={isSubmitting}
+              onClick={() => {
+                setStep(1);
+                setSubmitError("");
+              }}
+              className="rounded-lg border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700"
+            >
+              上一步
+            </button>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="primary-button flex-1 disabled:opacity-60"
+            >
+              {isSubmitting ? "正在提交…" : "提交合作需求"}
+            </button>
+          </div>
+          {submitError && (
+            <p
+              role="alert"
+              className="mt-5 rounded-lg border border-red-200 bg-red-50 p-4 text-sm leading-7 text-red-800"
+            >
+              {submitError}
+            </p>
+          )}
+        </div>
+      )}
     </form>
   );
 }

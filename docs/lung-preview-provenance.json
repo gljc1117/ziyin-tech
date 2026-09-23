@@ -1,0 +1,41 @@
+{
+  "description": "Display-only rendering of the existing public lung-case demo: five lobes and trachea, decimated for a static preview. Original public meshes remain unchanged; other structures are available interactively.",
+  "meshes": [
+    {
+      "source": "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models/lung-case/right_upper_lobe.stl",
+      "sha256": "a9ae76833c20884e6a9728a78dea8d13c401823648b05513fedb8cf8210d0320",
+      "source_triangles": 118140,
+      "preview_triangles": 9950
+    },
+    {
+      "source": "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models/lung-case/right_middle_lobe.stl",
+      "sha256": "7082a36e7b4a6c82045ed38d71f472e21b71d903aeb0714483ecb7eeeb7ea24c",
+      "source_triangles": 70046,
+      "preview_triangles": 6082
+    },
+    {
+      "source": "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models/lung-case/right_lower_lobe.stl",
+      "sha256": "d211503c493512d7e6245b28c854f91d430e3314a8550ed41490d85b8746582f",
+      "source_triangles": 128450,
+      "preview_triangles": 12254
+    },
+    {
+      "source": "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models/lung-case/left_upper_lobe.stl",
+      "sha256": "57bf2e08ab1b20956e5b8053646aa645484bde8e25cd60ddf545c9e795d17c52",
+      "source_triangles": 126256,
+      "preview_triangles": 9386
+    },
+    {
+      "source": "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models/lung-case/left_lower_lobe.stl",
+      "sha256": "d0f751bf80c405c8cff75ebea0213621eab75348de7f9f1e073c97c463e25613",
+      "source_triangles": 129490,
+      "preview_triangles": 12906
+    },
+    {
+      "source": "https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models/lung-case/trachea.stl",
+      "sha256": "8fdc4c60e86a4d7a909669147286ce37a72cf2b4a3f5520ed46af0a5f625539b",
+      "source_triangles": 28300,
+      "preview_triangles": 2666
+    }
+  ]
+}

@@ -1,117 +1,115 @@
 "use client";
-
-import { useMemo, useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import Image from "next/image";
-import { OpinionThumbnail, hasOpinionVisual } from "@/components/content/OpinionVisual";
-import { newsDateLabel, type PublishedNewsItem as NewsItem } from "@/lib/news-types";
-import { motion } from "framer-motion";
-
-
-const preferredCategoryOrder = ["合作动态", "技术进展", "学术观点", "学术动态", "视频科普", "公司动态"];
-
-const categoryColor: Record<string, string> = {
-  学术观点: "bg-blue-50 text-blue-800",
-  公司动态: "bg-cyan-50 text-cyan-800",
-  技术进展: "bg-purple-50 text-purple-800",
-  合作动态: "bg-emerald-50 text-emerald-800",
-  学术动态: "bg-amber-50 text-amber-800",
-  视频科普: "bg-cyan-50 text-cyan-800",
-};
-
-
-export default function NewsListClient({ initialNews }: { initialNews: NewsItem[] }) {
-  const [active, setActive] = useState("全部");
-  const categoryCounts = useMemo(
-    () =>
-      initialNews.reduce<Record<string, number>>((counts, item) => {
-        counts[item.category] = (counts[item.category] ?? 0) + 1;
-        return counts;
-      }, {}),
-    [initialNews],
-  );
-  const categories = useMemo(() => {
-    const available = Object.keys(categoryCounts);
-    const ordered = preferredCategoryOrder.filter((category) => categoryCounts[category]);
-    const remaining = available
-      .filter((category) => !preferredCategoryOrder.includes(category))
-      .sort((left, right) => left.localeCompare(right, "zh-CN"));
-    return ["全部", ...ordered, ...remaining];
-  }, [categoryCounts]);
-
-  const filtered = active === "全部"
-    ? initialNews
-    : initialNews.filter((n) => n.category === active);
-
+import Link from "next/link";
+import { newsDateLabel, type PublishedNewsItem } from "@/lib/news-types";
+import {
+  NEWS_CHANNELS,
+  type NewsChannel,
+  newsChannel,
+  newsDisplayTitle,
+  filterNews,
+} from "@/lib/news-presentation";
+export default function NewsListClient({
+  initialNews,
+  initialChannel = "全部",
+}: {
+  initialNews: PublishedNewsItem[];
+  initialChannel?: NewsChannel;
+}) {
+  const [active, setActive] = useState<NewsChannel>(initialChannel);
+  const [query, setQuery] = useState("");
+  const filtered = filterNews(initialNews, active, query);
   return (
     <>
-      {/* 分类筛选 */}
-      <div className="mt-8 flex flex-wrap gap-2">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActive(cat)}
-            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-              active === cat
-                ? "bg-blue-700 text-white"
-                : "bg-white text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-blue-50 hover:text-blue-800"
-            }`}
-          >
-            {cat}
-            <span className="ml-1.5 text-xs opacity-70">
-              {cat === "全部" ? initialNews.length : categoryCounts[cat]}
-            </span>
-          </button>
-        ))}
-      </div>
-
-      {/* 新闻卡片 */}
-      {filtered.length === 0 ? (
-        <div className="mt-16 text-center text-slate-500">
-          <p className="text-lg">暂无相关新闻</p>
-          <p className="mt-1 text-sm">请稍后再来查看</p>
-        </div>
-      ) : (
-        <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white px-4 sm:px-0">
-          {filtered.map((item, i) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: i * 0.05 }}
+      <div className="flex flex-col justify-between gap-5 border-b border-slate-200 pb-6 sm:flex-row sm:items-center">
+        <div aria-label="内容分类" className="flex flex-wrap gap-2">
+          {NEWS_CHANNELS.map((channel) => (
+            <button
+              key={channel}
+              aria-pressed={active === channel}
+              onClick={() => setActive(channel)}
+              className={`rounded-full px-4 py-2.5 text-sm font-medium ${active === channel ? "bg-[#153d83] text-white" : "bg-white text-slate-600 hover:bg-blue-50"}`}
             >
-              <Link
-                href={`/news/${item.id}`}
-                className="group flex flex-row-reverse items-start gap-4 border-b border-slate-200 bg-white py-6 transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 sm:gap-7 sm:px-6"
-              >
-                {item.cover_image_url && <div className="relative w-24 shrink-0 overflow-hidden rounded-xl sm:w-40">
-                  {hasOpinionVisual(item.id) ? <OpinionThumbnail id={item.id} /> : <div className="relative aspect-square bg-slate-100"><Image src={item.cover_image_url} alt="" fill sizes="(max-width: 640px) 96px, 160px" className="object-cover" /></div>}
-                </div>}
-                <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span
-                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                      categoryColor[item.category] ?? "bg-white/10 text-slate-600"
-                    }`}
-                  >
+              {channel}
+              <span className="ml-2 text-xs">
+                {channel === "全部"
+                  ? initialNews.length
+                  : initialNews.filter(
+                      (i) => newsChannel(i.category) === channel,
+                    ).length}
+              </span>
+            </button>
+          ))}
+        </div>
+        <label className="sm:w-52">
+          <span className="sr-only">搜索动态与洞察</span>
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="搜索文章"
+            className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900"
+          />
+        </label>
+      </div>
+      <p role="status" className="mt-4 text-xs text-slate-500">
+        {active} · {filtered.length} 篇
+      </p>
+      <div className="divide-y divide-slate-200">
+        {filtered.map((item) => (
+          <article key={item.id} className="py-7">
+            <Link
+              href={`/news/${item.id}`}
+              className="group flex items-start gap-4 sm:gap-6"
+            >
+              <div className="relative aspect-[16/10] w-24 shrink-0 overflow-hidden rounded-lg bg-slate-100 sm:w-48">
+                <Image
+                  src={item.cover_image_url || "/og-image.png"}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 96px, 192px"
+                  className="object-contain"
+                />
+              </div>
+              <div className="min-w-0">
+                <p className="flex flex-wrap gap-x-3 gap-y-1 text-xs leading-5 text-slate-500">
+                  <span className="font-medium text-blue-800">
                     {item.category}
                   </span>
-                  <span className="text-sm text-slate-600">
-                    {newsDateLabel(item)}
-                  </span>
-                </div>
-                <h2 className="mt-2 text-lg leading-relaxed sm:text-[22px] font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">
-                  {item.title}
+                  <span>{newsDateLabel(item)}</span>
+                </p>
+                <h2
+                  title={item.title}
+                  className="mt-2 line-clamp-2 text-base font-semibold leading-7 text-slate-900 group-hover:text-blue-800 sm:text-xl"
+                >
+                  {newsDisplayTitle(item)}
                 </h2>
                 {item.summary && (
-                  <p className="mt-2 text-[15px] leading-7 text-slate-600 line-clamp-2 sm:text-base">
+                  <p className="mt-3 hidden text-sm leading-7 text-slate-600 sm:line-clamp-2">
                     {item.summary}
                   </p>
                 )}
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                <span className="mt-3 inline-block text-xs font-medium text-blue-700">
+                  阅读全文 →
+                </span>
+              </div>
+            </Link>
+          </article>
+        ))}
+      </div>
+      {!filtered.length && (
+        <div className="py-20 text-center">
+          <p className="text-lg text-slate-700">没有找到匹配内容</p>
+          <button
+            onClick={() => {
+              setQuery("");
+              setActive("全部");
+            }}
+            className="mt-5 text-sm text-blue-700 underline"
+          >
+            查看全部文章
+          </button>
         </div>
       )}
     </>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 import { SITE_URL, SITE_DESCRIPTION } from "@/lib/site";
 
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "子殷科技 - 医疗AI · 医学3D打印 · 数智医学中心",
+    default: "子殷科技 - 数智医学产品与医工转化服务",
     template: "%s | 子殷科技",
   },
   description:
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     "医疗器械",
   ],
   openGraph: {
-    title: "子殷科技 - 医疗AI · 医学3D打印 · 数智医学中心",
+    title: "子殷科技 - 数智医学产品与医工转化服务",
     description:
       SITE_DESCRIPTION,
     url: SITE_URL,
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "子殷科技 - 医疗AI · 医学3D打印 · 数智医学中心",
+        alt: "子殷科技 - 数智医学产品与医工转化服务",
       },
     ],
   },
@@ -77,6 +78,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

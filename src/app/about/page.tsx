@@ -83,7 +83,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-4 text-lg text-white/70 sm:text-xl"
           >
-            医疗AI &middot; 医学3D打印 &middot; 数智医学中心
+            数智医学产品 &middot; 医工转化服务
           </motion.p>
         </div>
       </section>
@@ -99,8 +99,9 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl font-bold text-white">公司概况</h2>
             <p className="mt-6 leading-relaxed text-gray-300">
-              子殷科技围绕医疗AI、医学3D打印与数智医学中心，开展数字技术与医工协作服务。通过医工造物、CalcAI及医院与科室合作，将具体需求转化为可沟通、可实施的项目方案。
+              子殷科技面向医院提供数智医学产品与医工转化服务，围绕医学影像处理、医学3D打印和医疗AI研发，连接科室需求、工程实施与科研协作。通过产品交付、技术服务及中心共建，支持医院持续开展数字化医学工作。
             </p>
+            <div className="mt-7 border-t border-white/15 pt-6 text-sm leading-7 text-slate-300"><p>Chcomct SM 医学图像处理软件的注册人为内蒙古子殷科技有限公司。上海子殷科技有限公司参与孝感数智医学与临床转化中心共建。</p><div className="mt-4 flex flex-wrap gap-6"><Link href="/products/chcomct-sm" className="text-cyan-200">查看产品资料 →</Link><Link href="/cases/xiaogan-medical-center-2026" className="text-cyan-200">查看中心共建项目 →</Link></div></div>
           </motion.div>
 
 
@@ -121,7 +122,7 @@ export default function AboutPage() {
               发展历程
             </motion.h2>
             <p className="mt-3 text-sm text-gray-400">
-              重点里程碑与官网动态 · 更新至 {COMPANY_TIMELINE_UPDATED_LABEL}
+              重点里程碑与官网动态 · 最新事件日期 {COMPANY_TIMELINE_UPDATED_LABEL}
             </p>
           </div>
 
@@ -253,13 +254,13 @@ export default function AboutPage() {
             期待与您合作
           </h2>
           <p className="mx-auto mt-3 mb-8 max-w-md text-sm text-white/50">
-            了解我们的医学3D打印解决方案，申请免费演示体验
+            围绕科室需求，沟通产品演示、工程服务、科研协作与中心共建。
           </p>
           <Link
             href="/demo"
             className="inline-flex items-center rounded-lg bg-cyan-500 px-8 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
           >
-            申请免费演示
+            联系合作
           </Link>
         </div>
       </section>

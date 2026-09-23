@@ -11,6 +11,7 @@ import {
 } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import Link from "next/link";
+import Image from "next/image";
 import { OrbitControls } from "@react-three/drei";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
 import * as THREE from "three";
@@ -404,6 +405,7 @@ function LoadingOverlay({
    ============================================================ */
 export interface ModelViewerProps {
   manifestUrl: string;
+  previewUrl?: string;
   autoRotate?: boolean;
   autoRotateSpeed?: number;
   showControls?: boolean;
@@ -437,6 +439,7 @@ function ContextLossGuard({ onError }: { onError: () => void }) {
 
 function ModelViewerSession({
   manifestUrl,
+  previewUrl,
   autoRotate = false,
   autoRotateSpeed = 1.5,
   showControls = false,
@@ -528,13 +531,12 @@ function ModelViewerSession({
 
   if (error || (allDone && loadedCount === 0)) {
     return (
-      <div
-        className={`flex items-center justify-center rounded-xl bg-[#0a0a1a] text-gray-300 ${className}`}
-      >
-        <div role="alert" className="px-6 text-center">
-          <p className="text-lg">3D 模型加载失败</p>
-          <p className="mt-2 text-sm leading-6 text-gray-300">{error || "模型资源未加载成功，请稍后重试"}</p>
-          <Link href="/cases?category=ai_reconstruction" className="mt-4 inline-block text-sm text-cyan-300">返回三维演示列表</Link>
+      <div className={`relative overflow-hidden rounded-xl bg-[#0A1628] text-gray-300 ${className}`}>
+        {previewUrl && <Image src={previewUrl} alt="肺部公开演示模型静态预览" fill sizes="(max-width: 1024px) 100vw, 600px" className="object-contain" />}
+        <div role="alert" className={`relative z-10 px-6 py-5 ${previewUrl ? "bg-slate-950/90" : "pt-16 text-center"}`}>
+          <p className="font-medium text-white">{previewUrl ? "当前显示静态预览" : "交互演示暂不可用"}</p>
+          <p className="mt-2 text-sm leading-6 text-slate-300">{error || "模型资源未加载成功，请稍后重试"}</p>
+          <Link href="/cases?category=ai_reconstruction" className="mt-3 inline-block text-sm text-cyan-200">查看其他三维演示</Link>
         </div>
       </div>
     );

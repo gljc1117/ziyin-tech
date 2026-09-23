@@ -1,76 +1,64 @@
 import Link from "next/link";
 import Image from "next/image";
-import { OpinionCover, hasOpinionVisual } from "@/components/content/OpinionVisual";
 import { newsDateLabel } from "@/lib/news-types";
 import { getPublishedNews } from "@/lib/published-news";
-
-
-const categoryColor: Record<string, string> = {
-  学术观点: "bg-sky-500/20 text-sky-200",
-  公司动态: "bg-cyan-500/20 text-cyan-300",
-  技术进展: "bg-purple-500/20 text-purple-300",
-  合作动态: "bg-emerald-500/20 text-emerald-300",
-  学术动态: "bg-amber-500/20 text-amber-300",
-  视频科普: "bg-cyan-500/20 text-cyan-200",
-};
-
-
+import { newsChannel, newsDisplayTitle } from "@/lib/news-presentation";
 export default async function LatestNews() {
-  const news = (await getPublishedNews()).slice(0, 3);
-
-  if (news.length === 0) return null;
-
+  const all = await getPublishedNews();
+  const selected = ["企业动态", "项目实践", "子殷洞察"].map((channel) => ({
+    channel,
+    item: all.find((item) => newsChannel(item.category) === channel),
+  }));
   return (
-    <section className="bg-[#0A2463] py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="flex items-end justify-between">
+    <section className="bg-[#f4f7fb] py-16 sm:py-20">
+      <div className="site-container">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-white">最新动态</h2>
-            <p className="mt-2 text-sm text-white/50">了解子殷科技最新进展</p>
+            <p className="eyebrow">动态与洞察</p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900">
+              在实践中前进，在思考中更新
+            </h2>
           </div>
-          <Link
-            href="/news"
-            className="hidden text-sm font-medium text-cyan-400 transition-colors hover:text-cyan-300 sm:block"
-          >
+          <Link href="/news" className="text-sm font-semibold text-blue-700">
             查看全部 →
           </Link>
         </div>
-
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          {news.map((item) => (
-            <div key={item.id}>
-              <Link
-                href={`/news/${item.id}`}
-                className="group block rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:border-cyan-500/30 hover:bg-white/[0.08]"
-              >
-                {hasOpinionVisual(item.id) ? <div className="mb-5"><OpinionCover id={item.id} /></div> : item.cover_image_url && <div className="relative mb-5 aspect-video overflow-hidden rounded-lg bg-slate-100"><Image src={item.cover_image_url} alt={item.title} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-contain" /></div>}
-                <div className="flex items-center gap-2">
-                  <span
-                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                      categoryColor[item.category] ?? "bg-white/10 text-white/60"
-                    }`}
-                  >
-                    {item.category}
-                  </span>
-                </div>
-                <h3 className="mt-3 text-base font-semibold text-white group-hover:text-cyan-400 transition-colors line-clamp-2">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  {newsDateLabel(item)}
-                </p>
-              </Link>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-6 text-center sm:hidden">
-          <Link
-            href="/news"
-            className="text-sm font-medium text-cyan-400 transition-colors hover:text-cyan-300"
-          >
-            查看全部 →
-          </Link>
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          {selected.map(
+            ({ channel, item }) =>
+              item && (
+                <article key={channel}>
+                  <div className="mb-4 flex justify-between border-b border-slate-300 pb-3">
+                    <h3 className="text-sm font-semibold text-slate-800">
+                      {channel}
+                    </h3>
+                    <Link
+                      href={`/news?channel=${encodeURIComponent(channel)}`}
+                      className="text-xs text-blue-700"
+                    >
+                      更多 →
+                    </Link>
+                  </div>
+                  <Link href={`/news/${item.id}`} className="group">
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-white">
+                      <Image
+                        src={item.cover_image_url || "/og-image.png"}
+                        alt=""
+                        fill
+                        sizes="(max-width: 768px) 100vw, 400px"
+                        className="object-contain"
+                      />
+                    </div>
+                    <h4 className="mt-5 text-lg font-semibold leading-7 text-slate-900 group-hover:text-blue-800">
+                      {newsDisplayTitle(item)}
+                    </h4>
+                    <p className="mt-3 text-xs leading-6 text-slate-500">
+                      {newsDateLabel(item)}
+                    </p>
+                  </Link>
+                </article>
+              ),
+          )}
         </div>
       </div>
     </section>
