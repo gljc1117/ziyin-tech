@@ -6,8 +6,8 @@ export default function CooperationSection() {
       <div className="site-container grid items-center gap-10 lg:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100">
           <Image
-            src="/images/editorial/xiaogan-center-tour.webp"
-            alt="孝感数智医学与临床转化中心实体区域参观"
+            src="/images/company/xiaogan-center.jpg"
+            alt="孝感数智医学与临床转化中心的真实场地与医学模型展示"
             fill
             sizes="(max-width: 1024px) 100vw, 600px"
             className="object-cover"
@@ -49,6 +49,7 @@ export default function CooperationSection() {
             >
               沟通科研合作 →
             </Link>
+            <Link href="/about#centers" className="font-semibold text-blue-700">查看中心实景 →</Link>
           </div>
         </div>
       </div>

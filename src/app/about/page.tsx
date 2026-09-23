@@ -32,6 +32,21 @@ const facilities = [
     src: "/images/about/image5.jpg",
     alt: "产品展厅，3D打印模型陈列",
   },
+  {
+    src: "/images/company/translation-gallery.jpg",
+    alt: "子殷科技成果转化展示墙与实体模型展区",
+  },
+  {
+    src: "/images/company/ziyin-brand.jpg",
+    alt: "子殷科技品牌展示墙",
+  },
+];
+
+const centerScenes = [
+  { src: "/images/company/xiaogan-center.jpg", title: "孝感数智医学与临床转化中心", detail: "医学模型与中心展示区域", href: "/cases/xiaogan-medical-center-2026" },
+  { src: "/images/company/guangyuan-center.jpg", title: "广元3D打印创新研究中心", detail: "中心实景与模型展台", href: "/products/medical-center" },
+  { src: "/images/company/guangyuan-models.jpg", title: "医学3D打印应用展示", detail: "广元中心的技术介绍与实体模型", href: "/products/medical-3d-printing" },
+  { src: "/images/company/guangyuan-entrance.jpg", title: "从场地到服务现场", detail: "广元3D打印创新研究中心入口", href: "/demo" },
 ];
 
 /* ============================================================
@@ -207,6 +222,20 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section id="centers" className="bg-[#0a1128] py-20">
+        <div className="site-container">
+          <p className="text-sm font-medium text-cyan-200">医院场景 · 中心实景</p>
+          <h2 className="mt-4 text-3xl font-semibold text-white">看见医工协作发生的地方</h2>
+          <p className="mt-4 max-w-2xl leading-8 text-slate-300">通过真实场地、医学模型与应用展示，了解数智医学中心的现场形态。</p>
+          <div className="mt-9 grid gap-6 md:grid-cols-2">
+            {centerScenes.map((scene) => <Link key={scene.src} href={scene.href} className="overflow-hidden rounded-2xl border border-white/15 bg-[#0d1c32]">
+              <div className="relative aspect-[16/10]"><Image src={scene.src} alt={scene.title + "，" + scene.detail} fill sizes="(max-width: 768px) 95vw, 600px" className="object-cover" /></div>
+              <div className="p-6"><h3 className="text-lg font-semibold text-white">{scene.title}</h3><p className="mt-2 text-sm text-slate-300">{scene.detail}</p><span className="mt-4 inline-block text-sm text-cyan-200">了解相关服务与项目 →</span></div>
+            </Link>)}
+          </div>
+        </div>
+      </section>
+
       {/* ---- 荣誉与合作 ---- */}
       <section className="bg-[#0a1128] py-20">
         <div className="mx-auto max-w-6xl px-6">
@@ -262,6 +291,7 @@ export default function AboutPage() {
           >
             联系合作
           </Link>
+          <Link href="/careers" className="ml-5 mt-4 inline-flex min-h-12 items-center rounded-lg border border-white/40 px-6 text-sm font-semibold text-white">加入我们 →</Link>
         </div>
       </section>
     </main>

@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/cases/lung-case`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/cases/fullbody`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/about`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/careers`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/demo`, changeFrequency: "monthly", priority: 0.7 },
   ];
 }

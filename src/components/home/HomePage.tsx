@@ -4,10 +4,12 @@ import ProductSection from "@/components/home/ProductSection";
 import DeliveryShowcase from "@/components/home/DeliveryShowcase";
 import LatestNews from "@/components/home/LatestNews";
 import CooperationSection from "@/components/home/CooperationSection";
+import TechnicalShowcase from "@/components/home/TechnicalShowcase";
 export default function Home() {
   return (
     <main>
       <HeroSection />
+      <TechnicalShowcase />
       <ProductSection />
       <DeliveryShowcase />
       <CooperationSection />

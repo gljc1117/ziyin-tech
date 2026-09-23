@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import StaffAuthLanding from "@/components/staff/StaffAuthLanding";
+import ContactWidget from "@/components/contact/ContactWidget";
 import "./globals.css";
 import { SITE_URL, SITE_DESCRIPTION } from "@/lib/site";
 
@@ -81,6 +82,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <ContactWidget />
       </body>
     </html>
   );

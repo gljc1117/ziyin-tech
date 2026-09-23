@@ -1,18 +1,6 @@
-"use client";
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-const ModelViewer = dynamic(() => import("@/components/viewer/ModelViewer"), {
-  ssr: false,
-  loading: () => (
-    <p role="status" className="p-8 text-sm text-slate-200">
-      正在准备三维演示…
-    </p>
-  ),
-});
+import CenterCarousel from "./CenterCarousel";
 export default function HeroSection() {
-  const [showModel, setShowModel] = useState(false);
   return (
     <section className="bg-[#0A1628] pb-12 pt-28 text-white sm:pt-36 lg:pb-16">
       <div className="site-container">
@@ -46,61 +34,7 @@ export default function HeroSection() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-white/15 bg-[#0A1628]">
-            <div className="flex items-center justify-between border-b border-white/15 px-5 py-4">
-              <span className="text-sm text-cyan-200">肺部三维重建</span>
-              <span className="text-xs text-slate-300">技术演示</span>
-            </div>
-            {showModel ? (
-              <>
-                <div className="h-[320px] sm:h-[400px]">
-                  <ModelViewer
-                    manifestUrl="https://pangu-models-1376181172.cos.ap-shanghai.myqcloud.com/models/lung-case/manifest.json"
-                    previewUrl="/images/demos/lung-preview.png"
-                    showControls
-                    className="h-full w-full"
-                  />
-                </div>
-                <button
-                  onClick={() => setShowModel(false)}
-                  className="m-4 text-sm text-cyan-200"
-                >
-                  返回静态预览
-                </button>
-              </>
-            ) : (
-              <>
-                <div className="relative h-[280px] sm:h-[360px]">
-                  <Image
-                    src="/images/demos/lung-preview.png"
-                    alt="由公开演示模型渲染的五个肺叶与气管静态预览"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 90vw, 600px"
-                    className="object-contain"
-                  />
-                </div>
-                <div className="flex flex-wrap items-center justify-between gap-4 px-5 pb-5">
-                  <p className="text-sm leading-6 text-slate-300">
-                    从影像到空间结构
-                    <br />
-                    <span className="text-xs text-slate-400">
-                      静态预览 · 五个肺叶与气管
-                    </span>
-                  </p>
-                  <button
-                    onClick={() => setShowModel(true)}
-                    className="rounded-lg border border-cyan-300/60 px-4 py-3 text-sm font-medium text-cyan-100"
-                  >
-                    打开交互演示
-                  </button>
-                </div>
-              </>
-            )}
-            <p className="border-t border-white/10 px-5 py-3 text-xs leading-6 text-slate-400">
-              技术展示，不作为临床诊疗结论。交互视图支持旋转、缩放与结构显隐。
-            </p>
-          </div>
+          <CenterCarousel />
         </div>
         <Link
           href="/products/chcomct-sm"
