@@ -1,0 +1,12 @@
+.staff-shell { color: #102442; }
+.staff-shell button, .staff-shell a, .staff-shell input, .staff-shell select, .staff-shell textarea { outline-offset: 4px; }
+.staff-shell button { cursor: pointer; }
+.staff-shell button:disabled { cursor: wait; opacity: .55; }
+.staff-field { display: block; width: 100%; border: 1px solid #c8d5e8; border-radius: .55rem; background: white; padding: .7rem .85rem; font-size: .9rem; color: #102442; }
+.staff-label { display: block; font-size: .8rem; font-weight: 600; color: #435976; }
+.staff-primary { border-radius: .55rem; background: #163e7c; color: white; padding: .75rem 1.1rem; font-size: .9rem; font-weight: 600; }
+.staff-primary:hover { background: #102f61; }
+.staff-secondary { border: 1px solid #c8d5e8; background: white; border-radius: .55rem; padding: .65rem .9rem; font-size: .85rem; }
+.staff-card { border: 1px solid #dce5f0; border-radius: .85rem; background: white; }
+.staff-error { border: 1px solid #f3b8b8; background: #fff2f2; color: #9d2323; border-radius: .55rem; padding: .85rem 1rem; font-size: .9rem; }
+.staff-shell input:focus, .staff-shell select:focus, .staff-shell textarea:focus { outline: 2px solid #228ab4; }
