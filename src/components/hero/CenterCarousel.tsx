@@ -29,7 +29,7 @@ export default function CenterCarousel() {
   const select = (value: number) => { setPlaying(false); setIndex((value + slides.length) % slides.length); };
   const current = slides[index];
   return (
-    <div ref={region} role="region" aria-roledescription="轮播" aria-label="子殷科技与中心实景" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={(event) => { if (event.target !== rotationControl.current) setPlaying(false); }} className="overflow-hidden rounded-2xl border border-white/20 bg-[#102139]">
+    <div ref={region} role="region" aria-roledescription="轮播" aria-label="子殷科技与中心实景" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={(event) => { if (!rotationControl.current?.contains(event.target)) setPlaying(false); }} className="overflow-hidden rounded-2xl border border-white/20 bg-[#102139]">
       <div className="relative aspect-[4/3] overflow-hidden bg-slate-800 sm:aspect-[16/11]">
         {slides.map((slide, position) => (
           <div key={slide.image} aria-hidden={index !== position} className={`absolute inset-0 transition-opacity duration-700 ${index === position ? "opacity-100" : "pointer-events-none opacity-0"}`}>
