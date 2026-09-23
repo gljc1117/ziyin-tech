@@ -65,15 +65,15 @@ export default async function CasesPage({
     : cases;
 
   return (
-    <main className="mx-auto max-w-7xl px-6 pt-24 pb-20">
+    <main className="site-container pt-28 pb-20">
       <h1 className="text-3xl font-bold text-gray-900">案例与交付</h1>
-      <p className="mt-2 text-gray-500">
+      <p className="mt-2 text-slate-600">
         了解中心共建、服务项目与医学3D打印应用记录
       </p>
 
       <div className="mt-8">
         <Suspense fallback={null}>
-          <CaseFilter />
+          <CaseFilter available={[...new Set(cases.map(c=>c.category))]} />
         </Suspense>
       </div>
 

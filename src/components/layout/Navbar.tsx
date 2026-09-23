@@ -1,92 +1,91 @@
 "use client";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-
+import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "首页" },
-  { href: "/#products", label: "产品与服务" },
+  { href: "/products", label: "产品与服务" },
   { href: "/cases", label: "案例与交付" },
-  { href: "/news", label: "新闻动态" },
-  { href: "/about", label: "关于" },
-  { href: "/demo", label: "申请演示" },
+  { href: "/news", label: "动态与洞察" },
+  { href: "/about", label: "关于子殷" },
 ];
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+  const pathname = usePathname();
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+  const active = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#0A2463]/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-1.5">
-          <img src="/logo.png" alt="子殷科技" className="h-10 w-auto" />
-          <span className="text-lg font-bold text-white">子殷科技</span>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#0b2252] text-white">
+      <div className="site-container flex h-16 items-center justify-between gap-6">
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          className="flex shrink-0 items-center gap-2"
+        >
+          <Image
+            src="/logo.png"
+            width={48}
+            height={40}
+            alt=""
+            className="h-10 w-auto"
+          />
+          <span className="text-lg font-semibold">子殷科技</span>
         </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+        <nav aria-label="主导航" className="hidden items-center gap-7 lg:flex">
+          {navLinks.map((l) => (
             <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+              key={l.href}
+              href={l.href}
+              aria-current={active(l.href) ? "page" : undefined}
+              className={`py-5 text-sm font-medium ${active(l.href) ? "text-cyan-200" : "text-slate-200 hover:text-white"}`}
             >
-              {link.label}
+              {l.label}
             </Link>
           ))}
           <Link
             href="/demo"
-            className="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
+            className="rounded-lg bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-slate-950"
           >
-            预约演示
+            联系合作
           </Link>
         </nav>
-
-        {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-white md:hidden"
-          aria-label="菜单"
           aria-expanded={open}
           aria-controls="mobile-navigation"
+          className="rounded-lg border border-white/30 px-4 py-2 text-sm lg:hidden"
         >
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
-            {open ? (
-              <path d="M6 6l12 12M6 18L18 6" strokeLinecap="round" />
-            ) : (
-              <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
-            )}
-          </svg>
+          {open ? "关闭" : "菜单"}
         </button>
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            id="mobile-navigation"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-t border-white/10 bg-[#0A2463]/95 md:hidden"
-          >
-            <div className="flex flex-col gap-1 px-6 py-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-lg px-4 py-3 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {open && (
+        <nav
+          id="mobile-navigation"
+          aria-label="手机导航"
+          className="border-t border-white/15 px-6 pb-5 lg:hidden"
+        >
+          {[...navLinks, { href: "/demo", label: "联系合作" }].map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              aria-current={active(l.href) ? "page" : undefined}
+              className="block rounded-lg px-3 py-3 text-sm text-slate-100 hover:bg-white/10"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }

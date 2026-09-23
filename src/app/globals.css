@@ -12,17 +12,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 .icp-link {
@@ -32,3 +26,13 @@ body {
 .icp-link:hover {
   color: #3B82F6 !important;
 }
+
+.site-container { width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: 24px; }
+.eyebrow { font-size: 14px; font-weight: 600; color: #1e40af; letter-spacing: .04em; }
+.primary-button { display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: #173e87; color: white; padding: 13px 24px; font-weight: 600; }
+.primary-button:hover { background: #0b2252; }
+a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #0891b2; outline-offset: 4px; }
+html { scroll-padding-top: 84px; }
+@media(min-width: 1024px) { .site-container { padding-inline: 32px; } }
+@media(prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; } }

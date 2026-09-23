@@ -23,7 +23,7 @@ interface CaseCardProps {
 export default function CaseCard({ caseData, index = 0 }: CaseCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
@@ -38,7 +38,7 @@ export default function CaseCard({ caseData, index = 0 }: CaseCardProps) {
             src={caseData.cover_image_url}
             alt={caseData.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className={caseData.cover_image_url.includes("knee-planning") ? "object-contain" : "object-cover"}
             sizes="(max-width: 768px) 100vw, 33vw"
           />
           <span className="absolute left-3 top-3 rounded-full bg-blue-600 px-3 py-1 text-xs font-medium text-white">

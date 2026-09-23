@@ -124,7 +124,7 @@ const RECORDED_MILESTONES: CompanyMilestone[] = [
   },
 ];
 
-const TIMELINE_NEWS_CATEGORIES = new Set(["合作动态", "学术动态", "技术进展"]);
+const TIMELINE_NEWS_CATEGORIES = new Set(["合作动态", "学术动态", "技术进展", "公司动态"]);
 
 function formatTimelineDate(eventDate: string) {
   const [year, month, day] = eventDate.split("-");

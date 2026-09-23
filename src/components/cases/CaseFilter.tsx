@@ -12,10 +12,10 @@ const categories: { value: CaseCategory | "all"; label: string }[] = [
   { value: "surgical_guide", label: "手术导板" },
   { value: "implant", label: "植入物" },
   { value: "other", label: "其他" },
-  { value: "ai_reconstruction", label: "AI 三维重建" },
+  { value: "ai_reconstruction", label: "三维技术演示" },
 ];
 
-export default function CaseFilter() {
+export default function CaseFilter({ available }: { available?: string[] }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const current = searchParams.get("category") ?? "all";
@@ -33,10 +33,11 @@ export default function CaseFilter() {
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      {categories.map(({ value, label }) => (
+      {categories.filter(({value})=>value === "all" || value === "ai_reconstruction" || !available || available.includes(value)).map(({ value, label }) => (
         <button
           key={value}
           onClick={() => handleSelect(value)}
+          aria-pressed={current===value}
           className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
             current === value
               ? "bg-blue-600 text-white"

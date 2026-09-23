@@ -7,5 +7,6 @@ execFileSync(process.execPath, [
   "--outDir", ".qa/checks", "src/lib/demo-request.ts", "src/lib/model-manifest.ts",
   "src/lib/public-demos.ts", "src/lib/content-policy.ts",
   "src/lib/editorial-content.ts", "src/lib/news-types.ts",
+  "src/lib/news-presentation.ts", "src/lib/products.ts",
 ], { stdio: "inherit" });
-execFileSync(process.execPath, ["--test", "tests/trust.test.mjs", "tests/editorial.test.mjs"], { stdio: "inherit" });
+execFileSync(process.execPath, ["--test", "tests/trust.test.mjs", "tests/editorial.test.mjs", "tests/website-polish.test.mjs"], { stdio: "inherit" });
