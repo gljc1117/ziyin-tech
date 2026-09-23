@@ -24,7 +24,7 @@ export default async function DemoPage({
             下一步合作。
           </h1>
           <p className="mt-6 max-w-md leading-8 text-slate-600">
-            无论是一个科室的技术需求，还是一个中心的建设计划，都可以从一次具体的沟通开始。
+            从软件建模、模型与导板打印，到科研项目申报、协同研发和技术成果转化，都可以从一次具体的沟通开始。
           </p>
           <div className="mt-7 grid max-w-md gap-3">
             <a href={COMPANY_CONTACT.phoneHref} className="rounded-xl border border-slate-200 bg-white p-5"><span className="block text-xs text-slate-500">公司电话</span><span className="mt-1 block text-2xl font-semibold text-blue-900">{COMPANY_CONTACT.phone}</span></a>

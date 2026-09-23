@@ -17,20 +17,20 @@ export default function HeroSection() {
               <span className="text-cyan-300">数智医学方案。</span>
             </h1>
             <p className="mt-6 max-w-lg leading-8 text-slate-300">
-              围绕医学影像处理、医学3D打印与医疗AI研发，为医院和科室提供技术服务、科研协作及中心共建支持。
+              面向医院，提供医学三维建模与3D打印服务，支持临床科研与技术成果转化。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/products"
                 className="rounded-lg bg-cyan-300 px-6 py-3.5 font-semibold text-slate-950"
               >
-                了解产品与服务
+                产品与技术服务
               </Link>
               <Link
-                href="/cases"
+                href="/research"
                 className="rounded-lg border border-slate-500 px-6 py-3.5 font-semibold text-white"
               >
-                查看项目实践
+                科研与成果转化
               </Link>
             </div>
           </div>

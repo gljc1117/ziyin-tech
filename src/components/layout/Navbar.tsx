@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "首页" },
-  { href: "/products", label: "产品与服务" },
+  { href: "/products", label: "产品与技术服务" },
+  { href: "/research", label: "科研与成果转化" },
   { href: "/cases", label: "案例与交付" },
   { href: "/news", label: "动态与洞察" },
   { href: "/about", label: "关于子殷" },
@@ -40,7 +41,7 @@ export default function Navbar() {
           />
           <span className="text-lg font-semibold">子殷科技</span>
         </Link>
-        <nav aria-label="主导航" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="主导航" className="hidden items-center gap-5 xl:flex">
           {navLinks.map((l) => (
             <Link
               key={l.href}
@@ -62,7 +63,7 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-controls="mobile-navigation"
-          className="rounded-lg border border-white/30 px-4 py-2 text-sm lg:hidden"
+          className="rounded-lg border border-white/30 px-4 py-2 text-sm xl:hidden"
         >
           {open ? "关闭" : "菜单"}
         </button>
@@ -71,7 +72,7 @@ export default function Navbar() {
         <nav
           id="mobile-navigation"
           aria-label="手机导航"
-          className="border-t border-white/15 px-6 pb-5 lg:hidden"
+          className="border-t border-white/15 px-6 pb-5 xl:hidden"
         >
           {[...navLinks, { href: "/demo", label: "联系合作" }].map((l) => (
             <Link

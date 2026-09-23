@@ -11,12 +11,12 @@ export default function ProductSection({
       <div className="site-container">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p className="eyebrow">产品与服务</p>
+            <p className="eyebrow">产品与技术服务</p>
             <Title className="mt-3 text-3xl font-semibold leading-snug text-slate-900 sm:text-4xl">
-              找到适合您科室的合作方式
+              软件建模、模型与导板，明确每一项交付
             </Title>
             <p className="mt-4 max-w-2xl leading-7 text-slate-600">
-              从明确的产品功能，到具体的工程服务与科研协作，每一项合作都有清楚的范围。
+              了解软件功能、三维建模、模型与导板制造，以及中心共建和专科研发的实际范围。
             </p>
           </div>
           {!standalone && (

@@ -5,10 +5,12 @@ import DeliveryShowcase from "@/components/home/DeliveryShowcase";
 import LatestNews from "@/components/home/LatestNews";
 import CooperationSection from "@/components/home/CooperationSection";
 import TechnicalShowcase from "@/components/home/TechnicalShowcase";
+import BusinessPathways from "@/components/home/BusinessPathways";
 export default function Home() {
   return (
     <main>
       <HeroSection />
+      <BusinessPathways />
       <TechnicalShowcase />
       <ProductSection />
       <DeliveryShowcase />

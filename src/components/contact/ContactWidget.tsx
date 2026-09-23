@@ -13,9 +13,18 @@ export default function ContactWidget() {
 
 function ContactPanel() {
   const [open, setOpen] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
+  const [focusWithin, setFocusWithin] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const footer = document.getElementById("site-footer");
+    if (!footer || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(([entry]) => setFooterVisible(entry.isIntersecting));
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     if (!open) return;
     closeButton.current?.focus();
@@ -36,14 +45,14 @@ function ContactPanel() {
     };
   }, [open]);
   return (
-    <div ref={root} className="fixed bottom-[max(16px,env(safe-area-inset-bottom))] right-4 z-40 flex flex-col items-end sm:bottom-6 sm:right-6">
+    <div ref={root} onFocusCapture={() => setFocusWithin(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setFocusWithin(false); }} className={`${footerVisible && !open && !focusWithin ? "hidden" : "flex"} fixed bottom-[max(16px,env(safe-area-inset-bottom))] right-4 z-40 flex-col items-end sm:bottom-6 sm:right-6`}>
       {open && (
         <section id="quick-contact" aria-label="联系子殷科技" className="mb-3 max-h-[calc(100dvh-160px)] w-[min(340px,calc(100vw-32px))] overflow-y-auto rounded-2xl border border-slate-200 bg-white p-6 text-slate-900 shadow-xl">
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-lg font-semibold">联系子殷科技</h2>
             <button ref={closeButton} type="button" onClick={() => { setOpen(false); trigger.current?.focus(); }} className="min-h-11 px-2 text-sm text-slate-600">关闭</button>
           </div>
-          <p className="mt-1 text-sm text-slate-600">产品演示、工程服务与中心共建</p>
+          <p className="mt-1 text-sm text-slate-600">产品与工程服务、科研与成果转化</p>
           <a href={COMPANY_CONTACT.phoneHref} className="mt-5 block rounded-lg bg-blue-50 p-4"><span className="block text-xs text-slate-600">公司电话</span><span className="mt-1 block text-xl font-semibold text-blue-900">{COMPANY_CONTACT.phone}</span></a>
           <a href={COMPANY_CONTACT.emailHref} className="mt-2 block rounded-lg border border-slate-200 p-4"><span className="block text-xs text-slate-600">官方邮箱</span><span className="mt-1 block font-medium text-blue-900">{COMPANY_CONTACT.email}</span></a>
           <div className="mt-4 text-blue-800"><WechatQR /></div>
