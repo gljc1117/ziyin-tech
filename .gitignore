@@ -45,3 +45,4 @@ next-env.d.ts
 
 # Local responsive review harness
 /public/__qa-responsive.html
+/supabase/.temp/

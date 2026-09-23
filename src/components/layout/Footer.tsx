@@ -35,6 +35,7 @@ export default function Footer() {
         </div>
         <div className="mt-9 flex flex-wrap justify-between gap-3 border-t border-white/15 pt-5 text-xs text-slate-400">
           <p>© 2024–2026 上海子殷科技有限公司</p>
+          <Link href="/staff/login" className="hover:text-white">员工入口</Link>
           <a
             href="https://beian.miit.gov.cn"
             target="_blank"
