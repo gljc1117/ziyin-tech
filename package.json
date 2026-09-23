@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:trust": "node scripts/verify-candidate.mjs",
-    "test:staff": "node --test tests/staff-database.test.mjs tests/staff-api.test.mjs"
+    "test:staff": "node --test tests/staff-database.test.mjs tests/staff-api.test.mjs tests/staff-password.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
