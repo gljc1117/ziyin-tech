@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import { establishPasswordSetupSession, validateStaffPassword } from "@/lib/staff-password";
+import { establishPasswordSetupSession, readPasswordSetupLink, validateStaffPassword } from "@/lib/staff-password";
 
 function passwordClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -34,8 +34,9 @@ export default function StaffPassword() {
       // Remove credentials and untrusted errors before any asynchronous work.
       window.history.replaceState(null, "", "/staff/set-password");
       initialization.current = Promise.resolve().then(async () => {
-        client.current = passwordClient();
         if (!hash) return null;
+        readPasswordSetupLink(hash);
+        client.current = passwordClient();
         return establishPasswordSetupSession(client.current, hash);
       });
     }
@@ -43,9 +44,10 @@ export default function StaffPassword() {
       if (!active) return;
       if (accountEmail) { setEmail(accountEmail); setPhase("password"); }
       else setPhase("request");
-    }).catch(() => {
+    }).catch(error => {
       if (!active) return;
-      setError("设置链接无效或已过期，请重新申请邮件，并打开最新的一封。");
+      setError(error instanceof Error && error.message === "员工服务尚未配置，请联系管理员。"
+        ? error.message : "设置链接无效或已过期，请重新申请邮件，并打开最新的一封。");
       setPhase("request");
     });
     return () => { active = false; };
