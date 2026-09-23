@@ -53,7 +53,8 @@ npx vercel
 |--------|------|----------|
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase 项目 URL | Dashboard → Settings → API → Project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase 匿名公钥 | Dashboard → Settings → API → anon public |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase 服务端密钥（勿暴露） | Dashboard → Settings → API → service_role |
+
+官网合作咨询接口使用上述公开密钥，通过 `demo_requests` 已有的 INSERT 策略写入；不需要配置 `SUPABASE_SERVICE_ROLE_KEY`。必须保持该表的 RLS 启用，且不向公开访问者开放已有预约记录的读取、修改或删除策略。接口仅在数据库确认写入成功后返回成功。
 
 ## 许可
 

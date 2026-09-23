@@ -9,4 +9,4 @@ execFileSync(process.execPath, [
   "src/lib/editorial-content.ts", "src/lib/news-types.ts",
   "src/lib/news-presentation.ts", "src/lib/products.ts",
 ], { stdio: "inherit" });
-execFileSync(process.execPath, ["--test", "tests/trust.test.mjs", "tests/editorial.test.mjs", "tests/website-polish.test.mjs"], { stdio: "inherit" });
+execFileSync(process.execPath, ["--test", "tests/trust.test.mjs", "tests/editorial.test.mjs", "tests/website-polish.test.mjs", "tests/demo-request-route.test.mjs"], { stdio: "inherit" });
