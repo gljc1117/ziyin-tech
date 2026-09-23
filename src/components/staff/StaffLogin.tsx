@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { staffClient, staffFetch } from "@/lib/staff-browser";
@@ -36,7 +37,8 @@ export default function StaffLogin() {
         {error && <p className="staff-error" role="alert">{error}</p>}
         <button className="staff-primary w-full" disabled={busy}>{busy ? "正在验证…" : "登录工作台"}</button>
       </form>
-      <p className="mt-6 text-xs leading-6 text-slate-500">账号由公司统一开通。如需开通权限或重置密码，请联系管理员。</p>
+      <Link href="/staff/set-password" className="mt-6 inline-block text-sm font-semibold text-blue-700">首次设置 / 忘记密码</Link>
+      <p className="mt-3 text-xs leading-6 text-slate-500">账号由公司统一开通。如需开通权限，请联系管理员。</p>
     </section>
   </div>;
 }
