@@ -3,7 +3,9 @@ import { handleDemoRequest, type DemoRequestData } from "@/lib/demo-request";
 
 export async function POST(request: Request) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  // Public inquiries use the existing INSERT policy on demo_requests.
+  // Keep RLS in force; this endpoint does not need an administrative key.
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const save = url && key ? async (data: DemoRequestData) => {
     const supabase = createClient(url, key, {
       auth: { persistSession: false, autoRefreshToken: false },
