@@ -1,5 +1,7 @@
 import { pageMetadata } from "@/lib/site";
 import DemoRequestForm from "@/components/forms/DemoRequestForm";
+import WechatQR from "@/components/contact/WechatQR";
+import { COMPANY_CONTACT } from "@/lib/contact";
 export const metadata = pageMetadata(
   "联系合作",
   "沟通产品演示、工程服务、科研协作与中心共建需求。",
@@ -24,6 +26,11 @@ export default async function DemoPage({
           <p className="mt-6 max-w-md leading-8 text-slate-600">
             无论是一个科室的技术需求，还是一个中心的建设计划，都可以从一次具体的沟通开始。
           </p>
+          <div className="mt-7 grid max-w-md gap-3">
+            <a href={COMPANY_CONTACT.phoneHref} className="rounded-xl border border-slate-200 bg-white p-5"><span className="block text-xs text-slate-500">公司电话</span><span className="mt-1 block text-2xl font-semibold text-blue-900">{COMPANY_CONTACT.phone}</span></a>
+            <a href={COMPANY_CONTACT.emailHref} className="rounded-xl border border-slate-200 bg-white p-5"><span className="block text-xs text-slate-500">官方邮箱</span><span className="mt-1 block text-lg font-medium text-blue-900">{COMPANY_CONTACT.email}</span></a>
+            <div className="pt-2 text-blue-800"><WechatQR /></div>
+          </div>
           <div className="mt-8 max-w-sm border-t border-slate-300 pt-6">
             <h2 className="font-semibold text-slate-900">提交后会发生什么？</h2>
             <p className="mt-3 text-sm leading-7 text-slate-600">
@@ -31,7 +38,7 @@ export default async function DemoPage({
             </p>
           </div>
         </div>
-        <div className="rounded-2xl bg-white p-6 ring-1 ring-slate-200 sm:p-9">
+        <div id="request-form" className="self-start rounded-2xl bg-white p-6 ring-1 ring-slate-200 sm:p-9">
           <DemoRequestForm
             key={product || "general"}
             initialProduct={product}
