@@ -1,3 +1,4 @@
+import { RUNX2_SCAFFOLD_REGENERATION } from "./runx2-scaffold-regeneration";
 import { MEDICAL_AI_VALUE_EVALUATION } from "./medical-ai-value-evaluation";
 import { CHCOMCT_SM_APPROVAL } from "./chcomct-sm-approval";
 import { ORGANIZATIONAL_COGNITION } from "./organizational-cognition";
@@ -29,6 +30,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+RUNX2_SCAFFOLD_REGENERATION,
 MEDICAL_AI_VALUE_EVALUATION,
 CHCOMCT_SM_APPROVAL,
 ORGANIZATIONAL_COGNITION,
