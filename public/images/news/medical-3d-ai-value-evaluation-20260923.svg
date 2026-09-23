@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">医学三维AI三级价值评价框架</title>
+<desc id="desc">技术可行性、生产效率、临床可交付性逐层评价。AI初稿经工程师修订和质控审核后才能进入交付；临床方案须由医生确认。</desc>
+<rect width="1440" height="1080" fill="#F2F6FA"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">
+<text x="96" y="80" font-size="26" fill="#52667B" letter-spacing="3">ZIYIN  /  医工协同方法研究</text>
+<text x="96" y="158" font-size="54" font-weight="700" fill="#142D4E">从模型精度到临床生产效率</text>
+<text x="96" y="212" font-size="29" fill="#52667B">统一记录口径 · 保留专科标准 · 效率不能抵消质量问题</text>
+<rect x="96" y="258" width="1248" height="168" rx="22" fill="#E3ECF7"/>
+<text x="136" y="319" font-size="31" fill="#24599A">第一层</text><text x="320" y="323" font-size="40" font-weight="700" fill="#142D4E">技术可行性</text><text x="1080" y="323" font-size="34" fill="#24599A">能不能做</text>
+<text x="136" y="384" font-size="30" fill="#344D68">独立测试与专科精度  /  关键结构  /  失败与异常输入</text>
+<path d="M720 438v30m-13-12 13 13 13-13" fill="none" stroke="#6C849E" stroke-width="4"/>
+<rect x="96" y="482" width="1248" height="168" rx="22" fill="#DDF0ED"/>
+<text x="136" y="543" font-size="31" fill="#176B65">第二层</text><text x="320" y="547" font-size="40" font-weight="700" fill="#142D4E">生产效率</text><text x="1040" y="547" font-size="34" fill="#176B65">值不值得做</text>
+<text x="136" y="608" font-size="30" fill="#344D68">人工负荷与净节省  /  AI耗时  /  覆盖率与接管率</text>
+<path d="M720 662v30m-13-12 13 13 13-13" fill="none" stroke="#6C849E" stroke-width="4"/>
+<rect x="96" y="706" width="1248" height="168" rx="22" fill="#E6EAF1"/>
+<text x="136" y="767" font-size="31" fill="#475B77">第三层</text><text x="320" y="771" font-size="40" font-weight="700" fill="#142D4E">临床可交付性</text><text x="1000" y="771" font-size="34" fill="#475B77">能不能交出去</text>
+<text x="136" y="832" font-size="30" fill="#344D68">逐例质控与审核  /  输出一致性  /  全程追溯</text>
+<text x="96" y="950" font-size="33" font-weight="700" fill="#142D4E">AI初稿 → 工程师修订 → 质控审核 → 临床交付</text>
+<text x="96" y="1008" font-size="26" fill="#52667B">临床方案须由医生确认。框架示意，不代表已完成临床效果验证。</text>
+</g></svg>
