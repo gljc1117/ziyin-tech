@@ -44,6 +44,6 @@ export async function POST(request: Request, context: Context) {
     });
     if (error?.code === "P0429") return commentJson({ error: "提交较频繁或内容重复，请稍后再试。" }, 429);
     if (error) return commentJson({ error: "评论未能保存，请稍后重试。" }, 503);
-    return commentJson({ message: "评论已提交，审核通过后将在本文下方展示。" }, 202);
+    return commentJson({ message: "您的留言已收到，感谢关注子殷科技！我们将尽快查看并答复。留言审核通过后，将在本文评论区展示，请留意后续回复。" }, 202);
   } catch { return commentJson({ error: "评论未能保存，请稍后重试。" }, 503); }
 }
