@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...editorial,
     { url: base + "/products", changeFrequency: "monthly", priority: 0.9 },
+    { url: base + "/research", changeFrequency: "monthly", priority: 0.9 },
     ...PRODUCTS.map(p=>({url: base + "/products/" + p.slug, priority: 0.8})),
     { url: base, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/cases`, changeFrequency: "weekly", priority: 0.8 },

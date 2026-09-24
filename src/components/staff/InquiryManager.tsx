@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { StaffApiError, staffClient, staffFetch } from "@/lib/staff-browser";
 import { inquiryStatuses, type InquiryList } from "@/lib/staff-types";
 import InquiryDetail, { displayTime } from "./InquiryDetail";
@@ -100,6 +101,7 @@ export default function InquiryManager() {
       <div><p className="text-xs font-semibold tracking-widest text-blue-700">ZIYIN · 员工工作台</p><h1 className="mt-3 text-3xl font-semibold">合作需求管理</h1><p className="mt-3 text-sm text-slate-500">把官网提交的合作意向，接到具体的负责人和下一步行动。</p></div>
       <div className="flex items-center gap-3 text-sm">{data && <span>{data.member.display_name} · {data.member.role === "manager" ? "管理员" : "业务员工"}</span>}<button className="staff-secondary" onClick={() => void logout()}>退出登录</button></div>
     </header>
+    <nav aria-label="工作台功能" className="mt-5"><Link href="/staff/comments" className="staff-secondary inline-block" onClick={event => { if (dirty.current && !window.confirm("有未保存的跟进内容，确定离开吗？")) event.preventDefault(); }}>文章评论管理 →</Link></nav>
     {error && <div className="staff-error mt-6" role="alert">{error}{!blocked && <button className="ml-3 underline" onClick={() => void refresh()}>重试</button>}{data && <p className="mt-1 text-xs">当前显示上次成功加载的数据，提醒检查已中断。</p>}</div>}
     {!data ? <p className="py-20 text-center text-slate-500">{blocked ? "请联系管理员开通权限，或退出后使用已授权账号登录。" : loading ? "正在验证权限并加载需求…" : "暂时无法加载工作台。"}</p> : <>
       <section className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="需求概览">

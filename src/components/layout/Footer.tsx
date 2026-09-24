@@ -3,7 +3,7 @@ import WechatQR from "@/components/contact/WechatQR";
 import { COMPANY_CONTACT } from "@/lib/contact";
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-[#081628] pb-24 pt-12 text-sm text-slate-300">
+    <footer id="site-footer" className="mt-auto bg-[#081628] pb-24 pt-12 text-sm text-slate-300">
       <div className="site-container">
         <div className="grid gap-9 sm:grid-cols-2 xl:grid-cols-[1fr_1fr_1.1fr_1.2fr]">
           <div>
@@ -17,7 +17,8 @@ export default function Footer() {
           <div>
             <p className="font-semibold text-white">了解子殷</p>
             <div className="mt-4 grid grid-cols-2 gap-3">
-              <Link href="/products">产品与服务</Link>
+              <Link href="/products">产品与技术服务</Link>
+              <Link href="/research">科研与成果转化</Link>
               <Link href="/cases">案例与交付</Link>
               <Link href="/news">动态与洞察</Link>
               <Link href="/about">关于子殷</Link>
@@ -28,7 +29,7 @@ export default function Footer() {
             <p className="font-semibold text-white">直接联系</p>
             <a href={COMPANY_CONTACT.phoneHref} className="mt-3 block py-2 text-lg font-semibold text-white">{COMPANY_CONTACT.phone}</a>
             <a href={COMPANY_CONTACT.emailHref} className="block py-2 text-cyan-200">{COMPANY_CONTACT.email}</a>
-            <p className="mt-2 text-xs leading-6">产品演示 · 工程服务 · 中心共建</p>
+            <p className="mt-2 text-xs leading-6">产品与工程服务 · 科研与成果转化</p>
             <Link href="/demo" className="mt-4 inline-block text-cyan-300">
               联系合作 →
             </Link>

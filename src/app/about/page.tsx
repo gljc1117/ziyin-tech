@@ -124,7 +124,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---- 发展历程 ---- */}
-      <section className="bg-[#0a1128] py-20">
+      <section id="milestones" className="scroll-mt-24 bg-[#0a1128] py-20">
         <div className="mx-auto max-w-4xl px-6">
           <div className="mb-14 text-center">
             <motion.h2

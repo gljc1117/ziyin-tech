@@ -44,10 +44,10 @@ export default function CooperationSection() {
               了解中心共建 →
             </Link>
             <Link
-              href={`/demo?product=${encodeURIComponent("科研合作与成果转化")}`}
+              href="/research"
               className="font-semibold text-blue-700"
             >
-              沟通科研合作 →
+              科研与成果转化 →
             </Link>
             <Link href="/about#centers" className="font-semibold text-blue-700">查看中心实景 →</Link>
           </div>

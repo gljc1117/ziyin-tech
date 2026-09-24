@@ -8,6 +8,8 @@ import { getNewsArticle } from "@/lib/company-news";
 import { SPECIALTY_AI_CLOSED_LOOP } from "@/lib/specialty-ai-closed-loop";
 import EditorialArticleBody from "@/components/content/EditorialArticleBody";
 import { newsDateLabel } from "@/lib/news-types";
+import ArticleComments from "@/components/comments/ArticleComments";
+import { allowsComments } from "@/lib/article-comments";
 
 
 const categoryColor: Record<string, string> = {
@@ -71,6 +73,8 @@ export default async function NewsDetailPage({
         </h1>
 
         {editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
+
+        {allowsComments(news) && <ArticleComments key={id} articleId={id} />}
 
         <div className="mt-12">
           <Link
