@@ -62,7 +62,7 @@ export default function ArticleComments({ articleId }: { articleId: string }) {
         <div className="flex flex-wrap items-center justify-between gap-3"><p id="comment-guidance" className="text-xs leading-6 text-slate-500">请勿提交患者姓名、病历、电话等个人信息。<br />项目需求请前往<Link href="/demo" className="font-medium text-cyan-800 underline underline-offset-4">联系合作</Link>。</p><span className="text-xs text-slate-500">{body.length}/2000</span></div>
         <button type="submit" className="rounded-lg bg-[#163e7c] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#102f61] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 disabled:cursor-wait">{sending ? "正在提交…" : "提交评论"}</button>
       </fieldset>
-      {message && <p role="status" className="mt-4 rounded-lg bg-emerald-50 p-3 text-sm leading-6 text-emerald-800">{message}</p>}
+      {message && <div role="status" className="mt-4 rounded-lg bg-emerald-50 p-3 text-sm leading-6 text-emerald-800"><p className="font-semibold">系统提示 · 自动回执</p><p className="mt-1">{message}</p></div>}
       {submitError && <p role="alert" className="mt-4 text-sm leading-6 text-red-700">{submitError}</p>}
     </form>
     <div className="mt-8 flex items-center justify-between"><h3 className="font-semibold text-slate-800">公开讨论</h3><button type="button" disabled={loading} onClick={() => setRetry(value => value + 1)} className="text-sm text-cyan-800 underline underline-offset-4 disabled:opacity-50">刷新评论</button></div>
