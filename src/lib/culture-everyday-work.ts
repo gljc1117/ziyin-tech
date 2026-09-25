@@ -13,10 +13,10 @@ export const CULTURE_EVERYDAY_WORK: CompanyNewsArticle = {
   "sourceAttribution": "作者：内蒙古子殷科技有限公司。本文为企业文化建设研究述评与方案讨论，非同行评审论文；不报告新增员工调查、文化干预实验或临床成效。",
   "numberedReferences": true,
   "cover": {
-    "url": "/images/news/role-models-everyday-work-organizational-culture-20260925/culture-framework.svg",
-    "alt": "图1 子殷企业文化建设的概念框架。榜样方法通过岗位行动、证据反馈与经验复用进入日常工作；管理支持和专业审核是实施条件。箭头表示待验证的工作联系。",
-    "width": 1440,
-    "height": 1000
+    "url": "/images/news/role-models-everyday-work-organizational-culture-20260925/culture-wall-v1-1.webp",
+    "alt": "图1 “向塑造未来的人学习”文化墙概念方案。AI 生成设计示意，人物肖像为示意；学习文案为子殷提炼，非人物原话。",
+    "width": 1671,
+    "height": 941
   },
   "gallery": [],
   "sections": [
@@ -261,5 +261,26 @@ export const CULTURE_EVERYDAY_WORK: CompanyNewsArticle = {
       "linkLabel": "斯坦福大学人物介绍"
     }
   ],
-  "referenceNote": "文献使用说明：文献[1]依据出版社公开章节，[4]—[6]依据所列原文的相关段落；[2]—[3]依据公开摘要与书目信息。人物信息[7]—[9]来自相应官方机构。本方案中的工作原则、岗位例子和研究命题属于子殷提出的分析，不是所引文献已经验证的企业结论。学习文案非人物原话。"
+  "referenceNote": "文献使用说明：文献[1]依据出版社公开章节，[4]—[6]依据所列原文的相关段落；[2]—[3]依据公开摘要与书目信息。人物信息[7]—[9]来自相应官方机构。本方案中的工作原则、岗位例子和研究命题属于子殷提出的分析，不是所引文献已经验证的企业结论。学习文案非人物原话。",
+  "hideCover": true,
+  "sectionImages": {
+    "一 从一面文化墙提出一个组织问题": {
+      "url": "/images/news/role-models-everyday-work-organizational-culture-20260925/culture-wall-v1-1.webp",
+      "alt": "图1 “向塑造未来的人学习”文化墙概念方案。AI 生成设计示意，人物肖像为示意；学习文案为子殷提炼，非人物原话。",
+      "width": 1671,
+      "height": 941
+    },
+    "四 把文化主张转化为三个日常承诺": {
+      "url": "/images/news/role-models-everyday-work-organizational-culture-20260925/ai-engineer-collaboration.webp",
+      "alt": "图2 让专业时间回到判断与创造。AI 辅助、工程师修订与审核交付的协作场景。AI 生成概念图，人物、场景及软件界面均为示意。",
+      "width": 1672,
+      "height": 941
+    },
+    "五 从看见意义到形成可复用经验": {
+      "url": "/images/news/role-models-everyday-work-organizational-culture-20260925/culture-framework.svg",
+      "alt": "图3 子殷企业文化建设的概念框架。榜样方法通过岗位行动、证据反馈与经验复用进入日常工作；管理支持和专业审核是实施条件。箭头表示待验证的工作联系。",
+      "width": 1440,
+      "height": 1000
+    }
+  }
 };
