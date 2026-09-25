@@ -1,3 +1,4 @@
+import { CULTURE_EVERYDAY_WORK } from "./culture-everyday-work";
 import { RUNX2_SCAFFOLD_REGENERATION } from "./runx2-scaffold-regeneration";
 import { MEDICAL_AI_VALUE_EVALUATION } from "./medical-ai-value-evaluation";
 import { CHCOMCT_SM_APPROVAL } from "./chcomct-sm-approval";
@@ -30,6 +31,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CULTURE_EVERYDAY_WORK,
 RUNX2_SCAFFOLD_REGENERATION,
 MEDICAL_AI_VALUE_EVALUATION,
 CHCOMCT_SM_APPROVAL,

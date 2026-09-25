@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#236d70" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="1000" fill="#f8f6ef"/>
+<g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" fill="#173536">
+<text x="80" y="76" font-size="25" letter-spacing="3">子殷科技  ZIYIN</text>
+<text x="80" y="156" font-size="50" font-weight="700">让榜样的方法进入日常工作</text>
+<text x="80" y="205" font-size="26" fill="#53686a">企业文化建设的概念框架与观察路径</text>
+<g fill="#fff" stroke="#cddcda" stroke-width="2">
+<rect x="80" y="266" width="565" height="190" rx="16"/>
+<rect x="795" y="266" width="565" height="190" rx="16"/>
+<rect x="795" y="546" width="565" height="190" rx="16"/>
+<rect x="80" y="546" width="565" height="190" rx="16"/>
+</g>
+<g font-size="20" fill="#2e7776"><text x="110" y="310">01  理解意义</text><text x="825" y="310">02  转化行动</text><text x="825" y="590">03  核对结果</text><text x="110" y="590">04  传递经验</text></g>
+<g font-size="34" font-weight="700"><text x="110" y="362">我们向榜样学习什么</text><text x="825" y="362">今天具体怎样做</text><text x="825" y="642">改变是否有证据</text><text x="110" y="642">下一位同事能否用起来</text></g>
+<g font-size="25" fill="#53686a"><text x="110" y="410">问题意识  ·  求证方法  ·  服务对象</text><text x="825" y="410">核对疑点  ·  专业审核  ·  清楚交接</text><text x="825" y="690">人工投入  ·  交付质量  ·  实际负担</text><text x="110" y="690">分享依据  ·  说明边界  ·  保留修订</text></g>
+<g fill="none" stroke="#236d70" stroke-width="3" marker-end="url(#arrow)"><path d="M663 361 H774"/><path d="M1077 474 V528"/><path d="M777 641 H664"/><path d="M362 528 V475"/></g>
+<text x="720" y="502" text-anchor="middle" font-size="23" fill="#8e6c45">在反馈中持续修正</text>
+<rect x="80" y="790" width="1280" height="87" rx="12" fill="#e6eeeb"/>
+<text x="720" y="827" text-anchor="middle" font-size="23">实施条件</text>
+<text x="720" y="861" text-anchor="middle" font-size="26" font-weight="700">管理支持  ·  提问与求助空间  ·  专业标准  ·  合理工作负担</text>
+<text x="80" y="925" font-size="25">服务医生  ·  减少重复  ·  共同成长</text>
+<text x="80" y="965" font-size="20" fill="#667774">作者提出的建设框架；箭头表示待验证的工作联系，不表示已证实的因果效果。</text>
+</g></svg>
