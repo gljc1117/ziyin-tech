@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">从模型输出到医工交付</title><desc id="desc">研究方法示意。明确任务后，AI初稿经过修订与审核，形成最终交付。授权修订资料经独立验证用于新版本，验证未通过则继续开发。</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f4f9ff"/><stop offset="1" stop-color="#e9f3f7"/></linearGradient><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#267b99"/></marker></defs>
+<rect width="1600" height="900" rx="30" fill="url(#bg)"/>
+<g font-family="Droid Sans Fallback,Microsoft YaHei,PingFang SC,sans-serif">
+<text x="80" y="77" fill="#27718d" font-size="25" letter-spacing="5">ZIYIN · 医工方法研究</text>
+<text x="80" y="158" fill="#12304c" font-size="64" font-weight="700">从模型输出到医工交付</text>
+<text x="80" y="213" fill="#4b6579" font-size="28">以明确任务组织研发  以独立评价检验改进</text>
+<rect x="80" y="260" width="1440" height="92" rx="18" fill="#123e5b"/>
+<text x="118" y="317" fill="white" font-size="31">先定义任务</text><text x="370" y="317" fill="#d3e8f0" font-size="28">输入范围 · 参考标准 · 关键错误 · 成功条件</text>
+<g stroke="#267b99" stroke-width="4" fill="none" marker-end="url(#arrow)"><path d="M485 470H584"/><path d="M1010 470H1106"/><path d="M1310 554V620H1014"/><path d="M586 694H487"/><path d="M280 620V554"/></g>
+<g fill="white" stroke="#c5dae6" stroke-width="2">
+<rect x="80" y="398" width="405" height="156" rx="20"/>
+<rect x="586" y="398" width="424" height="156" rx="20"/>
+<rect x="1108" y="398" width="412" height="156" rx="20"/>
+<rect x="586" y="620" width="424" height="151" rx="20"/>
+<rect x="80" y="620" width="405" height="151" rx="20"/>
+</g>
+<g fill="#153b55" font-size="36" font-weight="700"><text x="120" y="455">AI初稿</text><text x="626" y="455">修订与审核</text><text x="1148" y="455">最终交付</text><text x="626" y="675">授权资料回流</text><text x="120" y="675">候选版本验证</text></g>
+<g fill="#577084" font-size="26"><text x="120" y="506">保存输出与运行版本</text><text x="626" y="506">定位错误  记录修改</text><text x="1148" y="506">结果与审核记录对应</text><text x="626" y="724">质量筛选  确认数据用途</text><text x="120" y="724">独立评价后决定更新</text></g>
+<text x="306" y="592" fill="#27718d" font-size="23">验证通过后更新</text>
+<text x="1110" y="689" fill="#27718d" font-size="25">质量 · 时间 · 残余错误</text><text x="1110" y="730" fill="#577084" font-size="23">共同构成评价依据</text>
+<text x="80" y="841" fill="#5f788a" font-size="23">子殷科技原创方法示意  |  不代表各项目已完成全部环节</text>
+</g></svg>
