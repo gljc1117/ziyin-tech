@@ -1,3 +1,4 @@
+import { QUALIFICATIONS } from "@/lib/qualifications";
 import { PRODUCTS } from "@/lib/products";
 import type { MetadataRoute } from "next";
 import { getEditorialArticles } from "@/lib/editorial-content";
@@ -13,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return [
     ...editorial,
+    ...["/qualifications", "/solutions", "/support", "/privacy", "/medical-disclaimer"].map(path=>({url:base+path,priority:0.8})),
+    ...QUALIFICATIONS.map(q=>({url:base+"/qualifications/"+q.id,priority:0.7})),
     { url: base + "/products", changeFrequency: "monthly", priority: 0.9 },
     { url: base + "/research", changeFrequency: "monthly", priority: 0.9 },
     ...PRODUCTS.map(p=>({url: base + "/products/" + p.slug, priority: 0.8})),

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { QUALIFICATIONS } from "@/lib/qualifications";
 import { PRODUCTS, productInquiryHref } from "@/lib/products";
 import { pageMetadata } from "@/lib/site";
 export function generateStaticParams() {
@@ -25,6 +26,7 @@ export default async function ProductPage({
   const { slug } = await params;
   const p = PRODUCTS.find((item) => item.slug === slug);
   if (!p) notFound();
+  const qualification = QUALIFICATIONS.find(q => q.id === p.qualificationId);
   return (
     <main className="bg-white pb-20 pt-28 text-slate-900">
       <div className="site-container">
@@ -66,22 +68,14 @@ export default async function ProductPage({
             </figcaption>
           </figure>
         </div>
-        {slug === "chcomct-sm" && (
+        {qualification && (
           <section className="mt-12 border-y border-slate-200 py-7">
             <h2 className="text-lg font-semibold">产品注册信息</h2>
             <dl className="mt-5 grid gap-5 text-sm sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                ["注册人", "内蒙古子殷科技有限公司"],
-                ["型号及发布版本", "Chcomct SM 2.0"],
-                ["注册证编号", "内械注准20262210005"],
-                ["批准日期", "2026年9月9日"],
-              ].map(([k, v]) => (
-                <div key={k}>
-                  <dt className="text-slate-500">{k}</dt>
-                  <dd className="mt-2 font-medium">{v}</dd>
-                </div>
-              ))}
+              {[["注册人", qualification.holder], ["注册证编号", qualification.number], ["批准日期", qualification.issued], ["证载有效期至", qualification.expires]].map(([k,v])=><div key={k}><dt className="text-slate-500">{k}</dt><dd className="mt-2 font-medium">{v}</dd></div>)}
             </dl>
+            <p className="mt-5 text-sm leading-7 text-slate-600">{qualification.scope}</p>
+            <Link href={`/qualifications/${qualification.id}`} className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-blue-800">查看注册信息与使用限制 →</Link>
           </section>
         )}
         <div className="mt-14 grid gap-12 lg:grid-cols-[1.5fr_1fr]">

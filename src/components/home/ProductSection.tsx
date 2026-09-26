@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PRODUCTS } from "@/lib/products";
 export default function ProductSection({
@@ -5,6 +6,7 @@ export default function ProductSection({
 }: {
   standalone?: boolean;
 }) {
+  const products = standalone ? PRODUCTS : PRODUCTS.filter(p => p.qualificationId);
   const Title = standalone ? "h1" : "h2";
   return (
     <section id="products" className="scroll-mt-24 bg-white py-16 sm:py-20">
@@ -29,11 +31,12 @@ export default function ProductSection({
           )}
         </div>
         <div className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2 xl:grid-cols-4">
-          {PRODUCTS.map((p) => (
+          {products.map((p) => (
             <article
               key={p.slug}
               className="flex flex-col border-t-2 border-blue-800 py-7"
             >
+              <Link href={`/products/${p.slug}`} className="relative mb-5 block aspect-[16/10] overflow-hidden rounded-xl bg-slate-50"><Image src={p.image} alt={p.imageAlt} fill sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 300px" className="object-contain" /></Link>
               <span className="self-start rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-800">
                 {p.kind}
               </span>
