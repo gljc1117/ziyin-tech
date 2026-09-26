@@ -178,5 +178,19 @@ export const UNDERSTANDING_DEEP_LEARNING: CompanyNewsArticle = {
         ]
       ]
     }
+  },
+  "sectionImages": {
+    "一 从教材建立可检验的研发问题": {
+      "url": "/images/news/understanding-deep-learning-20260926/deep-learning-reconstruction.webp",
+      "alt": "深度学习与医学三维重建：从教材中的数学原理，走向可检验的重建任务。AI概念示意图，非真实病例或临床验证结果。",
+      "width": 1672,
+      "height": 941
+    },
+    "七 将伦理问题落实到数据与人机协作": {
+      "url": "/images/news/understanding-deep-learning-20260926/clinical-engineering-review.webp",
+      "alt": "医生与工程师共同复核三维重建结果，围绕疑点定位、修订记录与交付质量开展讨论。AI概念示意图，非子殷真实工作现场。",
+      "width": 1672,
+      "height": 941
+    }
   }
 };
