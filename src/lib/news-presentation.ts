@@ -13,6 +13,7 @@ export function newsChannel(category: string): NewsChannel {
   return "企业动态";
 }
 const shortTitles: Record<string, string> = {
+  "development-validation-speed-mismatch-20260926": "从研发瓶颈到验证瓶颈：医疗AI的人机协同验证",
   "chcomct-sm-medical-imaging-approval-20260922":
     "Chcomct SM 获第二类医疗器械注册证",
   "organizational-cognition-self-correction-20260922": "从个人判断到组织认知",
