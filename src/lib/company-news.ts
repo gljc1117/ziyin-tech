@@ -1,3 +1,4 @@
+import { DEVELOPMENT_VALIDATION } from "./development-validation";
 import { UNDERSTANDING_DEEP_LEARNING } from "./understanding-deep-learning";
 import { CULTURE_EVERYDAY_WORK } from "./culture-everyday-work";
 import { RUNX2_SCAFFOLD_REGENERATION } from "./runx2-scaffold-regeneration";
@@ -32,6 +33,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+DEVELOPMENT_VALIDATION,
 UNDERSTANDING_DEEP_LEARNING,
 CULTURE_EVERYDAY_WORK,
 RUNX2_SCAFFOLD_REGENERATION,
