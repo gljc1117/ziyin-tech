@@ -311,7 +311,7 @@ export default function DemoRequestForm({
             ))}
           </select>
           <p className="mt-5 text-xs leading-6 text-slate-600">
-            信息仅用于本次演示预约与合作咨询跟进，请填写工作联系信息。
+            提交的信息用于本次演示预约与合作咨询跟进，请填写工作联系信息。提交前请阅读<Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-800 underline underline-offset-4">隐私与数据安全说明</Link>。
           </p>
           <div className="mt-6 flex gap-3">
             <button

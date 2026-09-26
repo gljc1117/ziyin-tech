@@ -3,6 +3,7 @@ export interface Product {
   name: string;
   title: string;
   kind: string;
+  qualificationId?: string;
   summary: string;
   audience: string;
   capabilities: string[];
@@ -17,6 +18,7 @@ export interface Product {
 export const PRODUCTS: Product[] = [
   {
     slug: "chcomct-sm",
+    qualificationId: "chcomct-sm",
     name: "Chcomct SM",
     title: "医学图像处理软件",
     kind: "已注册产品",
@@ -45,6 +47,36 @@ export const PRODUCTS: Product[] = [
         href: "/news/chcomct-sm-medical-imaging-approval-20260922",
       },
     ],
+  },
+  {
+    slug: "osteotomy-guide", qualificationId: "osteotomy-guide", name: "截骨导板", title: "定制式3D打印截骨导板", kind: "已注册产品",
+    summary: "基于患者影像与医生要求设计，用于特定病人骨科截骨手术的定位和导向。",
+    audience: "符合注册适用范围的骨科截骨手术场景。",
+    capabilities: ["依据影像学资料与医生要求进行三维重建和导板设计", "聚十二内酰胺粉末经激光烧结增材制造", "提供相应型号与设计复核资料，使用前确认匹配关系"],
+    deliverables: ["经确认的相应型号截骨导板", "按约定提供设计复核与交付资料", "产品使用、灭菌要求与技术沟通"],
+    boundary: "不与中枢神经系统、血液循环系统及椎间隙接触。产品非无菌提供，使用前由使用者按说明书要求灭菌。临床方案由医院专业人员审核，具体型号与范围见注册证。",
+    image: "/images/products/osteotomy-guide.webp", imageAlt: "子殷截骨导板产品资料中的实物及型号图", inquiry: "医学3D打印 / 医工造物",
+    sources: [{title:"截骨导板注册与变更信息",href:"/qualifications/osteotomy-guide"},{title:"膝关节导板应用观察",href:"/cases/xiaogan-knee-guides-2026"}]
+  },
+  {
+    slug: "bone-model", qualificationId: "bone-model", name: "骨模型", title: "定制式3D打印骨模型", kind: "已注册产品",
+    summary: "以实体模型显示骨缺损部位及骨骼表面形态，辅助观察病患骨部位。",
+    audience: "需要辅助观察骨缺损部位与骨骼表面形态的场景。",
+    capabilities: ["基于患者影像资料进行三维重建与模型设计", "按相应型号采用聚乳酸或光敏树脂材料3D打印", "呈现骨缺损部位和骨骼表面形态"],
+    deliverables: ["符合确认需求与相应型号的实体骨模型", "产品与交付资料", "适用范围与使用要求说明"],
+    boundary: "不带入手术室内使用，不用于内固定钢板术前弯折。材料与完整型号范围以注册证和说明书为准。",
+    image: "/images/products/bone-model.webp", imageAlt: "子殷骨模型实物，型号 ZY-UV-BMA-FR", inquiry: "医学3D打印 / 医工造物",
+    sources: [{title:"骨模型注册与变更信息",href:"/qualifications/bone-model"}]
+  },
+  {
+    slug: "organ-model", qualificationId: "organ-model", name: "器官轮廓模型", title: "定制式3D打印器官轮廓模型", kind: "已注册产品",
+    summary: "显示人体器官病灶或受损部位表面形态，辅助观察病患部位。",
+    audience: "需要辅助观察器官病灶或受损部位表面形态的场景。",
+    capabilities: ["基于影像资料进行三维重建与轮廓模型设计", "按相应型号采用聚乳酸或光敏树脂材料3D打印", "通过实体轮廓模型辅助形态观察"],
+    deliverables: ["经确认的相应型号器官轮廓模型", "产品与交付资料", "适用范围与使用要求说明"],
+    boundary: "不带入手术室内使用。材料、型号和具体适用范围以注册证及说明书为准，模型观察不能替代专业临床判断。",
+    image: "/images/products/organ-model.webp", imageAlt: "子殷器官轮廓模型实物，型号 ZY-UV-OMA", inquiry: "医学3D打印 / 医工造物",
+    sources: [{title:"器官轮廓模型注册与变更信息",href:"/qualifications/organ-model"}]
   },
   {
     slug: "medical-3d-printing",

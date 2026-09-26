@@ -20,7 +20,7 @@ export default function CenterCarousel() {
     if (!playing || hovered) return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const timer = window.setInterval(() => {
-      if (!preference.matches && !document.hidden && region.current && region.current.getBoundingClientRect().bottom > 0 && (!region.current.contains(document.activeElement) || document.activeElement === rotationControl.current)) {
+      if (window.matchMedia("(min-width: 1024px)").matches && !preference.matches && !document.hidden && region.current && region.current.getBoundingClientRect().bottom > 0 && (!region.current.contains(document.activeElement) || document.activeElement === rotationControl.current)) {
         setIndex((value) => (value + 1) % slides.length);
       }
     }, 6500);
@@ -33,7 +33,7 @@ export default function CenterCarousel() {
       <div className="relative aspect-[4/3] overflow-hidden bg-slate-800 sm:aspect-[16/11]">
         {slides.map((slide, position) => (
           <div key={slide.image} aria-hidden={index !== position} className={`absolute inset-0 transition-opacity duration-700 ${index === position ? "opacity-100" : "pointer-events-none opacity-0"}`}>
-            <Image src={slide.image} alt={slide.title + "实景照片"} fill priority={position === 0} sizes="(max-width: 1024px) 95vw, 640px" style={{ objectPosition: slide.position }} className="object-cover" />
+            <Image src={slide.image} alt={slide.title + "实景照片"} fill sizes="(max-width: 1023px) 1px, 600px" style={{ objectPosition: slide.position }} className="object-cover" />
           </div>
         ))}
         <span className="absolute left-4 top-4 rounded-full bg-slate-950/80 px-3 py-2 text-xs text-white">{current.label}</span>

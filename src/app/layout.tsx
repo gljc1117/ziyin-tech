@@ -78,9 +78,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <a href="#main-content" className="sr-only fixed left-4 top-4 z-[100] rounded-lg bg-white px-5 py-3 text-blue-900 focus:not-sr-only">跳至主要内容</a>
         <StaffAuthLanding />
         <Navbar />
-        {children}
+        <div id="main-content" tabIndex={-1} className="flex-1">{children}</div>
         <Footer />
         <ContactWidget />
       </body>

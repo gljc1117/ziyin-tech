@@ -23,6 +23,10 @@ export default function Footer() {
               <Link href="/news">动态与洞察</Link>
               <Link href="/about">关于子殷</Link>
               <Link href="/careers">加入我们</Link>
+              <Link href="/solutions">医院解决方案</Link>
+              <Link href="/qualifications">资质与注册证</Link>
+              <Link href="/support">服务与支持</Link>
+              <Link href="/search">站内搜索</Link>
             </div>
           </div>
           <div>
@@ -39,7 +43,8 @@ export default function Footer() {
             <WechatQR thumbnail />
           </div>
         </div>
-        <div className="mt-9 flex flex-wrap justify-between gap-3 border-t border-white/15 pt-5 text-xs text-slate-400">
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/15 pt-5 text-xs leading-6"><Link href="/privacy">隐私与数据安全</Link><Link href="/medical-disclaimer">医疗信息与使用说明</Link><span className="text-slate-400">产品适用范围以对应注册、备案文件及说明书为准。</span></div>
+        <div className="mt-5 flex flex-wrap justify-between gap-3 border-t border-white/15 pt-5 text-xs text-slate-400">
           <p>© 2024–2026 上海子殷科技有限公司</p>
           <Link href="/staff/login" className="hover:text-white">员工入口</Link>
           <a
