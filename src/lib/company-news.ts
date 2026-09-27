@@ -1,3 +1,4 @@
+import { MANAGERIAL_SIMPLIFICATION } from "./managerial-simplification";
 import { GRASSLAND_RESEARCH_ARTICLES as ADDITIONAL_GRASSLAND_RESEARCH_ARTICLES } from "./grassland-additional-research";
 import { RESEARCH_PAPERS_05_06 } from "./research-papers-05-06";
 import { GRASSLAND_RESEARCH_ARTICLES } from "./grassland-research";
@@ -37,6 +38,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+MANAGERIAL_SIMPLIFICATION,
 ...ADDITIONAL_GRASSLAND_RESEARCH_ARTICLES.filter(article => article.number !== 10),
 ...RESEARCH_PAPERS_05_06,
 ...GRASSLAND_RESEARCH_ARTICLES,

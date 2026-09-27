@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+<title id="title">组织减负与技术工程师赋能</title>
+<desc id="desc">本文提出的机制设计。管理者明确目标与授权，运营中心和院点事务专员承接日常事务，工程师获得专业时间与资源。以质量、交付和轮休保障检验效果。</desc>
+<rect width="1500" height="900" fill="#f2f6fa"/>
+<rect x="0" y="0" width="1500" height="20" fill="#164969"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">
+<text x="86" y="98" fill="#376079" font-size="24" letter-spacing="3">ZIYIN · 组织管理研究与实践</text>
+<text x="86" y="189" fill="#142e41" font-size="55" font-weight="700">让技术工程师专注专业工作</text>
+<text x="88" y="244" fill="#4d6575" font-size="28">管理者调整行为与认知，组织提供真实的承接能力和专业资源</text>
+<rect x="86" y="305" width="414" height="362" rx="16" fill="#fff" stroke="#d3dfe7"/>
+<rect x="543" y="305" width="414" height="362" rx="16" fill="#fff" stroke="#d3dfe7"/>
+<rect x="1000" y="305" width="414" height="362" rx="16" fill="#fff" stroke="#d3dfe7"/>
+<text x="120" y="367" fill="#164969" font-size="32" font-weight="700">管理者</text>
+<text x="120" y="431" fill="#213e51" font-size="28">明确目标和优先级</text>
+<text x="120" y="484" fill="#213e51" font-size="28">减少重复要求与插单</text>
+<text x="120" y="537" fill="#213e51" font-size="28">遵守授权和任务排程</text>
+<text x="120" y="609" fill="#687f8e" font-size="24">承担资源配置与关键决策</text>
+<text x="577" y="367" fill="#164969" font-size="32" font-weight="700">运营中心与院点专员</text>
+<text x="577" y="431" fill="#213e51" font-size="28">承接常规事务</text>
+<text x="577" y="484" fill="#213e51" font-size="28">协调资料和交付衔接</text>
+<text x="577" y="537" fill="#213e51" font-size="28">跟踪异常并按权限升级</text>
+<text x="577" y="609" fill="#687f8e" font-size="24">具备办理权限与可用工时</text>
+<text x="1034" y="367" fill="#164969" font-size="32" font-weight="700">技术工程师</text>
+<text x="1034" y="431" fill="#213e51" font-size="28">获得连续专业时间</text>
+<text x="1034" y="484" fill="#213e51" font-size="28">获得工具与技术支持</text>
+<text x="1034" y="537" fill="#213e51" font-size="28">履行专业判断与复核</text>
+<text x="1034" y="609" fill="#687f8e" font-size="24">轮休期间有相应能力替补</text>
+<rect x="86" y="710" width="1328" height="88" rx="12" fill="#164969"/>
+<text x="750" y="765" text-anchor="middle" fill="#fff" font-size="29">共同检验：专业时间 · 交付质量 · 真实产能 · 轮休保障</text>
+<text x="88" y="848" fill="#647b8b" font-size="22">概念框架与试行建议，具体效果有待实施数据验证</text>
+</g></svg>
