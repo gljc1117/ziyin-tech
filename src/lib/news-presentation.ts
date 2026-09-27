@@ -13,6 +13,7 @@ export function newsChannel(category: string): NewsChannel {
   return "企业动态";
 }
 const shortTitles: Record<string, string> = {
+  "shared-review-to-delegated-authority-20260927": "从共同把关到分级授权：多中心运营的组织机制",
   "development-validation-speed-mismatch-20260926": "从研发瓶颈到验证瓶颈：医疗AI的人机协同验证",
   "chcomct-sm-medical-imaging-approval-20260922":
     "Chcomct SM 获第二类医疗器械注册证",

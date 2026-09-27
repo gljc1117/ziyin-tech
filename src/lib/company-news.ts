@@ -1,3 +1,4 @@
+import { DELEGATION_RESEARCH } from "./delegation-research";
 import { DEVELOPMENT_VALIDATION } from "./development-validation";
 import { UNDERSTANDING_DEEP_LEARNING } from "./understanding-deep-learning";
 import { CULTURE_EVERYDAY_WORK } from "./culture-everyday-work";
@@ -33,6 +34,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+DELEGATION_RESEARCH,
 DEVELOPMENT_VALIDATION,
 UNDERSTANDING_DEEP_LEARNING,
 CULTURE_EVERYDAY_WORK,

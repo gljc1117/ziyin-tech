@@ -1,3 +1,5 @@
+import DelegationResearchPaper from "@/components/content/DelegationResearchPaper";
+import { DELEGATION_RESEARCH } from "@/lib/delegation-research";
 import DevelopmentValidationPaper from "@/components/content/DevelopmentValidationPaper";
 import { DEVELOPMENT_VALIDATION } from "@/lib/development-validation";
 import type { Metadata } from "next";
@@ -74,7 +76,7 @@ export default async function NewsDetailPage({
           {news.title}
         </h1>
 
-        {id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
+        {id === DELEGATION_RESEARCH.id ? <DelegationResearchPaper /> : id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
 
         {allowsComments(news) && <ArticleComments key={id} articleId={id} />}
 
