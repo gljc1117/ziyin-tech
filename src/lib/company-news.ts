@@ -1,3 +1,4 @@
+import { RESEARCH_PAPERS_05_06 } from "./research-papers-05-06";
 import { DELEGATION_RESEARCH } from "./delegation-research";
 import { DEVELOPMENT_VALIDATION } from "./development-validation";
 import { UNDERSTANDING_DEEP_LEARNING } from "./understanding-deep-learning";
@@ -34,6 +35,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+...RESEARCH_PAPERS_05_06,
 DELEGATION_RESEARCH,
 DEVELOPMENT_VALIDATION,
 UNDERSTANDING_DEEP_LEARNING,
