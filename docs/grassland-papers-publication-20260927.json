@@ -1,0 +1,62 @@
+[
+  {
+    "number": 1,
+    "id": "grassland-01-center-collaboration-20260927",
+    "source": "草原英才研究系列01_创新研究中心建设与医工协同_V1.0.docx",
+    "sha256": "5a4300ef4afc26b4bf1f404ab7b97f1bbafbb14061fe4bc87e219e71cbb6866f",
+    "blocks": 110,
+    "tables": 3,
+    "equations": 0,
+    "references": 8,
+    "textCharacters": 9943,
+    "contentEquality": true
+  },
+  {
+    "number": 2,
+    "id": "grassland-02-segmentation-quality-20260927",
+    "source": "草原英才研究系列02_AI影像分割与三维重建质量控制_V1.1.docx",
+    "sha256": "f1988046a244d4dc6e4a7561f88367a1d08237d024e405004a8ff6d5fc53c0a2",
+    "blocks": 95,
+    "tables": 4,
+    "equations": 1,
+    "references": 8,
+    "textCharacters": 9428,
+    "contentEquality": true
+  },
+  {
+    "number": 3,
+    "id": "grassland-03-surgical-planning-20260927",
+    "source": "草原英才研究系列03_数字外科术前规划流程与验证_V1.0.docx",
+    "sha256": "bcf759a1ca7c6728522f3a74d2aff9b1576f34cc6e1da0f5499c1bbeb2ede3c1",
+    "blocks": 104,
+    "tables": 4,
+    "equations": 1,
+    "references": 7,
+    "textCharacters": 9810,
+    "contentEquality": true
+  },
+  {
+    "number": 4,
+    "id": "grassland-04-orthopedic-guides-20260927",
+    "source": "草原英才研究系列04_个性化骨科手术导板设计制造与精度评价_V1.0.docx",
+    "sha256": "2daf32f0612df3097d799eee5806051cd36e8b5ebc20d5ef7f08596ab2c43868",
+    "blocks": 112,
+    "tables": 4,
+    "equations": 2,
+    "references": 8,
+    "textCharacters": 10965,
+    "contentEquality": true
+  },
+  {
+    "number": 10,
+    "id": "grassland-10-standardization-traceability-20260927",
+    "source": "草原英才_10_成果转化标准化与质量追溯_V1.0.docx",
+    "sha256": "343b5a43dc5b2480ca1d8a111aabf2bc64f54bf183cc5d30b4348e0b9ec13041",
+    "blocks": 68,
+    "tables": 1,
+    "equations": 0,
+    "references": 7,
+    "textCharacters": 5446,
+    "contentEquality": true
+  }
+]

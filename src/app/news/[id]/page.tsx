@@ -1,5 +1,6 @@
 import ResearchPaperBody from "@/components/content/ResearchPaperBody";
 import { RESEARCH_PAPERS_05_06 } from "@/lib/research-papers-05-06";
+import GrasslandResearchPaper, { getGrasslandPaper } from "@/components/content/GrasslandResearchPaper";
 import DelegationResearchPaper from "@/components/content/DelegationResearchPaper";
 import { DELEGATION_RESEARCH } from "@/lib/delegation-research";
 import DevelopmentValidationPaper from "@/components/content/DevelopmentValidationPaper";
@@ -57,6 +58,7 @@ export default async function NewsDetailPage({
 
   const date = newsDateLabel(news);
   const editorial = getEditorialNewsArticle(id);
+  const grasslandPaper = getGrasslandPaper(id);
 
   const body = news.content || news.summary;
 
@@ -78,7 +80,7 @@ export default async function NewsDetailPage({
           {news.title}
         </h1>
 
-        {RESEARCH_PAPERS_05_06.some((paper) => paper.id === id) ? <ResearchPaperBody articleId={id} /> : id === DELEGATION_RESEARCH.id ? <DelegationResearchPaper /> : id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
+        {grasslandPaper ? <GrasslandResearchPaper paper={grasslandPaper} /> : RESEARCH_PAPERS_05_06.some((paper) => paper.id === id) ? <ResearchPaperBody articleId={id} /> : id === DELEGATION_RESEARCH.id ? <DelegationResearchPaper /> : id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
 
         {allowsComments(news) && <ArticleComments key={id} articleId={id} />}
 
