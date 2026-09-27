@@ -13,6 +13,10 @@ export function newsChannel(category: string): NewsChannel {
   return "企业动态";
 }
 const shortTitles: Record<string, string> = {
+  "grassland-talent-07-scoliosis-orthosis-digital-design-20260927": "脊柱侧弯矫形器：数字设计与3D打印应用框架",
+  "grassland-talent-08-specialty-database-knowledge-graph-medical-llm-20260927": "专病数据库、知识图谱与医学大模型协同架构",
+  "grassland-talent-09-medical-engineering-competency-training-20260927": "医工融合人才培养：从岗位能力到临床交付",
+  "grassland-10-standardization-traceability-20260927": "医学3D打印成果转化：标准化与质量追溯",
   "shared-review-to-delegated-authority-20260927": "从共同把关到分级授权：多中心运营的组织机制",
   "development-validation-speed-mismatch-20260926": "从研发瓶颈到验证瓶颈：医疗AI的人机协同验证",
   "chcomct-sm-medical-imaging-approval-20260922":

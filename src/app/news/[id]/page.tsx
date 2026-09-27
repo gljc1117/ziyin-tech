@@ -1,3 +1,5 @@
+import GrasslandAdditionalResearchPaper from "@/components/content/GrasslandAdditionalResearchPaper";
+import { getGrasslandResearchArticle } from "@/lib/grassland-additional-research";
 import ResearchPaperBody from "@/components/content/ResearchPaperBody";
 import { RESEARCH_PAPERS_05_06 } from "@/lib/research-papers-05-06";
 import GrasslandResearchPaper, { getGrasslandPaper } from "@/components/content/GrasslandResearchPaper";
@@ -43,6 +45,17 @@ export async function generateMetadata({
 
   const metadata = pageMetadata(data.title, data.summary ?? "子殷科技新闻动态", "/news/" + id);
   const editorial = getEditorialNewsArticle(id);
+  const research = getGrasslandResearchArticle(id);
+  if (research) return {
+    ...metadata,
+    authors: research.authors.map(name => ({ name })),
+    openGraph: {
+      ...metadata.openGraph,
+      type: "article",
+      publishedTime: research.sourcePublishedAt ?? undefined,
+      authors: research.authors,
+    },
+  };
   if (!editorial) return metadata;
   return { ...metadata, openGraph: { ...metadata.openGraph, images: [{ url: editorial.cover.url, alt: editorial.cover.alt, width: editorial.cover.width, height: editorial.cover.height }] }, ...(editorial.status === "candidate" ? { robots: { index: false, follow: false } } : {}) };
 }
@@ -59,6 +72,7 @@ export default async function NewsDetailPage({
   const date = newsDateLabel(news);
   const editorial = getEditorialNewsArticle(id);
   const grasslandPaper = getGrasslandPaper(id);
+  const research = getGrasslandResearchArticle(id);
 
   const body = news.content || news.summary;
 
@@ -80,7 +94,7 @@ export default async function NewsDetailPage({
           {news.title}
         </h1>
 
-        {grasslandPaper ? <GrasslandResearchPaper paper={grasslandPaper} /> : RESEARCH_PAPERS_05_06.some((paper) => paper.id === id) ? <ResearchPaperBody articleId={id} /> : id === DELEGATION_RESEARCH.id ? <DelegationResearchPaper /> : id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
+        {research ? <GrasslandAdditionalResearchPaper article={research} /> : grasslandPaper ? <GrasslandResearchPaper paper={grasslandPaper} /> : RESEARCH_PAPERS_05_06.some((paper) => paper.id === id) ? <ResearchPaperBody articleId={id} /> : id === DELEGATION_RESEARCH.id ? <DelegationResearchPaper /> : id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
 
         {allowsComments(news) && <ArticleComments key={id} articleId={id} />}
 
