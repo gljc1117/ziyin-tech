@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1040" width="1400" height="1040" role="img" aria-labelledby="title desc">
+  <title id="title">患者专属仿真：四层研究路径与证据反馈</title>
+  <desc id="desc">解剖表征、干预方案、功能响应和临床结局分别连接独立标注、几何复核、实验对照和随访评价。真实观测用于更新患者状态；模型版本变更需另行评价。此图为研究框架建议。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="none" stroke="#2563eb" stroke-width="1.8"/></marker></defs>
+  <rect width="1400" height="1040" fill="#f2f6fc"/>
+  <rect width="1400" height="172" fill="#12376c"/>
+  <g font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">
+    <text x="68" y="61" fill="#8be4ef" font-size="23" letter-spacing="3">ZIYIN · RESEARCH PERSPECTIVE</text>
+    <text x="68" y="126" fill="#fff" font-size="45" font-weight="700">患者专属仿真：四层研究路径与证据反馈</text>
+    <text x="80" y="224" fill="#183962" font-size="28" font-weight="700">模型回答的问题</text>
+    <text x="787" y="224" fill="#183962" font-size="28" font-weight="700">对应的验证依据</text>
+    <g fill="#fff" stroke="#c9d9ed" stroke-width="2">
+      <rect x="70" y="251" width="540" height="119" rx="15"/>
+      <rect x="70" y="408" width="540" height="119" rx="15"/>
+      <rect x="70" y="565" width="540" height="119" rx="15"/>
+      <rect x="70" y="722" width="540" height="119" rx="15"/>
+      <rect x="778" y="251" width="550" height="119" rx="15"/>
+      <rect x="778" y="408" width="550" height="119" rx="15"/>
+      <rect x="778" y="565" width="550" height="119" rx="15"/>
+      <rect x="778" y="722" width="550" height="119" rx="15"/>
+    </g>
+    <g fill="#2563eb" font-size="30" font-weight="700"><text x="98" y="299">01</text><text x="98" y="456">02</text><text x="98" y="613">03</text><text x="98" y="770">04</text></g>
+    <g fill="#183962" font-size="33" font-weight="700">
+      <text x="158" y="299">解剖表征</text><text x="158" y="456">干预方案</text><text x="158" y="613">功能响应</text><text x="158" y="770">临床结局</text>
+      <text x="806" y="299">独立标注与空间核对</text><text x="806" y="456">几何复核与方案评价</text><text x="806" y="613">数值验证与实验对照</text><text x="806" y="770">独立队列与前瞻性评价</text>
+    </g>
+    <g fill="#48607a" font-size="28">
+      <text x="98" y="344">结构是什么样？测量是否可靠？</text><text x="98" y="501">改变了哪里？约束是否满足？</text><text x="98" y="658">在指定载荷下，响应如何？</text><text x="98" y="815">指定时点的真实结局如何？</text>
+      <text x="806" y="344">关键区域 · 坐标 · 测量误差</text><text x="806" y="501">台阶与间隙 · 残余错误 · 工时</text><text x="806" y="658">收敛 · 参数敏感性 · 不确定性</text><text x="806" y="815">校准 · 亚组 · 决策与患者获益</text>
+    </g>
+    <g fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M633 310H745"/><path d="M633 467H745"/><path d="M633 624H745"/><path d="M633 781H745"/>
+      <path d="M340 379V397"/><path d="M340 536V554"/><path d="M340 693V711"/>
+    </g>
+    <rect x="70" y="886" width="1258" height="104" rx="14" fill="#e0ecfa"/>
+    <text x="98" y="929" fill="#183962" font-size="29" font-weight="700">真实观测反馈 → 更新患者状态、检验适用范围</text>
+    <text x="98" y="971" fill="#48607a" font-size="27">患者状态更新与模型重新训练分开管理；各层主张分别验证。</text>
+    <text x="70" y="1024" fill="#566b83" font-size="23">研究框架建议 · 不表示已完成上述能力或临床验证</text>
+  </g>
+</svg>
