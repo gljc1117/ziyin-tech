@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">跟骨虚拟复位：把失败原因分开检验</title>
+  <desc id="desc">求解过程失败、几何约束弱与代理参照失配可能共同存在。局部可辨识性、全局排他性与复位准确度需要分别评价。</desc>
+  <rect width="1400" height="840" fill="#102738"/>
+  <rect x="78" y="80" width="8" height="128" rx="4" fill="#58d1c1"/>
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+    <text x="110" y="109" font-size="22" fill="#92ded4" letter-spacing="3">ZIYIN RESEARCH / CALCAI</text>
+    <text x="110" y="171" font-size="45" font-weight="700" fill="#ffffff">跟骨虚拟复位</text>
+    <text x="110" y="229" font-size="36" fill="#ffffff">把失败原因分开检验</text>
+    <text x="82" y="300" font-size="25" fill="#bdcbd7">同一配准现象，可能由不同原因共同造成。</text>
+    <rect x="80" y="353" width="395" height="262" rx="18" fill="#1d3c51"/>
+    <rect x="503" y="353" width="395" height="262" rx="18" fill="#1d3c51"/>
+    <rect x="926" y="353" width="395" height="262" rx="18" fill="#1d3c51"/>
+    <g fill="#58d1c1" font-size="22"><text x="111" y="399">01</text><text x="534" y="399">02</text><text x="957" y="399">03</text></g>
+    <g fill="#ffffff" font-size="31" font-weight="700"><text x="111" y="459">求解过程失败</text><text x="534" y="459">几何约束弱</text><text x="957" y="459">代理参照失配</text></g>
+    <g fill="#c7d6e0" font-size="23">
+      <text x="111" y="514">是否存在更优、</text><text x="111" y="554">可重复到达的解？</text>
+      <text x="534" y="514">哪些位姿变化</text><text x="534" y="554">仍然难以区分？</text>
+      <text x="957" y="514">参照与患者形态</text><text x="957" y="554">是否存在偏差？</text>
+    </g>
+    <path d="M80 676H1321" stroke="#355165" stroke-width="2"/>
+    <text x="82" y="726" font-size="25" fill="#ffffff">局部可辨识性 · 全局排他性 · 复位准确度：分别评价</text>
+    <text x="82" y="785" font-size="19" fill="#9bafbd">方法学案例分析　｜　框架示意，不代表新增实验结果　｜　2026.09</text>
+  </g>
+</svg>
