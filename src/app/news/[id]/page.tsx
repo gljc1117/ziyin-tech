@@ -1,3 +1,5 @@
+import OrganizationalGovernancePaper from "@/components/content/OrganizationalGovernancePaper";
+import { ORGANIZATIONAL_GOVERNANCE_ARTICLES } from "@/lib/organizational-governance-research";
 import GrasslandAdditionalResearchPaper from "@/components/content/GrasslandAdditionalResearchPaper";
 import { getGrasslandResearchArticle } from "@/lib/grassland-additional-research";
 import ResearchPaperBody from "@/components/content/ResearchPaperBody";
@@ -71,6 +73,7 @@ export default async function NewsDetailPage({
 
   const date = newsDateLabel(news);
   const editorial = getEditorialNewsArticle(id);
+  const organizationalPaper = ORGANIZATIONAL_GOVERNANCE_ARTICLES.find(article => article.id === id);
   const grasslandPaper = getGrasslandPaper(id);
   const research = getGrasslandResearchArticle(id);
 
@@ -94,7 +97,7 @@ export default async function NewsDetailPage({
           {news.title}
         </h1>
 
-        {research ? <GrasslandAdditionalResearchPaper article={research} /> : grasslandPaper ? <GrasslandResearchPaper paper={grasslandPaper} /> : RESEARCH_PAPERS_05_06.some((paper) => paper.id === id) ? <ResearchPaperBody articleId={id} /> : id === DELEGATION_RESEARCH.id ? <DelegationResearchPaper /> : id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
+        {organizationalPaper ? <OrganizationalGovernancePaper article={organizationalPaper} /> : research ? <GrasslandAdditionalResearchPaper article={research} /> : grasslandPaper ? <GrasslandResearchPaper paper={grasslandPaper} /> : RESEARCH_PAPERS_05_06.some((paper) => paper.id === id) ? <ResearchPaperBody articleId={id} /> : id === DELEGATION_RESEARCH.id ? <DelegationResearchPaper /> : id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
 
         {allowsComments(news) && <ArticleComments key={id} articleId={id} />}
 
