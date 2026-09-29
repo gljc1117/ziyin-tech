@@ -1,4 +1,5 @@
 import { GUANGYUAN_CHAOTIAN_VISIT } from "./guangyuan-chaotian-visit";
+import { XIAOGAN_PEDIATRIC_REHABILITATION } from "./xiaogan-pediatric-rehabilitation";
 import { CALCAI_GEOMETRIC_IDENTIFIABILITY } from "./calcai-geometric-identifiability";
 import { SPECIALTY_DIGITAL_TWIN } from "./specialty-digital-twin";
 import { ORGANIZATIONAL_GOVERNANCE_ARTICLES } from "./organizational-governance-research";
@@ -43,6 +44,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
 GUANGYUAN_CHAOTIAN_VISIT,
+XIAOGAN_PEDIATRIC_REHABILITATION,
 CALCAI_GEOMETRIC_IDENTIFIABILITY,
 SPECIALTY_DIGITAL_TWIN,
 ...ORGANIZATIONAL_GOVERNANCE_ARTICLES,
