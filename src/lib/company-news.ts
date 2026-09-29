@@ -1,3 +1,4 @@
+import { XIAOGAN_HUBEI_NURSING_LEADERS_VISIT } from "./xiaogan-hubei-nursing-leaders-visit";
 import { XIAOGAN_UROLOGY_DEPARTMENT_EXCHANGE } from "./xiaogan-urology-department-exchange";
 import { HENAN_TCM_COORDINATION } from "./henan-tcm-coordination";
 import { GUANGYUAN_CHAOTIAN_VISIT } from "./guangyuan-chaotian-visit";
@@ -45,6 +46,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+XIAOGAN_HUBEI_NURSING_LEADERS_VISIT,
 XIAOGAN_UROLOGY_DEPARTMENT_EXCHANGE,
 HENAN_TCM_COORDINATION,
 GUANGYUAN_CHAOTIAN_VISIT,
