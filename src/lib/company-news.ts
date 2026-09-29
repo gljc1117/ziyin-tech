@@ -1,3 +1,4 @@
+import { HENAN_TCM_COORDINATION } from "./henan-tcm-coordination";
 import { GUANGYUAN_CHAOTIAN_VISIT } from "./guangyuan-chaotian-visit";
 import { CALCAI_GEOMETRIC_IDENTIFIABILITY } from "./calcai-geometric-identifiability";
 import { SPECIALTY_DIGITAL_TWIN } from "./specialty-digital-twin";
@@ -42,6 +43,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+HENAN_TCM_COORDINATION,
 GUANGYUAN_CHAOTIAN_VISIT,
 CALCAI_GEOMETRIC_IDENTIFIABILITY,
 SPECIALTY_DIGITAL_TWIN,
