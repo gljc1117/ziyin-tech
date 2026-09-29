@@ -5,6 +5,7 @@ export const TIANJIN_FIFTH_ORTHOPEDICS: CompanyNewsArticle = {
   "title": "天津市第五中心医院（北京大学滨海医院）骨科开展3D打印技术应用交流",
   "summary": "子殷科技技术工程师程怀前走进天津市第五中心医院（北京大学滨海医院）骨科，结合屏幕演示、影像讨论和模型样品讲解3D打印应用，交流临床需求与工程服务的衔接。",
   "category": "学术动态",
+  "eventDate": "",
   "dateLabel": "2026年9月29日发布",
   "sourceTitle": "天津市第五中心医院（北京大学滨海医院）骨科开展3D打印技术应用交流",
   "sourcePublishedAt": "2026-09-29T15:05:00+08:00",
