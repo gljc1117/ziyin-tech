@@ -49,7 +49,7 @@ export const CALCAI_GEOMETRIC_IDENTIFIABILITY: CompanyNewsArticle = {
     {
       "heading": "作者与文章属性",
       "paragraphs": [
-        "作者：王文波、杨秀雯、李映锡、陈善玮；单位：内蒙古子殷科技有限公司。",
+        "作者：杨秀雯、李映锡；单位：内蒙古子殷科技有限公司。",
         "基于 CalcAI 研究记录的方法学案例分析。本文为企业官网方法学研究讨论文章，未经过学术期刊同行评议；分析依据既有研究记录，未重新运行原始实验。"
       ]
     },
