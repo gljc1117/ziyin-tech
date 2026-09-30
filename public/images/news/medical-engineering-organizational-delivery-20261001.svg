@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1050" viewBox="0 0 1500 1050" role="img" aria-labelledby="title desc">
+<title id="title">医工协同形成可靠交付能力的机制设计</title>
+<desc id="desc">共同任务关联临床确认、数字建模、审核确认和制造交付。审核异常返回对应处理，交付反馈经过归因与验证后更新后续方法。本文为待验证的机制设计。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#2563a6"/></marker><marker id="return" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#117b77"/></marker></defs>
+<rect width="1500" height="1050" fill="#f4f7fb"/>
+<g font-family="'Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+<text x="80" y="85" font-size="27" letter-spacing="3" fill="#2563a6">子殷组织机制研究</text>
+<text x="80" y="162" font-size="54" font-weight="700" fill="#142c48">让专业工作形成连续交付</text>
+<text x="80" y="213" font-size="29" fill="#516379">任务一致 · 版本可追溯 · 专业授权 · 反馈改进</text>
+<rect x="80" y="268" width="1340" height="125" rx="18" fill="#153b60"/>
+<text x="115" y="319" font-size="33" font-weight="700" fill="white">共同任务与贯穿任务的负责人</text>
+<text x="115" y="362" font-size="27" fill="#dbeafe">用途与范围　｜　验收条件　｜　交期与资源　｜　成果版本与责任</text>
+<g fill="#ffffff" stroke="#b7c8da" stroke-width="2">
+<rect x="80" y="450" width="300" height="200" rx="16"/>
+<rect x="427" y="450" width="300" height="200" rx="16"/>
+<rect x="774" y="450" width="300" height="200" rx="16"/>
+<rect x="1120" y="450" width="300" height="200" rx="16"/>
+</g>
+<g font-size="34" font-weight="700" fill="#173c60">
+<text x="110" y="509">临床确认</text><text x="457" y="509">数字建模</text><text x="804" y="509">审核确认</text><text x="1150" y="509">制造交付</text>
+</g>
+<g font-size="26" fill="#526477">
+<text x="110" y="558">问题与使用目的</text><text x="110" y="600">资料与关键约束</text>
+<text x="457" y="558">AI候选与人工修订</text><text x="457" y="600">工程检查与疑点</text>
+<text x="804" y="558">医学相关内容确认</text><text x="804" y="600">技术复核与版本</text>
+<text x="1150" y="558">打印及后处理</text><text x="1150" y="600">检验放行与接收</text>
+</g>
+<g stroke="#2563a6" stroke-width="4" fill="none" marker-end="url(#arrow)">
+<path d="M382 550H416"/><path d="M730 550H763"/><path d="M1077 550H1109"/>
+</g>
+<g stroke="#98aec4" stroke-width="2" stroke-dasharray="7 7"><path d="M230 393V450"/><path d="M577 393V450"/><path d="M924 393V450"/><path d="M1270 393V450"/></g>
+<path d="M924 653V702H577V659" fill="none" stroke="#117b77" stroke-width="4" marker-end="url(#return)"/>
+<text x="661" y="744" font-size="25" fill="#117b77">审核疑点返回修订</text>
+<rect x="80" y="790" width="1340" height="145" rx="18" fill="#e1f1ef" stroke="#8bbeba" stroke-width="2"/>
+<text x="115" y="846" font-size="33" font-weight="700" fill="#145e5c">反馈经过归因与验证，改善后续任务</text>
+<text x="115" y="891" font-size="27" fill="#346a69">明确问题位置与责任　｜　保留原版本　｜　验证修正效果　｜　更新适用方法</text>
+<path d="M1387 653V778" fill="none" stroke="#117b77" stroke-width="4" marker-end="url(#return)"/>
+<text x="80" y="999" font-size="25" fill="#5c6c7e">机制设计示意　评价同时观察完整周期、总人工投入、返工与质量</text>
+</g></svg>

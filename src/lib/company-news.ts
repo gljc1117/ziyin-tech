@@ -1,3 +1,4 @@
+import { ORGANIZATIONAL_DELIVERY } from "./organizational-delivery";
 import { TIANJIN_FIFTH_ORTHOPEDICS } from "./tianjin-fifth-orthopedics";
 import { HUAXI_DIGITAL_REHABILITATION } from "./huaxi-digital-rehabilitation";
 import { XIAOGAN_CHILD_SCREENING } from "./xiaogan-child-screening";
@@ -49,6 +50,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+ORGANIZATIONAL_DELIVERY,
 TIANJIN_FIFTH_ORTHOPEDICS,
 HUAXI_DIGITAL_REHABILITATION,
 XIAOGAN_CHILD_SCREENING,
