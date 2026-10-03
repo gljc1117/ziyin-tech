@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="980" viewBox="0 0 1000 980" role="img" aria-labelledby="t d">
+<title id="t">AI自主验证研究框架</title><desc id="d">影像与标签经过生成和独立验证后，分流到候选处理或疑点修订。独立测试同时评价生成器和验证器。</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#44617d"/></marker></defs>
+<rect width="1000" height="980" rx="24" fill="#f0f6fc"/>
+<g font-family="Arial,'Noto Sans CJK SC','Microsoft YaHei',sans-serif" fill="#12304a">
+<text x="55" y="72" font-size="44" font-weight="700">AI自主验证</text><text x="55" y="127" font-size="36" fill="#47647f">生成结果与检查结论，分别接受检验</text>
+<rect x="55" y="173" width="380" height="118" rx="16" fill="#fff" stroke="#9fb5c9" stroke-width="2"/><text x="245" y="245" text-anchor="middle" font-size="40">影像与已有标签</text>
+<rect x="565" y="173" width="380" height="118" rx="16" fill="#153e62"/><text x="755" y="245" text-anchor="middle" font-size="40" fill="#fff">生成候选结果</text>
+<path d="M445 232H550M755 302V360" fill="none" stroke="#44617d" stroke-width="4" marker-end="url(#a)"/>
+<rect x="55" y="375" width="890" height="174" rx="16" fill="#fff" stroke="#287ca2" stroke-width="3"/>
+<text x="500" y="440" text-anchor="middle" font-size="42" font-weight="700">独立证据与错误定位</text>
+<text x="500" y="502" text-anchor="middle" font-size="36">影像　几何　解剖关系　质量预测</text>
+<path d="M500 558V587H245V620M500 587H755V620" fill="none" stroke="#44617d" stroke-width="4" marker-end="url(#a)"/>
+<rect x="55" y="636" width="380" height="129" rx="16" fill="#daedf4"/><text x="245" y="689" text-anchor="middle" font-size="39">范围内候选处理</text><text x="245" y="741" text-anchor="middle" font-size="35">保留抽查与追溯</text>
+<rect x="565" y="636" width="380" height="129" rx="16" fill="#e5e7f8"/><text x="755" y="689" text-anchor="middle" font-size="39">疑点与争议修订</text><text x="755" y="741" text-anchor="middle" font-size="35">回流到下一版本</text>
+<rect x="55" y="816" width="890" height="109" rx="16" fill="#153e62"/><text x="500" y="863" text-anchor="middle" font-size="38" fill="#fff">独立测试：关键错误 × 覆盖率 × 人工时间</text><text x="500" y="904" text-anchor="middle" font-size="31" fill="#d1e5f3">研究设计示意 · 不代表已经完成性能验证</text>
+</g></svg>

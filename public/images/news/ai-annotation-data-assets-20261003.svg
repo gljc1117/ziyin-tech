@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="980" viewBox="0 0 1000 980" role="img" aria-labelledby="t d">
+<title id="t">AI自动标注与数据产品框架</title><desc id="d">自动标注与修订形成质量证据，用途权限形成使用依据，两者共同支持数据产品。会计确认和交易按各自条件判断。</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#456679"/></marker></defs>
+<rect width="1000" height="980" rx="24" fill="#f1f8fa"/>
+<g font-family="Arial,'Noto Sans CJK SC','Microsoft YaHei',sans-serif" fill="#153c50">
+<text x="55" y="72" font-size="44" font-weight="700">AI自动标注与医疗数据资产化</text><text x="55" y="126" font-size="36" fill="#466a79">技术质量与用途权限共同支持产品化</text>
+<rect x="55" y="172" width="890" height="110" rx="16" fill="#164d61"/><text x="500" y="241" text-anchor="middle" font-size="40" fill="#fff">已有影像 · Mask · 修订记录</text>
+<path d="M500 292V324H245V351M500 324H755V351" fill="none" stroke="#456679" stroke-width="4" marker-end="url(#a)"/>
+<rect x="55" y="370" width="380" height="195" rx="16" fill="#fff" stroke="#3b7b91" stroke-width="2"/><text x="245" y="423" text-anchor="middle" font-size="40" font-weight="700">技术质量</text><text x="245" y="480" text-anchor="middle" font-size="35">自动标注与验证</text><text x="245" y="530" text-anchor="middle" font-size="35">修订学习与追溯</text>
+<rect x="565" y="370" width="380" height="195" rx="16" fill="#fff" stroke="#3b7b91" stroke-width="2"/><text x="755" y="423" text-anchor="middle" font-size="40" font-weight="700">用途权限</text><text x="755" y="480" text-anchor="middle" font-size="35">处理目的与范围</text><text x="755" y="530" text-anchor="middle" font-size="35">使用条件与责任</text>
+<path d="M245 576V604H500V633M755 576V604H500" fill="none" stroke="#456679" stroke-width="4" marker-end="url(#a)"/>
+<rect x="55" y="651" width="890" height="113" rx="16" fill="#cfe7eb"/><text x="500" y="702" text-anchor="middle" font-size="40" font-weight="700">可复用的数据产品或服务</text><text x="500" y="745" text-anchor="middle" font-size="32">任务明确 · 质量可说明 · 权限与版本可追溯</text>
+<rect x="55" y="815" width="890" height="111" rx="16" fill="#164d61"/><text x="500" y="864" text-anchor="middle" font-size="38" fill="#fff">登记 · 评估 · 会计确认 · 挂牌交易</text><text x="500" y="906" text-anchor="middle" font-size="32" fill="#d7ebf1">分别判断适用条件，不是自动递进程序</text>
+</g></svg>
