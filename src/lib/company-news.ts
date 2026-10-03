@@ -1,3 +1,5 @@
+import { AI_AUTONOMOUS_VERIFICATION } from "./ai-autonomous-verification";
+import { AI_ANNOTATION_DATA_ASSETS } from "./ai-annotation-data-assets";
 import { ORGANIZATIONAL_DELIVERY } from "./organizational-delivery";
 import { TIANJIN_FIFTH_ORTHOPEDICS } from "./tianjin-fifth-orthopedics";
 import { HUAXI_DIGITAL_REHABILITATION } from "./huaxi-digital-rehabilitation";
@@ -50,6 +52,8 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+AI_AUTONOMOUS_VERIFICATION,
+AI_ANNOTATION_DATA_ASSETS,
 ORGANIZATIONAL_DELIVERY,
 TIANJIN_FIFTH_ORTHOPEDICS,
 HUAXI_DIGITAL_REHABILITATION,
