@@ -1,3 +1,4 @@
+import { CALCAI_WEEKLY_GEOMETRIC_VERIFICATION } from "./calcai-weekly-geometric-verification";
 import { AI_AUTONOMOUS_VERIFICATION } from "./ai-autonomous-verification";
 import { AI_ANNOTATION_DATA_ASSETS } from "./ai-annotation-data-assets";
 import { ORGANIZATIONAL_DELIVERY } from "./organizational-delivery";
@@ -52,6 +53,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CALCAI_WEEKLY_GEOMETRIC_VERIFICATION,
 AI_AUTONOMOUS_VERIFICATION,
 AI_ANNOTATION_DATA_ASSETS,
 ORGANIZATIONAL_DELIVERY,
