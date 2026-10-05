@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+<title id="title">管理者语言标签与组织行动</title><desc id="desc">本文概念模型：语言标签通过指令识别影响行动选择，授权规则与言行一致性构成条件；所有关系均待检验。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#64839b" stroke-width="1.8"/></marker></defs>
+<rect width="1500" height="900" fill="#f4f7fa"/><rect width="1500" height="226" fill="#112a40"/>
+<g font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif">
+<text x="72" y="63" fill="#73dbd0" font-size="23" letter-spacing="3">ZIYIN · 组织管理研究</text>
+<text x="72" y="129" fill="white" font-size="49" font-weight="700">一句话，何时成为组织命令？</text>
+<text x="75" y="182" fill="#cfdee8" font-size="25">语言标签 × 授权规则 × 管理者言行一致性</text>
+<rect x="510" y="265" width="480" height="110" rx="18" fill="#e4edf4" stroke="#b7cad9"/>
+<text x="750" y="307" text-anchor="middle" fill="#17374d" font-size="28" font-weight="700">授权规则</text>
+<text x="750" y="347" text-anchor="middle" fill="#496478" font-size="23">谁有权决定 · 允许什么行动</text>
+<path d="M750 377V428" stroke="#64839b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="72" y="449" width="385" height="155" rx="18" fill="white" stroke="#cbd7e0"/>
+<rect x="557" y="449" width="385" height="155" rx="18" fill="#16384f"/>
+<rect x="1042" y="449" width="385" height="155" rx="18" fill="white" stroke="#cbd7e0"/>
+<text x="264" y="506" text-anchor="middle" fill="#17374d" font-size="32" font-weight="700">语言标签</text>
+<text x="264" y="551" text-anchor="middle" fill="#496478" font-size="23">设想 · 待验证 · 授权试验</text>
+<text x="264" y="583" text-anchor="middle" fill="#496478" font-size="23">专业结论 · 正式决定</text>
+<text x="750" y="506" text-anchor="middle" fill="white" font-size="32" font-weight="700">指令识别</text>
+<text x="750" y="551" text-anchor="middle" fill="#d6e7f1" font-size="23">是否必须执行？</text>
+<text x="750" y="583" text-anchor="middle" fill="#d6e7f1" font-size="23">边界是什么？能否核实？</text>
+<text x="1234" y="506" text-anchor="middle" fill="#17374d" font-size="32" font-weight="700">行动选择</text>
+<text x="1234" y="551" text-anchor="middle" fill="#496478" font-size="23">执行 · 澄清 · 有限试验</text>
+<text x="1234" y="583" text-anchor="middle" fill="#496478" font-size="23">复核 · 暂缓启动</text>
+<path d="M470 527H537" stroke="#64839b" stroke-width="3" marker-end="url(#arrow)"/><path d="M955 527H1022" stroke="#64839b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="510" y="674" width="480" height="110" rx="18" fill="#e1f3ef" stroke="#a7d5cc"/>
+<text x="750" y="716" text-anchor="middle" fill="#146455" font-size="28" font-weight="700">管理者言行一致性</text>
+<text x="750" y="756" text-anchor="middle" fill="#387969" font-size="23">声明的边界，是否在行动中兑现？</text>
+<path d="M750 672V622" stroke="#64839b" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="750" y="844" text-anchor="middle" fill="#506779" font-size="23">制度上的授权 ≠ 员工感知的命令　｜　箭头表示待检验关系</text>
+</g></svg>

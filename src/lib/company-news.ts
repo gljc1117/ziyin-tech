@@ -1,3 +1,4 @@
+import { MANAGERIAL_LANGUAGE_LABELS } from "./managerial-language-labels";
 import { CALCAI_RELIABILITY_REVIEW } from "./calcai-reliability-review";
 import { MEDICAL_ENTERPRISE_MODEL_SELECTION } from "./medical-enterprise-model-selection";
 import { STARTUP_ORGANIZATIONAL_RATIONALITY } from "./startup-organizational-rationality";
@@ -60,6 +61,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+MANAGERIAL_LANGUAGE_LABELS,
 CALCAI_RELIABILITY_REVIEW,
 MEDICAL_ENTERPRISE_MODEL_SELECTION,
 STARTUP_ORGANIZATIONAL_RATIONALITY,
