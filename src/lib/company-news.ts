@@ -1,3 +1,4 @@
+import { STARTUP_ORGANIZATIONAL_RATIONALITY } from "./startup-organizational-rationality";
 import { ZIYIN_INTELLIGENCE_RESEARCH } from "./ziyin-intelligence-research";
 import { AI_AUTONOMOUS_VERIFICATION_EVIDENCE } from "./ai-autonomous-verification-evidence";
 import { CALCAI_MASK_CANDIDATE_LEARNING } from "./calcai-mask-candidate-learning";
@@ -57,6 +58,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+STARTUP_ORGANIZATIONAL_RATIONALITY,
 ZIYIN_INTELLIGENCE_RESEARCH,
 WBCT_INDEPENDENT_EVIDENCE,
 AI_AUTONOMOUS_VERIFICATION_EVIDENCE,
