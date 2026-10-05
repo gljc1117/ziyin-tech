@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="930" viewBox="0 0 1200 930" role="img" aria-labelledby="title desc">
+<title id="title">复位可靠性需要三类证据</title><desc id="desc">计算与几何、解剖准确度、人机协同效果分别评价。本文提出的研究框架，未报告新增临床验证。</desc>
+<rect width="1200" height="930" fill="#f4f7fb"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">
+<text x="70" y="86" fill="#112447" font-size="42" font-weight="700">复位可靠性需要三类证据</text>
+<text x="70" y="137" fill="#50627a" font-size="25">本文提出的研究框架 · 未报告新增临床验证</text>
+<rect x="70" y="185" width="1060" height="184" rx="20" fill="white" stroke="#d6dfeb"/>
+<rect x="70" y="185" width="9" height="184" rx="4" fill="#2b7691"/>
+<text x="108" y="247" fill="#2b7691" font-size="29" font-weight="700">01</text>
+<text x="185" y="247" fill="#142946" font-size="32" font-weight="700">计算与几何</text>
+<text x="185" y="293" fill="#455b75" font-size="27">坐标、单位、采样与局部交叠</text>
+<text x="185" y="336" fill="#455b75" font-size="26">多实现复核 + 未暴露采样设置</text>
+<rect x="70" y="395" width="1060" height="184" rx="20" fill="white" stroke="#d6dfeb"/>
+<rect x="70" y="395" width="9" height="184" rx="4" fill="#527899"/>
+<text x="108" y="457" fill="#527899" font-size="29" font-weight="700">02</text>
+<text x="185" y="457" fill="#142946" font-size="32" font-weight="700">解剖准确度</text>
+<text x="185" y="503" fill="#455b75" font-size="27">独立参照与关键区域误差</text>
+<text x="185" y="546" fill="#455b75" font-size="26">未参与调节的病例 + 专业裁定</text>
+<rect x="70" y="605" width="1060" height="184" rx="20" fill="white" stroke="#d6dfeb"/>
+<rect x="70" y="605" width="9" height="184" rx="4" fill="#6c6489"/>
+<text x="108" y="667" fill="#6c6489" font-size="29" font-weight="700">03</text>
+<text x="185" y="667" fill="#142946" font-size="32" font-weight="700">人机协同效果</text>
+<text x="185" y="713" fill="#455b75" font-size="27">修订负担、复核时间与剩余错误</text>
+<text x="185" y="756" fill="#455b75" font-size="26">同任务对照 + 最终医生审核</text>
+<text x="70" y="862" fill="#243d5b" font-size="26">2–3 mm：科研重点复核范围 · 医生临床终审</text>
+<text x="70" y="902" fill="#6b7b91" font-size="21">各类证据不能相互替代；图示不构成临床可接受误差标准。</text>
+</g></svg>
