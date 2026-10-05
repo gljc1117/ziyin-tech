@@ -1,3 +1,4 @@
+import { CALCAI_RELIABILITY_REVIEW } from "./calcai-reliability-review";
 import { MEDICAL_ENTERPRISE_MODEL_SELECTION } from "./medical-enterprise-model-selection";
 import { STARTUP_ORGANIZATIONAL_RATIONALITY } from "./startup-organizational-rationality";
 import { ZIYIN_INTELLIGENCE_RESEARCH } from "./ziyin-intelligence-research";
@@ -59,6 +60,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CALCAI_RELIABILITY_REVIEW,
 MEDICAL_ENTERPRISE_MODEL_SELECTION,
 STARTUP_ORGANIZATIONAL_RATIONALITY,
 ZIYIN_INTELLIGENCE_RESEARCH,
