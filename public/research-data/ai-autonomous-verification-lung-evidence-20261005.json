@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0",
+  "article": "ai-autonomous-verification-lung-evidence-20261005",
+  "published_date": "2026-10-05",
+  "study_type": "exploratory internal engineering replay; not clinical performance evaluation",
+  "analysis_units": {
+    "ct_entries": 5,
+    "structure_entries": 15,
+    "distinct_perturbations": 87,
+    "unchanged_controls": 33,
+    "replayed_scenarios": 120,
+    "external_holdout": false,
+    "patient_level_independence_externally_verified": false
+  },
+  "sources": {
+    "R12": {
+      "run": "20261004T084149-87ce8904"
+    },
+    "R13": {
+      "run": "20261004T093755-b5c797d5",
+      "version": "0.13.1"
+    },
+    "R14": {
+      "run": "20261004T095633-ca9d7144"
+    },
+    "R15": {
+      "run": "20261004T121418-c1838d95",
+      "version": "0.15.1",
+      "fingerprint_sha256": "dbdf14b1117969f100d48999b7b43958820164c4391bdb707a00ff1d03531649"
+    }
+  },
+  "axis_reencoding": {
+    "ct_entries": 1,
+    "structures": 3,
+    "signed_encodings_each": 48,
+    "fresh_canonical_thinning_runs": 144,
+    "identical_compared_outputs": 144,
+    "arbitrary_rotations_tested": false
+  },
+  "perturbation_results": {
+    "caption": "表1　同一批120个场景中的变化计数。覆盖／链几何／退缩采用R14账本，图边／孤点采用R15账本；各列非互斥。",
+    "columns": [
+      "场景",
+      "数量",
+      "原域覆盖变化",
+      "有支持的链几何变化",
+      "图边／孤点变化",
+      "原Mask末端退缩"
+    ],
+    "rows": [
+      [
+        "局部缺损",
+        "21",
+        "21",
+        "3",
+        "21",
+        "0"
+      ],
+      [
+        "跨域假桥",
+        "15",
+        "15",
+        "4",
+        "15",
+        "0"
+      ],
+      [
+        "末端缩短",
+        "45",
+        "45",
+        "39",
+        "39",
+        "45"
+      ],
+      [
+        "无骨架域移除",
+        "6",
+        "6",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "零变化对照",
+        "33",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "original_graph": {
+    "maximal_chains": 24453,
+    "degree_at_least_3_nodes": 13126,
+    "adjacent_junction_clusters": 6794
+  },
+  "unresolved_baseline_chain_records": {
+    "total": 46,
+    "one_to_many": 22,
+    "many_to_one": 6,
+    "many_to_one_groups": 3,
+    "previous_shared_support_insufficient": 7,
+    "without_shared_edges": 11,
+    "anatomical_matches_established": false
+  },
+  "candidate_residual_chains": {
+    "without_shared_edges": 9240,
+    "entirely_inside_junction_clusters": 9221,
+    "cluster_adjacent_to_supported_groups": 9238,
+    "four_outliers_total": 9197,
+    "counting_unit": "chain entries accumulated across paired scenarios, not distinct anatomical branches"
+  },
+  "dense_cluster_outliers": {
+    "caption": "表3　4个密集残余场景；EXT为研究条目别名。距离为新增骨架点到被删Mask体素的最大最近距离。",
+    "columns": [
+      "研究条目／结构",
+      "无共享边残余链",
+      "最大分叉簇节点",
+      "最大距离（mm）",
+      "重新细化"
+    ],
+    "rows": [
+      [
+        "EXT-02／气道",
+        "2,775",
+        "720",
+        "8.66",
+        "复现"
+      ],
+      [
+        "EXT-03／气道",
+        "1,596",
+        "418",
+        "7.82",
+        "复现"
+      ],
+      [
+        "EXT-03／动脉",
+        "2,390",
+        "615",
+        "6.25",
+        "复现"
+      ],
+      [
+        "EXT-04／气道",
+        "2,436",
+        "628",
+        "7.36",
+        "复现"
+      ]
+    ]
+  },
+  "baseline_source_binding": {
+    "dicom_slices": 470,
+    "voxels": 123207680,
+    "unsigned_source_pixel_mismatches": 0,
+    "signed_reinterpretation_inference_mismatches": 0,
+    "maximum_physical_position_error_mm": 4.88446266e-07,
+    "strict_metadata_to_inference_mismatched_voxels": 100268016,
+    "intensity_status": "UNRESOLVED_UNSIGNED_METADATA_CONFLICT"
+  },
+  "limitations": [
+    "Same historical project; previously used additional CTs",
+    "No independent anatomical reference standard",
+    "No clinical sensitivity or specificity estimates",
+    "No human net-workload measurements",
+    "R15 replays stored skeletons; fresh thinning only for four dense outliers",
+    "No patient identifiers, medical arrays or individual coordinates in this public file"
+  ]
+}
