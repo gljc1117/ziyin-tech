@@ -1,0 +1,21 @@
+﻿round,metric,count,denominator_or_scope,patient_count_in_technical_experiment,evidence_boundary,analysis_result_sha256
+R7,planned_attempts,120,120 planned attempts,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,realised_attempts,117,120 planned attempts,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,not_realised_attempts,3,120 planned attempts,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,new_structure_alerts,49,117 realized perturbations,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,directional_CT_loss,90,117 realized perturbations,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,structure_or_directional_loss,90,117 realized perturbations,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,no_structure_or_directional_loss,27,117 realized perturbations,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,mixed_or_method_conflict,86,117 realized perturbations,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,positive_global_medians_structure_pass,22,117 realized perturbations,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,passes_r6_plus_original_reference_gates,2,117 realized perturbations,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R7,passes_r4_plus_original_reference_gates,0,117 realized perturbations,2,Previously exposed patient crops; no independent anatomical truth,175c1c0a684f021970d0843a2aa8a9e2c0348d9e5dcba0e991e6db5fc18f3d64
+R8,technical_controls,48,48 restorations; 2 baseline targets,2,Previously exposed patient crops; no independent anatomical truth,667d872db2b7b068550c45e5dd4595bc242a24a683712f0a9a4b9db24ad9fc28
+R8,exact_preinjection_target_recovered,48,48 restorations; 2 baseline targets,2,Previously exposed patient crops; no independent anatomical truth,667d872db2b7b068550c45e5dd4595bc242a24a683712f0a9a4b9db24ad9fc28
+R8,directional_CT_gain,48,48 restorations; 2 baseline targets,2,Previously exposed patient crops; no independent anatomical truth,667d872db2b7b068550c45e5dd4595bc242a24a683712f0a9a4b9db24ad9fc28
+R8,all_28_frames_and_original_gates_pass,1,48 restorations; 2 baseline targets,2,Previously exposed patient crops; no independent anatomical truth,667d872db2b7b068550c45e5dd4595bc242a24a683712f0a9a4b9db24ad9fc28
+R8,fine_tiles_and_original_gates_pass,0,48 restorations; 2 baseline targets,2,Previously exposed patient crops; no independent anatomical truth,667d872db2b7b068550c45e5dd4595bc242a24a683712f0a9a4b9db24ad9fc28
+R8,confirmed_clinical_positive_controls,0,48 restorations; 2 baseline targets,2,Previously exposed patient crops; no independent anatomical truth,667d872db2b7b068550c45e5dd4595bc242a24a683712f0a9a4b9db24ad9fc28
+R9,admitted_active_final_records,0,Known receiving workflow status checked 2026-10-05,0,Not completed; no new current-version protected-case evaluation,
+R9,confirmed_local_research_positive_controls,0,Known receiving workflow status checked 2026-10-05,0,Not completed; no new current-version protected-case evaluation,
+R9,actual_protected_patients_evaluated,0,Known receiving workflow status checked 2026-10-05,0,Not completed; no new current-version protected-case evaluation,
