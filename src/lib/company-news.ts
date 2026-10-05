@@ -1,4 +1,5 @@
 import { AI_AUTONOMOUS_VERIFICATION_EVIDENCE } from "./ai-autonomous-verification-evidence";
+import { CALCAI_MASK_CANDIDATE_LEARNING } from "./calcai-mask-candidate-learning";
 import { CALCAI_WEEKLY_GEOMETRIC_VERIFICATION } from "./calcai-weekly-geometric-verification";
 import { AI_AUTONOMOUS_VERIFICATION } from "./ai-autonomous-verification";
 import { AI_ANNOTATION_DATA_ASSETS } from "./ai-annotation-data-assets";
@@ -55,6 +56,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
 AI_AUTONOMOUS_VERIFICATION_EVIDENCE,
+CALCAI_MASK_CANDIDATE_LEARNING,
 CALCAI_WEEKLY_GEOMETRIC_VERIFICATION,
 AI_AUTONOMOUS_VERIFICATION,
 AI_ANNOTATION_DATA_ASSETS,

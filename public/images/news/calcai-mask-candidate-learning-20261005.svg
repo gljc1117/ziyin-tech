@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">跟骨AI自动标注：候选学习与修改收益验证</title>
+<desc id="desc">复用既有影像与Mask，比较局部候选，再判断修改收益。拟合数据中安全收益候选193个覆盖31名患者，几何合格的安全收益候选31个覆盖5名患者。门槛校准未通过，本轮外层实际修改0次。既有开发患者复测，不代表临床效能。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#738796" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="820" fill="#f4f6f5"/>
+<rect width="1200" height="10" fill="#157d83"/>
+<g font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif">
+<text x="56" y="64" font-size="19" letter-spacing="2" fill="#157d83">子殷科技 · CALCAI · 阶段性方法研究</text>
+<text x="56" y="120" font-size="38" font-weight="700" fill="#17323f">让每次局部修改，都有可核对的收益证据</text>
+<text x="56" y="158" font-size="21" fill="#546c77">复用三维Mask，学习候选中的安全收益与匹配丢失</text>
+<g fill="#fff" stroke="#cedadd"><rect x="56" y="205" width="330" height="138" rx="16"/><rect x="435" y="205" width="330" height="138" rx="16"/><rect x="814" y="205" width="330" height="138" rx="16"/></g>
+<g fill="#17323f" font-size="25" font-weight="700"><text x="82" y="249">01　复用已有标注</text><text x="461" y="249">02　比较局部候选</text><text x="840" y="249">03　判断修改收益</text></g>
+<g fill="#546c77" font-size="20"><text x="82" y="289">CT · 三维Mask · 原对象</text><text x="82" y="319">参考、空间关系与版本</text><text x="461" y="289">拆分 · 合并 · 局部重分区</text><text x="461" y="319">冻结几何约束和候选排序</text><text x="840" y="289">新增匹配 · 丢失 · 值得修改</text><text x="840" y="319">接受后仍需通过执行门槛</text></g>
+<path d="M397 274H420M776 274H799" stroke="#738796" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="56" y="395" font-size="24" font-weight="700" fill="#17323f">训练覆盖：同一批拟合患者，两个不同的计数范围</text>
+<rect x="56" y="419" width="530" height="152" rx="16" fill="#e3efee"/>
+<rect x="614" y="419" width="530" height="152" rx="16" fill="#e8edf2"/>
+<g fill="#17323f"><text x="82" y="458" font-size="21">全部安全收益候选</text><text x="82" y="526" font-size="49" font-weight="700">193</text><text x="195" y="524" font-size="24">个 · 31 名患者</text><text x="640" y="458" font-size="21">其中：符合执行几何约束</text><text x="640" y="526" font-size="49" font-weight="700">31</text><text x="725" y="524" font-size="24">个 · 5 名患者</text></g>
+<rect x="56" y="608" width="1088" height="138" rx="16" fill="#17323f"/>
+<text x="82" y="650" font-size="23" fill="#d8e7eb">本轮外层实际修改</text><text x="82" y="708" font-size="46" font-weight="700" fill="#fff">0 次</text>
+<g font-size="22" fill="#fff"><text x="393" y="654">原执行准入未通过 · 保持基线</text><text x="393" y="695">尚未证明净人工时间或最终质量改善</text></g>
+<text x="56" y="785" font-size="18" fill="#546c77">R16冻结证据 · 86名既有开发患者 · 无新患者独立测试 · 研究标签不等于临床安全</text>
+</g></svg>
