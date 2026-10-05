@@ -1,3 +1,4 @@
+import { WBCT_INDEPENDENT_EVIDENCE } from "./wbct-independent-evidence";
 import { AI_AUTONOMOUS_VERIFICATION } from "./ai-autonomous-verification";
 import { AI_ANNOTATION_DATA_ASSETS } from "./ai-annotation-data-assets";
 import { ORGANIZATIONAL_DELIVERY } from "./organizational-delivery";
@@ -52,6 +53,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+WBCT_INDEPENDENT_EVIDENCE,
 AI_AUTONOMOUS_VERIFICATION,
 AI_ANNOTATION_DATA_ASSETS,
 ORGANIZATIONAL_DELIVERY,

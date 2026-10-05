@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">双下肢CT自主核验研发报告</title><desc id="desc">117项已实现扰动、48项技术恢复。独立解剖裁定及当前版本受保护测试尚待完成。</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#102b45"/><stop offset="1" stop-color="#1a4b68"/></linearGradient></defs>
+<rect width="1200" height="675" fill="url(#bg)"/><path d="M820 0V675M970 0V675M1120 0V675M0 155H1200M0 315H1200M0 475H1200" stroke="#79a5bd" stroke-opacity=".12"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif"><text x="70" y="92" font-size="22" fill="#a8dbe4" letter-spacing="3">子殷研发 · 方法学研究与技术报告</text>
+<text x="70" y="200" font-size="54" font-weight="700" fill="white">双下肢CT自主核验</text><text x="70" y="274" font-size="38" fill="#d3e7ee">从评分一致到独立证据</text>
+<rect x="70" y="334" width="470" height="144" rx="12" fill="#ffffff" fill-opacity=".07"/><rect x="560" y="334" width="570" height="144" rx="12" fill="#ffffff" fill-opacity=".07"/>
+<text x="100" y="401" font-size="52" font-weight="700" fill="white">117</text><text x="230" y="401" font-size="25" fill="#d3e7ee">项已实现扰动</text><text x="100" y="447" font-size="20" fill="#a8c6d5">告警覆盖不等于临床敏感度</text>
+<text x="590" y="401" font-size="52" font-weight="700" fill="white">48</text><text x="685" y="401" font-size="25" fill="#d3e7ee">项精确技术恢复</text><text x="590" y="447" font-size="20" fill="#a8c6d5">几何还原不等于解剖正确</text>
+<text x="70" y="554" font-size="24" fill="white">独立解剖裁定与当前版本受保护测试尚待完成</text><text x="70" y="612" font-size="19" fill="#a8c6d5">瑜秀瞳芯 · 2026年10月5日 · 未经期刊同行评议</text></g></svg>
