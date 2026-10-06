@@ -1,3 +1,4 @@
+import { MEDICAL_3D_SURFACE_FIDELITY } from "./medical-3d-surface-fidelity";
 import { LOWER_LIMB_CT_MONTHLY } from "./lower-limb-ct-monthly";
 import { MANAGERIAL_LANGUAGE_LABELS } from "./managerial-language-labels";
 import { CALCAI_RELIABILITY_REVIEW } from "./calcai-reliability-review";
@@ -62,6 +63,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+MEDICAL_3D_SURFACE_FIDELITY,
 LOWER_LIMB_CT_MONTHLY,
 MANAGERIAL_LANGUAGE_LABELS,
 CALCAI_RELIABILITY_REVIEW,
