@@ -1,3 +1,4 @@
+import { LOWER_LIMB_CT_MONTHLY } from "./lower-limb-ct-monthly";
 import { MANAGERIAL_LANGUAGE_LABELS } from "./managerial-language-labels";
 import { CALCAI_RELIABILITY_REVIEW } from "./calcai-reliability-review";
 import { MEDICAL_ENTERPRISE_MODEL_SELECTION } from "./medical-enterprise-model-selection";
@@ -61,6 +62,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+LOWER_LIMB_CT_MONTHLY,
 MANAGERIAL_LANGUAGE_LABELS,
 CALCAI_RELIABILITY_REVIEW,
 MEDICAL_ENTERPRISE_MODEL_SELECTION,

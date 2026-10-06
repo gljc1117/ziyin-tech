@@ -1,0 +1,33 @@
+﻿stage,record_or_check_date,metric,value,unit,denominator_or_scope,source_record,limitation
+Historical roles,2026-09-06/2026-10-06,non_holdout_admitted,19,patients,historical source,TRAIN_HOLDOUT_SPLIT_AUTHORITY.json,Not the identical set of the later 19 training patients
+Historical roles,2026-09-06/2026-10-06,historical_holdout,6,patients,historical source,TRAIN_HOLDOUT_SPLIT_AUTHORITY.json,Previously tested; not unseen current-C1 testing
+Historical roles,2026-09-06/2026-10-06,laterality_quarantined,1,patient,historical source,TRAIN_HOLDOUT_SPLIT_AUTHORITY.json,Not admitted
+Historical output,2026-09-11,native_grid_masks,60,assets,6 patients,FINAL_CLOSEOUT.md,"Engineering output, not 60 independent patients"
+Historical output,2026-09-11,LPS_mm_STL,60,assets,6 patients,FINAL_CLOSEOUT.md,Geometry and integrity checks
+Historical talus,2026-09-11,mean_Dice,0.968267,Dice,12 tali / 6 patients,FINAL_CLOSEOUT.md,Not all 60 structures; old model
+Historical talus,2026-09-11,minimum_Dice,0.941643,Dice,12 tali / 6 patients,FINAL_CLOSEOUT.md,Provisional reference
+Historical knee,2026-09-11,right_patella_Dice,0.665934,Dice,one exposed knee,FINAL_CLOSEOUT.md,Failure retained
+Historical knee,2026-09-11,right_patella_HD95,9.814,mm,one exposed knee,FINAL_CLOSEOUT.md,Failure retained
+NAS inventory,2026-09-24,case_directories,80,directories,bounded collection,NAS_Training_Revision_20260924.md,Not accepted patient count
+NAS inventory,2026-09-24,CT_header_and_STL,74,candidate directories,bounded collection,NAS_Training_Revision_20260924.md,Full pairing and anatomical quality pending
+Refinement roles,2026-09-25/2026-09-26,training,19,patients,15 historical + 4 extension,SPLIT.json,Role is distinct from historical 19
+Refinement roles,2026-09-25/2026-09-26,development,4,patients,historical admitted,SPLIT.json,Model selection only
+R5,2026-09-25,research_gate_pass,77,structures,80 structures / 13 exposed patients,WBCT_R5_Progress_20260925.md,Provisional-reference agreement
+R6,2026-09-26,research_gate_pass,79,structures,80 structures / 13 exposed patients,R6 FINAL_REPORT.md,Provisional-reference agreement
+R6-C1,2026-09-26,research_gate_pass,80,structures,80 structures / 13 exposed patients,C1 FINAL_REPORT.md; FINAL_AUDIT.json,No new independent patients; no additional training
+R6-C1,2026-09-26,repeated_changed_voxels,0,voxels,3 repeated patients,FINAL_AUDIT.json,Same environment only
+STL preview,2026-09-21,changed_voxels,75824,voxels,one left femur preview,ACTUAL_STL_READONLY_QA.json,Preview only; real case not saved; not correct-change count
+C1 trial,2026-09-26,workflow_checks,23,checks,isolated QA workflow,WBCT_R6C1_Trial_Handoff_20260926.html,Synthetic revisions; no clinical sign-off
+R7,2026-10-04,planned,120,perturbations,2 patient crops,R7 RESULT.json,Not independent patients
+R7,2026-10-04,realized,117,perturbations,120 planned / 2 patient crops,R7 RESULT.json,3 unrealized retained
+R7,2026-10-04,new_structure_alert,49,perturbations,117 realized,R7 RESULT.json,Overlaps CT decline
+R7,2026-10-04,directional_CT_decline,90,perturbations,117 realized,R7 RESULT.json,Not clinical sensitivity
+R7,2026-10-04,alert_union,90,perturbations,117 realized,R7 RESULT.json,Structure OR CT decline
+R7,2026-10-04,no_union_alert,27,perturbations,117 realized,R7 RESULT.json,Not acceptance or clinically correct
+R7,2026-10-04,mixed_or_method_conflict,86,perturbations,117 realized,R7 RESULT.json,Overlapping category
+R8,2026-10-04,exact_restore,48,restorations,48 restorations / 2 targets,R8 RESULT.json,Synthetic technical positives; not clinical positives
+R8,2026-10-04,28_frame_composite_accepted,1,restoration,48 restorations,R8 RESULT.json,Includes original research gates
+R8,2026-10-04,fine_tile_composite_accepted,0,restorations,48 restorations,R8 RESULT.json,Includes original research gates
+R9 known intake,2026-10-06,admitted_active_final_records,0,records,known intake,STATUS.json; private_incoming read-only inspection,Status file and known directory checked; no fresh intake execution
+R9 known intake,2026-10-06,confirmed_real_positive_controls,0,controls,known intake,STATUS.json; private_incoming read-only inspection,Software tests and synthetic restores excluded
+Current C1,2026-10-06,protected_patients_evaluated,0,patients,current C1,STATUS.json,Freeze blocked; historical model results separate
