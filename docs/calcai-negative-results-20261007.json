@@ -1,0 +1,18 @@
+{
+  "actual_sklearn_version": "1.9.0",
+  "model_audit": {
+    "models": 4,
+    "max_features": 1,
+    "parameter_type": "int",
+    "n_features_in": 13,
+    "tree_max_features": [
+      1
+    ],
+    "class_weight": null
+  },
+  "original_N10_records_unchanged": true,
+  "new_training_performed_for_article": false,
+  "parameter_effect_causal_claim": false,
+  "article_sha256": "32d2a4b846ce4813f27c11abdf7d151e1d09b035389c3ae840fbdc34b5ed1cd1",
+  "source_freeze_sha256": "515394dda2c98a2a0b57c14be163e449c5278f3346fe09cb0781707a09d3564c"
+}
