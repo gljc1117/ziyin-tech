@@ -1,3 +1,4 @@
+import { MEDICAL_MODELING_EVIDENCE_FRAMEWORK } from "./medical-modeling-evidence-framework";
 import { CALCAI_NEGATIVE_RESULTS } from "./calcai-negative-results";
 import { MEDICAL_3D_SURFACE_FIDELITY } from "./medical-3d-surface-fidelity";
 import { LOWER_LIMB_CT_MONTHLY } from "./lower-limb-ct-monthly";
@@ -64,6 +65,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+MEDICAL_MODELING_EVIDENCE_FRAMEWORK,
 CALCAI_NEGATIVE_RESULTS,
 MEDICAL_3D_SURFACE_FIDELITY,
 LOWER_LIMB_CT_MONTHLY,

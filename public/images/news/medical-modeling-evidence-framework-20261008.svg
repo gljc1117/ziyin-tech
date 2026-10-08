@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120" role="img" aria-labelledby="title desc">
+  <title id="title">医学三维建模：分阶段证据框架</title>
+  <desc id="desc">源影像经分割复核形成原始重建；按需开展虚拟复位并独立审核；选定批准版本进入制造与实物核验。各阶段保存输入、参数、输出、修改和审核记录。本图为建议框架。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#627f8b"/></marker>
+  </defs>
+  <rect width="1440" height="1120" fill="#f2f6f6"/>
+  <rect x="0" y="0" width="1440" height="12" fill="#176b70"/>
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+    <text x="78" y="82" fill="#176b70" font-size="22" letter-spacing="3">子殷科技 · 方法框架</text>
+    <text x="78" y="142" fill="#183844" font-size="44" font-weight="700">医学三维建模：分阶段证据框架</text>
+    <text x="78" y="190" fill="#4d6871" font-size="24">每次转换都有参照，每个交付版本都有审核依据</text>
+
+    <rect x="235" y="234" width="970" height="106" rx="18" fill="#183844"/>
+    <text x="720" y="278" text-anchor="middle" fill="#ffffff" font-size="29" font-weight="700">明确用途与源影像</text>
+    <text x="720" y="315" text-anchor="middle" fill="#d3e5e7" font-size="22">确认部位、侧别、序列与覆盖范围 → 分割候选 → 人员复核</text>
+    <path d="M720 340 V386" fill="none" stroke="#627f8b" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="235" y="394" width="970" height="120" rx="18" fill="#ffffff" stroke="#83aaa9" stroke-width="2"/>
+    <text x="720" y="439" text-anchor="middle" fill="#183844" font-size="29" font-weight="700">原始重建版本</text>
+    <text x="720" y="480" text-anchor="middle" fill="#4d6871" font-size="23">解剖保真：对照源影像，核对结构完整性与轮廓</text>
+
+    <path d="M465 514 V721" fill="none" stroke="#627f8b" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="430" y="603" text-anchor="end" fill="#4d6871" font-size="23">直接制造</text>
+    <text x="430" y="638" text-anchor="end" fill="#4d6871" font-size="23">原始模型</text>
+
+    <path d="M970 514 V554" fill="none" stroke="#627f8b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="630" y="562" width="640" height="126" rx="18" fill="#e4efec" stroke="#83aaa9" stroke-width="2"/>
+    <text x="950" y="605" text-anchor="middle" fill="#183844" font-size="28" font-weight="700">虚拟复位版本（按需）</text>
+    <text x="950" y="646" text-anchor="middle" fill="#4d6871" font-size="23">保留源形态与变换 · 独立审核规划关系</text>
+    <path d="M970 688 V721" fill="none" stroke="#627f8b" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="235" y="729" width="970" height="99" rx="18" fill="#ffffff" stroke="#83aaa9" stroke-width="2"/>
+    <text x="720" y="770" text-anchor="middle" fill="#183844" font-size="28" font-weight="700">选定并批准制造版本</text>
+    <text x="720" y="807" text-anchor="middle" fill="#4d6871" font-size="23">审核绑定具体文件 · 单独记录支撑、连接与删改</text>
+    <path d="M720 828 V867" fill="none" stroke="#627f8b" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="235" y="875" width="970" height="100" rx="18" fill="#176b70"/>
+    <text x="720" y="916" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="700">打印、后处理与实物核验</text>
+    <text x="720" y="953" text-anchor="middle" fill="#e2f0ee" font-size="23">制造一致性：核对批准文件、外观与预定测量项目</text>
+
+    <line x1="78" y1="1014" x2="1362" y2="1014" stroke="#c9d9d9"/>
+    <text x="78" y="1054" fill="#183844" font-size="23">全程追溯：输入 → 参数 → 输出 → 修改 → 审核 → 交付</text>
+    <text x="78" y="1090" fill="#637b84" font-size="20">图 1　本文提出的方法框架；尚待实际验证，各阶段均须保留退回与修订记录。</text>
+  </g>
+</svg>
