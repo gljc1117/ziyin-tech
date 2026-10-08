@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120" role="img" aria-labelledby="title desc">
+  <title id="title">从可靠交付到可检验知识</title>
+  <desc id="desc">本文原创建议框架。交付流程围绕用途、影像、重建、修订、核验和打印运行；异常与返工提出研究问题，比较和复现形成有边界的结论，再经验证进入新版本。复杂分块和复位仅按需开展。</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#6e8790"/></marker>
+  </defs>
+  <rect width="1440" height="1120" fill="#f3f6f5"/>
+  <rect width="1440" height="12" fill="#176b70"/>
+  <g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+    <text x="76" y="82" font-size="23" fill="#176b70" letter-spacing="3">子殷科技 · 工程与知识</text>
+    <text x="76" y="150" font-size="48" font-weight="700" fill="#183844">从可靠交付到可检验知识</text>
+    <text x="76" y="196" font-size="25" fill="#55717b">需求定义交付，证据支持改进，失败保留边界</text>
+    <rect x="76" y="243" width="1288" height="82" rx="16" fill="#183844"/>
+    <text x="720" y="294" text-anchor="middle" font-size="29" fill="#fff">共同基础：基础研究 · 公共投入 · 专业训练 · 企业工程能力</text>
+    <rect x="76" y="361" width="566" height="547" rx="20" fill="#fff" stroke="#bdd1d1" stroke-width="2"/>
+    <rect x="798" y="361" width="566" height="547" rx="20" fill="#e8f0ed" stroke="#bdd1d1" stroke-width="2"/>
+    <text x="112" y="418" font-size="32" font-weight="700" fill="#176b70">交付任务</text>
+    <text x="834" y="418" font-size="32" font-weight="700" fill="#176b70">研究任务</text>
+    <text x="112" y="458" font-size="23" fill="#55717b">按用途与验收条件完成结果</text>
+    <text x="834" y="458" font-size="23" fill="#55717b">围绕不确定性提出可检验解释</text>
+    <g fill="#183844" font-size="27">
+      <text x="112" y="523">明确用途与 DICOM 输入</text>
+      <text x="112" y="602">自动重建 → 工程修订</text>
+      <text x="112" y="681">数字核验 → 批准版本</text>
+      <text x="112" y="760">按需打印 → 实物核验</text>
+      <text x="112" y="839">交付清单与反馈</text>
+      <text x="834" y="523">从异常中提出假设</text>
+      <text x="834" y="602">确定基线、指标与约束</text>
+      <text x="834" y="681">比较、复现与独立评价</text>
+      <text x="834" y="760">支持或不支持：均保留记录</text>
+      <text x="834" y="839">明确适用条件与结论边界</text>
+    </g>
+    <g fill="none" stroke="#6e8790" stroke-width="2.5" marker-end="url(#a)">
+      <path d="M140 540V570"/><path d="M140 619V649"/><path d="M140 698V728"/><path d="M140 777V807"/>
+      <path d="M862 540V570"/><path d="M862 619V649"/><path d="M862 698V728"/><path d="M862 777V807"/>
+      <path d="M652 555H788"/><path d="M788 780H652"/>
+    </g>
+    <g font-size="23" text-anchor="middle" fill="#55717b">
+      <text x="720" y="511">异常</text><text x="720" y="541">与返工</text>
+      <text x="720" y="728">经验证</text><text x="720" y="758">的改进</text>
+    </g>
+    <text x="112" y="885" font-size="21" fill="#55717b">数字交付与实体交付分别验收</text>
+    <text x="834" y="885" font-size="21" fill="#55717b">复杂分块与复位按需立项研究</text>
+    <rect x="76" y="941" width="1288" height="73" rx="14" fill="#dce9e7"/>
+    <text x="720" y="987" text-anchor="middle" font-size="26" fill="#183844">全程记录：输入、版本、参数、修订、审核、测量与失败</text>
+    <text x="76" y="1065" font-size="22" fill="#55717b">图 1　本文提出的实施框架，尚待实际验证；不代表已完成全部能力或临床有效性评价。</text>
+  </g>
+</svg>
