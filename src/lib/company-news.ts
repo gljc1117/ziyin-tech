@@ -1,3 +1,4 @@
+import { AI_BASIC_RESEARCH_KNOWLEDGE_PRODUCTION } from "./ai-basic-research-knowledge-production";
 import { ENGINEERING_SCIENTIFIC_KNOWLEDGE } from "./engineering-scientific-knowledge";
 import { MEDICAL_MODELING_EVIDENCE_FRAMEWORK } from "./medical-modeling-evidence-framework";
 import { CALCAI_NEGATIVE_RESULTS } from "./calcai-negative-results";
@@ -66,6 +67,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+AI_BASIC_RESEARCH_KNOWLEDGE_PRODUCTION,
 ENGINEERING_SCIENTIFIC_KNOWLEDGE,
 MEDICAL_MODELING_EVIDENCE_FRAMEWORK,
 CALCAI_NEGATIVE_RESULTS,
