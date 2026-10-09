@@ -1,3 +1,4 @@
+import { TRIPARTITE_SPECIALTY_DATABASE_EDUCATION } from "./tripartite-specialty-database-education";
 import { PRACTICE_TEACHING_TEMPLATE } from "./practice-teaching-template";
 import { AI_BASIC_RESEARCH_KNOWLEDGE_PRODUCTION } from "./ai-basic-research-knowledge-production";
 import { ENGINEERING_SCIENTIFIC_KNOWLEDGE } from "./engineering-scientific-knowledge";
@@ -68,6 +69,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+TRIPARTITE_SPECIALTY_DATABASE_EDUCATION,
 PRACTICE_TEACHING_TEMPLATE,
 AI_BASIC_RESEARCH_KNOWLEDGE_PRODUCTION,
 ENGINEERING_SCIENTIFIC_KNOWLEDGE,
