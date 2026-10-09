@@ -1,3 +1,4 @@
+import { PRACTICE_TEACHING_TEMPLATE } from "./practice-teaching-template";
 import { AI_BASIC_RESEARCH_KNOWLEDGE_PRODUCTION } from "./ai-basic-research-knowledge-production";
 import { ENGINEERING_SCIENTIFIC_KNOWLEDGE } from "./engineering-scientific-knowledge";
 import { MEDICAL_MODELING_EVIDENCE_FRAMEWORK } from "./medical-modeling-evidence-framework";
@@ -67,6 +68,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+PRACTICE_TEACHING_TEMPLATE,
 AI_BASIC_RESEARCH_KNOWLEDGE_PRODUCTION,
 ENGINEERING_SCIENTIFIC_KNOWLEDGE,
 MEDICAL_MODELING_EVIDENCE_FRAMEWORK,
