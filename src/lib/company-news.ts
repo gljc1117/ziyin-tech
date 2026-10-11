@@ -1,3 +1,4 @@
+import { TCM_LINEAGE_RESEARCH } from "./tcm-lineage-research";
 import { DIGITAL_EXPERT_RESEARCH } from "./digital-expert-research";
 import { CLINICAL_INSIGHT_RESEARCH } from "./clinical-insight-research";
 import { MEDICAL_AI_EVIDENCE_SERIES } from "./medical-ai-evidence-series";
@@ -72,6 +73,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+TCM_LINEAGE_RESEARCH,
 DIGITAL_EXPERT_RESEARCH,
 CLINICAL_INSIGHT_RESEARCH,
 ...MEDICAL_AI_EVIDENCE_SERIES,
