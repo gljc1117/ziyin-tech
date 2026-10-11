@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960" role="img" aria-labelledby="title desc">
+<title id="title">从技术征集到科研转化</title><desc id="desc">医院主导的平台连接保存、研究和推广条件三类独立决定，以来源、版本、条件、授权和证据记录支撑持续研究。方法示意，无实测数据。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#75828d"/></marker></defs>
+<rect width="1440" height="960" fill="#f5f4f0"/><rect width="1440" height="12" fill="#7d2431"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">
+<text x="72" y="78" font-size="23" letter-spacing="3" fill="#7d2431">子殷科技 · 中医传承与科研转化</text>
+<text x="72" y="155" font-size="49" font-weight="700" fill="#172b36">从技术征集到科研转化</text>
+<text x="72" y="207" font-size="27" fill="#52616b">医院主导的组织入口，连接三类需要分别论证的决定</text>
+<rect x="72" y="257" width="1296" height="112" rx="16" fill="#172f3d"/>
+<text x="720" y="303" text-anchor="middle" font-size="29" font-weight="700" fill="white">征集与推广平台</text>
+<text x="720" y="345" text-anchor="middle" font-size="24" fill="#e0e8eb">申报与补正 · 材料版本 · 专家评审 · 医院确认 · 授权展示</text>
+<g fill="none" stroke="#75828d" stroke-width="3"><path d="M720 369V402H274V445" marker-end="url(#arrow)"/><path d="M720 402V445" marker-end="url(#arrow)"/><path d="M720 402H1166V445" marker-end="url(#arrow)"/></g>
+<g><rect x="72" y="455" width="405" height="215" rx="14" fill="white" stroke="#d7dee0"/><rect x="517" y="455" width="406" height="215" rx="14" fill="white" stroke="#d7dee0"/><rect x="963" y="455" width="405" height="215" rx="14" fill="white" stroke="#d7dee0"/></g>
+<g font-size="31" font-weight="700"><text x="103" y="508" fill="#7d2431">保存需求</text><text x="548" y="508" fill="#126575">研究价值</text><text x="994" y="508" fill="#475366">推广条件</text></g>
+<g font-size="24" fill="#40515b"><text x="103" y="551">记录缺口与传承风险</text><text x="103" y="591">原始口述与版本依据</text><text x="103" y="636">形成：可追溯的传承档案</text><text x="548" y="551">问题意义与证据缺口</text><text x="548" y="591">可检验假设与研究设计</text><text x="548" y="636">形成：可交接的研究任务</text><text x="994" y="551">特定用途的获益与风险</text><text x="994" y="591">实施能力与使用授权</text><text x="994" y="636">形成：有依据的用途决定</text></g>
+<rect x="72" y="716" width="1296" height="139" rx="14" fill="#e7eceb"/>
+<text x="104" y="761" font-size="27" font-weight="700" fill="#172f3d">贯穿记录：来源 · 技术版本 · 适用条件 · 授权 · 验证证据</text>
+<text x="104" y="813" font-size="24" fill="#40515b">首期评价：研究档案质量、关键错误、独立复用与团队总投入</text>
+<text x="72" y="913" font-size="21" fill="#64727a">方法学框架示意 · 非临床疗效数据 · 平台评审与临床证据分别解释</text>
+</g></svg>

@@ -1,0 +1,27 @@
+{
+  "article_id": "henan-tcm-folk-technique-platform-research-20261011",
+  "author": "瑜秀曈芯",
+  "publication_authorization": "用户明确要求形成探索论文并发表子殷官网",
+  "commission_background": "项目负责人明确提供：河南中医药大学第一附属医院委托子殷科技开发征集与推广平台",
+  "source_checks": [
+    {
+      "source": "开发候选版首页",
+      "date": "2026-10-11",
+      "observed": [
+        "医院及平台名称",
+        "申报五环节",
+        "补正与材料版本说明",
+        "独立评分、汇总复核及医院终审说明",
+        "项目及视频公开授权分别处理"
+      ]
+    },
+    {
+      "source": "2026-09-06内部技术交付说明与后续候选准备记录",
+      "use": "核对候选版功能范围，不将历史合成测试用作医院验收、临床效果或当前端到端性能证据"
+    }
+  ],
+  "research_status": "方法建议；未实施新访谈、工程测量、患者研究或流程比较",
+  "related_article": "https://www.chcomct.cn/news/tcm-folk-technique-lineage-research-20261011",
+  "reference_count": 13,
+  "tables": 6
+}

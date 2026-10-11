@@ -1,3 +1,4 @@
+import { HENAN_TCM_PLATFORM_RESEARCH } from "./henan-tcm-platform-research";
 import { TCM_LINEAGE_RESEARCH } from "./tcm-lineage-research";
 import { DIGITAL_EXPERT_RESEARCH } from "./digital-expert-research";
 import { CLINICAL_INSIGHT_RESEARCH } from "./clinical-insight-research";
@@ -73,6 +74,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+HENAN_TCM_PLATFORM_RESEARCH,
 TCM_LINEAGE_RESEARCH,
 DIGITAL_EXPERT_RESEARCH,
 CLINICAL_INSIGHT_RESEARCH,
