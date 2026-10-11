@@ -1,3 +1,4 @@
+import { DIGITAL_EXPERT_RESEARCH } from "./digital-expert-research";
 import { CLINICAL_INSIGHT_RESEARCH } from "./clinical-insight-research";
 import { MEDICAL_AI_EVIDENCE_SERIES } from "./medical-ai-evidence-series";
 import { TRIPARTITE_SPECIALTY_DATABASE_EDUCATION } from "./tripartite-specialty-database-education";
@@ -71,6 +72,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+DIGITAL_EXPERT_RESEARCH,
 CLINICAL_INSIGHT_RESEARCH,
 ...MEDICAL_AI_EVIDENCE_SERIES,
 TRIPARTITE_SPECIALTY_DATABASE_EDUCATION,
