@@ -1,3 +1,4 @@
+import { MEDICAL_AI_EVIDENCE_SERIES } from "./medical-ai-evidence-series";
 import { TRIPARTITE_SPECIALTY_DATABASE_EDUCATION } from "./tripartite-specialty-database-education";
 import { PRACTICE_TEACHING_TEMPLATE } from "./practice-teaching-template";
 import { AI_BASIC_RESEARCH_KNOWLEDGE_PRODUCTION } from "./ai-basic-research-knowledge-production";
@@ -69,6 +70,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+...MEDICAL_AI_EVIDENCE_SERIES,
 TRIPARTITE_SPECIALTY_DATABASE_EDUCATION,
 PRACTICE_TEACHING_TEMPLATE,
 AI_BASIC_RESEARCH_KNOWLEDGE_PRODUCTION,
