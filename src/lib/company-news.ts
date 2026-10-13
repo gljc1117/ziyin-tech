@@ -1,3 +1,4 @@
+import { SI_P1S_ENGINEERING_RESEARCH } from "./si-p1s-engineering-research";
 import { FLASH_PRINTING_SKILLS_RESEARCH } from "./flash-printing-skills-research";
 import { HENAN_TCM_PLATFORM_RESEARCH } from "./henan-tcm-platform-research";
 import { TCM_LINEAGE_RESEARCH } from "./tcm-lineage-research";
@@ -75,6 +76,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+SI_P1S_ENGINEERING_RESEARCH,
 FLASH_PRINTING_SKILLS_RESEARCH,
 HENAN_TCM_PLATFORM_RESEARCH,
 TCM_LINEAGE_RESEARCH,

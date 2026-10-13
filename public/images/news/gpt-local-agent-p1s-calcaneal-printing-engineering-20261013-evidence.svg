@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="870" viewBox="0 0 1440 870" role="img" aria-label="三个证据维度：分别记录，才能准确判断">
+<rect width="1440" height="870" fill="#f7fafc"/>
+<style>text{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#172d44}.title{font-size:37px;font-weight:700}.sub{font-size:22px;fill:#52677b}.head{font-size:27px;font-weight:700}.body{font-size:23px}.small{font-size:21px;fill:#52677b}</style>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L9,5 L0,10" fill="none" stroke="#527895" stroke-width="1.7"/></marker></defs>
+<text x="64" y="77" class="title">三个证据维度：分别记录，才能准确判断</text>
+<text x="64" y="121" class="sub">设备执行、应用关联与实体质量，可以处于不同状态</text>
+<rect x="64" y="185" width="410" height="165" rx="16" fill="#eef5fb" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="64" y="203" width="6" height="129" rx="3" fill="#24628b"/>
+<text x="89" y="229" class="head">设备执行</text>
+<text x="89" y="268" class="body">接收 / 准备 / 打印 / 完成</text>
+<text x="89" y="301" class="body">以对应设备的观察为据</text>
+<rect x="514" y="185" width="410" height="165" rx="16" fill="#f1f3fb" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="514" y="203" width="6" height="129" rx="3" fill="#24628b"/>
+<text x="539" y="229" class="head">应用关联</text>
+<text x="539" y="268" class="body">已关联 / 待核验 / 不匹配</text>
+<text x="539" y="301" class="body">以任务和文件对应关系为据</text>
+<rect x="964" y="185" width="410" height="165" rx="16" fill="#edf7f4" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="964" y="203" width="6" height="129" rx="3" fill="#24628b"/>
+<text x="989" y="229" class="head">实体质量</text>
+<text x="989" y="268" class="body">待检查 / 通过 / 不通过</text>
+<text x="989" y="301" class="body">以预定用途的检查记录为据</text>
+<text x="64" y="409" class="head">本批记录中的两种组合</text>
+<rect x="64" y="444" width="410" height="155" rx="16" fill="#ffffff" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="64" y="462" width="6" height="119" rx="3" fill="#24628b"/>
+<text x="89" y="488" class="head">案例 A</text>
+<text x="89" y="527" class="body">标识牌第一盘：设备已打印</text>
+<text x="89" y="560" class="body">独立回读支持所发对象</text>
+<rect x="514" y="444" width="410" height="155" rx="16" fill="#ffffff" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="514" y="462" width="6" height="119" rx="3" fill="#24628b"/>
+<text x="539" y="488" class="head">案例 A</text>
+<text x="539" y="527" class="body">应用曾报名称不匹配</text>
+<text x="539" y="560" class="body">不应因此再次发送</text>
+<rect x="964" y="444" width="410" height="155" rx="16" fill="#ffffff" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="964" y="462" width="6" height="119" rx="3" fill="#24628b"/>
+<text x="989" y="488" class="head">案例 A</text>
+<text x="989" y="527" class="body">用户报告成功取走</text>
+<text x="989" y="560" class="body">不等于完整尺寸质检</text>
+<rect x="64" y="621" width="410" height="155" rx="16" fill="#ffffff" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="64" y="639" width="6" height="119" rx="3" fill="#24628b"/>
+<text x="89" y="665" class="head">案例 B</text>
+<text x="89" y="704" class="body">三项任务：设备报告完成</text>
+<text x="89" y="737" class="body">连续完成观测进入回执</text>
+<rect x="514" y="621" width="410" height="155" rx="16" fill="#ffffff" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="514" y="639" width="6" height="119" rx="3" fill="#24628b"/>
+<text x="539" y="665" class="head">案例 B</text>
+<text x="539" y="704" class="body">应用保存完成状态</text>
+<text x="539" y="737" class="body">保留原发送和观察记录</text>
+<rect x="964" y="621" width="410" height="155" rx="16" fill="#ffffff" stroke="#d4e0e8" stroke-width="2"/>
+<rect x="964" y="639" width="6" height="119" rx="3" fill="#24628b"/>
+<text x="989" y="665" class="head">案例 B</text>
+<text x="989" y="704" class="body">没有自动签发实物合格</text>
+<text x="989" y="737" class="body">质量终点另行验收</text>
+<text x="64" y="831" class="small">图2 · 基于限定案例的状态比较；“未知”需要核对，不能替换成“未执行”或“已合格”。</text>
+</svg>
