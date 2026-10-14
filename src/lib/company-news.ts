@@ -1,3 +1,4 @@
+import { SI_SIX_CAPABILITY_FRAMEWORK } from "./si-six-capability-framework";
 import { RD_INSIGHT_KNOWLEDGE_RESEARCH } from "./rd-insight-knowledge-research";
 import { SI_P1S_ENGINEERING_RESEARCH } from "./si-p1s-engineering-research";
 import { FLASH_PRINTING_SKILLS_RESEARCH } from "./flash-printing-skills-research";
@@ -77,6 +78,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+SI_SIX_CAPABILITY_FRAMEWORK,
 RD_INSIGHT_KNOWLEDGE_RESEARCH,
 SI_P1S_ENGINEERING_RESEARCH,
 FLASH_PRINTING_SKILLS_RESEARCH,

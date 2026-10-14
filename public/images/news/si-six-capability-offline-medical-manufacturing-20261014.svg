@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120" role="img" aria-labelledby="title desc">
+<title id="title">院内医疗3D打印的六能力协同框架</title>
+<desc id="desc">研发辅助形成经过验证的版本后离线部署。院内以六项能力协同专科算法、切片和设备，依靠任务记录、证据核验和人工审核完成交付。本图为方法设计。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a7185"/></marker></defs>
+<rect width="1440" height="1120" fill="#f5f8fb"/>
+<g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+<text x="64" y="62" font-size="22" font-weight="700" fill="#1b657a" letter-spacing="3">ZIYIN · METHOD FRAMEWORK</text>
+<text x="64" y="122" font-size="42" font-weight="700" fill="#143147">从研发协助到院内可验证执行</text>
+<text x="64" y="166" font-size="24" fill="#546b7b">同一任务贯穿知识、算法、制造与验收｜拟议架构</text>
+<rect x="48" y="202" width="1344" height="170" rx="22" fill="#e7eef6" stroke="#b6c9d9"/>
+<text x="76" y="242" font-size="27" font-weight="700" fill="#143147">研发环境</text>
+<text x="76" y="279" font-size="22" fill="#435d72">GPT辅助分析、代码与技能设计</text>
+<text x="76" y="316" font-size="21" fill="#435d72">资料限定在获准使用范围</text>
+<path d="M490 287 H550" stroke="#4a7185" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="575" y="249" width="330" height="76" rx="12" fill="#fff"/>
+<text x="740" y="296" text-anchor="middle" font-size="25" fill="#143147">审查 · 测试 · 版本冻结</text>
+<path d="M930 287 H992" stroke="#4a7185" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="1015" y="249" width="330" height="76" rx="12" fill="#fff"/>
+<text x="1180" y="296" text-anchor="middle" font-size="25" fill="#143147">离线部署与回滚包</text>
+<path d="M1180 337 V412" stroke="#4a7185" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="48" y="428" width="1344" height="575" rx="22" fill="#fff" stroke="#92bcb5" stroke-width="2"/>
+<text x="76" y="475" font-size="28" font-weight="700" fill="#14564f">院内运行环境 · chcomct SI</text>
+<text x="76" y="513" font-size="22" fill="#536f6c">本地模型、本地知识和工具执行｜日常患者任务不依赖云端实时指挥</text>
+<rect x="76" y="544" width="408" height="105" rx="12" fill="#f0f7f6" stroke="#c5dcd7"/><text x="96" y="583" font-size="23" font-weight="700" fill="#168478">01</text><text x="143" y="584" font-size="25" font-weight="700" fill="#173f3b">提示词工程</text><text x="97" y="623" font-size="21" fill="#476661">理解目标与输出要求</text><rect x="506" y="544" width="408" height="105" rx="12" fill="#f0f7f6" stroke="#c5dcd7"/><text x="526" y="583" font-size="23" font-weight="700" fill="#168478">02</text><text x="573" y="584" font-size="25" font-weight="700" fill="#173f3b">参数配置</text><text x="527" y="623" font-size="21" fill="#476661">选择已验证的有效配置</text><rect x="936" y="544" width="408" height="105" rx="12" fill="#f0f7f6" stroke="#c5dcd7"/><text x="956" y="583" font-size="23" font-weight="700" fill="#168478">03</text><text x="1003" y="584" font-size="25" font-weight="700" fill="#173f3b">技能封装</text><text x="957" y="623" font-size="21" fill="#476661">固化操作与异常处置</text><rect x="76" y="668" width="408" height="105" rx="12" fill="#f0f7f6" stroke="#c5dcd7"/><text x="96" y="707" font-size="23" font-weight="700" fill="#168478">04</text><text x="143" y="708" font-size="25" font-weight="700" fill="#173f3b">RAG知识检索</text><text x="97" y="747" font-size="21" fill="#476661">提供有来源的本地依据</text><rect x="506" y="668" width="408" height="105" rx="12" fill="#f0f7f6" stroke="#c5dcd7"/><text x="526" y="707" font-size="23" font-weight="700" fill="#168478">05</text><text x="573" y="708" font-size="25" font-weight="700" fill="#173f3b">工具调用</text><text x="527" y="747" font-size="21" fill="#476661">连接专科算法和设备</text><rect x="936" y="668" width="408" height="105" rx="12" fill="#f0f7f6" stroke="#c5dcd7"/><text x="956" y="707" font-size="23" font-weight="700" fill="#168478">06</text><text x="1003" y="708" font-size="25" font-weight="700" fill="#173f3b">流程编排</text><text x="957" y="747" font-size="21" fill="#476661">保存任务与恢复执行</text><path d="M720 786 V815" stroke="#4a7185" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="76" y="829" width="1268" height="62" rx="12" fill="#143147"/>
+<text x="710" y="869" text-anchor="middle" font-size="24" fill="white">同一任务：影像与需求 → 专科算法 → 模型核验 → 切片与设备 → 实物检查</text>
+<text x="77" y="934" font-size="23" font-weight="700" fill="#14564f">贯穿全程</text>
+<text x="225" y="934" font-size="22" fill="#435d72">版本与授权 · 持久任务记录 · 工具证据 · 专业审核 · 异常接管</text>
+<text x="77" y="973" font-size="21" fill="#667b87">设备完成后仍需实物检查与业务回写；结果未知时先核对既有任务，不盲目重复下发。</text>
+<text x="64" y="1052" font-size="22" font-weight="700" fill="#143147">验证终点</text>
+<text x="222" y="1052" font-size="23" fill="#435d72">正确交付 · 中断可恢复 · 全链路离线 · 证据可核查</text>
+<text x="64" y="1094" font-size="18" fill="#667b87">方法设计示意，不代表整套系统已实现或完成临床验证。   瑜秀曈芯｜2026-10-14</text>
+</g></svg>
