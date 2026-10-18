@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" role="img" aria-labelledby="title desc">
+<title id="title">同一CT三路线配对评价方案</title>
+<desc id="desc">相同输入分到人工、自动和专科模型三路线，各自记录初稿、修订稿和导出稿。用独立参考比较，固定参数重放与统一后处理分别用于定位执行和算法差异。方案尚未执行。</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#536e83"/></marker></defs>
+<rect width="1440" height="1000" fill="#f4f7fa"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">
+<text x="60" y="57" fill="#167c75" font-size="21" font-weight="700" letter-spacing="2">ZIYIN · EVALUATION PROTOCOL</text>
+<text x="60" y="114" fill="#17354b" font-size="38" font-weight="700">自动操作与自动建模，分别验证</text>
+<text x="60" y="158" fill="#526b7d" font-size="23">三路线配对 · 分段留证 · 独立参考｜拟议协议，尚未实施</text>
+<rect x="60" y="194" width="1320" height="84" rx="16" fill="#17354b"/>
+<text x="720" y="230" text-anchor="middle" fill="white" font-size="25" font-weight="700">共同输入与任务定义</text>
+<text x="720" y="260" text-anchor="middle" fill="#d6e5ed" font-size="20">同一CT · 目标结构与侧别 · 用途 · 版本及允许的修订规则</text>
+<path d="M720 280V301H275V326 M720 301V326 M720 301H1165V326" fill="none" stroke="#536e83" stroke-width="3" marker-end="url(#a)"/>
+<rect x="60" y="335" width="430" height="275" rx="18" fill="#fff" stroke="#bbccd9"/>
+<rect x="505" y="335" width="430" height="275" rx="18" fill="#fff" stroke="#85bdb3"/>
+<rect x="950" y="335" width="430" height="275" rx="18" fill="#fff" stroke="#b8b3d2"/>
+<text x="86" y="379" fill="#234c68" font-size="27" font-weight="700">A · 人工工作流</text>
+<text x="531" y="379" fill="#16736a" font-size="27" font-weight="700">B · 自动工作流</text>
+<text x="976" y="379" fill="#655784" font-size="27" font-weight="700">C · 专科模型</text>
+<text x="86" y="416" fill="#526b7d" font-size="21">工程师操作既有软件</text>
+<text x="531" y="416" fill="#526b7d" font-size="21">SI操作同一软件</text>
+<text x="976" y="416" fill="#526b7d" font-size="21">指定模型与明确输出语义</text>
+<g fill="#17354b" font-size="23">
+<text x="86" y="469">① 初稿：保留首次结果和失败</text><text x="86" y="517">② 修订：记录改动和人工投入</text><text x="86" y="565">③ 导出：核对文件与几何</text>
+<text x="531" y="469">① 初稿：保留首次结果和失败</text><text x="531" y="517">② 修订：记录改动和人工投入</text><text x="531" y="565">③ 导出：核对文件与几何</text>
+<text x="976" y="469">① 初稿：保留首次结果和失败</text><text x="976" y="517">② 修订：记录改动和人工投入</text><text x="976" y="565">③ 导出：核对文件与几何</text>
+</g>
+<path d="M275 612V644 M720 612V644 M1165 612V644" fill="none" stroke="#536e83" stroke-width="3" marker-end="url(#a)"/>
+<rect x="60" y="654" width="1320" height="111" rx="16" fill="#e6f1ee"/>
+<text x="86" y="694" fill="#175b54" font-size="26" font-weight="700">共同独立参考 · 可行时盲化 · 同一病例配对比较</text>
+<text x="86" y="734" fill="#315c59" font-size="23">结构完整性与局部几何｜人员有效操作时间｜失败、救援与不适用</text>
+<rect x="60" y="791" width="647" height="112" rx="14" fill="#e6edf4"/>
+<text x="84" y="828" fill="#234c68" font-size="24" font-weight="700">A ↔ B：流程替代</text>
+<text x="84" y="868" fill="#465f73" font-size="21">另行固定参数重放，核对操作复现一致性</text>
+<rect x="733" y="791" width="647" height="112" rx="14" fill="#ece9f4"/>
+<text x="757" y="828" fill="#655784" font-size="24" font-weight="700">B ↔ C：工作流比较</text>
+<text x="757" y="868" fill="#5b5273" font-size="21">统一后处理后，再探讨分割算法贡献</text>
+<text x="60" y="949" fill="#17354b" font-size="22" font-weight="700">流程跑通 ≠ 解剖质量达标 ≠ 打印实物合格</text>
+<text x="60" y="982" fill="#697e8b" font-size="18">原创方法设计图｜非实验结果，不表示临床用途或产品变更已获批准｜2026-10-18</text>
+</g></svg>
