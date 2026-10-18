@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="title desc">
+  <title id="title">前置条件与验证证据如何共同约束执行</title>
+  <desc id="desc">任务绑定当前对象与用途。输入有效、工具与资源可用、授权适用三个必要条件共同决定是否可以执行。执行观察形成证据，更新任务；条件变化后重新核验。拟议方法，非实验结果。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#3e668e"/></marker></defs>
+  <rect width="1200" height="960" fill="#f3f7fb"/>
+  <g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">
+    <text x="64" y="63" fill="#35638a" font-size="19" letter-spacing="2">子殷科技 · 方法学与系统设计</text>
+    <text x="64" y="118" fill="#102b45" font-size="36" font-weight="700">前置条件与验证证据如何共同约束执行</text>
+    <text x="64" y="159" fill="#52667a" font-size="22">先明确当前任务，再检查条件；每次执行都留下可核查依据。</text>
+    <rect x="240" y="199" width="720" height="101" rx="15" fill="#163e60"/>
+    <text x="600" y="239" text-anchor="middle" fill="white" font-size="27" font-weight="700">当前任务</text>
+    <text x="600" y="275" text-anchor="middle" fill="#dbeaf5" font-size="21">目标 · 对象版本 · 配置 · 用途</text>
+    <g stroke="#3e668e" stroke-width="3" fill="none" marker-end="url(#arrow)">
+      <path d="M600 300V325H232V356"/><path d="M600 300V356"/><path d="M600 325H968V356"/>
+    </g>
+    <g fill="white" stroke="#bdcfde" stroke-width="2">
+      <rect x="64" y="360" width="336" height="132" rx="14"/><rect x="432" y="360" width="336" height="132" rx="14"/><rect x="800" y="360" width="336" height="132" rx="14"/>
+    </g>
+    <g text-anchor="middle">
+      <g fill="#163e60" font-size="26" font-weight="700"><text x="232" y="404">输入与产物</text><text x="600" y="404">工具与资源</text><text x="968" y="404">授权与用途</text></g>
+      <g fill="#52667a" font-size="21"><text x="232" y="440">当前对象是否核验通过？</text><text x="232" y="470">证据是否仍然有效？</text><text x="600" y="440">接口和配置是否适用？</text><text x="600" y="470">资源状态是否已核对？</text><text x="968" y="440">这次动作是否获准？</text><text x="968" y="470">范围是否与任务一致？</text></g>
+    </g>
+    <g stroke="#3e668e" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M232 492V521H600V550"/><path d="M600 492V550"/><path d="M968 492V521H600"/></g>
+    <rect x="240" y="555" width="720" height="106" rx="14" fill="#e3eff7" stroke="#8aaec8" stroke-width="2"/>
+    <text x="600" y="596" text-anchor="middle" fill="#163e60" font-size="27" font-weight="700">全部必要条件满足 → 当前步骤就绪</text>
+    <text x="600" y="633" text-anchor="middle" fill="#52667a" font-size="21">未满足或未知：定位缺项，补证、等待或按规则转交</text>
+    <path d="M600 661V704" stroke="#3e668e" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="240" y="710" width="720" height="106" rx="14" fill="#163e60"/>
+    <text x="600" y="750" text-anchor="middle" fill="white" font-size="27" font-weight="700">执行动作 · 观察结果 · 更新任务</text>
+    <text x="600" y="788" text-anchor="middle" fill="#dbeaf5" font-size="21">对象版本 + 检查方法 + 时间 + 结果 + 来源</text>
+    <path d="M960 763H1110V574H971" stroke="#3e668e" stroke-width="3" stroke-dasharray="8 7" fill="none" marker-end="url(#arrow)"/>
+    <text x="1042" y="685" text-anchor="middle" fill="#35638a" font-size="19">重新核验</text>
+    <text x="600" y="866" text-anchor="middle" fill="#52667a" font-size="21">对象或配置变化后，受影响的旧证据不能自动继承。</text>
+    <path d="M64 899H1136" stroke="#ccd9e5"/>
+    <text x="64" y="933" fill="#64778a" font-size="18">拟议框架 · 不是已部署架构或实验结果</text>
+    <text x="1136" y="933" text-anchor="end" fill="#64778a" font-size="18">2026.10.19</text>
+  </g>
+</svg>
