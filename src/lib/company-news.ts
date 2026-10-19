@@ -1,3 +1,4 @@
+import { HEALTHY_WAKEFULNESS_HYPOTHESIS } from "./healthy-wakefulness-hypothesis";
 import { PREREQUISITE_EVIDENCE_GRAPH } from "./prerequisite-evidence-graph";
 import { MEDICAL_MODELING_THREE_ROUTE } from "./medical-modeling-three-route";
 import { SI_SIX_CAPABILITY_FRAMEWORK } from "./si-six-capability-framework";
@@ -80,6 +81,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+HEALTHY_WAKEFULNESS_HYPOTHESIS,
 PREREQUISITE_EVIDENCE_GRAPH,
 MEDICAL_MODELING_THREE_ROUTE,
 SI_SIX_CAPABILITY_FRAMEWORK,

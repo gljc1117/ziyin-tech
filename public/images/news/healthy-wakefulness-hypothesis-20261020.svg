@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+<title id="title">新脑力能力与健康清醒时间研究框架</title>
+<desc id="desc">AI改变任务分工已有研究支持。认知负担变化是否降低整体睡眠需求仍待验证。即使观察到睡眠缩短，也须独立评价认知、情绪、身体功能和长期结局。营养可支持恢复，尚未证明替代睡眠。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="850" rx="24" fill="#f5f7fa"/>
+<g font-family="Noto Serif CJK SC, PingFang SC, Microsoft YaHei, sans-serif">
+<text x="64" y="69" font-size="18" letter-spacing="3" fill="#315979">ZIYIN  ·  RESEARCH HYPOTHESIS</text>
+<text x="64" y="125" font-size="39" font-weight="700" fill="#142b43">新脑力能力与健康清醒时间</text>
+<text x="64" y="168" font-size="22" fill="#536679">任务分工的改变已有依据  睡眠需求的改变仍需直接证据</text>
+<rect x="64" y="211" width="310" height="170" rx="12" fill="#e2edf5" stroke="#a4bfd3"/>
+<text x="88" y="252" font-size="18" fill="#315979">已有特定任务研究</text>
+<text x="88" y="295" font-size="28" font-weight="700" fill="#142b43">AI参与任务分工</text>
+<text x="88" y="337" font-size="21" fill="#405971">检索  计算  表达与执行</text>
+<rect x="445" y="211" width="310" height="170" rx="12" fill="#e2edf5" stroke="#a4bfd3"/>
+<text x="469" y="252" font-size="18" fill="#315979">与任务及使用方式有关</text>
+<text x="469" y="295" font-size="28" font-weight="700" fill="#142b43">认知负担重新分配</text>
+<text x="469" y="337" font-size="21" fill="#405971">核验与复杂决策也会增加</text>
+<rect x="826" y="211" width="310" height="170" rx="12" fill="#fff6e7" stroke="#c6a56e" stroke-dasharray="7 5"/>
+<text x="850" y="252" font-size="18" fill="#806231">本文待检验的联系</text>
+<text x="850" y="295" font-size="28" font-weight="700" fill="#513e21">整体睡眠需求变化</text>
+<text x="850" y="337" font-size="21" fill="#715c3b">方向  幅度与适用人群未知</text>
+<path d="M384 296H431" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M765 296H812" stroke="#64748b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<path d="M981 392V423H600V451" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="600" y="490" text-anchor="middle" font-size="26" font-weight="700" fill="#142b43">若观察到自然睡眠缩短  仍须分别验证</text>
+<g fill="#fff" stroke="#c4cfd9"><rect x="64" y="524" width="250" height="96" rx="10"/><rect x="338" y="524" width="250" height="96" rx="10"/><rect x="612" y="524" width="250" height="96" rx="10"/><rect x="886" y="524" width="250" height="96" rx="10"/></g>
+<g text-anchor="middle" fill="#203e56" font-size="25"><text x="189" y="566">独立认知</text><text x="463" y="566">情绪与生活体验</text><text x="737" y="566">代谢与身体功能</text><text x="1011" y="566">长期结局</text></g>
+<g text-anchor="middle" fill="#536679" font-size="19"><text x="189" y="598">移除AI后仍能保持</text><text x="463" y="598">本人可自主参与生活</text><text x="737" y="598">任务表现不能代替</text><text x="1011" y="598">排查补觉与累积影响</text></g>
+<path d="M64 671H1136" stroke="#cbd5df"/>
+<text x="64" y="715" font-size="25" font-weight="700" fill="#142b43">营养的研究位置</text>
+<text x="64" y="754" font-size="23" fill="#405971">评估营养不足与恢复条件  尚未证明蛋白质或补充剂能够替代睡眠</text>
+<text x="64" y="807" font-size="18" fill="#687c8e">概念示意  非实验结果  ·  瑜秀曈芯  ·  2026年10月</text>
+</g></svg>
