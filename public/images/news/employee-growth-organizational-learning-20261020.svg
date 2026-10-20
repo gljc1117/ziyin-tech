@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">医工协作中的员工成长与组织学习</title>
+  <desc id="desc">从临床需求、任务范围、支援复核到确认交付，积累能力证据与经验证的方法，再反馈到后续任务。贡献认可与资源安排支持持续学习。图中关系为待验证的概念机制。</desc>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#53778f" stroke-width="1.5"/></marker></defs>
+  <rect width="1200" height="760" fill="#f5f8fb"/>
+  <g font-family="Noto Sans CJK SC,Microsoft YaHei,Noto Serif CJK SC,sans-serif">
+    <text x="60" y="67" fill="#405d76" font-size="18" letter-spacing="2">ZIYIN  ·  方法学研究</text>
+    <text x="60" y="122" fill="#132d43" font-size="36" font-weight="700">员工成长如何进入每一次医工任务</text>
+    <text x="60" y="163" fill="#566879" font-size="21">职责有边界  求助有回应  成长有证据  贡献有认可</text>
+    <g stroke="#53778f" stroke-width="2.5" marker-end="url(#arrow)" fill="none"><path d="M295 274 H325"/><path d="M575 274 H605"/><path d="M855 274 H885"/></g>
+    <g fill="#fff" stroke="#bacbd8" stroke-width="1.5">
+      <rect x="60" y="213" width="235" height="125" rx="12"/>
+      <rect x="335" y="213" width="240" height="125" rx="12"/>
+      <rect x="615" y="213" width="240" height="125" rx="12"/>
+      <rect x="895" y="213" width="245" height="125" rx="12"/>
+    </g>
+    <g fill="#153950" font-size="25" font-weight="700"><text x="85" y="256">澄清临床需求</text><text x="360" y="256">确认任务范围</text><text x="640" y="256">安排支援复核</text><text x="920" y="256">确认交付结果</text></g>
+    <g fill="#536777" font-size="19"><text x="85" y="294">用途  资料  期限</text><text x="360" y="294">主办  标准  升级</text><text x="640" y="294">方法  时间  资源</text><text x="920" y="294">质量  依据  回执</text></g>
+    <path d="M1015 340 V390 H840 V426" fill="none" stroke="#53778f" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <path d="M1015 390 H355 V426" fill="none" stroke="#53778f" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="105" y="440" width="490" height="112" rx="12" fill="#e5eff7" stroke="#a8c1d3"/>
+    <rect x="625" y="440" width="490" height="112" rx="12" fill="#e4f0ed" stroke="#a6c6bc"/>
+    <text x="133" y="483" fill="#153950" font-size="26" font-weight="700">个人形成能力证据</text>
+    <text x="133" y="522" fill="#536777" font-size="20">解释方法  独立完成  识别例外</text>
+    <text x="653" y="483" fill="#164b42" font-size="26" font-weight="700">团队积累经验证的方法</text>
+    <text x="653" y="522" fill="#496b63" font-size="20">适用条件  版本  贡献者  复用结果</text>
+    <path d="M1120 495 H1160 V365 H738 V343" fill="none" stroke="#53778f" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+    <path d="M110 495 H40 V365 H452 V343" fill="none" stroke="#53778f" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+    <text x="60" y="615" fill="#153950" font-size="23" font-weight="700">组织提供支持</text>
+    <text x="265" y="615" fill="#536777" font-size="21">带教与排班  贡献回认  资源安排  专业意见回应</text>
+    <text x="60" y="658" fill="#153950" font-size="23" font-weight="700">SI辅助后续任务</text>
+    <text x="265" y="658" fill="#536777" font-size="21">需求询问  方法检索  工具执行  异常保留  人工复核</text>
+    <text x="60" y="722" fill="#6c7b88" font-size="17">概念框架  ·  箭头表示拟议机制  ·  完整效果尚待验证  ·  子殷科技 2026</text>
+  </g>
+</svg>

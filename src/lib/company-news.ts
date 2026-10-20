@@ -1,3 +1,4 @@
+import { EMPLOYEE_GROWTH_ORGANIZATIONAL_LEARNING } from "./employee-growth-organizational-learning";
 import { HEALTHY_WAKEFULNESS_HYPOTHESIS } from "./healthy-wakefulness-hypothesis";
 import { PREREQUISITE_EVIDENCE_GRAPH } from "./prerequisite-evidence-graph";
 import { MEDICAL_MODELING_THREE_ROUTE } from "./medical-modeling-three-route";
@@ -81,6 +82,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+EMPLOYEE_GROWTH_ORGANIZATIONAL_LEARNING,
 HEALTHY_WAKEFULNESS_HYPOTHESIS,
 PREREQUISITE_EVIDENCE_GRAPH,
 MEDICAL_MODELING_THREE_ROUTE,
