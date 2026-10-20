@@ -1,3 +1,5 @@
+import { HUMAN_AI_COLLABORATION_REUSABLE_CAPABILITY } from "./human-ai-collaboration-reusable-capability";
+import { RD_EVIDENCE_SYSTEM_HUMAN_AI_METHODOLOGY } from "./rd-evidence-system-human-ai-methodology";
 import { EMPLOYEE_GROWTH_ORGANIZATIONAL_LEARNING } from "./employee-growth-organizational-learning";
 import { HEALTHY_WAKEFULNESS_HYPOTHESIS } from "./healthy-wakefulness-hypothesis";
 import { PREREQUISITE_EVIDENCE_GRAPH } from "./prerequisite-evidence-graph";
@@ -82,6 +84,8 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+RD_EVIDENCE_SYSTEM_HUMAN_AI_METHODOLOGY,
+HUMAN_AI_COLLABORATION_REUSABLE_CAPABILITY,
 EMPLOYEE_GROWTH_ORGANIZATIONAL_LEARNING,
 HEALTHY_WAKEFULNESS_HYPOTHESIS,
 PREREQUISITE_EVIDENCE_GRAPH,
