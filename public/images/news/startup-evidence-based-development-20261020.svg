@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">共同事实连接企业发展</title><desc id="desc">研发、财务、人事和业务依据真实事件与来源形成不同专业视图，连接证据与阶段决策。差异解释和失败复盘返回日常记录。属于拟议框架。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#4e6d9c" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="820" rx="24" fill="#f3f5fa"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif">
+<text x="64" y="67" font-size="19" letter-spacing="3" fill="#4e6d9c">ZIYIN · 方法研究</text>
+<text x="64" y="127" font-size="40" font-weight="700" fill="#213853">共同事实连接企业发展</text>
+<text x="64" y="169" font-size="22" fill="#5c6e84">保留真实事件，解释不同口径，支持资源与方向选择</text>
+<g fill="white" stroke="#c9d3e3" stroke-width="2"><rect x="64" y="220" width="503" height="80" rx="14"/><rect x="633" y="220" width="503" height="80" rx="14"/><rect x="64" y="545" width="503" height="80" rx="14"/><rect x="633" y="545" width="503" height="80" rx="14"/></g>
+<g font-size="24" fill="#213853" font-weight="700"><text x="93" y="269">研发</text><text x="662" y="269">财务</text><text x="93" y="594">人事</text><text x="662" y="594">业务</text></g>
+<g font-size="21" fill="#5c6e84"><text x="177" y="269">问题、方案、试验与结果</text><text x="746" y="269">凭证、期间与分类依据</text><text x="177" y="594">岗位、参与与工作安排</text><text x="746" y="594">需求、交付与应用反馈</text></g>
+<rect x="215" y="359" width="770" height="126" rx="20" fill="#27486b"/>
+<text x="600" y="409" text-anchor="middle" font-size="29" font-weight="700" fill="white">真实事件与来源证据</text>
+<text x="600" y="450" text-anchor="middle" font-size="22" fill="#dce7f3">稳定标识 · 发生时间 · 责任人 · 关联与版本</text>
+<g stroke="#4e6d9c" stroke-width="2.5" fill="none"><path d="M315 300V335H395V359M885 300V335H805V359M315 545V510H395V485M885 545V510H805V485"/></g>
+<path d="M600 492V674" fill="none" stroke="#4e6d9c" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="64" y="689" width="1072" height="67" rx="14" fill="#dfe7f2"/>
+<text x="600" y="732" text-anchor="middle" font-size="24" fill="#27486b">阶段决策：继续、调整、暂停或终止；差异与失败反馈至日常记录</text>
+<text x="64" y="790" font-size="17" fill="#60748c">共享事实允许形成不同专业视图；图示不替代会计核算、政策判断或实际验证。</text>
+</g></svg>

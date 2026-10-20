@@ -1,3 +1,5 @@
+import { DIALOGUE_TO_ORGANIZATIONAL_CAPABILITY } from "./dialogue-to-organizational-capability";
+import { STARTUP_EVIDENCE_BASED_DEVELOPMENT } from "./startup-evidence-based-development";
 import { EMPLOYEE_GROWTH_ORGANIZATIONAL_LEARNING } from "./employee-growth-organizational-learning";
 import { HEALTHY_WAKEFULNESS_HYPOTHESIS } from "./healthy-wakefulness-hypothesis";
 import { PREREQUISITE_EVIDENCE_GRAPH } from "./prerequisite-evidence-graph";
@@ -82,6 +84,8 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+STARTUP_EVIDENCE_BASED_DEVELOPMENT,
+DIALOGUE_TO_ORGANIZATIONAL_CAPABILITY,
 EMPLOYEE_GROWTH_ORGANIZATIONAL_LEARNING,
 HEALTHY_WAKEFULNESS_HYPOTHESIS,
 PREREQUISITE_EVIDENCE_GRAPH,
