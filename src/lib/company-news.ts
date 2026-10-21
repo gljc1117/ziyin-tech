@@ -1,3 +1,4 @@
+import { MEDICAL_IMAGING_PRETRAINING_REVIEW } from "./medical-imaging-pretraining-review";
 import { DIALOGUE_TO_ORGANIZATIONAL_CAPABILITY } from "./dialogue-to-organizational-capability";
 import { STARTUP_EVIDENCE_BASED_DEVELOPMENT } from "./startup-evidence-based-development";
 import { EMPLOYEE_GROWTH_ORGANIZATIONAL_LEARNING } from "./employee-growth-organizational-learning";
@@ -84,6 +85,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+MEDICAL_IMAGING_PRETRAINING_REVIEW,
 STARTUP_EVIDENCE_BASED_DEVELOPMENT,
 DIALOGUE_TO_ORGANIZATIONAL_CAPABILITY,
 EMPLOYEE_GROWTH_ORGANIZATIONAL_LEARNING,
