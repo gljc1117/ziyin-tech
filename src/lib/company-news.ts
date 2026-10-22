@@ -1,3 +1,4 @@
+import { PELVIS_SI_LAYERED_DELIVERY } from "./pelvis-si-layered-delivery";
 import { AI_RD_REPEATABLE_SUCCESS } from "./ai-rd-repeatable-success";
 import { CALCAI_SURFACE_VALIDATION } from "./calcai-surface-validation";
 import { MEDICAL_IMAGING_PRETRAINING_REVIEW } from "./medical-imaging-pretraining-review";
@@ -87,6 +88,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+PELVIS_SI_LAYERED_DELIVERY,
 AI_RD_REPEATABLE_SUCCESS,
 CALCAI_SURFACE_VALIDATION,
 MEDICAL_IMAGING_PRETRAINING_REVIEW,
