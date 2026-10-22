@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040" role="img" aria-labelledby="title desc">
+ <title id="title">数字成果先交付，实体制造按需求继续</title>
+ <desc id="desc">医学三维服务从影像与任务、数字建模进入专科审阅，完成数字交付后按任务要求选择数字结案或制造分支。各阶段通过任务与成果记录支持续接。方法框架示意，不表示全部能力已经部署。</desc>
+ <defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f2f6fc"/><stop offset="1" stop-color="#eaf7f4"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#426c8b" stroke-width="1.5"/></marker>
+  <style>text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif}.h{font-size:30px;font-weight:700;fill:#173d59}.p{font-size:24px;fill:#3a5a70}.s{font-size:22px;fill:#527085}.a{stroke:#426c8b;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+ </defs>
+ <rect width="1440" height="1040" rx="28" fill="url(#bg)"/>
+ <rect x="56" y="46" width="7" height="84" rx="3" fill="#14998d"/>
+ <text x="84" y="85" font-size="41" font-weight="700" fill="#123a56">数字成果先交付，实体制造按需求继续</text>
+ <text x="84" y="126" font-size="24" fill="#4b6a7c">骨盆实践中的分层交付 · 专科审阅 · 方法复用 · 任务续接</text>
+
+ <rect x="55" y="180" width="410" height="174" rx="18" fill="#fff" stroke="#cbdae8" stroke-width="2"/>
+ <text x="82" y="225" class="h">01 任务与影像</text>
+ <text x="82" y="271" class="p">目标部位、范围与用途</text>
+ <text x="82" y="311" class="p">明确数字及实体交付要求</text>
+ <rect x="515" y="180" width="410" height="174" rx="18" fill="#fff" stroke="#cbdae8" stroke-width="2"/>
+ <text x="542" y="225" class="h">02 数字建模</text>
+ <text x="542" y="271" class="p">重建与几何处理形成候选</text>
+ <text x="542" y="311" class="p">保留输入、方法与成果版本</text>
+ <rect x="975" y="180" width="410" height="174" rx="18" fill="#fff" stroke="#cbdae8" stroke-width="2"/>
+ <text x="1002" y="225" class="h">03 专科审阅</text>
+ <text x="1002" y="271" class="p">专业检查、修订与确认</text>
+ <text x="1002" y="311" class="p">对应部位的结构与用途</text>
+ <path d="M465 267H505" class="a"/><path d="M925 267H965" class="a"/>
+ <path d="M1180 354V390H720V415" class="a"/>
+
+ <rect x="55" y="423" width="1330" height="135" rx="18" fill="#143f59"/>
+ <text x="85" y="472" font-size="32" font-weight="700" fill="#fff">数字成果交付</text>
+ <text x="85" y="517" font-size="25" fill="#cdeae8">模型或报告　｜　明确成果版本　｜　保留审核状态　｜　按任务约定交付</text>
+
+ <path d="M720 558V602H355V639" class="a"/>
+ <path d="M720 602H1075V639" class="a"/>
+ <text x="330" y="620" text-anchor="end" class="s">仅需数字成果</text>
+ <text x="1100" y="620" class="s">还需实体模型</text>
+
+ <rect x="55" y="647" width="600" height="180" rx="18" fill="#dff3eb" stroke="#9ac8b6" stroke-width="2"/>
+ <text x="84" y="696" class="h">按约定数字结案</text>
+ <text x="84" y="742" class="p">数字交付具有独立终点</text>
+ <text x="84" y="783" class="p">后续新增打印需求，核对成果后再衔接</text>
+
+ <rect x="765" y="647" width="620" height="180" rx="18" fill="#fff" stroke="#cbdae8" stroke-width="2"/>
+ <text x="794" y="696" class="h">进入制造分支</text>
+ <text x="794" y="742" class="p">引用已确认版本 → 切片、发送与制造</text>
+ <text x="794" y="783" class="p">设备终态 → 实物验收 → 任务回写</text>
+
+ <rect x="55" y="872" width="1330" height="116" rx="18" fill="#fff" stroke="#cbdae8"/>
+ <text x="84" y="915" font-size="27" font-weight="700" fill="#176b74">任务记录支撑续接</text>
+ <text x="394" y="915" class="p">同一任务 · 已有决定 · 已发生动作 · 结果证据 · 下一步骤</text>
+ <text x="84" y="960" class="s">中断后先核对事实；平滑共用方法，各专科分别验证参数与关键结构。</text>
+ <text x="1384" y="1019" text-anchor="end" fill="#567384" font-size="18">ZIYIN · 2026.10 · 原创方法框架，非全部能力已完成证明</text>
+</svg>
