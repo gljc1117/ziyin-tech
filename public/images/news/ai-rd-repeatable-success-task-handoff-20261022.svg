@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960" role="img" aria-labelledby="title desc">
+  <title id="title">从任务完成到能力复用</title>
+  <desc id="desc">以任务事实、固定执行器、版本条件和证据回执连接数字成果交付与按需制造，并把失败场景纳入后续回归。本文提出的方法框架，不表示所有模块已部署。</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f0f7fc"/><stop offset="1" stop-color="#eef9f6"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#3d7896" stroke-width="1.6"/></marker>
+    <style>text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif}.label{font-size:24px;fill:#456477}.heading{font-size:30px;font-weight:700;fill:#143c55}.body{font-size:24px;fill:#3b5c70}.small{font-size:22px;fill:#4c6879}.line{stroke:#3d7896;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1440" height="960" rx="28" fill="url(#bg)"/>
+  <rect x="54" y="50" width="7" height="80" rx="3" fill="#118f9b"/>
+  <text x="82" y="86" fill="#123c55" font-size="42" font-weight="700">从任务完成到能力复用</text>
+  <text x="83" y="126" class="label">让下一位执行者少一点摸索，让下一次运行多一份依据</text>
+
+  <rect x="55" y="174" width="1330" height="114" rx="18" fill="#123c55"/>
+  <text x="83" y="214" fill="#a8e7e2" font-size="22" font-weight="700">任务事实 · 跨会话保留</text>
+  <text x="83" y="257" fill="#fff" font-size="25">目标与授权　｜　输入及成果版本　｜　当前阶段　｜　已发生动作　｜　合法下一步</text>
+
+  <path d="M278 288V331" class="line"/>
+  <path d="M720 288V331" class="line"/>
+  <path d="M1162 288V331" class="line"/>
+
+  <rect x="55" y="336" width="410" height="224" rx="18" fill="#fff" stroke="#c6dce9" stroke-width="2"/>
+  <text x="83" y="381" class="heading">01 方法能调用</text>
+  <text x="83" y="427" class="body">稳定步骤进入固定执行器</text>
+  <text x="83" y="466" class="body">明确入口、回读与失败出口</text>
+  <text x="83" y="520" class="small">避免每次重新探索同一操作</text>
+
+  <rect x="515" y="336" width="410" height="224" rx="18" fill="#fff" stroke="#c6dce9" stroke-width="2"/>
+  <text x="543" y="381" class="heading">02 条件有绑定</text>
+  <text x="543" y="427" class="body">代码、参数、设备与输入</text>
+  <text x="543" y="466" class="body">同时保存适用与未覆盖范围</text>
+  <text x="543" y="520" class="small">跨专科复用方法，各自验收</text>
+
+  <rect x="975" y="336" width="410" height="224" rx="18" fill="#fff" stroke="#c6dce9" stroke-width="2"/>
+  <text x="1003" y="381" class="heading">03 结果有证据</text>
+  <text x="1003" y="427" class="body">文件检查、专业审阅与回执</text>
+  <text x="1003" y="466" class="body">保留“结果未知”并先核对</text>
+  <text x="1003" y="520" class="small">动作已发生 ≠ 已通过验收</text>
+
+  <path d="M465 448H505" class="line"/>
+  <path d="M925 448H965" class="line"/>
+  <path d="M1162 560V602H370V634" class="line"/>
+
+  <rect x="55" y="640" width="610" height="139" rx="18" fill="#e0f4ef" stroke="#94c8bd" stroke-width="2"/>
+  <text x="83" y="686" class="heading">先完成专科数字交付</text>
+  <text x="83" y="731" class="body">模型或报告 · 审核状态 · 对应成果版本</text>
+  <path d="M665 710H757" class="line"/>
+  <text x="686" y="670" fill="#2b706d" font-size="21">按需</text>
+  <rect x="765" y="640" width="620" height="139" rx="18" fill="#fff" stroke="#c6dce9" stroke-width="2"/>
+  <text x="793" y="686" class="heading">再继续实体制造</text>
+  <text x="793" y="731" class="body">切片与发送 · 设备终态 · 实物质量检查</text>
+
+  <rect x="55" y="815" width="1330" height="96" rx="16" fill="#fff" stroke="#c6dce9"/>
+  <text x="82" y="853" fill="#176774" font-size="25" font-weight="700">持续评价</text>
+  <text x="255" y="853" class="body">一次成功率　｜　人工介入　｜　恢复表现　｜　交接续接</text>
+  <text x="82" y="889" class="small">失败场景进入后续回归；方法框架示意，尚非完整部署或对照实验结果。</text>
+  <text x="1382" y="941" text-anchor="end" fill="#577586" font-size="18">ZIYIN · 2026.10 · 原创方法示意</text>
+</svg>
