@@ -1,3 +1,4 @@
+import { AI_RD_REPEATABLE_SUCCESS } from "./ai-rd-repeatable-success";
 import { CALCAI_SURFACE_VALIDATION } from "./calcai-surface-validation";
 import { MEDICAL_IMAGING_PRETRAINING_REVIEW } from "./medical-imaging-pretraining-review";
 import { DIALOGUE_TO_ORGANIZATIONAL_CAPABILITY } from "./dialogue-to-organizational-capability";
@@ -86,6 +87,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+AI_RD_REPEATABLE_SUCCESS,
 CALCAI_SURFACE_VALIDATION,
 MEDICAL_IMAGING_PRETRAINING_REVIEW,
 STARTUP_EVIDENCE_BASED_DEVELOPMENT,
