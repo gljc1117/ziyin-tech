@@ -33,7 +33,7 @@ test("website publishing protects drafts, ownership, immutable versions and cust
     insert into public.demo_requests(doctor_name,hospital_name,phone) values('QA only','QA institution','synthetic');
   `);
   await db.exec(readFileSync(new URL("../supabase/migrations/20260923074638_staff_inquiry_management.sql",import.meta.url),"utf8"));
-  await db.exec(readFileSync(new URL("../supabase/migrations/20261022095642_website_publishing.sql",import.meta.url),"utf8"));
+  await db.exec(readFileSync(new URL("../supabase/migrations/20261022102133_website_publishing.sql",import.meta.url),"utf8"));
   const ids = [1,2,3,4].map(n => `20000000-0000-4000-8000-00000000000${n}`);
   const [owner,other,outsider,staff] = ids;
   for (const id of ids) await db.query("insert into auth.users(id) values($1)",[id]);
