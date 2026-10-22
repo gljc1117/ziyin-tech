@@ -2,6 +2,7 @@ export interface PublishedNewsItem {
   id: string; title: string; summary: string | null; content: string | null;
   category: string; published_at: string | null;
   display_date?: string; cover_image_url?: string;
+  byline?: string;
 }
 export function newsDateLabel(item: { published_at: string | null; display_date?: string }) {
   if (item.display_date) return item.display_date;

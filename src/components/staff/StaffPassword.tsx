@@ -105,7 +105,8 @@ export default function StaffPassword() {
         </form>
       </>}
       {error && <p className="staff-error mt-5" role="alert">{error}</p>}
-      {phase === "done" && <p className="mt-5 text-sm leading-7 text-slate-600">请使用工作邮箱和刚设置的密码登录合作需求管理。</p>}
+      {phase === "done" && <p className="mt-5 text-sm leading-7 text-slate-600">请使用工作邮箱和刚设置的密码，进入公司已开通权限的工作台。</p>}
+      <Link href="/publishing/login" className="mr-6 mt-7 inline-block text-sm font-semibold text-blue-700">前往官网发文登录 →</Link>
       <Link href="/staff/login" className="mt-7 inline-block text-sm font-semibold text-blue-700">返回员工登录 →</Link>
     </section>
   </div>;

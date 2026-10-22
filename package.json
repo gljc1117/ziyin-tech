@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test:trust": "node scripts/verify-candidate.mjs",
     "test:staff": "node --test tests/staff-database.test.mjs tests/staff-api.test.mjs tests/staff-password.test.mjs",
-    "test:comments": "node --test tests/comments-database.test.mjs tests/comments-api.test.mjs"
+    "test:comments": "node --test tests/comments-database.test.mjs tests/comments-api.test.mjs",
+    "test:publishing": "node --test tests/publishing-database.test.mjs tests/publishing-api.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

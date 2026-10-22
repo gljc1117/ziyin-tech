@@ -21,6 +21,7 @@ import EditorialArticleBody from "@/components/content/EditorialArticleBody";
 import { newsDateLabel } from "@/lib/news-types";
 import ArticleComments from "@/components/comments/ArticleComments";
 import { allowsComments } from "@/lib/article-comments";
+export const dynamic = "force-dynamic";
 
 
 const categoryColor: Record<string, string> = {
@@ -96,6 +97,7 @@ export default async function NewsDetailPage({
         <h1 className="mt-4 text-3xl font-bold leading-snug text-slate-900" style={id === "recursive-self-improvement-medical-ai-20260915" ? { textWrap: "balance" } : undefined}>
           {news.title}
         </h1>
+        {!editorial && news.byline && <p className="mt-4 text-sm text-slate-500">作者：{news.byline}</p>}
 
         {organizationalPaper ? <OrganizationalGovernancePaper article={organizationalPaper} /> : research ? <GrasslandAdditionalResearchPaper article={research} /> : grasslandPaper ? <GrasslandResearchPaper paper={grasslandPaper} /> : RESEARCH_PAPERS_05_06.some((paper) => paper.id === id) ? <ResearchPaperBody articleId={id} /> : id === DELEGATION_RESEARCH.id ? <DelegationResearchPaper /> : id === DEVELOPMENT_VALIDATION.id ? <DevelopmentValidationPaper /> : editorial ? <EditorialArticleBody article={editorial} /> : body && <NewsContent content={body} />}
 

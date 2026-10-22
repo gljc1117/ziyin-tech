@@ -33,7 +33,7 @@ export default function NewsContent({ content }: { content: string }) {
             );
           },
           img: ({ src, alt }) => {
-            if (typeof src !== "string") return null;
+            if (typeof src !== "string" || !/^(https:\/\/|\/(?!\/))/.test(src)) return null;
             return (
               <span className="my-6 block overflow-hidden rounded-xl">
                 <Image
@@ -41,6 +41,8 @@ export default function NewsContent({ content }: { content: string }) {
                   alt={alt ?? ""}
                   width={800}
                   height={450}
+                  unoptimized
+                  referrerPolicy="no-referrer"
                   className="w-full rounded-xl"
                 />
               </span>

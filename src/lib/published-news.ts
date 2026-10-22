@@ -16,7 +16,7 @@ export const getPublishedNews = cache(async (): Promise<PublishedNewsItem[]> => 
   let existing: PublishedNewsItem[] = [];
   if (supabase) {
     const { data, error } = await supabase.from("news")
-      .select("id, title, summary, content, category, published_at")
+      .select("id, title, summary, content, category, published_at, byline")
       .eq("is_published", true).order("published_at", { ascending: false });
     if (!error && data) existing = data.filter(canDisplayNews);
   }
