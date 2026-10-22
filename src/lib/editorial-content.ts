@@ -1,6 +1,6 @@
 import type { CaseCategory, ClinicalCase } from "./types";
 
-export interface EditorialImage { url: string; alt: string; width: number; height: number; }
+export interface EditorialImage { url: string; alt: string; width: number; height: number; originalUrl?: string; }
 export interface EditorialArticle {
   id: string; title: string; summary: string; category: string;
   eventDate: string; dateLabel: string; sourceTitle: string;

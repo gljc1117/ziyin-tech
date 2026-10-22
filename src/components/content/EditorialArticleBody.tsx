@@ -9,12 +9,17 @@ import OfficialVideoCard from "./OfficialVideoCard";
 import { hasOpinionVisual, OpinionFramework } from "./OpinionVisual";
 
 function Figure({ item }: { item: EditorialImage }) {
+  const image = <Image src={item.url} alt={item.alt} width={item.width} height={item.height}
+    sizes="(max-width: 768px) 100vw, 768px" unoptimized={Boolean(item.originalUrl)}
+    className="mx-auto h-auto max-h-[640px] w-full object-contain" />;
   return <figure className="mt-8">
     <div className="overflow-hidden rounded-xl bg-slate-100">
-      <Image src={item.url} alt={item.alt} width={item.width} height={item.height}
-        sizes="(max-width: 768px) 100vw, 768px" className="mx-auto h-auto max-h-[640px] w-full object-contain" />
+      {item.originalUrl ? <a href={item.originalUrl} target="_blank" rel="noopener noreferrer"
+        aria-label="查看科学图原图">{image}</a> : image}
     </div>
     <figcaption className="mt-2 text-xs leading-6 opacity-70">{item.alt}</figcaption>
+    {item.originalUrl && <a href={item.originalUrl} target="_blank" rel="noopener noreferrer"
+      className="mt-2 inline-block text-sm text-blue-700 underline underline-offset-4">查看原图</a>}
   </figure>;
 }
 

@@ -1,3 +1,4 @@
+import { CALCAI_SURFACE_VALIDATION } from "./calcai-surface-validation";
 import { MEDICAL_IMAGING_PRETRAINING_REVIEW } from "./medical-imaging-pretraining-review";
 import { DIALOGUE_TO_ORGANIZATIONAL_CAPABILITY } from "./dialogue-to-organizational-capability";
 import { STARTUP_EVIDENCE_BASED_DEVELOPMENT } from "./startup-evidence-based-development";
@@ -85,6 +86,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CALCAI_SURFACE_VALIDATION,
 MEDICAL_IMAGING_PRETRAINING_REVIEW,
 STARTUP_EVIDENCE_BASED_DEVELOPMENT,
 DIALOGUE_TO_ORGANIZATIONAL_CAPABILITY,
