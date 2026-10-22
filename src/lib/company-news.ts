@@ -1,3 +1,4 @@
+import { CLINICAL_KNOWN_TO_UNKNOWN } from "./clinical-known-to-unknown";
 import { CLINICAL_INSIGHT_CONTINUOUS_RESEARCH } from "./clinical-insight-continuous-research";
 import { PELVIS_SI_LAYERED_DELIVERY } from "./pelvis-si-layered-delivery";
 import { AI_RD_REPEATABLE_SUCCESS } from "./ai-rd-repeatable-success";
@@ -89,6 +90,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CLINICAL_KNOWN_TO_UNKNOWN,
 CLINICAL_INSIGHT_CONTINUOUS_RESEARCH,
 PELVIS_SI_LAYERED_DELIVERY,
 AI_RD_REPEATABLE_SUCCESS,
