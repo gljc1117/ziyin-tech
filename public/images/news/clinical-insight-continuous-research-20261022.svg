@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">临床研究线索的连续记录框架</title><desc id="desc">从日常观察到本人确认，再关联原始资料；按需检索和回访帮助澄清问题，新增观察与反例回流原线索。拟议方法，非实验结果。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3975a4"/></marker></defs>
+<rect width="1440" height="1080" fill="#f6f9fc"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">
+<text x="80" y="78" font-size="25" fill="#326b91" letter-spacing="3">ZIYIN · 方法论与平台设计</text>
+<text x="80" y="146" font-size="47" font-weight="700" fill="#173650">让一个临床问题，拥有可追溯的历史</text>
+<text x="80" y="196" font-size="28" fill="#576f83">原始观察保留语境 · 本人确认保留原意 · 持续回访允许修正</text>
+<g fill="white" stroke="#c5d7e6" stroke-width="2">
+<rect x="80" y="260" width="370" height="220" rx="18"/>
+<rect x="535" y="260" width="370" height="220" rx="18"/>
+<rect x="990" y="260" width="370" height="220" rx="18"/>
+<rect x="990" y="620" width="370" height="220" rx="18"/>
+<rect x="535" y="620" width="370" height="220" rx="18"/>
+<rect x="80" y="620" width="370" height="220" rx="18"/>
+</g>
+<g fill="#173650" font-size="35" font-weight="700">
+<text x="110" y="320">01 轻量记录</text><text x="565" y="320">02 本人确认</text><text x="1020" y="320">03 关联来源</text>
+<text x="1020" y="680">04 按需找回</text><text x="565" y="680">05 澄清问题</text><text x="110" y="680">06 回访修正</text>
+</g>
+<g fill="#4b6277" font-size="29">
+<text x="110" y="378">一句话、一段本人语音</text><text x="110" y="425">保存原话、时间与场景</text>
+<text x="565" y="378">纠正转写和归纳</text><text x="565" y="425">区分观察、解释与假设</text>
+<text x="1020" y="378">既有论文与授权材料</text><text x="1020" y="425">记录出处和支持范围</text>
+<text x="1020" y="738">返回原文与关联片段</text><text x="1020" y="785">显示缺口与不确定性</text>
+<text x="565" y="738">明确对象和发生条件</text><text x="565" y="785">留下尚待核对的问题</text>
+<text x="110" y="738">补充新观察和反例</text><text x="110" y="785">保留修订与暂停原因</text>
+</g>
+<g fill="none" stroke="#3975a4" stroke-width="4" marker-end="url(#arrow)">
+<path d="M460 370H522"/><path d="M915 370H977"/><path d="M1175 492V607"/>
+<path d="M977 730H918"/><path d="M522 730H463"/><path d="M265 608V493" stroke-dasharray="10 7"/>
+</g>
+<text x="1198" y="553" font-size="25" fill="#52748b">授权范围内</text>
+<text x="95" y="550" font-size="25" fill="#52748b">持续积累</text>
+<rect x="80" y="895" width="1280" height="90" rx="16" fill="#e8f0f7"/>
+<text x="115" y="950" font-size="29" fill="#254b68">评价重点：记录负担 · 找回准确性 · 来源可追溯性 · 问题清晰度</text>
+<text x="80" y="1035" font-size="24" fill="#688093">原创方法示意｜拟议框架，非平台已上线功能或试验结果｜子殷科技 · 2026</text>
+</g></svg>
