@@ -8,7 +8,7 @@ export const CLINICAL_KNOWN_TO_UNKNOWN: CompanyNewsArticle = {
   "eventDate": "2026-10-22",
   "dateLabel": "2026年10月22日 · 子殷科技 · 方法论与观点研究",
   "sourceTitle": "从临床已知走向医学未知：医工共创的洞察发现、假设验证与成果转化方法论",
-  "sourcePublishedAt": "2026-10-22T14:41:23.149Z",
+  "sourcePublishedAt": "2026-10-22T22:41:23.149+08:00",
   "status": "approved",
   "numberedReferences": true,
   "hideCover": true,
