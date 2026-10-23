@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="980" viewBox="0 0 800 980" role="img" aria-labelledby="title desc">
+<title id="title">医疗AI：证据、候选与执行</title><desc id="desc">证据不足或有关键错误时补证或重定义；通过证据核查后生成候选，经专业核验后交付；核验未通过则修订或转人工。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#52738e"/></marker></defs>
+<rect width="800" height="980" rx="28" fill="#f2f7fa"/>
+<g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif"><text x="45" y="60" font-size="32" fill="#12394f" font-weight="700">医疗AI：证据、候选与执行</text><text x="45" y="100" font-size="23" fill="#466478">方法建议 · 各项能力需分别验证</text>
+<g fill="white" stroke="#b3cad7" stroke-width="2"><rect x="45" y="145" width="460" height="105" rx="15"/><rect x="45" y="300" width="460" height="105" rx="15"/><rect x="45" y="455" width="460" height="105" rx="15"/><rect x="45" y="610" width="460" height="105" rx="15"/></g>
+<rect x="45" y="790" width="460" height="105" rx="15" fill="#e1f1ed" stroke="#4a9581" stroke-width="2"/>
+<rect x="550" y="300" width="205" height="150" rx="15" fill="#fff2df" stroke="#c49b54" stroke-width="2"/><rect x="550" y="610" width="205" height="150" rx="15" fill="#fff2df" stroke="#c49b54" stroke-width="2"/>
+<g text-anchor="middle" fill="#173e54" font-size="29" font-weight="600"><text x="275" y="186">明确任务与用途</text><text x="275" y="341">核查关键证据</text><text x="275" y="496">生成候选成果</text><text x="275" y="651">核验与专业审核</text><text x="275" y="831">按已确认用途交付</text></g>
+<g text-anchor="middle" fill="#506b7d" font-size="22"><text x="275" y="222">说明输入、目标及允许的动作</text><text x="275" y="377">查来源、条件、反证和缺口</text><text x="275" y="532">保留依据、推断与成果版本</text><text x="275" y="687">回到原文、测量及适当参照</text><text x="275" y="867">后续制造另行确认执行条件</text></g>
+<g text-anchor="middle" fill="#805c22" font-size="25"><text x="652" y="340">不足或错误</text><text x="652" y="390">补证</text><text x="652" y="427">或重定义</text><text x="652" y="650">核验未通过</text><text x="652" y="700">修订</text><text x="652" y="737">或转人工</text></g>
+<g fill="none" stroke="#52738e" stroke-width="3" marker-end="url(#arrow)"><path d="M275 250V295"/><path d="M275 405V450"/><path d="M275 560V605"/><path d="M275 715V785"/><path d="M505 352H545"/><path d="M505 662H545"/></g>
+<text x="295" y="444" font-size="20" fill="#43685d">依据支持继续</text><text x="295" y="759" font-size="20" fill="#43685d">审核通过</text><text x="45" y="943" font-size="20" fill="#607a8b">子殷科技 · 原创方法图 · 不表示全部功能已部署</text></g></svg>
