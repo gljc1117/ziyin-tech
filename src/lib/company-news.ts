@@ -1,3 +1,4 @@
+import { ONE_PAGE_HOSPITAL_MARKET_RESEARCH } from "./one-page-hospital-market-research";
 import { MEDICAL_AI_PREMISE_VERIFICATION } from "./medical-ai-premise-verification";
 import { CLINICAL_KNOWN_TO_UNKNOWN } from "./clinical-known-to-unknown";
 import { CLINICAL_INSIGHT_CONTINUOUS_RESEARCH } from "./clinical-insight-continuous-research";
@@ -91,6 +92,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+ONE_PAGE_HOSPITAL_MARKET_RESEARCH,
 MEDICAL_AI_PREMISE_VERIFICATION,
 CLINICAL_KNOWN_TO_UNKNOWN,
 CLINICAL_INSIGHT_CONTINUOUS_RESEARCH,
