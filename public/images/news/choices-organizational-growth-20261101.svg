@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">我们反复选择什么，就会成为怎样的公司</title>
+  <desc id="desc">子殷科技原创思考。判断有依据，异议有回应，经验可接续。</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b213d"/>
+      <stop offset="1" stop-color="#123d55"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#71d2cb" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#71d2cb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#background)"/>
+  <circle cx="1100" cy="50" r="240" fill="none" stroke="#78d5d0" stroke-opacity=".08" stroke-width="60"/>
+  <circle cx="1100" cy="50" r="120" fill="none" stroke="#78d5d0" stroke-opacity=".12" stroke-width="2"/>
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+    <text x="88" y="98" font-size="24" fill="#95d9d7" letter-spacing="3">子殷洞察 · 原创思考</text>
+    <rect x="88" y="138" width="68" height="5" rx="2.5" fill="#71d2cb"/>
+    <g font-size="60" font-weight="700" fill="#fff">
+      <text x="88" y="242">我们反复选择什么，</text>
+      <text x="88" y="328">就会成为怎样的公司</text>
+    </g>
+    <text x="90" y="397" font-size="27" fill="#bfceda">从个人担当，到团队共同拥有的能力</text>
+    <path d="M90 474 H1110" stroke="url(#line)" stroke-width="2"/>
+    <g font-size="27" fill="#e4f3f5">
+      <circle cx="104" cy="535" r="6" fill="#71d2cb"/>
+      <text x="128" y="545">判断有依据</text>
+      <circle cx="449" cy="535" r="6" fill="#71d2cb"/>
+      <text x="473" y="545">异议有回应</text>
+      <circle cx="794" cy="535" r="6" fill="#71d2cb"/>
+      <text x="818" y="545">经验可接续</text>
+    </g>
+    <text x="88" y="650" font-size="23" fill="#a4bac8">瑜秀曈芯</text>
+    <text x="1112" y="650" text-anchor="end" font-size="23" fill="#a4bac8">子殷科技 · 2026.11.01</text>
+  </g>
+</svg>
