@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">从语言信任到可验证协作</title>
+  <desc id="description">共同理解、证据可核、责任明确与纠错有效四项协作条件形成相互支持的概念关系。此图不表示已验证的因果关系或具体技术架构。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#79969b"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#f4f7f6"/>
+  <rect x="52" y="48" width="7" height="74" rx="3" fill="#087e83"/>
+  <g font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">
+    <text x="80" y="75" fill="#087e83" font-size="19" letter-spacing="3">子殷洞察 · 概念研究</text>
+    <text x="80" y="124" fill="#17343e" font-size="40" font-weight="700">从语言信任到可验证协作</text>
+    <text x="80" y="168" fill="#51666e" font-size="22">AI参与信息组织，可靠合作需要持续检验。</text>
+    <g fill="none" stroke="#79969b" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M554 300H644"/>
+      <path d="M892 383V437"/>
+      <path d="M646 520H556"/>
+      <path d="M308 437V383"/>
+    </g>
+    <rect x="80" y="220" width="474" height="160" rx="16" fill="#fff" stroke="#c7dddc" stroke-width="2"/>
+    <rect x="646" y="220" width="474" height="160" rx="16" fill="#fff" stroke="#c7dddc" stroke-width="2"/>
+    <rect x="646" y="440" width="474" height="160" rx="16" fill="#fff" stroke="#c7dddc" stroke-width="2"/>
+    <rect x="80" y="440" width="474" height="160" rx="16" fill="#fff" stroke="#c7dddc" stroke-width="2"/>
+    <g font-size="18" font-weight="700" fill="#087e83">
+      <text x="108" y="255">01</text><text x="674" y="255">02</text>
+      <text x="674" y="475">03</text><text x="108" y="475">04</text>
+    </g>
+    <g font-size="30" font-weight="700" fill="#17343e">
+      <text x="108" y="302">共同理解</text><text x="674" y="302">证据可核</text>
+      <text x="674" y="522">责任明确</text><text x="108" y="522">纠错有效</text>
+    </g>
+    <g font-size="21" fill="#51666e">
+      <text x="108" y="344">需求、范围与完成条件能够对齐</text>
+      <text x="674" y="344">依据、版本与适用边界能够查明</text>
+      <text x="674" y="564">承诺、专业判断与异常有人落实</text>
+      <text x="108" y="564">异议得到回应，经验经过复核</text>
+    </g>
+    <text x="80" y="660" font-size="17" fill="#61747b">原创概念关系示意 · 不表示已验证的因果关系或具体系统架构</text>
+    <text x="1120" y="660" font-size="17" fill="#61747b" text-anchor="end">CHCOMCT · 2026</text>
+  </g>
+</svg>
