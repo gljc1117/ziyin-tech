@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">从影像到植入的概念路径</title>
+  <desc id="description">影像分割与三维重建、设计包络、制造验证和监管顺序依次衔接。此图为原创概念示意，不表示已验证的因果关系，也不表示子殷科技已持有植入物注册证或金属增材制造植入物产线资质。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#79969b"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#f4f7f6"/>
+  <rect x="52" y="48" width="7" height="74" rx="3" fill="#087e83"/>
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif">
+    <text x="80" y="75" fill="#087e83" font-size="19" letter-spacing="3">子殷洞察 · 学术观点</text>
+    <text x="80" y="122" fill="#17343e" font-size="40" font-weight="700">从影像到植入</text>
+    <text x="80" y="164" fill="#51666e" font-size="22">多孔钛路径要先验证设计包络，再谈个性化。</text>
+    <g fill="none" stroke="#79969b" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M554 292H644"/>
+      <path d="M892 375V429"/>
+      <path d="M646 512H556"/>
+      <path d="M308 429V375"/>
+    </g>
+    <rect x="80" y="212" width="474" height="160" rx="16" fill="#fff" stroke="#c7dddc" stroke-width="2"/>
+    <rect x="646" y="212" width="474" height="160" rx="16" fill="#fff" stroke="#c7dddc" stroke-width="2"/>
+    <rect x="646" y="432" width="474" height="160" rx="16" fill="#fff" stroke="#c7dddc" stroke-width="2"/>
+    <rect x="80" y="432" width="474" height="160" rx="16" fill="#fff" stroke="#c7dddc" stroke-width="2"/>
+    <g font-size="18" font-weight="700" fill="#087e83">
+      <text x="108" y="247">01</text><text x="674" y="247">02</text>
+      <text x="674" y="467">03</text><text x="108" y="467">04</text>
+    </g>
+    <g font-size="28" font-weight="700" fill="#17343e">
+      <text x="108" y="292">影像分割与三维重建</text>
+      <text x="674" y="292">已验证的设计包络</text>
+      <text x="674" y="512">制造与实物验证</text>
+      <text x="108" y="512">标准规格注册在先</text>
+    </g>
+    <g font-size="20" fill="#51666e">
+      <text x="108" y="334">CT、MRI 形成患者几何约束</text>
+      <text x="674" y="334">孔径与孔隙率不能直接套用文献</text>
+      <text x="674" y="554">粉末、力学、清洗与生物学评价</text>
+      <text x="108" y="554">其后才讨论定制式备案</text>
+    </g>
+    <text x="80" y="652" font-size="17" fill="#61747b">原创概念示意 · 不表示已验证因果关系 · 不表示子殷已持有植入物注册证</text>
+    <text x="1120" y="652" font-size="17" fill="#61747b" text-anchor="end">CHCOMCT · 2026</text>
+  </g>
+</svg>
