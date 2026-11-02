@@ -1,3 +1,4 @@
+import { MEDICAL_3D_MODEL_PRIORITY_REVIEW } from "./medical-3d-model-priority-review";
 import { IMPRESSION_R1_MEDICAL_ENGINEERING } from "./impression-r1-medical-engineering";
 import { CT_FOUNDATION_MODELS_MEDICAL_ENGINEERING } from "./ct-foundation-models-medical-engineering";
 import { MEDICAL_3D_PRINTING_PRICING_POLICIES } from "./medical-3d-printing-pricing-policies";
@@ -99,6 +100,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+MEDICAL_3D_MODEL_PRIORITY_REVIEW,
 IMPRESSION_R1_MEDICAL_ENGINEERING,
 CT_FOUNDATION_MODELS_MEDICAL_ENGINEERING,
 MEDICAL_3D_PRINTING_PRICING_POLICIES,

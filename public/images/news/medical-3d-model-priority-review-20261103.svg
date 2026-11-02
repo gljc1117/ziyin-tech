@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">77 张紧急疑似胸片，两种阈值下的识别数</title>
+<desc id="desc">约登指数阈值识别 64 张，训练集目标标记率 15% 的阈值识别 46 张。为胸片研究结果。</desc>
+<rect width="1200" height="675" fill="#f0f5f3"/>
+<g fill="#142f36" font-family="system-ui, sans-serif">
+<text x="85" y="99" font-size="25" letter-spacing="3" fill="#36686a">子殷科技　 /　 研究视点</text>
+<text x="85" y="201" font-size="56" font-weight="700">同一组胸片，谁先被看见</text>
+<text x="86" y="266" font-size="27">专家判为紧急疑似的 77 张胸片中，被模型标出的数量</text>
+<text x="86" y="344" font-size="26">约登指数阈值</text>
+<rect x="86" y="366" width="770" height="36" rx="3" fill="#d5e1df"/><rect x="86" y="366" width="640" height="36" rx="3" fill="#126267"/>
+<text x="893" y="399" font-size="35" font-weight="700">64 / 77</text>
+<text x="86" y="468" font-size="26">训练集目标标记率 15% 的阈值</text>
+<rect x="86" y="490" width="770" height="36" rx="3" fill="#d5e1df"/><rect x="86" y="490" width="460" height="36" rx="3" fill="#397d81"/>
+<text x="893" y="523" font-size="35" font-weight="700">46 / 77</text>
+<text x="86" y="615" font-size="21" fill="#466269">数据来源　Duncan 等，Insights into Imaging，2026，表 4</text>
+</g></svg>
