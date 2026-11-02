@@ -1,3 +1,4 @@
+import { IMAGING_TO_IMPLANT_POROUS_TITANIUM } from "./imaging-to-implant-porous-titanium";
 import { AI_TRUST_VERIFIABLE_COLLABORATION } from "./ai-trust-verifiable-collaboration";
 import { CHOICES_ORGANIZATIONAL_GROWTH } from "./choices-organizational-growth";
 import { AI_WORKFLOW_ORGANIZATIONAL_COLLABORATION } from "./ai-workflow-organizational-collaboration";
@@ -95,6 +96,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+IMAGING_TO_IMPLANT_POROUS_TITANIUM,
 AI_TRUST_VERIFIABLE_COLLABORATION,
 CHOICES_ORGANIZATIONAL_GROWTH,
 AI_WORKFLOW_ORGANIZATIONAL_COLLABORATION,
