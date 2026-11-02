@@ -1,3 +1,4 @@
+import { MEDICAL_3D_PRINTING_PRICING_POLICIES } from "./medical-3d-printing-pricing-policies";
 import { IMAGING_TO_IMPLANT_POROUS_TITANIUM } from "./imaging-to-implant-porous-titanium";
 import { AI_TRUST_VERIFIABLE_COLLABORATION } from "./ai-trust-verifiable-collaboration";
 import { CHOICES_ORGANIZATIONAL_GROWTH } from "./choices-organizational-growth";
@@ -96,6 +97,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+MEDICAL_3D_PRINTING_PRICING_POLICIES,
 IMAGING_TO_IMPLANT_POROUS_TITANIUM,
 AI_TRUST_VERIFIABLE_COLLABORATION,
 CHOICES_ORGANIZATIONAL_GROWTH,
