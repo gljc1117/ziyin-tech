@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">看到虚拟三维重建之后，手术入路建议变了吗？</title>
+  <desc id="desc">在233次可比较判断中，86次更改入路，147次维持。数据来自20名医生对15例双柱髋臼骨折的研究。</desc>
+  <rect width="1200" height="630" fill="#f3f5ef"/>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif">
+    <rect x="68" y="48" width="8" height="30" rx="2" fill="#047565"/>
+    <text x="94" y="72" font-size="25" font-weight="650" fill="#22574f">子殷洞察　/　手术规划研究</text>
+    <text x="66" y="156" font-size="51" font-weight="750" fill="#183b39">看到三维重建之后，入路建议变了吗？</text>
+    <text x="68" y="212" font-size="27" fill="#46605b">20名医生评估15例双柱髋臼骨折，对比加入虚拟三维重建前后的判断。</text>
+    <text x="69" y="300" font-size="25" font-weight="650" fill="#1b5147">更改入路</text>
+    <text x="465" y="300" font-size="25" font-weight="650" fill="#3b5553">维持入路</text>
+    <rect x="68" y="330" width="1064" height="83" rx="8" fill="#c7d9d3"/>
+    <path d="M76 330 H460.7 V413 H76 Q68 413 68 405 V338 Q68 330 76 330Z" fill="#087664"/>
+    <text x="88" y="386" font-size="40" font-weight="750" fill="#fff">86次</text>
+    <text x="484" y="386" font-size="40" font-weight="750" fill="#183b39">147次</text>
+    <text x="68" y="478" font-size="26" fill="#263f3e">统计单位为两轮均可比较入路的233次判断。同一病例由多名医生评估。</text>
+    <line x1="68" y1="527" x2="1132" y2="527" stroke="#bccbc5" stroke-width="2"/>
+    <text x="68" y="573" font-size="23" fill="#4e625f">据 Leemhuis 等，Diagnostics，2023，表2。研究未评价这些改变带来的患者结局。</text>
+  </g>
+</svg>
