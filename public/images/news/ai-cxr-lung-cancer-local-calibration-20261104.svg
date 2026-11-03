@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b2545"/><stop offset="1" stop-color="#13315c"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#g)"/>
+<g fill="none" stroke="#8da9c4" stroke-width="3" opacity="0.7">
+<path d="M600 140 L600 470"/>
+<path d="M590 170 C470 180 420 300 430 430 C440 480 520 490 575 450 Z"/>
+<path d="M610 170 C730 180 780 300 770 430 C760 480 680 490 625 450 Z"/>
+</g>
+<circle cx="500" cy="320" r="18" fill="none" stroke="#f4a261" stroke-width="3"/>
+<g stroke="#eef4ed" stroke-width="2" opacity="0.5"><line x1="880" y1="200" x2="1080" y2="200"/><line x1="880" y1="260" x2="1040" y2="260"/><line x1="880" y1="320" x2="1060" y2="320"/></g>
+<text x="80" y="560" fill="#eef4ed" font-family="sans-serif" font-size="40" font-weight="bold">шиXIAIД,0!∆</text>
+<text x="80" y="600" fill="#8da9c4" font-family="sans-serif" font-size="22">yБ	й Ј <ЊЪ Ј ;bиr</text>
+</svg>
