@@ -1,4 +1,5 @@
 import { AI_CXR_LUNG_CANCER_LOCAL_CALIBRATION } from "./ai-cxr-lung-cancer-local-calibration";
+import { RADIOLOGY_AI_SECOND_READER } from "./radiology-ai-second-reader";
 import { EVLF_MEDICAL_IMAGE_GROUNDING } from "./evlf-medical-image-grounding";
 import { PELVIC_PLANNING_ADDED_VALUE } from "./pelvic-planning-added-value";
 import { XIAOGAN_PELVIC_FRACTURES } from "./xiaogan-pelvic-fractures";
@@ -106,6 +107,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
 AI_CXR_LUNG_CANCER_LOCAL_CALIBRATION,
+RADIOLOGY_AI_SECOND_READER,
 EVLF_MEDICAL_IMAGE_GROUNDING,
 PELVIC_PLANNING_ADDED_VALUE,
 XIAOGAN_PELVIC_FRACTURES,

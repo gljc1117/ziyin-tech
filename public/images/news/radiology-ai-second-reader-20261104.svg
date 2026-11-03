@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">21项放射学研究比较了什么？</title>
+  <desc id="desc">每格代表1项研究。仅考察AI独立判读11项，仅考察AI辅助读者6项，兼有两类比较4项。依据Cureus系统综述。</desc>
+  <rect width="1200" height="630" fill="#f5f6ef"/>
+  <path fill="#133d3c" d="M0 0h1200v14H0z"/>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif">
+    <text x="72" y="79" fill="#176862" font-size="21" font-weight="700" letter-spacing="2">子殷科技　/　临床影像研究述评</text>
+    <text x="72" y="161" fill="#132f31" font-size="54" font-weight="750">21项放射学研究比较了什么？</text>
+    <text x="74" y="211" fill="#415957" font-size="24">按比较方式分组，每个方格代表一项研究</text>
+    <g font-size="29" font-weight="650" fill="#153e3d">
+      <text x="74" y="304">仅考察AI独立判读</text>
+      <rect x="384" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="437" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="490" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="543" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="596" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="649" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="702" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="755" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="808" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="861" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <rect x="914" y="273" width="42" height="36" rx="4" fill="#18695e"/>
+      <text x="1086" y="303" text-anchor="end">11 项</text>
+      <text x="74" y="386">仅考察AI辅助读者</text>
+      <rect x="384" y="355" width="42" height="36" rx="4" fill="#236c86"/>
+      <rect x="437" y="355" width="42" height="36" rx="4" fill="#236c86"/>
+      <rect x="490" y="355" width="42" height="36" rx="4" fill="#236c86"/>
+      <rect x="543" y="355" width="42" height="36" rx="4" fill="#236c86"/>
+      <rect x="596" y="355" width="42" height="36" rx="4" fill="#236c86"/>
+      <rect x="649" y="355" width="42" height="36" rx="4" fill="#236c86"/>
+      <text x="1086" y="385" text-anchor="end">6 项</text>
+      <text x="74" y="468">两类比较均涉及</text>
+      <rect x="384" y="437" width="42" height="36" rx="4" fill="#916028"/>
+      <rect x="437" y="437" width="42" height="36" rx="4" fill="#916028"/>
+      <rect x="490" y="437" width="42" height="36" rx="4" fill="#916028"/>
+      <rect x="543" y="437" width="42" height="36" rx="4" fill="#916028"/>
+      <text x="1086" y="467" text-anchor="end">4 项</text>
+    </g>
+    <path d="M74 522h1052" stroke="#a9b8af"/>
+    <text x="74" y="564" fill="#415957" font-size="20">数据来源　Diaz-Perdomo 等，Cureus 2026；18：e118954，表4</text>
+  </g>
+</svg>
