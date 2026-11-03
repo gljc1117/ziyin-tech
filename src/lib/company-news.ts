@@ -1,3 +1,4 @@
+import { AI_CXR_LUNG_CANCER_LOCAL_CALIBRATION } from "./ai-cxr-lung-cancer-local-calibration";
 import { WEIGHT_SPACE_MEDICAL_ENGINEERING } from "./weight-space-medical-engineering";
 import { MEDICAL_3D_MODEL_PRIORITY_REVIEW } from "./medical-3d-model-priority-review";
 import { IMPRESSION_R1_MEDICAL_ENGINEERING } from "./impression-r1-medical-engineering";
@@ -101,6 +102,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+AI_CXR_LUNG_CANCER_LOCAL_CALIBRATION,
 WEIGHT_SPACE_MEDICAL_ENGINEERING,
 MEDICAL_3D_MODEL_PRIORITY_REVIEW,
 IMPRESSION_R1_MEDICAL_ENGINEERING,
