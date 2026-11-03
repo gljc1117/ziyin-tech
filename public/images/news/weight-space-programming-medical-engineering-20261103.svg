@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+  <title id="t">一次权重编辑之后</title>
+  <desc id="d">Qwen3.5-0.8B 在 MATH-500 上的两项变化。答对比例从 7.9% 升至 48.1%，输出触及长度上限的比例从 93.0% 降至 33.1%。两组横条以零为起点，长度比例尺相同。</desc>
+  <rect width="1200" height="675" fill="#F1F4EC"/>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif">
+    <rect x="68" y="55" width="8" height="31" fill="#087264"/>
+    <text x="94" y="80" fill="#18685E" font-size="25" font-weight="600" letter-spacing="2">子殷科技　/　研究述评</text>
+    <text x="67" y="177" fill="#173E3C" font-size="66" font-weight="700">一次权重编辑之后</text>
+    <text x="71" y="225" fill="#42605B" font-size="27">Qwen3.5-0.8B 在 MATH-500 上的两项变化</text>
+    <rect x="70" y="267" width="19" height="19" rx="2" fill="#91A39F"/><text x="100" y="285" font-size="22" fill="#36524E">编辑前</text>
+    <rect x="206" y="267" width="19" height="19" rx="2" fill="#087264"/><text x="236" y="285" font-size="22" fill="#36524E">编辑后</text>
+    <g fill="#173E3C" font-size="27" font-weight="600">
+      <text x="70" y="359">答对题目</text><text x="70" y="481">触及输出长度上限</text>
+    </g>
+    <g fill="#DEE5DC">
+      <rect x="360" y="331" width="624" height="21" rx="3"/><rect x="360" y="370" width="624" height="21" rx="3"/>
+      <rect x="360" y="454" width="624" height="21" rx="3"/><rect x="360" y="493" width="624" height="21" rx="3"/>
+    </g>
+    <g fill="#91A39F"><rect x="360" y="331" width="49.30" height="21" rx="3"/><rect x="360" y="454" width="580.32" height="21" rx="3"/></g>
+    <g fill="#087264"><rect x="360" y="370" width="300.14" height="21" rx="3"/><rect x="360" y="493" width="206.54" height="21" rx="3"/></g>
+    <g font-size="27" text-anchor="end" font-weight="650"><text x="1123" y="352" fill="#526762">7.9%</text><text x="1123" y="391" fill="#076557">48.1%</text><text x="1123" y="475" fill="#526762">93.0%</text><text x="1123" y="514" fill="#076557">33.1%</text></g>
+    <path d="M70 563H1126" stroke="#B9C9BD"/>
+    <text x="70" y="601" font-size="22" fill="#415C54">开启思考模式，输出上限 32,768 token。两项指标分别统计。</text>
+    <text x="70" y="636" font-size="19" fill="#556D63">数据来源　Takehi 等，2026 年 11 月，实验 8。</text>
+  </g>
+</svg>
