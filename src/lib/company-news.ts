@@ -1,3 +1,4 @@
+import { QWEN_LSA_RTX4090 } from "./qwen-lsa-rtx4090";
 import { AI_CXR_LUNG_CANCER_LOCAL_CALIBRATION } from "./ai-cxr-lung-cancer-local-calibration";
 import { RADIOLOGY_AI_SECOND_READER } from "./radiology-ai-second-reader";
 import { EVLF_MEDICAL_IMAGE_GROUNDING } from "./evlf-medical-image-grounding";
@@ -106,6 +107,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+QWEN_LSA_RTX4090,
 AI_CXR_LUNG_CANCER_LOCAL_CALIBRATION,
 RADIOLOGY_AI_SECOND_READER,
 EVLF_MEDICAL_IMAGE_GROUNDING,
