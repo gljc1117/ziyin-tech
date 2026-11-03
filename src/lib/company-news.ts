@@ -1,4 +1,6 @@
 import { AI_CXR_LUNG_CANCER_LOCAL_CALIBRATION } from "./ai-cxr-lung-cancer-local-calibration";
+import { EVLF_MEDICAL_IMAGE_GROUNDING } from "./evlf-medical-image-grounding";
+import { PELVIC_PLANNING_ADDED_VALUE } from "./pelvic-planning-added-value";
 import { XIAOGAN_PELVIC_FRACTURES } from "./xiaogan-pelvic-fractures";
 import { WEIGHT_SPACE_MEDICAL_ENGINEERING } from "./weight-space-medical-engineering";
 import { MEDICAL_3D_MODEL_PRIORITY_REVIEW } from "./medical-3d-model-priority-review";
@@ -104,6 +106,8 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
 AI_CXR_LUNG_CANCER_LOCAL_CALIBRATION,
+EVLF_MEDICAL_IMAGE_GROUNDING,
+PELVIC_PLANNING_ADDED_VALUE,
 XIAOGAN_PELVIC_FRACTURES,
 WEIGHT_SPACE_MEDICAL_ENGINEERING,
 MEDICAL_3D_MODEL_PRIORITY_REVIEW,

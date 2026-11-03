@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+  <title id="t">同一个外部基准，两种定位成绩</title>
+  <desc id="d">Med-GRIT-270k上平均Acc@0.5，零样本0.360，少样本微调0.545。横轴起点0，终点1。</desc>
+  <rect width="1200" height="630" fill="#f5f3ed"/>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif">
+    <rect x="67" y="45" width="8" height="30" fill="#24618c"/>
+    <text x="94" y="69" font-size="24" font-weight="650" fill="#2a587a">子殷洞察　/　医学影像研究</text>
+    <text x="65" y="151" font-size="53" font-weight="750" fill="#18354b">给出文字描述后，模型指对了位置吗？</text>
+    <text x="68" y="207" font-size="27" fill="#46596a">EVLF-FM 在 Med-GRIT-270k 外部基准上的平均定位成绩</text>
+    <g fill="#203c50" font-size="31" font-weight="600">
+      <text x="68" y="324">零样本</text><text x="68" y="418">少样本微调</text>
+    </g>
+    <g fill="#dce2e3"><rect x="289" y="290" width="793" height="44" rx="4"/><rect x="289" y="384" width="793" height="44" rx="4"/></g>
+    <rect x="289" y="290" width="285.48" height="44" rx="4" fill="#61849c"/>
+    <rect x="289" y="384" width="432.19" height="44" rx="4" fill="#1e5d83"/>
+    <g fill="#17364b" font-size="30" font-weight="750"><text x="594" y="323">0.360</text><text x="741" y="417">0.545</text></g>
+    <path d="M289 451 H1082" stroke="#94a4aa" stroke-width="2"/>
+    <g fill="#526674" font-size="21"><text x="289" y="481">0</text><text x="1082" y="481" text-anchor="end">1.0</text></g>
+    <line x1="68" y1="518" x2="1131" y2="518" stroke="#c5cdcf" stroke-width="2"/>
+    <text x="68" y="560" font-size="22" fill="#415b6b">指标为平均 Acc@0.5，衡量预测位置与参考位置的重叠是否达到阈值。</text>
+    <text x="68" y="596" font-size="20" fill="#536977">数据取自 Bai 等，Nature Medicine，2026，图3c。任务为图像定位。</text>
+  </g>
+</svg>
