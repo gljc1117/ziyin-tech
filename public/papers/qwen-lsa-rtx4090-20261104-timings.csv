@@ -1,0 +1,9 @@
+comparison_round,path,input_tokens,visible_output_tokens,first_token_s,decode_tokens_per_s,total_to_eos_s
+graph_r1,dense,32768,126,11.499914,31.99248,15.438339
+graph_r1,lsa_graph,32768,126,14.592368,32.51543,18.467451
+graph_r2,dense,32768,126,11.547863,32.19609,15.461381
+graph_r2,lsa_graph,32768,126,14.944661,32.26486,18.849838
+official_r1,dense,32768,126,11.44394,32.08337,15.371209
+official_r1,lsa,32768,126,14.739838,26.37292,19.517466
+official_r2,dense,32768,126,11.525943,32.25232,15.43264
+official_r2,lsa,32768,126,14.658982,27.02106,19.322011
