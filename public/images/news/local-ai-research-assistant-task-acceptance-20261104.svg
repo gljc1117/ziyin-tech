@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+<title id="t">本地AI研究助手的任务验收</title><desc id="d">子殷科技技术研究。分别检查内容与证据、接口与程序、任务与反馈。探索性观察，使用文档摘录与合成数据。</desc>
+<rect width="1200" height="630" fill="#f7f6ef"/><path fill="#14605b" d="M0 0h1200v13H0z"/>
+<g font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" fill="#163b3b">
+<text x="66" y="76" font-size="24" letter-spacing="2">子殷科技　/　技术研究</text>
+<text x="63" y="166" font-size="58" font-weight="700">本地AI研究助手的任务验收</text>
+<text x="67" y="224" font-size="27">医疗3D打印研发 · 单张 RTX 4090 · 探索性测试</text>
+<g fill="#e3ece5"><rect x="66" y="285" width="338" height="202" rx="16"/><rect x="431" y="285" width="338" height="202" rx="16"/><rect x="796" y="285" width="338" height="202" rx="16"/></g>
+<g fill="#176b64" font-size="22"><text x="91" y="332">01　内容与证据</text><text x="456" y="332">02　接口与程序</text><text x="821" y="332">03　任务与反馈</text></g>
+<g font-size="34" font-weight="700"><text x="91" y="395">事实能否回查</text><text x="456" y="395">成果能否执行</text><text x="821" y="395">修订是否有效</text></g>
+<g font-size="22" fill="#47635c"><text x="91" y="449">字段、空白项与来源</text><text x="456" y="449">JSON解析与源码交付</text><text x="821" y="449">独立验收与失败记录</text></g>
+<text x="66" y="564" font-size="23" fill="#47635c">文档摘录与合成程序题 · 各配置单次观察 · 2026年11月4日</text>
+</g></svg>
