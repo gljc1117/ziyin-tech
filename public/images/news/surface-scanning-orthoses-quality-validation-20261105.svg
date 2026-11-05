@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">三维扫描之后，个性化矫形器如何被验证？——从形态采集到适配随访的质量框架</title><desc id="desc">原创质量框架图：区分采集、设计、制造、适配与随访；数字几何和实际功能分别验证，非临床试验结果。</desc>
+<rect width="1200" height="630" fill="#f1f5f9"/><rect x="0" y="0" width="1200" height="12" fill="#0f766e"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,Arial,sans-serif">
+<text x="56" y="67" fill="#0f766e" font-size="20" font-weight="700">ZIYIN · 子殷科技　｜　研究述评 02</text>
+<text x="56" y="140" fill="#0f172a" font-size="43" font-weight="750">三维扫描之后</text>
+<text x="56" y="198" fill="#0f172a" font-size="43" font-weight="750">个性化矫形器如何被验证？</text>
+<text x="56" y="242" fill="#475569" font-size="23">采集条件、设计修改、制造一致性和实际功能共同留证。</text>
+<rect x="56" y="290" width="528" height="108" rx="16" fill="#fff" stroke="#cbd5e1"/><rect x="56" y="290" width="7" height="108" rx="3" fill="#0f766e"/><text x="80" y="329" font-size="25" font-weight="650" fill="#0f172a">采集与设计</text><text x="80" y="365" font-size="19" fill="#475569">姿态 · 原始数据 · 修改依据</text><rect x="616" y="290" width="528" height="108" rx="16" fill="#fff" stroke="#cbd5e1"/><rect x="616" y="290" width="7" height="108" rx="3" fill="#0f766e"/><text x="640" y="329" font-size="25" font-weight="650" fill="#0f172a">制造与实测</text><text x="640" y="365" font-size="19" fill="#475569">材料工艺 · 尺寸 · 结构检查</text><rect x="56" y="422" width="528" height="108" rx="16" fill="#fff" stroke="#cbd5e1"/><rect x="56" y="422" width="7" height="108" rx="3" fill="#0f766e"/><text x="80" y="461" font-size="25" font-weight="650" fill="#0f172a">专业适配</text><text x="80" y="497" font-size="19" fill="#475569">局部问题 · 使用要求 · 调整</text><rect x="616" y="422" width="528" height="108" rx="16" fill="#fff" stroke="#cbd5e1"/><rect x="616" y="422" width="7" height="108" rx="3" fill="#0f766e"/><text x="640" y="461" font-size="25" font-weight="650" fill="#0f172a">功能与随访</text><text x="640" y="497" font-size="19" fill="#475569">实际使用 · 异常 · 目标结局</text>
+<text x="56" y="585" fill="#64748b" font-size="18">原创方法示意 · 非实验结果　　2026.11.05　　chcomct.cn</text>
+</g></svg>
