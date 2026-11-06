@@ -1,3 +1,4 @@
+import { NEWS_RESEARCH_20261106 } from "./news-research-20261106";
 import { NEWS_RESEARCH_20261105 } from "./news-research-20261105";
 import { LOCAL_AI_TASK_ACCEPTANCE } from "./local-ai-task-acceptance";
 import { UPPER_CERVICAL_GUIDES } from "./upper-cervical-guides";
@@ -110,6 +111,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+...NEWS_RESEARCH_20261106,
 ...NEWS_RESEARCH_20261105,
 LOCAL_AI_TASK_ACCEPTANCE,
 UPPER_CERVICAL_GUIDES,
