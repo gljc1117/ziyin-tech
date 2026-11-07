@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2748"/>
+      <stop offset="1" stop-color="#0e4d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="105" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ffffff">获批不是终点</text>
+  <text x="70" y="160" font-family="sans-serif" font-size="27" fill="#bcd9e8">医疗人工智能的审评加速与支付断层</text>
+  <line x1="90" y1="430" x2="1110" y2="430" stroke="#7fb6cf" stroke-width="3"/>
+  <circle cx="200" cy="430" r="10" fill="#ffd166"/>
+  <circle cx="600" cy="430" r="10" fill="#ffd166"/>
+  <circle cx="1000" cy="430" r="10" fill="#ef6f6c"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="90" y="240" width="220" height="130" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="200" y="295" font-size="30" font-weight="bold" fill="#ffffff">审评门</text>
+    <text x="200" y="335" font-size="19" fill="#bcd9e8">510(k) · 突破性认定</text>
+    <rect x="490" y="240" width="220" height="130" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="600" y="295" font-size="30" font-weight="bold" fill="#ffffff">证据门</text>
+    <text x="600" y="335" font-size="19" fill="#bcd9e8">多中心研究 · 比较有效性</text>
+    <rect x="890" y="240" width="220" height="130" rx="10" fill="#5a2e35" stroke="#ef6f6c" stroke-width="2"/>
+    <text x="1000" y="295" font-size="30" font-weight="bold" fill="#ffffff">支付门</text>
+    <text x="1000" y="335" font-size="19" fill="#f3c1bf">编码 · 覆盖 · 立项定价</text>
+    <text x="200" y="480" font-size="20" fill="#d7ecf5">正在加速通过</text>
+    <text x="600" y="480" font-size="20" fill="#d7ecf5">逐步积累</text>
+    <text x="1000" y="480" font-size="20" fill="#f3c1bf">多数产品卡在这里</text>
+  </g>
+  <text x="70" y="575" font-family="sans-serif" font-size="20" fill="#8fb8cc">子殷科技 · 研究述评与方法探索 · 2026年11月7日</text>
+</svg>
