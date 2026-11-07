@@ -1,3 +1,4 @@
+import { GOAL_DRIVEN_AGENT_ENGINEERING } from "./goal-driven-agent-engineering";
 import { NEWS_RESEARCH_20261106 } from "./news-research-20261106";
 import { NEWS_RESEARCH_20261107 } from "./news-research-20261107";
 import { NEWS_RESEARCH_20261105 } from "./news-research-20261105";
@@ -112,6 +113,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+GOAL_DRIVEN_AGENT_ENGINEERING,
 ...NEWS_RESEARCH_20261106,
 ...NEWS_RESEARCH_20261107,
 ...NEWS_RESEARCH_20261105,

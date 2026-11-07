@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="diagram-title diagram-desc">
+  <title id="diagram-title">目标驱动的可验证交付流程</title>
+  <desc id="diagram-desc">从左到右五个步骤：目标契约、受控执行、分层验证、人工放行、反馈更新。这是工程方法示意，不是患者影像，也不表示已部署系统或临床研究结果。</desc>
+  <rect width="1200" height="630" fill="#f1f5f9"/>
+  <rect width="1200" height="12" fill="#0369a1"/>
+  <g font-family="Noto Sans CJK SC, Source Han Sans SC, Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+    <text x="48" y="64" font-size="18" fill="#0369a1" font-weight="600">ZIYIN  /  METHOD NOTES  /  2026.11.07</text>
+    <text x="48" y="122" font-size="40" fill="#0f172a" font-weight="700">从目标到可验证交付</text>
+    <text x="48" y="166" font-size="22" fill="#475569">医学影像与3D打印的方法建议：先写清目标，再受控执行和人工放行</text>
+    <rect x="36" y="206" width="206" height="248" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="266" y="206" width="206" height="248" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="496" y="206" width="206" height="248" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="726" y="206" width="206" height="248" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="956" y="206" width="206" height="248" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="56" y="248" font-size="16" fill="#0369a1" font-weight="700">01  /  CONTRACT</text>
+    <text x="56" y="300" font-size="30" fill="#0f172a" font-weight="700">目标契约</text>
+    <text x="56" y="352" font-size="18" fill="#475569">用途、约束、验收</text>
+    <text x="56" y="384" font-size="18" fill="#475569">责任人与停止条件</text>
+    <text x="286" y="248" font-size="16" fill="#0369a1" font-weight="700">02  /  EXECUTE</text>
+    <text x="286" y="300" font-size="30" fill="#0f172a" font-weight="700">受控执行</text>
+    <text x="286" y="352" font-size="18" fill="#475569">先测量，再修改</text>
+    <text x="286" y="384" font-size="18" fill="#475569">隔离与最小权限</text>
+    <text x="516" y="248" font-size="16" fill="#0369a1" font-weight="700">03  /  EVIDENCE</text>
+    <text x="516" y="300" font-size="30" fill="#0f172a" font-weight="700">分层验证</text>
+    <text x="516" y="352" font-size="18" fill="#475569">版本、日志与校验</text>
+    <text x="516" y="384" font-size="18" fill="#475569">证据可独立重放</text>
+    <text x="746" y="248" font-size="16" fill="#0369a1" font-weight="700">04  /  RELEASE</text>
+    <text x="746" y="300" font-size="30" fill="#0f172a" font-weight="700">人工放行</text>
+    <text x="746" y="352" font-size="18" fill="#475569">专业审核与签署</text>
+    <text x="746" y="384" font-size="18" fill="#475569">质量责任不转移</text>
+    <text x="976" y="248" font-size="16" fill="#0369a1" font-weight="700">05  /  UPDATE</text>
+    <text x="976" y="300" font-size="30" fill="#0f172a" font-weight="700">反馈更新</text>
+    <text x="976" y="352" font-size="18" fill="#475569">对照评估单一因素</text>
+    <text x="976" y="384" font-size="18" fill="#475569">变更先评估影响</text>
+    <polygon points="248,294 262,304 248,314" fill="#0369a1"/>
+    <polygon points="478,294 492,304 478,314" fill="#0369a1"/>
+    <polygon points="708,294 722,304 708,314" fill="#0369a1"/>
+    <polygon points="938,294 952,304 938,314" fill="#0369a1"/>
+    <text x="48" y="530" font-size="20" fill="#64748b">方法示意 · 非实证或临床研究 · 非已部署系统 · 不含患者影像或病例数据</text>
+  </g>
+</svg>
