@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2748"/>
+      <stop offset="1" stop-color="#0e4d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="105" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ffffff">证据正在升级</text>
+  <text x="70" y="160" font-family="sans-serif" font-size="27" fill="#bcd9e8">影像人工智能从单点准确率走向系统证据</text>
+  <g font-family="sans-serif">
+    <rect x="150" y="225" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="272" font-size="28" font-weight="bold" fill="#ffffff">第一层 · 规模验证</text>
+    <text x="1010" y="272" font-size="22" fill="#bcd9e8" text-anchor="end">多中心 · 大样本 · 跨机构一致性</text>
+    <rect x="150" y="315" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="362" font-size="28" font-weight="bold" fill="#ffffff">第二层 · 随机对照</text>
+    <text x="1010" y="362" font-size="22" fill="#bcd9e8" text-anchor="end">盲法评审 · 修改率 · 时间终点</text>
+    <rect x="150" y="405" width="900" height="72" rx="10" fill="#14532d" stroke="#ffd166" stroke-width="2"/>
+    <text x="190" y="452" font-size="28" font-weight="bold" fill="#ffffff">第三层 · 工作流终点</text>
+    <text x="1010" y="452" font-size="22" fill="#ffe9b0" text-anchor="end">嵌入原有界面 · 决定采用</text>
+  </g>
+  <text x="70" y="575" font-family="sans-serif" font-size="20" fill="#8fb8cc">子殷科技 · 研究述评与方法探索 · 2026年11月10日</text>
+</svg>

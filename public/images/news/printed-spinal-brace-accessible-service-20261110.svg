@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2748"/>
+      <stop offset="1" stop-color="#0e4d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="105" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ffffff">从两周到四十八小时</text>
+  <text x="70" y="160" font-family="sans-serif" font-size="27" fill="#bcd9e8">三维打印支具的普惠价值与落地条件</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="90" y="250" width="400" height="150" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="290" y="312" font-size="30" font-weight="bold" fill="#ffffff">传统石膏支具</text>
+    <text x="290" y="358" font-size="24" fill="#bcd9e8">取模浇铸 · 等待约两周</text>
+    <path d="M 520 325 L 660 325" stroke="#ffd166" stroke-width="6"/>
+    <path d="M 640 305 L 675 325 L 640 345 Z" fill="#ffd166"/>
+    <rect x="710" y="250" width="400" height="150" rx="10" fill="#14532d" stroke="#ffd166" stroke-width="2"/>
+    <text x="910" y="312" font-size="30" font-weight="bold" fill="#ffffff">扫描 ＋ 三维打印</text>
+    <text x="910" y="358" font-size="24" fill="#ffe9b0">48小时交付 · 价格不到一半</text>
+    <text x="600" y="470" font-size="22" fill="#d7ecf5">西开普省公立矫形与假肢中心 · 南非公立系统首家内部提供该服务</text>
+  </g>
+  <text x="70" y="575" font-family="sans-serif" font-size="20" fill="#8fb8cc">子殷科技 · 研究述评与方法探索 · 2026年11月10日</text>
+</svg>
