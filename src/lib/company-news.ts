@@ -2,6 +2,7 @@ import { GOAL_DRIVEN_AGENT_ENGINEERING } from "./goal-driven-agent-engineering";
 import { NEWS_RESEARCH_20261106 } from "./news-research-20261106";
 import { NEWS_RESEARCH_20261107 } from "./news-research-20261107";
 import { NEWS_RESEARCH_20261110 } from "./news-research-20261110";
+import { CALCAI_SURFACE_JOINT_SOLVER } from "./calcai-surface-joint-solver";
 import { NEWS_RESEARCH_20261105 } from "./news-research-20261105";
 import { LOCAL_AI_TASK_ACCEPTANCE } from "./local-ai-task-acceptance";
 import { UPPER_CERVICAL_GUIDES } from "./upper-cervical-guides";
@@ -114,6 +115,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CALCAI_SURFACE_JOINT_SOLVER,
 ...NEWS_RESEARCH_20261110,
 GOAL_DRIVEN_AGENT_ENGINEERING,
 ...NEWS_RESEARCH_20261106,

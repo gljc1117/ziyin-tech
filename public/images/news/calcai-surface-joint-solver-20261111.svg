@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">CalcAI：从骨面识别到联合复位</title>
+  <desc id="desc">骨面语义、断面关系和个体形态共同支持多骨块联合求解，再由候选排序与不确定性管理连接医生复核。经裁定的修正反馈用于后续离线学习。拟议方法示意，非临床结果。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#607a90"/></marker>
+  </defs>
+  <rect width="1200" height="900" fill="#f4f7fa"/>
+  <rect width="1200" height="12" fill="#155e75"/>
+  <g font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif">
+    <text x="64" y="70" font-size="22" font-weight="700" letter-spacing="3" fill="#155e75">ZIYIN RESEARCH · 方法学框架</text>
+    <text x="64" y="132" font-size="43" font-weight="700" fill="#102b40">CalcAI：从骨面识别到联合复位</text>
+    <text x="64" y="179" font-size="25" fill="#526779">分清表面身份，建立可信关系，再共同求解骨块位姿</text>
+    <g fill="white" stroke="#c9d8e3" stroke-width="2">
+      <rect x="64" y="222" width="328" height="178" rx="18"/>
+      <rect x="436" y="222" width="328" height="178" rx="18"/>
+      <rect x="808" y="222" width="328" height="178" rx="18"/>
+    </g>
+    <g font-size="29" font-weight="700" fill="#13384e">
+      <text x="88" y="270">01  骨面语义</text>
+      <text x="460" y="270">02  断面关系</text>
+      <text x="832" y="270">03  个体形态</text>
+    </g>
+    <g font-size="24" fill="#4b6375">
+      <text x="88" y="318">断面 · 关节骨面</text>
+      <text x="88" y="355">非关节外表面 · 未定</text>
+      <text x="460" y="318">局部对应 · 配对置信度</text>
+      <text x="460" y="355">允许缺损与未匹配</text>
+      <text x="832" y="318">健侧或统计形态参考</text>
+      <text x="832" y="355">区域容差 · 柔性约束</text>
+    </g>
+    <g stroke="#607a90" stroke-width="3" fill="none" marker-end="url(#arrow)">
+      <path d="M228 400V451"/>
+      <path d="M600 400V451"/>
+      <path d="M972 400V451"/>
+    </g>
+    <rect x="64" y="459" width="1072" height="131" rx="18" fill="#123d53"/>
+    <text x="96" y="511" font-size="32" font-weight="700" fill="white">04  多骨块联合求解</text>
+    <text x="96" y="557" font-size="25" fill="#d6e8ed">局部对合 ＋ 关节连续 ＋ 整骨形态 ＋ 穿透检查 ｜ 保持骨块刚体形状</text>
+    <g stroke="#607a90" stroke-width="3" fill="none" marker-end="url(#arrow)">
+      <path d="M316 590V637"/>
+      <path d="M884 590V637"/>
+    </g>
+    <rect x="64" y="645" width="504" height="126" rx="18" fill="white" stroke="#c9d8e3" stroke-width="2"/>
+    <rect x="632" y="645" width="504" height="126" rx="18" fill="white" stroke="#c9d8e3" stroke-width="2"/>
+    <text x="88" y="692" font-size="29" font-weight="700" fill="#13384e">05  候选排序与修正学习</text>
+    <text x="88" y="737" font-size="24" fill="#4b6375">记录接受、淘汰和修改的理由</text>
+    <text x="656" y="692" font-size="29" font-weight="700" fill="#13384e">06  不确定性与医生复核</text>
+    <text x="656" y="737" font-size="24" fill="#4b6375">定位关键疑点，保留拒绝与转人工</text>
+    <text x="64" y="822" font-size="24" fill="#155e75">医生裁定 → 可追溯反馈 → 离线学习与独立验证 → 下一版本</text>
+    <line x1="64" x2="1136" y1="844" y2="844" stroke="#cfdae3"/>
+    <text x="64" y="880" font-size="20" fill="#667c8b">拟议研究方案 · 原创方法示意，非临床结果</text>
+    <text x="1136" y="880" font-size="20" fill="#667c8b" text-anchor="end">子殷科技研发团队 · 2026.11</text>
+  </g>
+</svg>
