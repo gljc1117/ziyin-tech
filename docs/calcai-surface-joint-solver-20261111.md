@@ -1,8 +1,8 @@
 # 面向跟骨骨折虚拟复位的骨面语义识别与多骨块联合求解：CalcAI的方法学框架与验证设计
 
-2026年11月11日 · 子殷科技研发团队 · 方法学研究与验证方案
+2026年11月11日 · 瑜秀瞳芯 · 方法学研究与验证方案
 
-作者：子殷科技研发团队。本文为官网原创方法学研究与验证方案，未经学术期刊同行评审；不报告新增临床试验、临床可接受率或部署效果。所提六项能力尚未作为完整框架接入并验证于现用CalcAI模型。
+作者：瑜秀瞳芯。本文为官网原创方法学研究与验证方案，未经学术期刊同行评审；不报告新增临床试验、临床可接受率或部署效果。所提六项能力尚未作为完整框架接入并验证于现用CalcAI模型。
 
 以断面配对与联合求解为核心，本文提出将骨面身份识别、个体形态约束、医生修正学习与不确定性管理纳入CalcAI研发的六项能力框架，并设计基线、医生确认关系和AI自动关系三组对照。研究重点是分别验证关系识别、位姿求解和候选选择的贡献，建立面向医生复核的可追溯评价路径。
 
@@ -178,4 +178,4 @@ B组的关系获取过程必须明确。主要的人机协作试验中，医生�
 [4] [Li S, Jiang Z, Chen G, et al. GARF: Learning Generalizable 3D Reassembly for Real-World Fractures. Proceedings of the IEEE/CVF International Conference on Computer Vision. 2025:5711–5721.](https://www.openaccess.thecvf.com/content/ICCV2025/papers/Li_GARF_Learning_Generalizable_3D_Reassembly_for_Real-World_Fractures_ICCV_2025_paper.pdf)
 [5] [International Medical Device Regulators Forum. Good machine learning practice for medical device development: Guiding principles. IMDRF/AIML WG/N88 FINAL:2025. 27 January 2025.](https://www.imdrf.org/sites/default/files/2025-02/IMDRF_AIML%20WG_GMLP_N88%20Final.pdf)
 
-资料核验截至2026年11月11日。参考文献用于说明方法来源及适用边界；文中的算法组织、数据规范和试验安排为本文提出的研究设计。内部排查线索来自项目组提供的研发摘要，未作为独立临床结果发表。本文不公开患者影像、病例标识或原始医疗数据。利益关系：作者团队参与CalcAI研发；文献作者及其机构不因此被视为对子殷产品作出认可。ChatGPT参与文献核对、文字与原创方法图整理。
+资料核验截至2026年11月11日。参考文献用于说明方法来源及适用边界；文中的算法组织、数据规范和试验安排为本文提出的研究设计。内部排查线索来自项目组提供的研发摘要，未作为独立临床结果发表。本文不公开患者影像、病例标识或原始医疗数据。利益关系：作者所属的子殷科技参与CalcAI研发；文献作者及其机构不因此被视为对子殷产品作出认可。ChatGPT参与文献核对、文字与原创方法图整理。
