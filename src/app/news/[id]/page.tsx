@@ -94,7 +94,7 @@ export default async function NewsDetailPage({
           <span className="text-xs text-slate-500">{date}</span>
         </div>
 
-        <h1 className="mt-4 text-3xl font-bold leading-snug text-slate-900" style={id === "recursive-self-improvement-medical-ai-20260915" ? { textWrap: "balance" } : undefined}>
+        <h1 className="mt-4 text-3xl font-bold leading-snug text-slate-900" style={id === "recursive-self-improvement-medical-ai-20260915" || id === "calcai-surface-semantics-joint-reduction-20261111" ? { textWrap: "balance" } : undefined}>
           {news.title}
         </h1>
         {!editorial && news.byline && <p className="mt-4 text-sm text-slate-500">作者：{news.byline}</p>}

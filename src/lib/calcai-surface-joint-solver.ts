@@ -15,6 +15,7 @@ export const CALCAI_SURFACE_JOINT_SOLVER: CompanyNewsArticle = {
   referenceNote: "资料核验截至2026年11月11日。参考文献用于说明方法来源及适用边界；文中的算法组织、数据规范和试验安排为本文提出的研究设计。内部排查线索来自项目组提供的研发摘要，未作为独立临床结果发表。本文不公开患者影像、病例标识或原始医疗数据。利益关系：作者团队参与CalcAI研发；文献作者及其机构不因此被视为对子殷产品作出认可。ChatGPT参与文献核对、文字与原创方法图整理。",
   cover: {
     url: "/images/news/calcai-surface-joint-solver-20261111.svg",
+    originalUrl: "/images/news/calcai-surface-joint-solver-20261111.svg",
     width: 1200,
     height: 900,
     alt: "图1　CalcAI拟议研究框架：骨面语义、断面关系与个体形态共同约束多骨块联合求解，候选排序和不确定性提示连接医生复核；经裁定的修正用于后续离线学习。原创方法示意，非临床结果。",
