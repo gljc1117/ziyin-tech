@@ -1,3 +1,5 @@
+import { SI_INQUIRY } from "./si-showcase";
+
 export interface Product {
   slug: string;
   name: string;
@@ -16,6 +18,16 @@ export interface Product {
 }
 // Grounded in the existing, approved public articles; research is separate from registered scope.
 export const PRODUCTS: Product[] = [
+  {
+    slug: "chcomct-si", name: "Chcomct SI", title: "自动建模与打印协同", kind: "研发与工程展示",
+    summary: "从医学影像自动建模，到专业复核与打印协同。通过真实研发界面了解子殷数智工作台。",
+    audience: "希望了解自动建模、专业复核与模型打印协同的医院及医工团队。",
+    capabilities: ["统一任务入口", "三维建模候选与专科审阅", "影像与模型对照", "审核与后续打印衔接"],
+    deliverables: ["按版本安排实机演示", "按任务确认实施与验证范围"],
+    boundary: "SI 为研发与工程能力展示，自动建模结果需要专业复核。具体功能与适用范围按版本确认，不沿用 Chcomct SM 的注册范围。",
+    image: "/images/si/pelvis-workbench.png", imageAlt: "Chcomct SI 骨盆三维审阅真实研发界面，模型待专业复核", inquiry: SI_INQUIRY,
+    sources: [{ title: "骨盆建模与按需打印工程实践", href: "/news/pelvis-si-layered-delivery-resumable-workflow-20261022" }],
+  },
   {
     slug: "chcomct-sm",
     qualificationId: "chcomct-sm",

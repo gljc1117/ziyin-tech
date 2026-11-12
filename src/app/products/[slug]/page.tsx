@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { QUALIFICATIONS } from "@/lib/qualifications";
 import { PRODUCTS, productInquiryHref } from "@/lib/products";
 import { pageMetadata } from "@/lib/site";
+import SiShowcasePage from "@/components/si/SiShowcasePage";
 export function generateStaticParams() {
   return PRODUCTS.map(({ slug }) => ({ slug }));
 }
@@ -14,9 +15,10 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const p = PRODUCTS.find((item) => item.slug === slug);
-  return p
-    ? pageMetadata(`${p.name} · ${p.title}`, p.summary, `/products/${slug}`)
-    : {};
+  if (!p) return {};
+  const metadata = pageMetadata(`${p.name} · ${p.title}`, p.summary, `/products/${slug}`);
+  if (slug === "chcomct-si") return { ...metadata, openGraph: { ...metadata.openGraph, images: [{ url: "https://www.chcomct.cn/images/si/pelvis-workbench.png", width: 2548, height: 1270, alt: p.imageAlt }] } };
+  return metadata;
 }
 export default async function ProductPage({
   params,
@@ -26,6 +28,7 @@ export default async function ProductPage({
   const { slug } = await params;
   const p = PRODUCTS.find((item) => item.slug === slug);
   if (!p) notFound();
+  if (slug === "chcomct-si") return <SiShowcasePage />;
   const qualification = QUALIFICATIONS.find(q => q.id === p.qualificationId);
   return (
     <main className="bg-white pb-20 pt-28 text-slate-900">

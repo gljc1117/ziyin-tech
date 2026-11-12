@@ -27,18 +27,20 @@ const input = {
   phone: "13800000000", products: ["其他合作"], surgery_volume: "不适用",
   notes: "自动回归测试，无真实联系人",
 };
-const request = () => new Request("http://localhost/api/demo-request", {
-  method: "POST", body: JSON.stringify(input),
+const request = (body = input) => new Request("http://localhost/api/demo-request", {
+  method: "POST", body: JSON.stringify(body),
 });
 
 test("public inquiry uses the configured anon key without requiring an admin key", async (t) => {
   let stored;
   let receivedKey;
   let denied = false;
+  let writes = 0;
   const server = createServer(async (req, res) => {
     assert.equal(req.url, "/rest/v1/demo_requests");
     assert.equal(req.method, "POST");
     receivedKey = req.headers.apikey;
+    writes++;
     const chunks = [];
     for await (const chunk of req) chunks.push(chunk);
     if (denied) {
@@ -65,6 +67,17 @@ test("public inquiry uses the configured anon key without requiring an admin key
     department: input.department, phone: input.phone, modules: input.products,
     monthly_cases: input.surgery_volume, notes: input.notes, status: "pending",
   });
+
+  const siProduct = "自动建模与打印协同 / Chcomct SI";
+  const siResponse = await post(request({ ...input, products: [siProduct] }));
+  assert.equal(siResponse.status, 200);
+  assert.deepEqual(await siResponse.json(), { success: true });
+  assert.deepEqual(stored.modules, [siProduct]);
+
+  const writesBeforeInvalid = writes;
+  const invalidResponse = await post(request({ ...input, products: ["unsupported SI service"] }));
+  assert.equal(invalidResponse.status, 400);
+  assert.equal(writes, writesBeforeInvalid);
 
   denied = true;
   const failure = await post(request());
