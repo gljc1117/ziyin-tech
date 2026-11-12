@@ -4,6 +4,7 @@ import { NEWS_RESEARCH_20261107 } from "./news-research-20261107";
 import { NEWS_RESEARCH_20261110 } from "./news-research-20261110";
 import { CALCAI_SURFACE_JOINT_SOLVER } from "./calcai-surface-joint-solver";
 import { CALCAI_MULTIHYPOTHESIS_ASSEMBLY } from "./calcai-multihypothesis-assembly-20261112";
+import { NEWS_RESEARCH_20261112 } from "./news-research-20261112";
 import { NEWS_RESEARCH_20261105 } from "./news-research-20261105";
 import { LOCAL_AI_TASK_ACCEPTANCE } from "./local-ai-task-acceptance";
 import { UPPER_CERVICAL_GUIDES } from "./upper-cervical-guides";
@@ -120,6 +121,7 @@ HENAN_TCM_CENTER_UPDATE,
 XINXIANG_COMPANY_NEWS,
 CALCAI_MULTIHYPOTHESIS_ASSEMBLY,
 CALCAI_SURFACE_JOINT_SOLVER,
+...NEWS_RESEARCH_20261112,
 ...NEWS_RESEARCH_20261110,
 GOAL_DRIVEN_AGENT_ENGINEERING,
 ...NEWS_RESEARCH_20261106,
