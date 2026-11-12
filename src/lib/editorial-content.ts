@@ -1,4 +1,5 @@
 import type { CaseCategory, ClinicalCase } from "./types";
+import { HENAN_TCM_CENTER_UPDATE, TIANJIN_HOSPITAL_OPERATION } from "./operations-news-20261112";
 
 export interface EditorialImage { url: string; alt: string; width: number; height: number; originalUrl?: string; }
 export interface EditorialArticle {
@@ -6,18 +7,21 @@ export interface EditorialArticle {
   eventDate: string; dateLabel: string; sourceTitle: string;
   sourcePublishedAt: string | null; status: "candidate" | "approved" | "withdrawn";
   cover: EditorialImage; gallery: EditorialImage[];
+  hideCover?: boolean;
+  sourceAttribution?: string;
   references: { title: string; url: string; linkLabel?: string; verification: "primary_full_text" | "search_summary" }[];
   sections: { heading: string; headingLevel?: 2 | 3; paragraphs: string[]; items?: string[] }[];
   caseProfile: {
     title: string; category: CaseCategory; phase: string; hospital: string; department: string;
     need: string; work: string; result: string; deliverables: string[]; boundary: string;
+    update?: Pick<EditorialArticle, "id" | "dateLabel" | "cover" | "gallery">;
   };
 }
 
 export const EDITORIAL_ARTICLES: EditorialArticle[] = [
   {
     "caseProfile": {
-      "boundary": "以上为采购服务范围，不能视为所有项目已经完成交付或验收。",
+      "boundary": "服务内容按医院流程和采购约定开展，交付与验收以项目记录为准。",
       "category": "service_project",
       "deliverables": [
         "医学影像处理与三维规划服务",
@@ -27,10 +31,11 @@ export const EDITORIAL_ARTICLES: EditorialArticle[] = [
       "department": "医学3D打印服务",
       "hospital": "河南中医药大学第一附属医院",
       "need": "面向医院影像处理、术前规划、模型与导板打印及康复支具等服务需求。",
-      "phase": "项目成交",
-      "result": "采购公告已确认成交供应商和一年服务期限；履约交付资料后续补充。",
+      "phase": "已投入使用",
+      "result": HENAN_TCM_CENTER_UPDATE.summary,
       "title": "河南中医药大学第一附属医院医学3D打印服务项目",
-      "work": "通过影像、设计、打印、技术操作与设备运维等环节组织一体化服务。"
+      "work": "现场设置医工协作、医学模型展示和3D打印工作区域，按医院流程组织影像接收、设计沟通、医生确认及制造质检。",
+      "update": HENAN_TCM_CENTER_UPDATE
     },
     "category": "合作动态",
     "cover": {
@@ -79,6 +84,7 @@ export const EDITORIAL_ARTICLES: EditorialArticle[] = [
     "summary": "围绕影像处理、三维规划、模型与导板打印、康复支具及运营配套，开展为期一年的医学3D打印服务项目。",
     "title": "子殷科技成为河南中医药大学第一附属医院3D打印服务项目成交供应商"
   },
+  TIANJIN_HOSPITAL_OPERATION,
   {
     "caseProfile": {
       "boundary": "具体服务功能、交付批次与应用成效应结合中心实际运行记录，不能仅以揭牌活动推定。",
@@ -237,12 +243,16 @@ export function getEditorialArticle(id: string, preview = process.env.WEBSITE_CO
   return getEditorialArticles(preview).find((item) => item.id === id);
 }
 export function getEditorialCases(preview = process.env.WEBSITE_CONTENT_PREVIEW === "1"): ClinicalCase[] {
-  return getEditorialArticles(preview).map((item) => ({
-    id: item.id, slug: item.id, title: item.caseProfile.title, category: item.caseProfile.category,
-    hospital: item.caseProfile.hospital, department: item.caseProfile.department, doctor_name: "",
-    summary: item.caseProfile.result, cover_image_url: item.cover.url,
-    images: item.gallery.map((image) => image.url), model_ids: [],
-    tags: [item.caseProfile.phase, "医工造物"], is_published: item.status === "approved",
-    created_at: "", updated_at: "",
-  }));
+  return getEditorialArticles(preview).map((item) => {
+    const profile = item.caseProfile;
+    const { cover, gallery } = profile.update ?? item;
+    return {
+      id: item.id, slug: item.id, title: profile.title, category: profile.category,
+      hospital: profile.hospital, department: profile.department, doctor_name: "",
+      summary: profile.result, cover_image_url: cover.url,
+      images: gallery.map((image) => image.url), model_ids: [],
+      tags: [profile.phase, "医工造物"], is_published: item.status === "approved",
+      created_at: "", updated_at: "",
+    };
+  });
 }

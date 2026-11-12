@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { XINXIANG_COMPANY_NEWS } from "@/lib/operations-news-20261112";
 import {
   COMPANY_MILESTONES,
   COMPANY_TIMELINE_UPDATED_LABEL,
@@ -117,6 +118,12 @@ export default function AboutPage() {
               子殷科技面向医院提供数智医学产品与医工转化服务，围绕医学影像处理、医学3D打印和医疗AI研发，连接科室需求、工程实施与科研协作。通过产品交付、技术服务及中心共建，支持医院持续开展数字化医学工作。
             </p>
             <div className="mt-7 border-t border-white/15 pt-6 text-sm leading-7 text-slate-300"><p>Chcomct SM 医学图像处理软件的注册人为内蒙古子殷科技有限公司。上海子殷科技有限公司参与孝感数智医学与临床转化中心共建。</p><div className="mt-4 flex flex-wrap gap-6"><Link href="/products/chcomct-sm" className="text-cyan-200">查看产品资料 →</Link><Link href="/cases/xiaogan-medical-center-2026" className="text-cyan-200">查看中心共建项目 →</Link></div></div>
+            <div className="mt-5 text-sm leading-7 text-slate-300">
+              <p>{XINXIANG_COMPANY_NEWS.summary}</p>
+              <Link href={`/news/${XINXIANG_COMPANY_NEWS.id}`} className="mt-2 inline-flex min-h-11 items-center text-cyan-200">
+                查看新乡落地进展 →
+              </Link>
+            </div>
           </motion.div>
 
 

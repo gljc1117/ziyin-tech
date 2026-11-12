@@ -1,4 +1,5 @@
 import { getNewsArticles } from "./company-news";
+import { TIANJIN_HOSPITAL_OPERATION } from "./operations-news-20261112";
 
 export interface CompanyMilestone {
   sortDate: string;
@@ -121,6 +122,13 @@ const RECORDED_MILESTONES: CompanyMilestone[] = [
     date: "2026.8.13",
     text: "上海市第六人民医院与上海子殷科技有限公司共同申请的“一种基于多模态数据的跟骨骨折AI复位方法”发明专利获国家知识产权局受理（申请号202611224126.6）",
     source: "申请受理文件",
+  },
+  {
+    sortDate: "2026-07",
+    date: "2026.7",
+    text: "天津市天津医院医学3D打印项目投入运营",
+    source: "公司资料",
+    href: `/cases/${TIANJIN_HOSPITAL_OPERATION.id}`,
   },
 ];
 

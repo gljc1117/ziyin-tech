@@ -99,12 +99,12 @@ import { AI_WORKFORCE_COMMENTARY } from "./ai-workforce-commentary";
 import { getEditorialArticles, type EditorialArticle, type EditorialImage } from "./editorial-content";
 
 import { PHYSICAL_EXAM_COMMENTARY } from "./physical-exam-commentary";
+import { HENAN_TCM_CENTER_UPDATE, XINXIANG_COMPANY_NEWS } from "./operations-news-20261112";
 
 // Company reporting can be published as news without creating a clinical case.
 export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
-  sourceAttribution?: string;
+  relatedCaseId?: string;
   numberedReferences?: boolean;
-  hideCover?: boolean;
   referenceNote?: string;
   sectionTables?: Record<string, { caption: string; columns: string[]; rows: string[][] }>;
   sectionImages?: Record<string, EditorialImage>;
@@ -116,6 +116,8 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+HENAN_TCM_CENTER_UPDATE,
+XINXIANG_COMPANY_NEWS,
 CALCAI_MULTIHYPOTHESIS_ASSEMBLY,
 CALCAI_SURFACE_JOINT_SOLVER,
 ...NEWS_RESEARCH_20261110,

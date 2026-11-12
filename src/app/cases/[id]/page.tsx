@@ -42,8 +42,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const article = getEditorialArticle(id);
   if (article) {
-    const metadata = pageMetadata(article.caseProfile.title, article.summary, "/cases/" + id);
-    return { ...metadata, openGraph: { ...metadata.openGraph, images: [{ url: article.cover.url, alt: article.cover.alt, width: article.cover.width, height: article.cover.height }] }, ...(article.status === "candidate" ? { robots: { index: false, follow: false } } : {}) };
+    const profile = article.caseProfile;
+    const { cover } = profile.update ?? article;
+    const metadata = pageMetadata(profile.title, profile.update ? profile.result : article.summary, "/cases/" + id);
+    return { ...metadata, openGraph: { ...metadata.openGraph, images: [cover] }, ...(article.status === "candidate" ? { robots: { index: false, follow: false } } : {}) };
   }
   const demo = getPublicDemo(id);
   if (demo) return pageMetadata(demo.title, demo.summary, "/cases/" + id);

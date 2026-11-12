@@ -35,7 +35,7 @@ function ReferenceText({ text, article }: { text: string; article: EditorialArti
 
 export function EditorialSources({ article }: { article: EditorialArticle | CompanyNewsArticle }) {
   return <aside className="mt-10 border-t border-current/15 pt-5 text-sm leading-7">
-    <p>{"sourceAttribution" in article && article.sourceAttribution
+    <p>{article.sourceAttribution
       ? article.sourceAttribution
       : <>内容来源：子殷科技提供的《{article.sourceTitle}》。</>}</p>
     {article.references.map((source, index) => <p key={source.url} id={"numberedReferences" in article && article.numberedReferences ? "reference-" + (index + 1) : undefined} className="scroll-mt-24 break-words">{"numberedReferences" in article && article.numberedReferences ? `[${index + 1}] ` : ""}{source.linkLabel && <>{source.title} </>}<a href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{source.linkLabel || source.title} ↗</a></p>)}
@@ -44,10 +44,11 @@ export function EditorialSources({ article }: { article: EditorialArticle | Comp
 }
 
 export default function EditorialArticleBody({ article }: { article: EditorialArticle | CompanyNewsArticle }) {
+  const caseId = "caseProfile" in article ? article.id : article.relatedCaseId;
   return <div className="mt-6 text-slate-700">
     {article.status === "candidate" && <p className="rounded-lg border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">候选内容预览 · 尚未发布</p>}
     <p className="mt-6 text-lg leading-8">{article.summary}</p>
-    {!("hideCover" in article && article.hideCover) && (article.id === "grant-assistant-calibrated-decisions-20260916" ? <GrantDecisionFramework /> : article.id === "recursive-scientific-instruments-materials-medical-ai-20260916" ? <ScientificInstrumentFramework /> : article.id === "recursive-self-improvement-medical-ai-20260915" ? <RsiFramework /> : hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />)}
+    {!article.hideCover && (article.id === "grant-assistant-calibrated-decisions-20260916" ? <GrantDecisionFramework /> : article.id === "recursive-scientific-instruments-materials-medical-ai-20260916" ? <ScientificInstrumentFramework /> : article.id === "recursive-self-improvement-medical-ai-20260915" ? <RsiFramework /> : hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />)}
     {"officialVideo" in article && article.officialVideo && <OfficialVideoCard video={article.officialVideo} />}
     {article.sections.map((section) => <section key={section.heading} className="mt-10">
       {section.headingLevel === 3
@@ -66,27 +67,29 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
     </section>)}
     {article.gallery.map((item) => <Figure key={item.url} item={item} />)}
     <EditorialSources article={article} />
-    {"caseProfile" in article && <Link href={"/cases/" + article.id} className="mt-6 inline-block rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950">查看项目与交付记录 →</Link>}
+    {caseId && <Link href={"/cases/" + caseId} className="mt-6 inline-block rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950">查看项目与交付记录 →</Link>}
   </div>;
 }
 
 export function EditorialCaseDetail({ article }: { article: EditorialArticle }) {
   const profile = article.caseProfile;
+  const { cover, dateLabel } = profile.update ?? article;
   return <main className="mx-auto max-w-4xl px-6 pb-20 pt-24 text-slate-800">
     <Link href="/cases" className="text-sm text-blue-700">← 返回案例与交付</Link>
     {article.status === "candidate" && <p className="mt-5 text-sm text-amber-800">候选内容预览 · 尚未发布</p>}
-    <p className="mt-6 text-sm font-medium text-blue-700">{profile.phase} · {article.dateLabel}</p>
+    <p className="mt-6 text-sm font-medium text-blue-700">{profile.phase} · {dateLabel}</p>
     <h1 className="mt-3 text-3xl font-bold leading-tight">{profile.title}</h1>
     <p className="mt-4 text-sm text-slate-600">{profile.hospital} · {profile.department}</p>
-    <Figure item={article.cover} />
+    {!article.hideCover && <Figure item={cover} />}
     {[
       ["项目需求", profile.need], ["医工过程", profile.work], ["已记录的进展", profile.result],
     ].map(([heading, text]) => <section key={heading} className="mt-8"><h2 className="text-xl font-semibold">{heading}</h2><p className="mt-3 leading-8 text-slate-600">{text}</p></section>)}
+    {profile.update?.gallery.map((image) => <Figure key={image.url} item={image} />)}
     <section className="mt-8"><h2 className="text-xl font-semibold">{profile.phase === "项目成交" ? "约定服务内容" : "项目内容"}</h2><ul className="mt-4 list-disc space-y-2 pl-6 text-slate-600">{profile.deliverables.map((item) => <li key={item}>{item}</li>)}</ul></section>
     <p className="mt-8 rounded-xl bg-blue-50 p-5 text-sm leading-7 text-slate-700">{profile.boundary}</p>
     <EditorialSources article={article} />
     <div className="mt-8 flex flex-wrap gap-4">
-      <Link href={"/news/" + article.id} className="rounded-lg border border-slate-300 px-5 py-3 text-sm">阅读完整图文</Link>
+      <Link href={"/news/" + (profile.update?.id ?? article.id)} className="rounded-lg border border-slate-300 px-5 py-3 text-sm">阅读完整图文</Link>
       <Link href="/demo" className="rounded-lg bg-blue-700 px-5 py-3 text-sm font-semibold text-white">沟通类似项目需求</Link>
     </div>
   </main>;
