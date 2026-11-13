@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2748"/>
+      <stop offset="1" stop-color="#0e4d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="105" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ffffff">乳腺筛查的三道算术</text>
+  <text x="70" y="160" font-family="sans-serif" font-size="27" fill="#bcd9e8">RSNA 2026预览：三项乳腺AI研究</text>
+  <g font-family="sans-serif">
+    <rect x="150" y="225" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="272" font-size="28" font-weight="bold" fill="#ffffff">补经验 · 年轻医生敏感性提升</text>
+    <rect x="150" y="320" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="367" font-size="28" font-weight="bold" fill="#ffffff">算召回 · 召回率上升先于收益</text>
+    <rect x="150" y="415" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="462" font-size="28" font-weight="bold" fill="#ffffff">分资源 · 约7%人群加做核磁</text>
+  </g>
+  <text x="70" y="565" font-family="sans-serif" font-size="22" fill="#bcd9e8">子殷科技 · 研究述评与方法探索 · 2026年11月14日</text>
+</svg>
