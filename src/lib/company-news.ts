@@ -96,6 +96,8 @@ import { MEDICAL_AI_REGULATION } from "./medical-ai-regulation";
 import { GRANT_DECISION_FRAMEWORK } from "./grant-decision-framework";
 import { RECURSIVE_INSTRUMENTS_REVIEW } from "./recursive-instruments-review";
 import { XIAOGAN_LUNG_BIOPSY } from "./xiaogan-lung-biopsy";
+import { XIAOGAN_RESPIRATORY_MEETING } from "./xiaogan-respiratory-meeting";
+import { XINXIANG_UNIVERSITY_RECRUITMENT } from "./xinxiang-university-recruitment";
 import { RSI_COMMENTARY } from "./rsi-commentary";
 import { FLY_CONNECTOME_REVIEW } from "./fly-connectome-review";
 import { AI_WORKFORCE_COMMENTARY } from "./ai-workforce-commentary";
@@ -119,6 +121,8 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+XIAOGAN_RESPIRATORY_MEETING,
+XINXIANG_UNIVERSITY_RECRUITMENT,
 HENAN_TCM_CENTER_UPDATE,
 XINXIANG_COMPANY_NEWS,
 CALCAI_MULTIHYPOTHESIS_ASSEMBLY,
