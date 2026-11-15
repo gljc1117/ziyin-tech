@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2748"/>
+      <stop offset="1" stop-color="#0e4d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="105" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ffffff">轻量模型啃脑卒中早期识别</text>
+  <text x="70" y="160" font-family="sans-serif" font-size="27" fill="#bcd9e8">二十万参数里装下不确定性</text>
+  <g font-family="sans-serif">
+    <rect x="150" y="225" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="272" font-size="28" font-weight="bold" fill="#ffffff">CT 曲线下面积 0.974 · F1 0.897</text>
+    <rect x="150" y="320" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="367" font-size="28" font-weight="bold" fill="#ffffff">定位 Dice 0.70 · 仅 20 万参数</text>
+    <rect x="150" y="415" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="462" font-size="28" font-weight="bold" fill="#ffffff">证据边界 · 前瞻性验证未做，MRI 定位无金标准</text>
+  </g>
+  <text x="70" y="565" font-family="sans-serif" font-size="22" fill="#bcd9e8">子殷科技 · 研究述评与方法探索 · 2026年11月16日</text>
+</svg>

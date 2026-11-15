@@ -9,6 +9,7 @@ import { NEWS_RESEARCH_20261112 } from "./news-research-20261112";
 import { NEWS_RESEARCH_20261113 } from "./news-research-20261113";
 import { NEWS_RESEARCH_20261114 } from "./news-research-20261114";
 import { NEWS_RESEARCH_20261115 } from "./news-research-20261115";
+import { NEWS_RESEARCH_20261116 } from "./news-research-20261116";
 import { NEWS_RESEARCH_20261105 } from "./news-research-20261105";
 import { LOCAL_AI_TASK_ACCEPTANCE } from "./local-ai-task-acceptance";
 import { UPPER_CERVICAL_GUIDES } from "./upper-cervical-guides";
@@ -130,6 +131,7 @@ XINXIANG_COMPANY_NEWS,
 CALCAI_FRAGMENT_COMPOSITION,
 CALCAI_MULTIHYPOTHESIS_ASSEMBLY,
 CALCAI_SURFACE_JOINT_SOLVER,
+...NEWS_RESEARCH_20261116,
 ...NEWS_RESEARCH_20261115,
 ...NEWS_RESEARCH_20261114,
 ...NEWS_RESEARCH_20261113,
