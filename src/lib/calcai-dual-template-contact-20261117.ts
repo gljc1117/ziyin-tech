@@ -1,0 +1,420 @@
+import type { CompanyNewsArticle } from "./company-news";
+
+export const CALCAI_DUAL_TEMPLATE_CONTACT: CompanyNewsArticle = {
+  "id": "calcai-dual-template-contact-20261117",
+  "title": "双组模板与接触约束驱动的跟骨骨折虚拟复位：逐骨块回归研究与失效分析",
+  "sourceTitle": "双组模板与接触约束驱动的跟骨骨折虚拟复位：逐骨块回归研究与失效分析",
+  "summary": "CalcAI V40 将两组模板与接触约束共同纳入候选姿态生成。历史回归中，7 枚目标骨块出现 5 枚改善、1 枚持平和 1 枚退化；20 项既有调整保留。本文报告完整逐块结果、优化器非收敛记录及未升版原因。",
+  "category": "学术观点",
+  "eventDate": "2026-11-17",
+  "sourcePublishedAt": "2026-11-17",
+  "dateLabel": "2026年11月17日 · 瑜秀瞳芯 · 原创研究技术论文／官网预印本",
+  "status": "approved",
+  "numberedReferences": true,
+  "hideCover": true,
+  "cover": {
+    "url": "/images/news/calcai-dual-template-contact-20261117/cover.png",
+    "originalUrl": "/images/news/calcai-dual-template-contact-20261117/cover.png",
+    "width": 1440,
+    "height": 1032,
+    "alt": "CalcAI V40 双组模板与接触约束逐骨块回归研究流程。"
+  },
+  "gallery": [],
+  "sections": [
+    {
+      "heading": "论文信息",
+      "paragraphs": [
+        "作者：瑜秀瞳芯。单位：子殷数智医学与临床转化中心，内蒙古子殷科技。发布日期：2026 年 11 月 17 日。研究对象：CalcAI V38—V40 的历史工程回归记录。",
+        "本文为官网原创研究技术论文／预印本，未经学术期刊同行评议。公开的是算法实验及其局限，V40 未通过升版；本文不构成临床有效性验证或临床使用建议。"
+      ]
+    },
+    {
+      "heading": "摘要",
+      "paragraphs": [
+        "目的　针对接缝证据不足的多骨块跟骨骨折，检验在候选姿态生成阶段同时引入两组模板与局部接触约束，能否在保留既有接纳调整的前提下，降低逐骨块复位误差。",
+        "方法　对 26 个历史病例工程条目开展配对回归。以封存的 V38 位姿为基线，7 个符合预设条件的条目各再生成 1 枚后关节面相关骨块（PF）的刚体候选，19 个沿用原封存结果。比较单组模板参与生成与双组模板参与生成；两组使用相同起点、双组模板接纳规则及原接触和碰撞预算。完整自动批次封存后，以固定载距突参照系下对应顶点到人工复位参考的距离第 95 百分位数（P95）评价每枚骨块。所有条目的人工参考在既往研发中均已暴露，本轮不作为独立验证。",
+        "结果　7 枚目标 PF 骨块相对 V38 为 5 枚改善、1 枚持平、1 枚退化，P95 变化均值为 −0.355 mm，中位数为 −0.161 mm；最大退化为 +0.222 mm。全队列 44 枚 PF 中，41 枚可评价，结果为 5 枚改善、35 枚持平、1 枚退化，另 3 枚未验证。20 项既有接纳调整均保留。54 次优化调用中仅 4 次报告成功，49 次达到迭代上限，1 次线搜索失败。退化条目的两组模板得分均改善，但其全部合格新候选均劣于基线；另一条目存在更优候选，自动排序仍损失 0.358 mm。",
+        "结论　双组模板与接触约束参与候选生成，在所选历史目标中产生了局部精度增益，但尚未消除模板共同偏差、候选排序偏差与求解不稳定。逐骨块检查识别出病例均值可能掩盖的局部退化，按预设规则阻止 V40 升版。下一步应先改善目标函数与参考精度的一致性及求解收敛性，再开展未参与规则设计且参考未暴露病例的验证。",
+        "关键词　跟骨骨折；虚拟复位；后关节面；多模板先验；接触约束；逐骨块评价；负结果"
+      ]
+    },
+    {
+      "heading": "English abstract",
+      "paragraphs": [
+        "Dual-template-panel and contact-constrained virtual reduction of calcaneal fractures: a fragment-level regression study and failure analysis.",
+        "Objective: To examine whether incorporating two non-overlapping template panels into rigid-pose generation improves reduction accuracy while preserving previously accepted fragment adjustments. Methods: Twenty-six historical engineering records were reviewed. Seven eligible records contributed one target posterior-facet-related fragment each; nineteen retained frozen baseline poses. Single-panel and dual-panel generation used identical starts and final acceptance rules. After automatic outputs were frozen, corresponding-vertex P95 distances to manual reductions were computed in a fixed sustentacular anchor frame. All references had prior development exposure. Results: Five target fragments improved, one remained unchanged, and one regressed versus V38. Mean and median changes were −0.355 and −0.161 mm, respectively; the largest regression was +0.222 mm. Of 44 PF fragments, 41 were measurable: five improved, thirty-five were unchanged, and one regressed. Twenty prior adjustments were preserved. Only four of fifty-four optimizer calls reported success. Conclusions: Local improvements did not establish reliable superiority or clinical validity. Fragment-level regression blocked algorithm adoption. Objective alignment, ranking and solver stability require further work before independent validation."
+      ]
+    },
+    {
+      "heading": "1　引言",
+      "paragraphs": [
+        "CT 三维重建为跟骨骨折术前虚拟复位提供了几何基础。[1] 在自动复位中，骨折面识别与配对可以提供局部装配证据；多骨块配准和形态模板则提供整体形状约束。[2][3] 但不同研究使用的骨种、参考标准和评价指标并不相同，既有文献中的误差值不能直接作为本系统的达标阈值。",
+        "CalcAI 前期实验发现，接缝覆盖不足时，某些形态驱动调整可以改善局部误差，也可能因同组其他骨块需要保护而在整体选择中被丢弃；另一方面，形态评分较好并不总对应人工参考误差更小。[6] 因此，研发需要同时解决“保留已经接纳的局部动作”和“为尚未调整的骨块生成更好的动作”两个问题。",
+        "V39 主要从既有候选中投影并筛选可保留的动作，26 个条目的最终位姿哈希均与 V38 相同，未产生新增精度收益。V40 据此将改动前移到候选生成阶段：使两组互不重叠模板与接触约束共同参与搜索，同时锁定此前已接纳的动作。本研究的主要问题是该改变能否降低逐枚 PF 骨块的参考误差，而不是仅提高模板评分或病例平均值。"
+      ]
+    },
+    {
+      "heading": "2　材料与方法",
+      "paragraphs": []
+    },
+    {
+      "heading": "2.1　研究设计、资料与目标选择",
+      "paragraphs": [
+        "本研究为单一研发流程内的历史回归实验。资料来自既有患侧术前网格、骨块标签、自动位姿和人工复位参考归档，共 26 个病例工程条目。本轮没有新增影像采集或患者干预。资料属于按工程可用性与历史研发范围形成的便利样本，并非连续入组队列；未开展人口学、骨折分型构成或临床结局分析。",
+        "再生成范围在自动计算前锁定：条目须至少包含两枚 PF 骨块；目标须为可动、未受已接纳接缝支持、未被保护规则冻结，且其 V38 位姿仍与原始起始位姿一致的 PF 骨块。7 个条目各有 1 枚目标符合条件，其余 19 个条目沿用封存基线。公开资料用 R01—R07 表示 7 个目标条目，保留 PF 局部编号以支持逐块核对，不公开身份映射。",
+        "26 个条目均曾在前期研发中检查过人工参考。其中一个沿用的历史目录名称包含“未见”含义，但不代表 V40 独立留出。排除同源模板以及本轮计算前封存规则，均不能消除既往参考暴露。本文统一将这批资料报告为历史开发／回归集，不将不同工程分组解释为独立患者队列。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "2.2　冻结基线与共同对照",
+      "paragraphs": [
+        "V38 为主要冻结对照。此前已接纳的 20 项骨块调整、全部非目标骨块及锚点位姿在 V40 中保持不变；不得根据本轮人工误差撤销、重新组合或替换这些动作。对 19 个不进入再生成的条目，核对封存回执与位姿一致性后复用结果，其人工参考指标重新计算。这 19 个条目不计作重新运行自动复位引擎。",
+        "预先指定双组模板生成作为主方案，单组模板生成作为机制对照。两组均从同一原始目标位姿出发；若存在可用的封存术前几何候选，再增加一份按共同双组模板／接触评分确定的起点。两组使用相同运动预算和最终接纳规则，仅优化目标所包含的模板组数不同。因此，单组对照的起点筛选和最终接纳也使用第二组模板，不能将其理解为完全不接触第二组信息的消融。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "2.3　双组模板、局部接触与刚体目标",
+      "paragraphs": [
+        "每个目标使用两组各 4 份、组间互不重叠的形态模板。模板筛选排除目标所属折叠及已知同患者别名。两组仍来自同一形态库并共享坐标框架，模板互不重叠不等于统计独立，也不能保证其误差方向互补。",
+        "对模板组 j、模板 k 和目标骨块 f，记 ℓⱼₖ𝒻(T) 为原有皮质位置与法向残差评分。以原始位姿 T₀ 为参照，先对四份模板全部使用及每次剔除一份的五个子集分别计算配对改善量的中位数，再取其中最小值作为保守收益：Gⱼ𝒻(T) = minₛ medianₖ∈ₛ[ℓⱼₖ𝒻(T₀) − ℓⱼₖ𝒻(T)]。该值属于内部几何评分，不能按参考 P95 的毫米误差解读。",
+        "记 sⱼ = max{1, medianₖ ℓⱼₖ𝒻(T₀)}，s＊ = min(s₁, s₂)。优化变量为六维刚体参数 x 和辅助标量 q，目标为 J(x,q) = 0.65·s＊·q + Σg∈PF max{0, Cg[T(x)] − Cg(Tseed)} + 0.12·[(d𝒻/2.5)² + (θ𝒻/10)²]。其中 Cg 为原有局部接触代价，包含可用的接触边拟合与互匹配骨面信息；d𝒻 和 θ𝒻 分别为相对原始位姿的质心位移与转角，单位为 mm 和度。",
+        "约束 q + Gⱼ𝒻[T(x)]/sⱼ ≥ 0 将模板收益纳入生成过程。单组对照仅对第一组施加该约束，双组主方案同时对两组施加；同时保留原接触、碰撞及归一化刚体运动约束。该形式倾向于改善最不利模板组的收益，并惩罚对其他 PF 骨块局部接触关系的破坏。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "2.4　候选求解、接纳与排序",
+      "paragraphs": [
+        "使用 SLSQP 求解，每次最多 40 次迭代，最多进行 3 轮碰撞见证点更新；ftol 为 10⁻⁶，有限差分步长 eps 为 2×10⁻⁴。六维归一化参数逐维界限为 [−1,1]，并保留平移与旋转范数约束；辅助变量 q 未设置显式上下界。每轮返回的有限刚体位姿沿 25%、50%、75% 和 100% 动作幅度生成候选。[5] 实验使用两个任务工作进程、每进程一个 BLAS 线程。",
+        "接纳类及阈值沿用 V38，经语法树比对确认一致。目标质心移动不超过 2.5 mm、转角不超过 10°；原接触边中位距离增量不超过 0.25 mm；最大穿透深度不得超过各例封存的原始上限。原始上限可能非零，因此“通过碰撞预算”不等于不存在骨块穿透。",
+        "两个模板组均须达到至少 0.025 的内部保守收益，每组至少 3/4 模板的改善超过 0.025，净收益至少为 0.025。受软保护规则约束的目标还须在两个模板组上均达到至少 5% 的相对收益，并将强接触增量限制在 0.20 mm 内。合格候选依次按最弱模板组的相对收益、净收益、运动量和候选标识排序；没有合格新候选时保留 V38。",
+        "接纳依据与求解器收敛状态分开记录。优化器非成功退出后返回的有限位姿可以进入独立几何接纳检查，但不据此记为优化收敛。对再生成组的最终选中位姿另行复查原接触约束与全部骨块对碰撞。自动批次完整封存后才读取本轮人工参考误差，禁止据此重选输出。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "2.5　逐骨块评价与统计",
+      "paragraphs": [
+        "人工复位网格是本研究的比较参考，不视为无误差的解剖真值。评价先核验人工网格与术前网格的同序顶点刚体对应，将两者置于固定载距突（ST）锚点参照系，再计算对应顶点欧氏距离。每枚骨块以这些距离的第 95 百分位数 P95 表示误差，不对该目标单独再次配准。它不同于最近表面点距离、Hausdorff 第 95 百分位距离，也不同于关节面台阶、间隙或临床疗效指标。",
+        "主要比较为 V40 双组生成相对冻结 V38 的逐枚 PF 误差，单组生成为次要配对对照。改善、持平和退化按 10⁻⁶ mm 数值容差分类；该容差仅用于数值分类，不表示临床最小重要差异。参考对应不完整的骨块列为未验证，不按持平或通过处理。所有非锚点骨块均纳入退化检查。",
+        "7 枚目标的配对变化报告逐项数值、均值和中位数，不进行显著性检验或临床成功率推断。全队列骨块计数用于检查遗漏和局部退化；同一病例内骨块并非独立样本，不将 41 枚 PF 当作 41 个独立患者。预设版本接纳规则为：任一新增 PF 退化即阻止本轮升版，不能用总体平均收益抵消。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "3　结果",
+      "paragraphs": []
+    },
+    {
+      "heading": "3.1　运行范围与既有调整保留",
+      "paragraphs": [
+        "26 个计划条目均形成可核对的自动记录，未出现批次执行失败。7 个进入新候选生成，19 个复用封存基线；25 个条目的 PF 人工参考完整。20 项此前接纳的调整按位姿矩阵逐项保持一致，其他非目标骨块也未改变。双组主方案在 6 个条目选择新位姿，R02 沿用基线。",
+        "V38、V39 和 V40 的比较范围见表 1。V39 的保持能力为本轮提供稳定起点，但不能把“输出未改变”计作精度新增改善。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "3.2　七枚目标骨块的配对误差",
+      "paragraphs": [
+        "表 2 和图 2 展示全部目标，不按结果筛除个别病例。相对 V38，双组生成改善 5 枚、持平 1 枚、退化 1 枚，变化均值为 −0.355 mm，中位数为 −0.161 mm；相对单组生成的平均变化为 −0.352 mm，方向计数同为 5／1／1。单组生成相对 V38 仅改善 1 枚、退化 1 枚，其余 5 枚持平。",
+        "R07 的目标 P95 下降最多，为 1.094 mm；但其残余误差仍为 13.315 mm。R01 和 R06 分别为 19.235 mm 与 18.706 mm。局部下降并不等于达到可接受的临床复位。R04 的 P95 增加 0.222 mm，因此即使 7 枚目标的平均误差下降，V40 仍被退化规则阻断。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "3.3　全队列逐块检查",
+      "paragraphs": [
+        "全部 44 枚 PF 骨块中，41 枚具备可核验参考：5 枚改善、35 枚持平、1 枚退化；3 枚未验证。全部 344 枚非锚点骨块中，332 枚可评价：5 枚改善、326 枚持平、1 枚退化；12 枚未验证。未验证骨块不进入方向比例或精度均值。",
+        "本轮新增动作集中于 7 枚目标骨块。持平数较多主要来自预设冻结与非目标位姿不变，不能解释为 V40 对全部骨块重新求解后实现了同样的稳定性。新选中位姿通过原引擎接触和碰撞预算复查，也不能覆盖人工参考误差上的退化。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "3.4　优化器退出状态",
+      "paragraphs": [
+        "54 次搜索调用中，4 次报告成功，49 次达到迭代上限，1 次报告线搜索方向导数异常。54 是包含不同起点、方案和碰撞更新轮次的求解调用数，不是病例数。非成功退出比例较高，表明本轮不能据几何接纳结果宣称优化过程已稳定收敛。",
+        "此次实验保留了这些退出状态及候选后续检查结果。迭代预算、目标尺度、辅助变量界限与约束可行性恢复均是后续需要检查的因素；现有证据尚不能把某一个因素认定为全部非收敛的原因。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "4　失效分析",
+      "paragraphs": []
+    },
+    {
+      "heading": "4.1　R04：两组模板同向改善仍可导致退化",
+      "paragraphs": [
+        "R04 的双组首选在两组模板上的保守相对收益分别为 9.095% 和 6.069%，并通过接触、运动与碰撞预算，但 P95 从 3.247 mm 增至 3.469 mm。其质心移动约 0.814 mm、转角约 1.449°；较小动作和模板一致性均未阻止参考误差增加。",
+        "该条目的单组生成有 1 个合格新候选，双组生成有 2 个，三者均劣于 V38。双组候选中事后参考误差最小者仍为 3.469 mm。因此仅重排这批合格新候选不能解决 R04；当前证据把问题指向生成目标与局部几何约束对参考精度的描述不足。选择冻结基线可以避免本次退化，但若依赖已知人工误差进行该选择，将失去自动比较的有效性。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "4.2　R03：可用候选尚未被正确排序",
+      "paragraphs": [
+        "R03 的双组自动首选 P95 为 4.525 mm，优于 V38 的 4.686 mm。封存后逐一计算候选的人工参考误差，发现另一个合格候选可达 4.167 mm；两者相差 0.358 mm。与 R04 不同，该条目已经生成更好的可用候选，主要暴露了当前排序指标未能准确识别它。",
+        "4.167 mm 是事后利用人工参考识别的候选最优值，仅用于定位排序损失，未替换自动首选，也未计入主结果。图 3 将该值与自动输出分开标注，避免把事后可知的上限写成算法已经实现的能力。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "4.3　R02：保留基线不等于新增改善",
+      "paragraphs": [
+        "R02 的双组生成得到 12 个不同新候选，其中 6 个因两组模板收益不一致被拒绝，6 个因净形态收益不足被拒绝，没有候选进入最终接纳集合。单组生成同样没有合格新候选。最终保留 V38，P95 仍为 6.408 mm。这说明保护机制避免了未经接纳的动作，但不提供精度改善证据。"
+      ],
+      "headingLevel": 3
+    },
+    {
+      "heading": "5　讨论",
+      "paragraphs": [
+        "本轮的实质进展是把第二组模板从事后接纳条件前移到姿态生成目标，使搜索能够主动寻找同时满足两组形态证据和局部接触关系的候选。在严格保留既有动作的范围内，5 枚目标出现了可测量的参考误差下降。然而，这一结果只支持所选历史目标上的局部工程增益，不能推断新病例性能。",
+        "双组模板不是误差独立性的保证。若模板共享形态偏差、锚点配准误差或缺乏目标特异的关节面约束，两组评分可能同时偏向错误方向。R04 是这一风险的直接反例。接触预算和碰撞预算限制了某些不合理动作，但并不能完整表达后关节面连续性、局部解剖关系以及个体化形态。",
+        "R03 和 R04 要求不同的后续措施：前者需要校准不读取人工答案的排序证据；后者需要生成更好的候选，或识别当前证据不足而保留基线。对这两个问题使用同一阈值补丁，可能只是在已见资料上调整结果。下一轮应将目标函数对齐与排序改动分开比较，并在固定基线和冻结规则下检查每枚骨块。",
+        "研究局限包括样本小且经过选择、全部参考有历史暴露、模板可能相关、人工参考缺少独立多评者不确定性估计、部分骨块对应缺失，以及较高的优化非收敛比例。本研究未评价临床关节面台阶、Böhler 角、Gissane 角、手术时间或患者结局，也未进行独立多中心验证。报告范围和参考标准的限制参照医学影像人工智能透明报告的原则说明；本研究为几何优化实验，不宣称已满足 CLAIM 的全部适用条目。[4]",
+        "研发顺序应为：先修复共同模板偏差和求解稳定性，再冻结算法、数据划分与逐块验收规则，随后引入此前未参与规则设计且人工参考未暴露的接缝不足多骨块病例。只有在这一条件下才能检验新增收益是否可以外推。与均值下降同等重要的是，局部退化能够被发现、保留证据并阻止不成熟版本替代基线。"
+      ]
+    },
+    {
+      "heading": "6　结论",
+      "paragraphs": [
+        "CalcAI V40 在 7 枚历史目标 PF 骨块中取得 5 枚改善、1 枚持平和 1 枚退化，并保留 20 项既有接纳调整。双组模板与接触约束参与生成提供了局部增益，但模板一致性、工程几何接纳与人工参考精度仍不等价。逐块退化及优化非收敛共同限定了当前能力边界。本轮继续保留原基线，V40 不升版；独立病例验证尚待开展。"
+      ]
+    },
+    {
+      "heading": "7　数据、伦理与研究透明性",
+      "paragraphs": [
+        "本次分析使用既有研发归档，公开材料仅包含研究专用代号、逐目标标量结果、汇总统计及原创图表，不提供原始 CT、骨块网格或身份映射。当前实验包未附可核验的伦理批件号、知情同意或豁免文件，本文不据此宣称相关审批已经完成。后续正式临床研究及期刊投稿，应由数据提供机构核定并补充适用的伦理与数据使用依据。",
+        "利益关系：作者所在单位参与 CalcAI 的研发与成果转化。本文没有新增经证据核验的资助项目声明，也不代表合作医院对本轮结论的审签。ChatGPT 协助代码核查、数值复核、公开文献检索、图表生成及文稿整理，不列为作者。",
+        "开放资料包括 7 枚目标的完整精度表、汇总与失效诊断数据、本文 Markdown 版及制图脚本。[7][8][9][10] 公开数据可以复算本文目标层面的配对统计和图表，不足以从患者原始几何完整复跑复位算法。原始引擎、运行环境与病例几何仍需在既定授权下使用；本公开版本不提供完整依赖锁定环境。",
+        "为区分数值结果与过程封存，补充资料分别记录协议、自动批次和参考评价的冻结清单 SHA-256，以及逐骨块评价文件本身的 SHA-256。冻结清单的哈希不是单个结果文件的哈希。主结果在事后失效分析前已封存，事后最优候选不参与重选。"
+      ]
+    }
+  ],
+  "sectionTables": {
+    "3.1　运行范围与既有调整保留": {
+      "caption": "表 1　版本角色与本轮证据范围",
+      "columns": [
+        "版本／范围",
+        "处理方式",
+        "可确认结果"
+      ],
+      "rows": [
+        [
+          "V38 冻结基线",
+          "保留既有接纳姿态",
+          "本轮主要比较基线；20 项调整锁定"
+        ],
+        [
+          "V39 历史筛选",
+          "投影与筛选已有候选",
+          "26 个条目的选中位姿均与 V38 相同"
+        ],
+        [
+          "V40 再生成组",
+          "7 个条目，各 1 枚目标 PF",
+          "双组主方案在 6 个条目采用新姿态"
+        ],
+        [
+          "V40 复用组",
+          "19 个条目沿用封存基线",
+          "核对回执及位姿；重新计算参考误差"
+        ]
+      ]
+    },
+    "3.2　七枚目标骨块的配对误差": {
+      "caption": "表 2　P95 单位为 mm；Δ 为双组生成减 V38，负数表示改善。显示至小数点后三位。",
+      "columns": [
+        "研究代号／骨块",
+        "V38",
+        "单组生成",
+        "双组生成",
+        "Δ",
+        "方向"
+      ],
+      "rows": [
+        [
+          "R01／PF_04",
+          "19.891",
+          "19.891",
+          "19.235",
+          "-0.656",
+          "改善"
+        ],
+        [
+          "R02／PF_02",
+          "6.408",
+          "6.408",
+          "6.408",
+          "+0.000",
+          "持平"
+        ],
+        [
+          "R03／PF_02",
+          "4.686",
+          "4.686",
+          "4.525",
+          "-0.161",
+          "改善"
+        ],
+        [
+          "R04／PF_01",
+          "3.247",
+          "3.321",
+          "3.469",
+          "+0.222",
+          "退化"
+        ],
+        [
+          "R05／PF_01",
+          "4.198",
+          "4.102",
+          "4.038",
+          "-0.160",
+          "改善"
+        ],
+        [
+          "R06／PF_03",
+          "19.342",
+          "19.342",
+          "18.706",
+          "-0.636",
+          "改善"
+        ],
+        [
+          "R07／PF_02",
+          "14.409",
+          "14.409",
+          "13.315",
+          "-1.094",
+          "改善"
+        ]
+      ]
+    },
+    "3.3　全队列逐块检查": {
+      "caption": "表 3　V40 相对 V38 的逐块变化。未验证项单独列出，不作为通过。",
+      "columns": [
+        "范围",
+        "总数",
+        "改善",
+        "持平",
+        "退化",
+        "未验证"
+      ],
+      "rows": [
+        [
+          "预设目标 PF",
+          "7",
+          "5",
+          "1",
+          "1",
+          "0"
+        ],
+        [
+          "全队列 PF",
+          "44",
+          "5",
+          "35",
+          "1",
+          "3"
+        ],
+        [
+          "全部非锚点骨块",
+          "344",
+          "5",
+          "326",
+          "1",
+          "12"
+        ]
+      ]
+    }
+  },
+  "sectionImages": {
+    "2.2　冻结基线与共同对照": {
+      "url": "/images/news/calcai-dual-template-contact-20261117/fig1-workflow.svg",
+      "originalUrl": "/images/news/calcai-dual-template-contact-20261117/fig1-workflow.svg",
+      "width": 1440,
+      "height": 1032,
+      "alt": "图 1　研究设计。两组共享起点和接纳规则，仅生成目标中的模板组数不同。26 个条目均有历史参考暴露，19 个条目复用基线。"
+    },
+    "3.2　七枚目标骨块的配对误差": {
+      "url": "/images/news/calcai-dual-template-contact-20261117/fig2-fragment-errors.svg",
+      "originalUrl": "/images/news/calcai-dual-template-contact-20261117/fig2-fragment-errors.svg",
+      "width": 1440,
+      "height": 888,
+      "alt": "图 2　七枚目标骨块的三组 P95 与配对变化。左图标记在纵向略作错开以显示重合值；右图以零线区分改善与退化。R04 的局部退化不能由其余骨块的平均收益抵消。"
+    },
+    "4.2　R03：可用候选尚未被正确排序": {
+      "url": "/images/news/calcai-dual-template-contact-20261117/fig3-failure-analysis.svg",
+      "originalUrl": "/images/news/calcai-dual-template-contact-20261117/fig3-failure-analysis.svg",
+      "width": 1440,
+      "height": 1044,
+      "alt": "图 3　生成、排序与求解三个层面的失效证据。R04 合格新候选均劣于基线；R03 事后参考最优与自动首选相差 0.358 mm；54 次求解中仅 4 次报告成功。事后最优不计入自动结果。"
+    }
+  },
+  "sourceAttribution": "作者：瑜秀瞳芯。子殷数智医学与临床转化中心原创研究技术论文。数据来自已封存的 CalcAI V38—V40 研发记录，本文未经学术期刊同行评议。",
+  "referenceNote": "文献 [1]—[6] 为相关研究、方法文档及前期技术报告；[7]—[10] 为本研究开放补充资料。引用文献的研究结果不作为本系统的临床性能声明。",
+  "references": [
+    {
+      "title": "Xia S, Fu B, Wang B, et al. Computed Tomography Imaging-Based Preoperative Virtual Simulation for Calcaneal Fractures Reduction. J Foot Ankle Surg. 2019;58(2):248–252. doi:10.1053/j.jfas.2018.08.054.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30850096/",
+      "linkLabel": "PubMed 文献记录",
+      "verification": "search_summary"
+    },
+    {
+      "title": "Paulano-Godino F, Jiménez-Delgado JJ. Identification of fracture zones and its application in automatic bone fracture reduction. Comput Methods Programs Biomed. 2017;141:93–104. doi:10.1016/j.cmpb.2016.12.014.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28241972/",
+      "linkLabel": "PubMed 文献记录",
+      "verification": "search_summary"
+    },
+    {
+      "title": "Han R, Uneri A, Vijayan RC, et al. Fracture reduction planning and guidance in orthopaedic trauma surgery via multi-body image registration. Med Image Anal. 2021;68:101917. doi:10.1016/j.media.2020.101917.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8661907/",
+      "linkLabel": "开放全文",
+      "verification": "primary_full_text"
+    },
+    {
+      "title": "Tejani AS, Klontzas ME, Gatti AA, et al. Checklist for Artificial Intelligence in Medical Imaging (CLAIM): 2024 Update. Radiol Artif Intell. 2024;6(4):e240300. doi:10.1148/ryai.240300.",
+      "url": "https://pubs.rsna.org/doi/10.1148/ryai.240300",
+      "linkLabel": "期刊原文",
+      "verification": "primary_full_text"
+    },
+    {
+      "title": "SciPy Community. minimize(method=\"SLSQP\"). SciPy documentation. 访问日期：2026-11-17。",
+      "url": "https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html",
+      "linkLabel": "官方方法文档",
+      "verification": "primary_full_text"
+    },
+    {
+      "title": "瑜秀瞳芯. 接缝证据不足时的跟骨骨折虚拟复位——CalcAI 逐骨块约束组合与留出回放. 子殷数智医学与临床转化中心, 2026-11-15. 官网研究技术报告，非同行评议论文。",
+      "url": "https://www.chcomct.cn/news/calcai-fragment-composition-20261113",
+      "linkLabel": "前期研究全文",
+      "verification": "primary_full_text"
+    },
+    {
+      "title": "补充资料 S1：七枚目标骨块的三组配对误差与变化方向。",
+      "url": "/papers/calcai-dual-template-contact-20261117-targets.csv",
+      "linkLabel": "下载 CSV 数据表",
+      "verification": "primary_full_text"
+    },
+    {
+      "title": "补充资料 S2：队列计数、求解状态、失效诊断、参数及封存哈希。",
+      "url": "/papers/calcai-dual-template-contact-20261117-summary.json",
+      "linkLabel": "下载 JSON 汇总",
+      "verification": "primary_full_text"
+    },
+    {
+      "title": "补充资料 S3：论文可下载文本，包含表格、图注与参考文献。",
+      "url": "/papers/calcai-dual-template-contact-20261117.md",
+      "linkLabel": "下载 Markdown 全文",
+      "verification": "primary_full_text"
+    },
+    {
+      "title": "补充资料 S4：仅使用公开标量数据的原创图表复算脚本。",
+      "url": "/papers/calcai-dual-template-contact-20261117-figures.py",
+      "linkLabel": "下载 Python 制图脚本",
+      "verification": "primary_full_text"
+    }
+  ]
+};

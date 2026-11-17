@@ -1,0 +1,158 @@
+{
+  "title": "CalcAI V40 historical per-fragment regression study",
+  "date": "2026-11-17",
+  "author": "瑜秀瞳芯",
+  "publication_type": "Website research preprint; not peer reviewed",
+  "record_codes": "R01-R07 are publication-specific pseudonyms; no identity mapping is public.",
+  "study_design": "Historical development/regression; all 26 records have prior reference exposure.",
+  "independent_validation": false,
+  "algorithm_promoted": false,
+  "adoption_status": "BLOCKED_BY_REGRESSION",
+  "metric": "95th percentile of corresponding vertex Euclidean distances to manual reduction, in a fixed ST anchor frame; not Hausdorff distance or articular step-off.",
+  "tie_tolerance_mm": 1e-06,
+  "planned_records": 26,
+  "regenerated_records": 7,
+  "reused_frozen_baselines": 19,
+  "complete_pf_reference_records": 25,
+  "target_pf_vs_v38": {
+    "improved": 5,
+    "tied": 1,
+    "regressed": 1
+  },
+  "all_pf_vs_v38": {
+    "total": 44,
+    "measurable": 41,
+    "improved": 5,
+    "tied": 35,
+    "regressed": 1,
+    "unverified": 3
+  },
+  "nonanchor_vs_v38": {
+    "total": 344,
+    "measurable": 332,
+    "improved": 5,
+    "tied": 326,
+    "regressed": 1,
+    "unverified": 12
+  },
+  "previously_accepted_adjustments_preserved": 20,
+  "target_mean_delta_mm": -0.3549495546102476,
+  "target_median_delta_mm": -0.16061175521369453,
+  "target_mean_dual_minus_single_mm": -0.3518051190378187,
+  "optimizer": {
+    "search_rounds": 54,
+    "success": 4,
+    "iteration_limit": 49,
+    "directional_derivative_failure": 1
+  },
+  "failure_diagnosis": {
+    "R03": {
+      "single_panel": {
+        "eligible": 0,
+        "posthoc_ranking_gap_mm": null,
+        "all_eligible_worse_than_baseline": false,
+        "selected": null,
+        "posthoc_reference_best_eligible": null
+      },
+      "dual_panel": {
+        "eligible": 2,
+        "posthoc_ranking_gap_mm": 0.3580110287308953,
+        "all_eligible_worse_than_baseline": false,
+        "selected": {
+          "target_p95_mm": 4.525125055887747,
+          "delta_target_p95_vs_v38_mm": -0.16061175521369453,
+          "panel_relative_gains": [
+            0.15619048508132893,
+            0.06142038835613217
+          ]
+        },
+        "posthoc_reference_best_eligible": {
+          "target_p95_mm": 4.167114027156852,
+          "delta_target_p95_vs_v38_mm": -0.5186227839445898,
+          "panel_relative_gains": [
+            0.13100017364460423,
+            0.05648340246167585
+          ]
+        }
+      },
+      "posthoc_values_not_used_for_selection": true
+    },
+    "R04": {
+      "single_panel": {
+        "eligible": 1,
+        "posthoc_ranking_gap_mm": 0.0,
+        "all_eligible_worse_than_baseline": true,
+        "selected": {
+          "target_p95_mm": 3.32145292765537,
+          "delta_target_p95_vs_v38_mm": 0.07417274899924164,
+          "panel_relative_gains": [
+            0.08923159014428093,
+            0.05768823400120033
+          ]
+        },
+        "posthoc_reference_best_eligible": {
+          "target_p95_mm": 3.32145292765537,
+          "delta_target_p95_vs_v38_mm": 0.07417274899924164,
+          "panel_relative_gains": [
+            0.08923159014428093,
+            0.05768823400120033
+          ]
+        }
+      },
+      "dual_panel": {
+        "eligible": 2,
+        "posthoc_ranking_gap_mm": 9.12408299402756e-05,
+        "all_eligible_worse_than_baseline": true,
+        "selected": {
+          "target_p95_mm": 3.4688719118478044,
+          "delta_target_p95_vs_v38_mm": 0.2215917331916759,
+          "panel_relative_gains": [
+            0.09094738361604193,
+            0.06068576143049595
+          ]
+        },
+        "posthoc_reference_best_eligible": {
+          "target_p95_mm": 3.468780671017864,
+          "delta_target_p95_vs_v38_mm": 0.22150049236173563,
+          "panel_relative_gains": [
+            0.07522845362221628,
+            0.05066409776676474
+          ]
+        }
+      },
+      "posthoc_values_not_used_for_selection": true
+    }
+  },
+  "search_parameters": {
+    "translation_budget_mm": 2.5,
+    "rotation_budget_deg": 10,
+    "maximum_rounds_per_start_arm": 3,
+    "maxiter": 40,
+    "ftol": 1e-06,
+    "eps": 0.0002,
+    "fractions": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "atlas_weight": 0.65,
+    "movement_weight": 0.12,
+    "contact_median_increment_mm": 0.25,
+    "collision_depth_cap": "case-specific frozen native value, potentially nonzero"
+  },
+  "frozen_manifest_sha256": {
+    "protocol": "c8a59ca3585769675d8b735e9b2ded82531fc338c9211c24d87e77c125b55226",
+    "automatic_batch": "24376cb5bddf734b372052269dcaf2909e4e0ffb70b7744402262939421c5f41",
+    "reference_evaluation": "6d118ecb5c9045a8f619aa75e9bc0b38ef380ddc6160ca0cb682b4ac5294ee8e"
+  },
+  "reference_evaluation_file_sha256": "1e97a48a49f297b8483923d35534a35135924834a3131d162ddf5a49c06cc13f",
+  "limitations": [
+    "Historical reference exposure",
+    "Selected small sample",
+    "Manual reference uncertainty",
+    "No independent clinical validation",
+    "Optimizer nonconvergence",
+    "Restricted raw geometry: public files support scalar recalculation, not full patient-level reconstruction"
+  ]
+}

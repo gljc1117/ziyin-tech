@@ -1,3 +1,4 @@
+import { CALCAI_DUAL_TEMPLATE_CONTACT } from "./calcai-dual-template-contact-20261117";
 import { PELVIS_PRODUCTION_VERIFICATION } from "./pelvis-production-verification";
 import { GOAL_DRIVEN_AGENT_ENGINEERING } from "./goal-driven-agent-engineering";
 import { NEWS_RESEARCH_20261106 } from "./news-research-20261106";
@@ -126,6 +127,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CALCAI_DUAL_TEMPLATE_CONTACT,
 PELVIS_PRODUCTION_VERIFICATION,
 XIAOGAN_RESPIRATORY_MEETING,
 XINXIANG_UNIVERSITY_RECRUITMENT,
