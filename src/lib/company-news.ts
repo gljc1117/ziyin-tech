@@ -1,3 +1,4 @@
+import { CALCAI_FRACTURE_SEAM_CORRESPONDENCE } from "./calcai-fracture-seam-correspondence-20261119";
 import { SI_ORDER_VERSION_RECOVERY } from "./si-order-version-recovery";
 import { SI_HUMAN_AI_WORKFLOW_REFLECTION } from "./si-human-ai-workflow-reflection";
 import { CALCAI_DUAL_TEMPLATE_CONTACT } from "./calcai-dual-template-contact-20261117";
@@ -131,6 +132,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CALCAI_FRACTURE_SEAM_CORRESPONDENCE,
 SI_ORDER_VERSION_RECOVERY,
 SI_HUMAN_AI_WORKFLOW_REFLECTION,
 CALCAI_DUAL_TEMPLATE_CONTACT,
