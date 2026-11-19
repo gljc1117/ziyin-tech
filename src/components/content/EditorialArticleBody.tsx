@@ -50,10 +50,12 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
     <p className="mt-6 text-lg leading-8">{article.summary}</p>
     {!article.hideCover && (article.id === "grant-assistant-calibrated-decisions-20260916" ? <GrantDecisionFramework /> : article.id === "recursive-scientific-instruments-materials-medical-ai-20260916" ? <ScientificInstrumentFramework /> : article.id === "recursive-self-improvement-medical-ai-20260915" ? <RsiFramework /> : hasOpinionVisual(article.id) ? <OpinionFramework id={article.id} /> : <Figure item={article.cover} />)}
     {"officialVideo" in article && article.officialVideo && <OfficialVideoCard video={article.officialVideo} />}
-    {article.sections.map((section) => <section key={section.heading} className="mt-10">
+    {article.sections.map((section) => {
+      const headingText = section.heading.replace(/^#+\s*/, "");
+      return <section key={section.heading} className="mt-10">
       {section.headingLevel === 3
-        ? <h3 className="text-lg font-semibold leading-8 text-slate-900">{section.heading}</h3>
-        : <h2 className="text-xl font-semibold leading-8 text-slate-900">{section.heading}</h2>}
+        ? <h3 className="text-lg font-semibold leading-8 text-slate-900">{headingText}</h3>
+        : <h2 className="text-xl font-semibold leading-8 text-slate-900">{headingText}</h2>}
       {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-5 text-[17px] leading-8 text-slate-800"><ReferenceText text={paragraph} article={article} /></p>)}
       {"sectionTables" in article && article.sectionTables?.[section.heading] && <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200">
         <table className="w-full min-w-[620px] border-collapse text-left text-sm leading-7">
@@ -64,7 +66,7 @@ export default function EditorialArticleBody({ article }: { article: EditorialAr
       </div>}
       {section.items && <ol className="mt-4 list-decimal space-y-2 pl-6 text-slate-800">{section.items.map((item) => <li key={item}>{item}</li>)}</ol>}
       {"sectionImages" in article && article.sectionImages?.[section.heading] && <Figure item={article.sectionImages[section.heading]} />}
-    </section>)}
+    </section>; })}
     {article.gallery.map((item) => <Figure key={item.url} item={item} />)}
     <EditorialSources article={article} />
     {caseId && <Link href={"/cases/" + caseId} className="mt-6 inline-block rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950">查看项目与交付记录 →</Link>}
