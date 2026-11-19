@@ -1,3 +1,4 @@
+import { MEDICAL_AI_QUALIFIED_DELIVERY } from "./medical-ai-qualified-delivery";
 import { CALCAI_EDGE_PATH_POSE_REFINEMENT } from "./calcai-edge-path-pose-refinement-20261120";
 import { CALCAI_FRACTURE_SEAM_CORRESPONDENCE } from "./calcai-fracture-seam-correspondence-20261119";
 import { SI_ORDER_VERSION_RECOVERY } from "./si-order-version-recovery";
@@ -133,6 +134,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+  MEDICAL_AI_QUALIFIED_DELIVERY,
 CALCAI_EDGE_PATH_POSE_REFINEMENT,
 CALCAI_FRACTURE_SEAM_CORRESPONDENCE,
 SI_ORDER_VERSION_RECOVERY,
