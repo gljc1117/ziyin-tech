@@ -1,3 +1,4 @@
+import { CALCAI_EDGE_PATH_POSE_REFINEMENT } from "./calcai-edge-path-pose-refinement-20261120";
 import { CALCAI_FRACTURE_SEAM_CORRESPONDENCE } from "./calcai-fracture-seam-correspondence-20261119";
 import { SI_ORDER_VERSION_RECOVERY } from "./si-order-version-recovery";
 import { SI_HUMAN_AI_WORKFLOW_REFLECTION } from "./si-human-ai-workflow-reflection";
@@ -132,6 +133,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+CALCAI_EDGE_PATH_POSE_REFINEMENT,
 CALCAI_FRACTURE_SEAM_CORRESPONDENCE,
 SI_ORDER_VERSION_RECOVERY,
 SI_HUMAN_AI_WORKFLOW_REFLECTION,
