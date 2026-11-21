@@ -1,3 +1,4 @@
+import { CALCAI_FRAGMENT_SEAM_VALIDATION_METHOD } from "./calcai-fragment-seam-validation-method-20261121";
 import { CALCAI_MULTI_AGENT_REDUCTION_FOUR_ROUNDS } from "./calcai-multi-agent-calcaneal-reduction-four-rounds-20261121";
 import { OBJECT_CORRESPONDENCE_DIRECTION } from "./object-correspondence-change-direction-validation-20261121";
 import { CALCAI_PAIRED_DIRECTION } from "./calcai-paired-direction-fragment-risk-20261121";
@@ -139,6 +140,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+  CALCAI_FRAGMENT_SEAM_VALIDATION_METHOD,
   CALCAI_MULTI_AGENT_REDUCTION_FOUR_ROUNDS,
   OBJECT_CORRESPONDENCE_DIRECTION,
   CALCAI_PAIRED_DIRECTION,
