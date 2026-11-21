@@ -1,3 +1,4 @@
+import { CALCAI_PAIRED_DIRECTION } from "./calcai-paired-direction-fragment-risk-20261121";
 import { MEDICAL_AI_QUALIFIED_DELIVERY } from "./medical-ai-qualified-delivery";
 import { CALCAI_EDGE_PATH_POSE_REFINEMENT } from "./calcai-edge-path-pose-refinement-20261120";
 import { CALCAI_FRACTURE_SEAM_CORRESPONDENCE } from "./calcai-fracture-seam-correspondence-20261119";
@@ -136,6 +137,7 @@ export type CompanyNewsArticle = Omit<EditorialArticle, "caseProfile"> & {
 };
 
 export const COMPANY_NEWS_ARTICLES: CompanyNewsArticle[] = [
+  CALCAI_PAIRED_DIRECTION,
   MEDICAL_AI_QUALIFIED_DELIVERY,
 CALCAI_EDGE_PATH_POSE_REFINEMENT,
 CALCAI_FRACTURE_SEAM_CORRESPONDENCE,
