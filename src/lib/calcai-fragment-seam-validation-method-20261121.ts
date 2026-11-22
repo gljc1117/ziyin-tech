@@ -78,6 +78,12 @@ export const CALCAI_FRAGMENT_SEAM_VALIDATION_METHOD: CompanyNewsArticle = {
       ]
     },
     {
+      "heading": "相关独立研究数据表",
+      "paragraphs": [
+        "另有《CalcAI 逐缝段退化预测与完整候选池验证》四张公开数据表，涵盖七个开发病例的完整候选池排序和两个历史起点的冻结模型复核。该数据集属于另一项离线实验，不能与本文方法学实例的候选分母合并计算。完整表格及可打印版本：https://www.chcomct.cn/papers/calcai-seam-segment-full-pool-20261121/tables.html"
+      ]
+    },
+    {
       "heading": "研究声明与数据可用性",
       "paragraphs": [
         "作者为瑜秀瞳芯，供稿机构为子殷数智医学与临床转化中心。作者所在团队参与 CalcAI 研发。本文为方法学论文，采用既有离线研发汇总作为实例。公开稿含方法、示意图和去标识化汇总计数。原始医疗影像、骨块网格及人工标注保存在原科研环境。"
