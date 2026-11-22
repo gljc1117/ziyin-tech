@@ -207,7 +207,7 @@ export const CALCAI_FRAGMENT_SEAM_VALIDATION_METHOD: CompanyNewsArticle = {
       "title": "CalcAI 逐缝段退化预测与完整候选池验证：四张公开数据表及可打印页面. 子殷数智医学与临床转化中心. 2026.",
       "url": "https://www.chcomct.cn/papers/calcai-seam-segment-full-pool-20261121/tables.html",
       "linkLabel": "查看研究数据表",
-      "verification": "author_source"
+      "verification": "primary_full_text"
     }
   ]
 };
