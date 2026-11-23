@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2748"/>
+      <stop offset="1" stop-color="#0e4d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="105" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ffffff">合成影像能不能替真数据进试验</text>
+  <text x="70" y="160" font-family="sans-serif" font-size="27" fill="#bcd9e8">PNAS拓扑验证方法，11月23日见报</text>
+  <g font-family="sans-serif">
+    <rect x="150" y="225" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="272" font-size="28" font-weight="bold" fill="#ffffff">计算拓扑加统计学，比影像数据的结构</text>
+    <rect x="150" y="320" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="367" font-size="28" font-weight="bold" fill="#ffffff">合成乳腺X线对放疗剂量的反应</text>
+    <rect x="150" y="415" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="462" font-size="28" font-weight="bold" fill="#ffffff">方法学研究，不等于已经可以替代</text>
+  </g>
+  <text x="70" y="565" font-family="sans-serif" font-size="22" fill="#bcd9e8">子殷科技 · 研究述评与方法探索 · 2026年11月23日</text>
+</svg>
