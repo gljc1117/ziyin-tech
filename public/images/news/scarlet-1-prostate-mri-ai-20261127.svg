@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2748"/>
+      <stop offset="1" stop-color="#0e4d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="105" font-family="sans-serif" font-size="42" font-weight="bold" fill="#ffffff">前列腺MRI AI：22国验证与专家相当</text>
+  <text x="70" y="160" font-family="sans-serif" font-size="27" fill="#bcd9e8">SCARLET-1 发表于《放射学》，22445例</text>
+  <g font-family="sans-serif">
+    <rect x="150" y="225" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="272" font-size="28" font-weight="bold" fill="#ffffff">三外部验证集 AUC 0.84–0.89</text>
+    <rect x="150" y="320" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="367" font-size="28" font-weight="bold" fill="#ffffff">83%–87.9% 与常规阅片一致</text>
+    <rect x="150" y="415" width="900" height="72" rx="10" fill="#123f63" stroke="#7fb6cf" stroke-width="2"/>
+    <text x="190" y="462" font-size="28" font-weight="bold" fill="#ffffff">28% 中心 AUC 未达 0.80</text>
+  </g>
+  <text x="70" y="565" font-family="sans-serif" font-size="22" fill="#bcd9e8">子殷科技 · 研究述评与方法探索 · 2026年11月24日</text>
+</svg>
